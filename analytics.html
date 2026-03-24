@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analytics — Masters Charity Pool 2026</title>
+  <meta name="description" content="Fun stats and analytics for the 2026 Masters Charity Pool.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/leaderboard.css">
+  <style>
+    /* Analytics Page Specific Styles */
+    .analytics-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-lg);
+      margin-bottom: var(--space-xl);
+    }
+
+    .analytics-card {
+      background: var(--white);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .analytics-card.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .analytics-card-header {
+      background: var(--masters-green);
+      padding: var(--space-md) var(--space-lg);
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .analytics-card-header h3 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: var(--cream);
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .analytics-card-header .card-icon {
+      font-size: 1.1rem;
+    }
+
+    .analytics-card-body {
+      padding: var(--space-lg);
+    }
+
+    /* Popular Picks Bar Chart */
+    .pick-bar-group {
+      margin-bottom: var(--space-lg);
+    }
+
+    .pick-bar-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .pick-bar-group-label {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      margin-bottom: var(--space-sm);
+    }
+
+    .pick-bar-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      margin-bottom: 6px;
+    }
+
+    .pick-bar-name {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      min-width: 140px;
+      text-align: right;
+    }
+
+    .pick-bar-track {
+      flex: 1;
+      height: 22px;
+      background: var(--cream);
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .pick-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--masters-green) 0%, var(--masters-green-light) 100%);
+      border-radius: 4px;
+      transition: width 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 6px;
+    }
+
+    .pick-bar-count {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--cream);
+    }
+
+    .pick-bar-count-outside {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      margin-left: 6px;
+      min-width: 20px;
+    }
+
+    /* Earnings Distribution */
+    .distribution-chart {
+      display: flex;
+      align-items: flex-end;
+      gap: 3px;
+      height: 200px;
+      padding: var(--space-md) 0;
+    }
+
+    .dist-bar {
+      flex: 1;
+      background: linear-gradient(180deg, var(--masters-green-light) 0%, var(--masters-green) 100%);
+      border-radius: 3px 3px 0 0;
+      transition: all var(--transition-medium);
+      cursor: pointer;
+      position: relative;
+      min-height: 4px;
+    }
+
+    .dist-bar:hover {
+      background: linear-gradient(180deg, var(--masters-gold) 0%, var(--masters-gold-dim) 100%);
+    }
+
+    .dist-bar:hover .dist-tooltip {
+      opacity: 1;
+      transform: translateX(-50%) translateY(-8px);
+    }
+
+    .dist-tooltip {
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%) translateY(0);
+      background: var(--masters-green-deep);
+      color: var(--cream);
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      white-space: nowrap;
+      opacity: 0;
+      transition: all var(--transition-fast);
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .dist-labels {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--text-light);
+      margin-top: var(--space-xs);
+    }
+
+    /* Risk Analysis */
+    .risk-entry {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--space-sm) 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .risk-entry:last-child {
+      border-bottom: none;
+    }
+
+    .risk-name {
+      font-family: var(--font-display);
+      font-weight: 600;
+      color: var(--text-primary);
+      font-size: 0.95rem;
+    }
+
+    .risk-detail {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+
+    .risk-badge {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 4px;
+    }
+
+    .risk-badge.safe {
+      background: rgba(39,174,96,0.1);
+      color: var(--green-movement);
+    }
+
+    .risk-badge.risky {
+      background: rgba(192,57,43,0.1);
+      color: var(--red-movement);
+    }
+
+    /* Unique Combos */
+    .combo-stat {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      padding: var(--space-md) 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .combo-stat:last-child {
+      border-bottom: none;
+    }
+
+    .combo-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .combo-info h4 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: var(--masters-green);
+      margin-bottom: 2px;
+    }
+
+    .combo-info p {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .combo-value {
+      font-family: var(--font-mono);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--masters-green);
+      margin-left: auto;
+    }
+
+    /* Fun Facts */
+    .fun-fact {
+      padding: var(--space-md);
+      background: var(--cream-light);
+      border-radius: 8px;
+      margin-bottom: var(--space-md);
+      border-left: 4px solid var(--masters-gold);
+    }
+
+    .fun-fact:last-child {
+      margin-bottom: 0;
+    }
+
+    .fun-fact-label {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      color: var(--masters-gold-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .fun-fact-value {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--masters-green);
+    }
+
+    .fun-fact-detail {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-top: 4px;
+    }
+
+    @media (max-width: 768px) {
+      .analytics-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pick-bar-name {
+        min-width: 100px;
+        font-size: 0.75rem;
+      }
+
+      .distribution-chart {
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo">
+        <div class="logo-crest">⛳</div>
+        <div class="logo-text">
+          <span class="logo-title">Masters Pool 2026</span>
+          <span class="logo-subtitle">Charity Tournament</span>
+        </div>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.main-nav').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Leaderboard</a></li>
+          <li><a href="standings.html">Standings</a></li>
+          <li><a href="players.html">Players</a></li>
+          <li><a href="analytics.html" class="active">Analytics</a></li>
+          <li><a href="myteam.html">My Team</a></li>
+          <li><a href="game.html">Mini Golf</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <h1>Pool Analytics</h1>
+    <div class="hero-divider"></div>
+    <p class="hero-subtitle">The numbers behind the picks</p>
+  </section>
+
+  <main class="main-content">
+    <!-- Summary Stats -->
+    <div class="stats-grid">
+      <div class="stat-card animate-in">
+        <div class="stat-value" id="stat-unique-players">—</div>
+        <div class="stat-label">Unique Players Picked</div>
+      </div>
+      <div class="stat-card animate-in">
+        <div class="stat-value" id="stat-avg-earnings">—</div>
+        <div class="stat-label">Avg. Entry Earnings</div>
+      </div>
+      <div class="stat-card animate-in">
+        <div class="stat-value" id="stat-top-spread">—</div>
+        <div class="stat-label">1st to Last Spread</div>
+      </div>
+      <div class="stat-card animate-in">
+        <div class="stat-value" id="stat-zero-players">—</div>
+        <div class="stat-label">Golfers at $0</div>
+      </div>
+    </div>
+
+    <div class="analytics-grid">
+      <!-- Most Popular Picks by Group -->
+      <div class="analytics-card full-width">
+        <div class="analytics-card-header">
+          <span class="card-icon">🏆</span>
+          <h3>Most Popular Picks by Group</h3>
+        </div>
+        <div class="analytics-card-body" id="popular-picks">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- Earnings Distribution -->
+      <div class="analytics-card">
+        <div class="analytics-card-header">
+          <span class="card-icon">📊</span>
+          <h3>Earnings Distribution</h3>
+        </div>
+        <div class="analytics-card-body">
+          <div class="distribution-chart" id="dist-chart"></div>
+          <div class="dist-labels">
+            <span id="dist-min">$0</span>
+            <span id="dist-max">—</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Safest vs Riskiest -->
+      <div class="analytics-card">
+        <div class="analytics-card-header">
+          <span class="card-icon">🎲</span>
+          <h3>Safest vs. Riskiest Entries</h3>
+        </div>
+        <div class="analytics-card-body" id="risk-analysis">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- Fun Facts -->
+      <div class="analytics-card">
+        <div class="analytics-card-header">
+          <span class="card-icon">⭐</span>
+          <h3>Fun Facts</h3>
+        </div>
+        <div class="analytics-card-body" id="fun-facts">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- Unique Combos -->
+      <div class="analytics-card">
+        <div class="analytics-card-header">
+          <span class="card-icon">🔢</span>
+          <h3>By the Numbers</h3>
+        </div>
+        <div class="analytics-card-body" id="combo-stats">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">⛳ Masters Charity Pool 2026</div>
+      <div class="footer-charity">Supporting the Ride to Conquer Cancer</div>
+      <div class="footer-note">
+        $30 entry &middot; $5/entry to charity &middot; 89 participants<br>
+        Not affiliated with Augusta National Golf Club or the Masters Tournament.
+      </div>
+    </div>
+  </footer>
+
+  <script src="data/pool-data.js"></script>
+  <script src="js/analytics.js"></script>
+</body>
+</html>

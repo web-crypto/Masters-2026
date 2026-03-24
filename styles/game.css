@@ -1,0 +1,558 @@
+/* ============================================
+   MINI GOLF GAME — Masters Augusta Edition
+   Green felt aesthetic with classic typography
+   ============================================ */
+
+.game-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* --- Game Canvas Area --- */
+.game-canvas-wrapper {
+  position: relative;
+  background: var(--masters-green-deep);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 
+    0 8px 32px rgba(0,0,0,0.3),
+    inset 0 0 60px rgba(0,0,0,0.2);
+  border: 4px solid;
+  border-image: linear-gradient(180deg, #5a3e1b 0%, #8b6914 50%, #5a3e1b 100%) 1;
+  margin-bottom: var(--space-lg);
+}
+
+.game-canvas-wrapper canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  cursor: crosshair;
+}
+
+/* --- Game HUD Overlay --- */
+.game-hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md) var(--space-lg);
+  background: linear-gradient(180deg, var(--masters-green-deep) 0%, var(--masters-green) 100%);
+  border-radius: 10px;
+  margin-bottom: var(--space-md);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  border: 1px solid rgba(201,168,76,0.2);
+}
+
+.hud-item {
+  text-align: center;
+}
+
+.hud-label {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  color: var(--masters-gold-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.hud-value {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--cream);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+.hud-value.gold {
+  color: var(--masters-gold-light);
+}
+
+.hud-hole-name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--masters-gold);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+  max-width: 200px;
+}
+
+/* --- Power Bar --- */
+.power-bar-container {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-sm) var(--space-lg);
+  background: var(--white);
+  border-radius: 8px;
+  margin-bottom: var(--space-md);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.power-bar-label {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  min-width: 60px;
+}
+
+.power-bar-track {
+  flex: 1;
+  height: 16px;
+  background: linear-gradient(180deg, #e8e0d0 0%, #d4cbbe 100%);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.power-bar-fill {
+  height: 100%;
+  border-radius: 8px;
+  background: linear-gradient(90deg, 
+    var(--masters-green) 0%, 
+    var(--masters-green-light) 40%, 
+    var(--masters-gold) 70%, 
+    #e74c3c 100%
+  );
+  transition: width 0.05s linear;
+  width: 0%;
+}
+
+.power-bar-percentage {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  min-width: 40px;
+  text-align: right;
+}
+
+/* --- Game Instructions --- */
+.game-instructions {
+  background: var(--white);
+  border-radius: 10px;
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.game-instructions h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--masters-green);
+  margin-bottom: var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.instructions-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-sm);
+}
+
+.instructions-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  padding: var(--space-xs) 0;
+}
+
+.instructions-list li .step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  border-radius: 50%;
+  background: var(--masters-green);
+  color: var(--cream);
+  font-size: 0.7rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+
+/* --- Scorecard --- */
+.scorecard {
+  background: var(--white);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.06);
+  margin-bottom: var(--space-lg);
+}
+
+.scorecard-header {
+  background: var(--masters-green);
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.scorecard-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--cream);
+  font-weight: 700;
+}
+
+.scorecard-total {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--masters-gold);
+  font-weight: 700;
+}
+
+.scorecard-grid {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  border-bottom: 2px solid var(--masters-green);
+}
+
+.scorecard-hole {
+  text-align: center;
+  padding: var(--space-sm);
+  border-right: 1px solid rgba(0,0,0,0.08);
+}
+
+.scorecard-hole:last-child {
+  border-right: none;
+}
+
+.scorecard-hole .hole-num {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.scorecard-hole .hole-par {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+}
+
+.scorecard-hole .hole-score {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  min-height: 1.5em;
+}
+
+.scorecard-hole .hole-score.birdie {
+  color: var(--green-movement);
+}
+
+.scorecard-hole .hole-score.bogey {
+  color: var(--red-movement);
+}
+
+.scorecard-hole .hole-score.eagle {
+  color: var(--masters-gold);
+}
+
+.scorecard-hole.current {
+  background: rgba(201,168,76,0.1);
+}
+
+.scorecard-hole.completed {
+  background: rgba(26,71,49,0.03);
+}
+
+/* --- Game Overlays --- */
+.game-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15,46,31,0.92);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  backdrop-filter: blur(4px);
+}
+
+.game-overlay.hidden {
+  display: none;
+}
+
+.overlay-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  color: var(--cream);
+  margin-bottom: var(--space-sm);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+.overlay-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: var(--masters-gold);
+  margin-bottom: var(--space-lg);
+  text-align: center;
+  max-width: 400px;
+}
+
+.overlay-btn {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  padding: var(--space-sm) var(--space-xl);
+  background: linear-gradient(180deg, var(--masters-gold-light) 0%, var(--masters-gold) 100%);
+  color: var(--masters-green-deep);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.overlay-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+  background: linear-gradient(180deg, var(--masters-gold) 0%, var(--masters-gold-dim) 100%);
+}
+
+/* --- Game End / Name Entry --- */
+.name-input-wrapper {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.name-input {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: var(--space-sm) var(--space-md);
+  border: 2px solid var(--masters-gold-dim);
+  border-radius: 6px;
+  background: rgba(255,255,255,0.1);
+  color: var(--cream);
+  width: 200px;
+}
+
+.name-input::placeholder {
+  color: rgba(245,240,232,0.4);
+}
+
+.name-input:focus {
+  outline: none;
+  border-color: var(--masters-gold);
+}
+
+/* --- Daily Leaderboard --- */
+.daily-leaderboard {
+  background: var(--white);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.daily-leaderboard-header {
+  background: var(--masters-green);
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.daily-leaderboard-header h3 {
+  font-family: var(--font-display);
+  color: var(--cream);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.clear-scores-btn {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  padding: var(--space-xs) var(--space-sm);
+  background: transparent;
+  border: 1px solid rgba(245,240,232,0.3);
+  color: var(--cream-dark);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.clear-scores-btn:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: var(--masters-gold);
+  color: var(--masters-gold);
+}
+
+.leaderboard-list {
+  list-style: none;
+}
+
+.leaderboard-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm) var(--space-lg);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  font-family: var(--font-body);
+}
+
+.leaderboard-list li:last-child {
+  border-bottom: none;
+}
+
+.leaderboard-list .lb-rank {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--masters-green);
+  min-width: 30px;
+}
+
+.leaderboard-list .lb-name {
+  flex: 1;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.leaderboard-list .lb-score {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--masters-green);
+}
+
+.leaderboard-list .lb-date {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  margin-left: var(--space-md);
+  min-width: 80px;
+  text-align: right;
+}
+
+.no-scores {
+  padding: var(--space-xl);
+  text-align: center;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+/* --- Hole Complete Notification --- */
+.hole-complete-toast {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: rgba(15,46,31,0.95);
+  border: 2px solid var(--masters-gold);
+  border-radius: 12px;
+  padding: var(--space-lg) var(--space-xl);
+  text-align: center;
+  z-index: 50;
+  pointer-events: none;
+  backdrop-filter: blur(4px);
+}
+
+.hole-complete-toast.show {
+  animation: toastPop 2s ease forwards;
+}
+
+@keyframes toastPop {
+  0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+  15% { transform: translate(-50%, -50%) scale(1.05); opacity: 1; }
+  25% { transform: translate(-50%, -50%) scale(1); }
+  75% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(0.95); opacity: 0; }
+}
+
+.toast-score-name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--masters-gold);
+  font-weight: 700;
+}
+
+.toast-strokes {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--cream);
+  margin-top: var(--space-xs);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .game-hud {
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .hud-item {
+    flex: 1;
+    min-width: 70px;
+  }
+
+  .hud-value {
+    font-size: 1.1rem;
+  }
+
+  .hud-hole-name {
+    font-size: 0.9rem;
+    order: -1;
+    width: 100%;
+    text-align: center;
+    margin-bottom: var(--space-xs);
+  }
+
+  .scorecard-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .scorecard-grid .scorecard-hole:nth-child(n+6) {
+    border-top: 1px solid rgba(0,0,0,0.08);
+  }
+
+  .power-bar-container {
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .instructions-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .scorecard-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .game-canvas-wrapper {
+    border-width: 2px;
+  }
+
+  .name-input-wrapper {
+    flex-direction: column;
+  }
+
+  .name-input {
+    width: 100%;
+  }
+}

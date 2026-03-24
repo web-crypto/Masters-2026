@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masters Charity Pool 2026 — Leaderboard</title>
+  <meta name="description" content="2026 Masters Tournament charity pool leaderboard. 89 entries, $5 per entry to Ride to Conquer Cancer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/leaderboard.css">
+</head>
+<body>
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo">
+        <div class="logo-crest">⛳</div>
+        <div class="logo-text">
+          <span class="logo-title">Masters Pool 2026</span>
+          <span class="logo-subtitle">Charity Tournament</span>
+        </div>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.main-nav').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html" class="active">Leaderboard</a></li>
+          <li><a href="standings.html">Standings</a></li>
+          <li><a href="players.html">Players</a></li>
+          <li><a href="analytics.html">Analytics</a></li>
+          <li><a href="myteam.html">My Team</a></li>
+          <li><a href="game.html">Mini Golf</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Charity Banner -->
+  <div class="charity-banner">
+    <span>🎗️ $5 from every entry supports the Ride to Conquer Cancer — $445 raised so far</span>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="page-hero">
+    <h1>The Leaderboard</h1>
+    <div class="hero-divider"></div>
+    <p class="hero-subtitle">Masters Tournament 2026 — Augusta National</p>
+  </section>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Pool Stats -->
+    <div class="stats-grid">
+      <div class="stat-card animate-in">
+        <div class="stat-value" id="stat-entries">89</div>
+        <div class="stat-label">Entries</div>
+      </div>
+      <div class="stat-card animate-in">
+        <div class="stat-value" id="stat-prize-pool">$2,225</div>
+        <div class="stat-label">Prize Pool</div>
+      </div>
+      <div class="stat-card animate-in">
+        <div class="stat-value" id="stat-charity">$445</div>
+        <div class="stat-label">For Charity</div>
+      </div>
+      <div class="stat-card animate-in">
+        <div class="stat-value" id="stat-leader">—</div>
+        <div class="stat-label">Current Leader</div>
+      </div>
+    </div>
+
+    <p class="last-updated" id="last-updated">Last updated: loading...</p>
+
+    <!-- Augusta-Style Scoreboard — Top 10 -->
+    <div class="scoreboard-container">
+      <div class="scoreboard">
+        <div class="scoreboard-header">
+          <div class="scoreboard-title">Masters Charity Pool</div>
+          <div class="scoreboard-year">Augusta National — 2026</div>
+        </div>
+        <div class="scoreboard-columns">
+          <span class="col-header">Pos</span>
+          <span class="col-header">Entry</span>
+          <span class="col-header earnings-header">Earnings</span>
+          <span class="col-header movement-header">+/−</span>
+        </div>
+        <div id="scoreboard-rows">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- View All Link -->
+    <div class="text-center mt-lg">
+      <a href="standings.html" style="
+        display: inline-block;
+        font-family: var(--font-display);
+        font-size: 1rem;
+        font-weight: 700;
+        padding: 0.75rem 2rem;
+        background: var(--masters-green);
+        color: var(--cream);
+        border-radius: 6px;
+        letter-spacing: 0.05em;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      " onmouseover="this.style.background='#2a6b4a'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#1a4731'; this.style.transform='translateY(0)'">
+        View All 89 Entries →
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">⛳ Masters Charity Pool 2026</div>
+      <div class="footer-charity">Supporting the Ride to Conquer Cancer</div>
+      <div class="footer-note">
+        $30 entry &middot; $5/entry to charity &middot; 89 participants<br>
+        Not affiliated with Augusta National Golf Club or the Masters Tournament.
+      </div>
+    </div>
+  </footer>
+
+  <script src="data/pool-data.js"></script>
+  <script src="js/leaderboard.js"></script>
+</body>
+</html>

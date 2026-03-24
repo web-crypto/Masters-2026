@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Golf — Masters Charity Pool 2026</title>
+  <meta name="description" content="Play a 9-hole mini golf game at Augusta National. Masters-themed holes and daily leaderboard.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/game.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo">
+        <div class="logo-crest">⛳</div>
+        <div class="logo-text">
+          <span class="logo-title">Masters Pool 2026</span>
+          <span class="logo-subtitle">Charity Tournament</span>
+        </div>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.main-nav').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Leaderboard</a></li>
+          <li><a href="standings.html">Standings</a></li>
+          <li><a href="players.html">Players</a></li>
+          <li><a href="analytics.html">Analytics</a></li>
+          <li><a href="myteam.html">My Team</a></li>
+          <li><a href="game.html" class="active">Mini Golf</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero" style="padding-bottom: var(--space-lg);">
+    <h1>Augusta Mini Golf</h1>
+    <div class="hero-divider"></div>
+    <p class="hero-subtitle">9 iconic holes. One legendary course.</p>
+  </section>
+
+  <main class="main-content">
+    <div class="game-container">
+      <!-- Game HUD -->
+      <div class="game-hud">
+        <div class="hud-item">
+          <span class="hud-label">Hole</span>
+          <span class="hud-value" id="hud-hole">1</span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-label">Par</span>
+          <span class="hud-value" id="hud-par">3</span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-hole-name" id="hud-hole-name">Tea Olive</span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-label">Strokes</span>
+          <span class="hud-value gold" id="hud-strokes">0</span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-label">Total</span>
+          <span class="hud-value gold" id="hud-total">0</span>
+        </div>
+      </div>
+
+      <!-- Power Bar -->
+      <div class="power-bar-container">
+        <span class="power-bar-label">Power</span>
+        <div class="power-bar-track">
+          <div class="power-bar-fill" id="power-fill"></div>
+        </div>
+        <span class="power-bar-percentage" id="power-pct">0%</span>
+      </div>
+
+      <!-- Game Canvas -->
+      <div class="game-canvas-wrapper">
+        <canvas id="game-canvas" width="800" height="500"></canvas>
+
+        <!-- Start Overlay -->
+        <div class="game-overlay" id="start-overlay">
+          <div class="overlay-title">Augusta Mini Golf</div>
+          <div class="overlay-subtitle">9 holes inspired by the most famous course in golf. Click and hold to aim, release to putt.</div>
+          <button class="overlay-btn" id="start-btn">Tee Off</button>
+        </div>
+
+        <!-- Hole Complete Toast -->
+        <div class="hole-complete-toast" id="hole-toast">
+          <div class="toast-score-name" id="toast-name"></div>
+          <div class="toast-strokes" id="toast-strokes"></div>
+        </div>
+
+        <!-- Game Over Overlay -->
+        <div class="game-overlay hidden" id="end-overlay">
+          <div class="overlay-title">Round Complete</div>
+          <div class="overlay-subtitle" id="end-summary"></div>
+          <div class="name-input-wrapper">
+            <input type="text" class="name-input" id="player-name-input" placeholder="Your name" maxlength="20">
+            <button class="overlay-btn" id="submit-score-btn">Submit Score</button>
+          </div>
+          <button class="overlay-btn" id="play-again-btn" style="margin-top: var(--space-md); background: transparent; border: 2px solid var(--masters-gold); color: var(--masters-gold);">Play Again</button>
+        </div>
+      </div>
+
+      <!-- Scorecard -->
+      <div class="scorecard">
+        <div class="scorecard-header">
+          <span class="scorecard-title">Scorecard</span>
+          <span class="scorecard-total" id="scorecard-total">Total: E</span>
+        </div>
+        <div class="scorecard-grid" id="scorecard-grid">
+          <!-- 9 holes rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Instructions -->
+      <div class="game-instructions">
+        <h3>⛳ How to Play</h3>
+        <ul class="instructions-list">
+          <li><span class="step-num">1</span> Click and hold on the ball to start aiming</li>
+          <li><span class="step-num">2</span> Drag away from the ball to set direction</li>
+          <li><span class="step-num">3</span> Hold longer for more power (watch the bar)</li>
+          <li><span class="step-num">4</span> Release to putt — get the ball in the hole!</li>
+        </ul>
+      </div>
+
+      <!-- Daily Leaderboard -->
+      <div class="daily-leaderboard">
+        <div class="daily-leaderboard-header">
+          <h3>🏆 Daily Leaderboard</h3>
+          <button class="clear-scores-btn" id="clear-scores-btn">Clear Scores</button>
+        </div>
+        <ul class="leaderboard-list" id="daily-scores">
+          <li class="no-scores">No scores yet. Be the first to play!</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">⛳ Masters Charity Pool 2026</div>
+      <div class="footer-charity">Supporting the Ride to Conquer Cancer</div>
+      <div class="footer-note">
+        $30 entry &middot; $5/entry to charity &middot; 89 participants<br>
+        Not affiliated with Augusta National Golf Club or the Masters Tournament.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/game.js"></script>
+</body>
+</html>

@@ -1,0 +1,430 @@
+// ============================================
+// MY TEAM DASHBOARD — Personal Stats Engine
+// ============================================
+
+document.addEventListener('DOMContentLoaded', () => {
+  const select = document.getElementById('entry-select');
+  const emptyState = document.getElementById('empty-state');
+  const dashboard = document.getElementById('team-dashboard');
+
+  // Populate dropdown
+  poolData.entries.forEach(entry => {
+    const opt = document.createElement('option');
+    opt.value = entry.id;
+    opt.textContent = `${entry.name} (${entry.owner})`;
+    select.appendChild(opt);
+  });
+
+  // Check URL param or localStorage for saved selection
+  const params = new URLSearchParams(window.location.search);
+  const savedId = params.get('entry') || localStorage.getItem('masters-my-entry');
+  if (savedId) {
+    select.value = savedId;
+    if (select.value === savedId) {
+      loadDashboard(parseInt(savedId));
+    }
+  }
+
+  select.addEventListener('change', () => {
+    const id = parseInt(select.value);
+    if (id) {
+      localStorage.setItem('masters-my-entry', id);
+      loadDashboard(id);
+    } else {
+      emptyState.classList.remove('hidden');
+      dashboard.classList.add('hidden');
+    }
+  });
+});
+
+function loadDashboard(entryId) {
+  const entry = poolData.entries.find(e => e.id === entryId);
+  if (!entry) return;
+
+  document.getElementById('empty-state').classList.add('hidden');
+  document.getElementById('team-dashboard').classList.remove('hidden');
+
+  renderHeroCard(entry);
+  renderEarningsChart(entry);
+  renderRoster(entry);
+  renderGapAnalysis(entry);
+  renderDifferentiators(entry);
+  renderScenarioWidget(entry);
+}
+
+// ============================================
+// HERO CARD
+// ============================================
+function renderHeroCard(entry) {
+  const rank = entry.currentRank;
+  const change = getRankChange(entry);
+
+  document.getElementById('hero-rank').textContent = rank;
+  document.getElementById('hero-rank-suffix').textContent = getOrdinalSuffix(rank);
+  document.getElementById('hero-name').textContent = entry.name;
+  document.getElementById('hero-earnings').textContent = formatCurrency(entry.totalEarnings);
+  document.getElementById('hero-total-entries').textContent = poolData.totalEntries;
+
+  const movementEl = document.getElementById('hero-movement');
+  if (change.direction === 'up') {
+    movementEl.className = 'rank-hero-movement up';
+    movementEl.textContent = `▲ ${change.amount} from last update`;
+  } else if (change.direction === 'down') {
+    movementEl.className = 'rank-hero-movement down';
+    movementEl.textContent = `▼ ${change.amount} from last update`;
+  } else {
+    movementEl.className = 'rank-hero-movement same';
+    movementEl.textContent = '— No change';
+  }
+}
+
+// ============================================
+// EARNINGS BREAKDOWN CHART
+// ============================================
+function renderEarningsChart(entry) {
+  const chart = document.getElementById('earnings-chart');
+  chart.innerHTML = '';
+
+  const maxEarnings = Math.max(...Object.values(entry.players).map(p => p.earnings), 1);
+
+  const groupOrder = ['groupA', 'groupB1', 'groupB2', 'groupB3', 'groupC1', 'groupC2', 'groupC3', 'groupD'];
+
+  groupOrder.forEach((group, i) => {
+    const player = entry.players[group];
+    const pct = (player.earnings / maxEarnings) * 100;
+    const tierClass = group === 'groupD' ? 'tier-d' : group.startsWith('groupA') ? 'tier-a' : group.startsWith('groupB') ? 'tier-b' : 'tier-c';
+
+    const row = document.createElement('div');
+    row.className = 'echart-row';
+    row.innerHTML = `
+      <span class="echart-label">${getGroupLabel(group).replace('Group ', '')}</span>
+      <span class="echart-player">${player.name}</span>
+      <div class="echart-bar-track">
+        <div class="echart-bar-fill ${tierClass}" style="width: 0%" data-width="${pct}">
+          ${pct > 20 ? `<span class="echart-bar-amount">${formatCurrency(player.earnings)}</span>` : ''}
+        </div>
+      </div>
+      <span class="echart-amount-outside">${formatCurrency(player.earnings)}</span>
+    `;
+
+    chart.appendChild(row);
+
+    // Animate bar
+    setTimeout(() => {
+      const fill = row.querySelector('.echart-bar-fill');
+      fill.style.width = fill.dataset.width + '%';
+    }, 100 + i * 80);
+  });
+}
+
+// ============================================
+// ROSTER — 8 Players with vs. the field
+// ============================================
+function renderRoster(entry) {
+  const grid = document.getElementById('roster-grid');
+  grid.innerHTML = '';
+
+  const groupOrder = ['groupA', 'groupB1', 'groupB2', 'groupB3', 'groupC1', 'groupC2', 'groupC3', 'groupD'];
+
+  groupOrder.forEach((group, i) => {
+    const player = entry.players[group];
+    const fieldStats = getFieldStats(group, player.name);
+
+    const card = document.createElement('div');
+    card.className = `roster-player-card ${group === 'groupD' ? 'tier-d' : ''}`;
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(12px)';
+
+    card.innerHTML = `
+      <div class="roster-player-top">
+        <span class="roster-player-name">${player.name}</span>
+        <span class="roster-player-group">${getGroupLabel(group)}</span>
+      </div>
+      <div class="roster-player-earnings ${player.earnings === 0 ? 'zero' : ''}">${formatCurrency(player.earnings)}</div>
+      <div class="roster-vs-field">
+        <span class="rank-highlight">#${fieldStats.rank} in ${getGroupLabel(group)}</span> out of ${fieldStats.totalPicked} picked players.
+        <span class="popularity-note">${fieldStats.pickPct}% of entries have ${player.name.split(' ')[1] || player.name}.</span>
+      </div>
+    `;
+
+    grid.appendChild(card);
+
+    setTimeout(() => {
+      card.style.transition = 'all 0.4s ease';
+      card.style.opacity = '1';
+      card.style.transform = 'translateY(0)';
+    }, 80 + i * 60);
+  });
+}
+
+function getFieldStats(group, playerName) {
+  // Count picks and earnings for each player in this group slot
+  const pickCounts = {};
+  const earningsMap = {};
+
+  poolData.entries.forEach(entry => {
+    const pick = entry.players[group];
+    if (pick) {
+      pickCounts[pick.name] = (pickCounts[pick.name] || 0) + 1;
+      earningsMap[pick.name] = pick.earnings;
+    }
+  });
+
+  // Rank by earnings within this group
+  const sorted = Object.entries(earningsMap).sort((a, b) => b[1] - a[1]);
+  const rank = sorted.findIndex(([name]) => name === playerName) + 1;
+
+  const pickPct = Math.round(((pickCounts[playerName] || 0) / poolData.entries.length) * 100);
+
+  return {
+    rank: rank || '?',
+    totalPicked: sorted.length,
+    pickCount: pickCounts[playerName] || 0,
+    pickPct: pickPct
+  };
+}
+
+// ============================================
+// GAP ANALYSIS — What You Need
+// ============================================
+function renderGapAnalysis(entry) {
+  const body = document.getElementById('gap-body');
+  const subtitle = document.getElementById('gap-subtitle');
+  body.innerHTML = '';
+
+  const leader = poolData.entries[0]; // Already sorted by totalEarnings
+
+  // If this IS the leader
+  if (leader.id === entry.id) {
+    subtitle.textContent = "You're #1!";
+    const secondPlace = poolData.entries[1];
+    const lead = entry.totalEarnings - secondPlace.totalEarnings;
+    body.innerHTML = `
+      <div class="gap-summary">
+        <div class="gap-amount leading">+${formatCurrency(lead)}</div>
+        <div class="gap-description">
+          You're leading <strong>${secondPlace.name}</strong> by ${formatCurrency(lead)}. Keep the pressure on.
+        </div>
+      </div>
+    `;
+    renderGapGrid(body, entry, secondPlace, true);
+    return;
+  }
+
+  const gap = leader.totalEarnings - entry.totalEarnings;
+  subtitle.textContent = `${formatCurrency(gap)} behind #1`;
+
+  body.innerHTML = `
+    <div class="gap-summary">
+      <div class="gap-amount">-${formatCurrency(gap)}</div>
+      <div class="gap-description">
+        <strong>${leader.name}</strong> leads with ${formatCurrency(leader.totalEarnings)}.
+        Here's where their players are outearning yours, and where you're fighting back.
+      </div>
+    </div>
+  `;
+
+  renderGapGrid(body, entry, leader, false);
+}
+
+function renderGapGrid(container, myEntry, otherEntry, isLeading) {
+  const gridDiv = document.createElement('div');
+  gridDiv.className = 'gap-comparison-grid';
+
+  const groupOrder = ['groupA', 'groupB1', 'groupB2', 'groupB3', 'groupC1', 'groupC2', 'groupC3', 'groupD'];
+
+  groupOrder.forEach(group => {
+    const mine = myEntry.players[group];
+    const theirs = otherEntry.players[group];
+    const diff = mine.earnings - theirs.earnings;
+
+    let rowClass, diffClass, diffText;
+    if (diff > 0) {
+      rowClass = 'winning';
+      diffClass = 'positive';
+      diffText = `+${formatCurrency(diff)}`;
+    } else if (diff < 0) {
+      rowClass = 'losing';
+      diffClass = 'negative';
+      diffText = `-${formatCurrency(Math.abs(diff))}`;
+    } else {
+      rowClass = 'tied';
+      diffClass = 'neutral';
+      diffText = 'Even';
+    }
+
+    const row = document.createElement('div');
+    row.className = `gap-row ${rowClass}`;
+    row.innerHTML = `
+      <span class="gap-group-label">${getGroupLabel(group).replace('Group ', '')}</span>
+      <div class="gap-players">
+        <span class="gap-your-pick">${mine.name} (${formatCurrency(mine.earnings)})</span>
+        <span class="gap-their-pick">vs. ${theirs.name} (${formatCurrency(theirs.earnings)})</span>
+      </div>
+      <span class="gap-diff ${diffClass}">${diffText}</span>
+    `;
+
+    gridDiv.appendChild(row);
+  });
+
+  container.appendChild(gridDiv);
+}
+
+// ============================================
+// DIFFERENTIATORS — Bold / Unique Picks
+// ============================================
+function renderDifferentiators(entry) {
+  const body = document.getElementById('diff-body');
+  body.innerHTML = '';
+
+  const groupOrder = ['groupA', 'groupB1', 'groupB2', 'groupB3', 'groupC1', 'groupC2', 'groupC3', 'groupD'];
+  const callouts = [];
+
+  groupOrder.forEach(group => {
+    const player = entry.players[group];
+    const stats = getFieldStats(group, player.name);
+
+    // "Bold pick" threshold: picked by fewer than 25% of entries
+    const threshold = Math.ceil(poolData.entries.length * 0.25);
+
+    if (stats.pickCount <= 3) {
+      // Very unique
+      const word = stats.pickCount === 1 ? "the only one" : `one of only ${stats.pickCount}`;
+      callouts.push({
+        icon: '💎',
+        html: `You're <strong>${word}</strong> with <strong>${player.name}</strong> in ${getGroupLabel(group)}.${
+          player.earnings > 0
+            ? ` That pick is earning ${formatCurrency(player.earnings)} — exclusivity that's paying off.`
+            : ' A contrarian play that hasn\'t paid off yet.'
+        }`
+      });
+    } else if (stats.pickCount <= threshold) {
+      callouts.push({
+        icon: '🎯',
+        html: `<strong>${player.name}</strong> (${getGroupLabel(group)}) — picked by only <span class="diff-count">${stats.pickCount}</span> entries (${stats.pickPct}%). A less obvious choice.`
+      });
+    }
+  });
+
+  // Check if they have a popular consensus pick
+  groupOrder.forEach(group => {
+    const player = entry.players[group];
+    const stats = getFieldStats(group, player.name);
+    if (stats.pickPct >= 60) {
+      callouts.push({
+        icon: '📢',
+        html: `<strong>${player.name}</strong> (${getGroupLabel(group)}) is the consensus pick — ${stats.pickPct}% of the field has them. Safety in numbers.`
+      });
+    }
+  });
+
+  if (callouts.length === 0) {
+    body.innerHTML = '<div class="no-diff-message">Your picks are right in the middle of the pack. No extreme outliers here.</div>';
+    return;
+  }
+
+  callouts.forEach(c => {
+    const div = document.createElement('div');
+    div.className = 'diff-callout';
+    div.innerHTML = `
+      <span class="diff-icon">${c.icon}</span>
+      <div class="diff-text">${c.html}</div>
+    `;
+    body.appendChild(div);
+  });
+}
+
+// ============================================
+// SCENARIO SIMULATOR — What If?
+// ============================================
+function renderScenarioWidget(entry) {
+  const playerSelect = document.getElementById('scenario-player-select');
+  const results = document.getElementById('scenario-results');
+
+  // Clear existing options (keep placeholder)
+  playerSelect.innerHTML = '<option value="">Choose a player...</option>';
+
+  const groupOrder = ['groupA', 'groupB1', 'groupB2', 'groupB3', 'groupC1', 'groupC2', 'groupC3', 'groupD'];
+  groupOrder.forEach(group => {
+    const player = entry.players[group];
+    const opt = document.createElement('option');
+    opt.value = group;
+    opt.textContent = `${player.name} (${getGroupLabel(group)})`;
+    playerSelect.appendChild(opt);
+  });
+
+  playerSelect.onchange = () => {
+    const group = playerSelect.value;
+    if (!group) {
+      results.classList.add('hidden');
+      return;
+    }
+    results.classList.remove('hidden');
+    simulateScenarios(entry, group, results);
+  };
+
+  // Reset on new entry
+  results.classList.add('hidden');
+  playerSelect.value = '';
+}
+
+function simulateScenarios(entry, group, container) {
+  container.innerHTML = '';
+
+  const player = entry.players[group];
+
+  // Masters prize money scenarios (approximate 2026 purse: $20M total)
+  const scenarios = [
+    { label: 'Wins the Masters', newEarnings: 4000000 },
+    { label: 'Top 5 Finish', newEarnings: 1400000 },
+    { label: 'Top 10 Finish', newEarnings: 700000 },
+    { label: 'Top 25 Finish', newEarnings: 250000 },
+    { label: 'Makes the Cut', newEarnings: 80000 },
+    { label: 'Misses the Cut', newEarnings: 0 }
+  ];
+
+  scenarios.forEach(scenario => {
+    const earningsDelta = scenario.newEarnings - player.earnings;
+    const newTotal = entry.totalEarnings + earningsDelta;
+
+    // Calculate new rank by comparing against all other entries
+    let newRank = 1;
+    poolData.entries.forEach(other => {
+      if (other.id !== entry.id && other.totalEarnings > newTotal) {
+        newRank++;
+      }
+    });
+
+    const rankDelta = entry.currentRank - newRank;
+    let rankClass, rankText;
+    if (rankDelta > 0) {
+      rankClass = 'improved';
+      rankText = `▲ ${rankDelta} to #${newRank}`;
+    } else if (rankDelta < 0) {
+      rankClass = 'worsened';
+      rankText = `▼ ${Math.abs(rankDelta)} to #${newRank}`;
+    } else {
+      rankClass = 'unchanged';
+      rankText = `Stays #${newRank}`;
+    }
+
+    const outcomeDiv = document.createElement('div');
+    outcomeDiv.className = 'scenario-outcome';
+    outcomeDiv.innerHTML = `
+      <div class="scenario-finish">${scenario.label}</div>
+      <div class="scenario-new-earnings">${formatCurrency(newTotal)}</div>
+      <div class="scenario-rank-change ${rankClass}">${rankText}</div>
+    `;
+
+    container.appendChild(outcomeDiv);
+  });
+}
+
+// ============================================
+// HELPERS
+// ============================================
+function getOrdinalSuffix(n) {
+  const s = ['th', 'st', 'nd', 'rd'];
+  const v = n % 100;
+  return s[(v - 20) % 10] || s[v] || s[0];
+}

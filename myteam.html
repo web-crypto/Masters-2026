@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Team — Masters Charity Pool 2026</title>
+  <meta name="description" content="Your personal team dashboard for the 2026 Masters Charity Pool.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/leaderboard.css">
+  <link rel="stylesheet" href="styles/myteam.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo">
+        <div class="logo-crest">⛳</div>
+        <div class="logo-text">
+          <span class="logo-title">Masters Pool 2026</span>
+          <span class="logo-subtitle">Charity Tournament</span>
+        </div>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.main-nav').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Leaderboard</a></li>
+          <li><a href="standings.html">Standings</a></li>
+          <li><a href="players.html">Players</a></li>
+          <li><a href="analytics.html">Analytics</a></li>
+          <li><a href="myteam.html" class="active">My Team</a></li>
+          <li><a href="game.html">Mini Golf</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <h1>My Team</h1>
+    <div class="hero-divider"></div>
+    <p class="hero-subtitle">Your personal Augusta dashboard</p>
+  </section>
+
+  <main class="main-content">
+    <!-- Entry Selector -->
+    <div class="team-selector-wrapper">
+      <label for="entry-select" class="selector-label">Select Your Entry</label>
+      <div class="select-wrapper">
+        <select id="entry-select">
+          <option value="">Choose your entry...</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Empty State -->
+    <div id="empty-state" class="empty-state">
+      <div class="empty-crest">⛳</div>
+      <h2>Select your entry above</h2>
+      <p>Pick your name from the dropdown to see your personal Masters dashboard.</p>
+    </div>
+
+    <!-- Dashboard (hidden until selection) -->
+    <div id="team-dashboard" class="team-dashboard hidden">
+
+      <!-- Hero Card: Rank + Earnings -->
+      <div class="rank-hero-card" id="rank-hero">
+        <div class="rank-hero-position">
+          <span class="rank-hero-number" id="hero-rank">—</span>
+          <span class="rank-hero-suffix" id="hero-rank-suffix">th</span>
+        </div>
+        <div class="rank-hero-details">
+          <h2 class="rank-hero-name" id="hero-name">—</h2>
+          <div class="rank-hero-earnings" id="hero-earnings">$0</div>
+          <div class="rank-hero-movement" id="hero-movement"></div>
+        </div>
+        <div class="rank-hero-out-of">
+          <span class="rank-hero-field">of <span id="hero-total-entries">89</span></span>
+          <span class="rank-hero-label">entries</span>
+        </div>
+      </div>
+
+      <!-- Earnings Breakdown Chart -->
+      <div class="dashboard-card" id="earnings-breakdown-card">
+        <div class="dashboard-card-header">
+          <h3><span class="card-icon">📊</span> Earnings Breakdown</h3>
+        </div>
+        <div class="dashboard-card-body">
+          <div class="earnings-chart" id="earnings-chart"></div>
+        </div>
+      </div>
+
+      <!-- Player Roster: 8 players with vs. the field -->
+      <div class="dashboard-card" id="roster-card">
+        <div class="dashboard-card-header">
+          <h3><span class="card-icon">🏌️</span> Your Roster</h3>
+        </div>
+        <div class="dashboard-card-body">
+          <div class="roster-grid" id="roster-grid"></div>
+        </div>
+      </div>
+
+      <!-- What You Need: Gap to 1st -->
+      <div class="dashboard-card" id="gap-card">
+        <div class="dashboard-card-header">
+          <h3><span class="card-icon">🎯</span> What You Need</h3>
+          <span class="gap-subtitle" id="gap-subtitle"></span>
+        </div>
+        <div class="dashboard-card-body" id="gap-body"></div>
+      </div>
+
+      <!-- Differentiator Callouts -->
+      <div class="dashboard-card" id="diff-card">
+        <div class="dashboard-card-header">
+          <h3><span class="card-icon">💎</span> Your Bold Picks</h3>
+        </div>
+        <div class="dashboard-card-body" id="diff-body"></div>
+      </div>
+
+      <!-- Scenario Simulator -->
+      <div class="dashboard-card" id="scenario-card">
+        <div class="dashboard-card-header">
+          <h3><span class="card-icon">🔮</span> What If?</h3>
+        </div>
+        <div class="dashboard-card-body">
+          <p class="scenario-intro">Pick a player from your team and see how your standing changes based on their finish.</p>
+          <div class="scenario-controls">
+            <div class="select-wrapper scenario-select-wrapper">
+              <select id="scenario-player-select">
+                <option value="">Choose a player...</option>
+              </select>
+            </div>
+          </div>
+          <div id="scenario-results" class="scenario-results hidden"></div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">⛳ Masters Charity Pool 2026</div>
+      <div class="footer-charity">Supporting the Ride to Conquer Cancer</div>
+      <div class="footer-note">
+        $30 entry &middot; $5/entry to charity &middot; 89 participants<br>
+        Not affiliated with Augusta National Golf Club or the Masters Tournament.
+      </div>
+    </div>
+  </footer>
+
+  <script src="data/pool-data.js"></script>
+  <script src="js/myteam.js"></script>
+</body>
+</html>

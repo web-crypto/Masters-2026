@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full Standings — Masters Charity Pool 2026</title>
+  <meta name="description" content="Complete standings for all 89 entries in the 2026 Masters Charity Pool.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/leaderboard.css">
+</head>
+<body>
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo">
+        <div class="logo-crest">⛳</div>
+        <div class="logo-text">
+          <span class="logo-title">Masters Pool 2026</span>
+          <span class="logo-subtitle">Charity Tournament</span>
+        </div>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.main-nav').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Leaderboard</a></li>
+          <li><a href="standings.html" class="active">Standings</a></li>
+          <li><a href="players.html">Players</a></li>
+          <li><a href="analytics.html">Analytics</a></li>
+          <li><a href="myteam.html">My Team</a></li>
+          <li><a href="game.html">Mini Golf</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <h1>Full Standings</h1>
+    <div class="hero-divider"></div>
+    <p class="hero-subtitle">All Entries — Click any row to see player picks</p>
+  </section>
+
+  <main class="main-content">
+    <p class="last-updated" id="last-updated"></p>
+
+    <div class="standings-controls">
+      <div class="search-box">
+        <input type="text" id="standings-search" placeholder="Search entries, owners, or players..." aria-label="Search standings">
+      </div>
+      <span class="results-count" id="results-count"></span>
+    </div>
+
+    <div class="standings-table-wrapper">
+      <table class="standings-table">
+        <thead>
+          <tr>
+            <th style="width: 60px">Pos</th>
+            <th>Entry</th>
+            <th class="text-right" style="width: 140px">Earnings</th>
+            <th class="text-center" style="width: 60px">+/−</th>
+          </tr>
+        </thead>
+        <tbody id="standings-body">
+          <!-- Populated by JS -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">⛳ Masters Charity Pool 2026</div>
+      <div class="footer-charity">Supporting the Ride to Conquer Cancer</div>
+      <div class="footer-note">
+        $30 entry &middot; $5/entry to charity &middot; 89 participants<br>
+        Not affiliated with Augusta National Golf Club or the Masters Tournament.
+      </div>
+    </div>
+  </footer>
+
+  <script src="data/pool-data.js"></script>
+  <script src="js/leaderboard.js"></script>
+  <script>
+    // Update last updated text
+    const lastUpdatedEl = document.getElementById('last-updated');
+    if (lastUpdatedEl) {
+      lastUpdatedEl.textContent = 'Last updated: ' + getTimeSinceUpdate();
+    }
+  </script>
+</body>
+</html>
