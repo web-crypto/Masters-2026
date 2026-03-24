@@ -61,7 +61,6 @@ function createScoreboardRow(entry, index) {
     movementHtml = `<span class="movement same">—</span>`;
   }
 
-  const earningsClass = entry.totalEarnings === 0 ? 'earnings-amount zero' : 'earnings-amount';
   const chipRows = Object.entries(entry.players).map(([group, player]) => {
     const chipEarningsClass = player.earnings === 0 ? 'player-chip-earnings zero' : 'player-chip-earnings';
     return `
@@ -74,6 +73,9 @@ function createScoreboardRow(entry, index) {
       </div>`;
   }).join('');
 
+  const earningsZero = entry.totalEarnings === 0;
+  const earningsFaceClass = earningsZero ? 'flip-tile-face zero' : 'flip-tile-face';
+
   row.innerHTML = `
     <div class="rank-cell">
       <div class="rank-plate ${index < 3 ? 'top-three' : ''}">${entry.currentRank}</div>
@@ -83,7 +85,9 @@ function createScoreboardRow(entry, index) {
       <span class="entry-owner">${entry.owner}</span>
     </div>
     <div class="earnings-cell">
-      <span class="${earningsClass}" data-amount="${entry.totalEarnings}">$0</span>
+      <div class="flip-tile" data-amount="${entry.totalEarnings}">
+        <span class="${earningsFaceClass}">$0</span>
+      </div>
     </div>
     <div class="movement-cell">
       ${movementHtml}
@@ -106,60 +110,61 @@ function createScoreboardRow(entry, index) {
     }
   });
 
-  // Reveal animation observer
-  const revealObserver = {
-    reveal: () => {
-      row.style.opacity = '1';
-      row.style.transform = 'translateX(0)';
-
-      // Animate the earnings counter
-      const earningsEl = row.querySelector('.earnings-amount');
-      if (earningsEl) {
-        animateCounter(earningsEl, 0, entry.totalEarnings, 800 + (index * 100));
-      }
-    }
-  };
-
-  // Use class-based reveal
-  const originalClassList = row.classList;
-  Object.defineProperty(row, 'classList', {
-    get() {
-      return originalClassList;
-    }
-  });
-
+  // Intercept "revealed" class to trigger flip animation
   const originalAdd = row.classList.add.bind(row.classList);
   row.classList.add = function(...args) {
     originalAdd(...args);
     if (args.includes('revealed')) {
-      revealObserver.reveal();
+      row.style.opacity = '1';
+      row.style.transform = 'translateX(0)';
+      // Flip the earnings tile in with a delay per row
+      const tile = row.querySelector('.flip-tile');
+      if (tile) {
+        const amount = parseInt(tile.dataset.amount || '0', 10);
+        const delay = 300 + index * 120;
+        setTimeout(() => flipTileTo(tile, formatCurrency(amount), amount === 0), delay);
+      }
     }
   };
 
   return row;
 }
 
-function animateCounter(element, start, end, duration) {
-  const startTime = performance.now();
+/**
+ * Flip tile animation — old number drops off, new number falls in.
+ * Mimics the physical Augusta scoreboard number replacement.
+ */
+function flipTileTo(tileEl, newText, isZero) {
+  const face = tileEl.querySelector('.flip-tile-face');
+  if (!face) return;
 
-  function update(currentTime) {
-    const elapsed = currentTime - startTime;
-    const progress = Math.min(elapsed / duration, 1);
+  const currentText = face.textContent;
+  if (currentText === newText) return;
 
-    // Ease out cubic
-    const eased = 1 - Math.pow(1 - progress, 3);
-    const current = Math.floor(start + (end - start) * eased);
+  // Drop old number off
+  face.classList.add('dropping');
 
-    element.textContent = formatCurrency(current);
+  setTimeout(() => {
+    // Swap text and flip new one in
+    face.textContent = newText;
+    face.className = isZero ? 'flip-tile-face zero flipping-in' : 'flip-tile-face flipping-in';
 
-    if (progress < 1) {
-      requestAnimationFrame(update);
-    } else {
-      element.textContent = formatCurrency(end);
-    }
-  }
+    // Clean up animation class after it's done
+    setTimeout(() => {
+      face.classList.remove('flipping-in');
+    }, 350);
+  }, 220);
+}
 
-  requestAnimationFrame(update);
+/**
+ * Update a live tile (called when standings refresh during tournament).
+ * Shows the "number being pulled off the board" effect.
+ */
+function updateFlipTile(tileEl, newAmount) {
+  const newText = formatCurrency(newAmount);
+  const isZero = newAmount === 0;
+  flipTileTo(tileEl, newText, isZero);
+  tileEl.dataset.amount = newAmount;
 }
 
 // ============================================

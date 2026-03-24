@@ -110,46 +110,34 @@
 .col-header.earnings-header { text-align: right; }
 .col-header.movement-header { text-align: center; }
 
-/* ---- Scoreboard Rows ---- */
+/* ---- Scoreboard Rows — WHITE NAME CARDS ---- */
 .scoreboard-row {
   display: grid;
-  grid-template-columns: 48px 1fr 160px 52px;
-  padding: 0 12px;
-  align-items: center;
-  min-height: 46px;
+  grid-template-columns: 48px 1fr 170px 52px;
+  align-items: stretch;
+  min-height: 48px;
   cursor: pointer;
-  border-bottom: 1px solid #122619;
-  transition: background 0.15s ease;
+  border-bottom: 2px solid #1b3425;
   position: relative;
+  background: transparent;
 }
 
 .scoreboard-row:last-child {
   border-bottom: none;
 }
 
-.scoreboard-row:hover {
-  background: rgba(255,255,255,0.04);
-}
-
-/* Subtle alternating row shading like the real board */
-.scoreboard-row:nth-child(odd) {
-  background: rgba(0,0,0,0.08);
-}
-
-.scoreboard-row:nth-child(odd):hover {
-  background: rgba(255,255,255,0.03);
-}
-
-/* ---- Rank (position number) ---- */
+/* ---- Rank number — stays on green ---- */
 .rank-cell {
   display: flex;
   align-items: center;
   justify-content: center;
+  background: transparent;
+  padding: 0 6px;
 }
 
 .rank-plate {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: #ffffff;
   min-width: 28px;
@@ -157,20 +145,25 @@
 }
 
 .rank-plate.top-three {
-  color: #e8c84a;
+  color: #f5e066;
 }
 
-/* ---- Entry Name — ALL CAPS white like the board ---- */
+/* ---- White name card ---- */
 .entry-cell {
-  padding: 0 10px;
+  background: #ffffff;
+  padding: 0 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 3px solid #e8e8e8;
   overflow: hidden;
 }
 
 .entry-name {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #111111;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   white-space: nowrap;
@@ -181,30 +174,76 @@
 
 .entry-owner {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.62rem;
-  color: rgba(255,255,255,0.38);
+  font-size: 0.6rem;
+  color: #888888;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   display: block;
-  margin-top: 1px;
+  margin-top: 2px;
 }
 
-/* ---- Earnings — RED like the score numbers ---- */
+/* Hover: subtle cream tint */
+.scoreboard-row:hover .entry-cell {
+  background: #f8f5ec;
+}
+
+/* ---- Earnings — flip tile container ---- */
 .earnings-cell {
-  text-align: right;
-  padding-right: 4px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10px;
+  border-left: 1px solid #e8e8e8;
+  overflow: hidden;
 }
 
-.earnings-amount {
+.scoreboard-row:hover .earnings-cell {
+  background: #f8f5ec;
+}
+
+/* The flip tile wrapper */
+.flip-tile {
+  display: inline-block;
+  position: relative;
+  perspective: 400px;
+}
+
+.flip-tile-face {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   font-weight: 700;
-  color: #e03030;
-  letter-spacing: 0.02em;
+  color: #c41e1e;
+  display: block;
+  backface-visibility: hidden;
 }
 
-.earnings-amount.zero {
-  color: rgba(255,255,255,0.25);
+.flip-tile-face.zero {
+  color: #aaaaaa;
+}
+
+/* The "falling off" keyframe — old number drops down */
+@keyframes tileDropOut {
+  0%   { transform: rotateX(0deg);    opacity: 1; }
+  40%  { transform: rotateX(80deg);   opacity: 0.6; }
+  100% { transform: rotateX(90deg);   opacity: 0; }
+}
+
+/* New number flips in from top */
+@keyframes tileFlipIn {
+  0%   { transform: rotateX(-90deg);  opacity: 0; }
+  60%  { transform: rotateX(-10deg);  opacity: 0.8; }
+  100% { transform: rotateX(0deg);    opacity: 1; }
+}
+
+.flip-tile-face.dropping {
+  animation: tileDropOut 0.22s ease-in forwards;
+  transform-origin: center bottom;
+}
+
+.flip-tile-face.flipping-in {
+  animation: tileFlipIn 0.28s ease-out forwards;
+  transform-origin: center top;
 }
 
 /* ---- Movement ---- */
@@ -212,6 +251,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background: transparent;
 }
 
 .movement {
@@ -219,20 +259,20 @@
   align-items: center;
   gap: 1px;
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 700;
 }
 
 .movement.up   { color: #4ade80; }
 .movement.down { color: #f87171; }
-.movement.same { color: rgba(255,255,255,0.2); }
+.movement.same { color: rgba(255,255,255,0.25); }
 
 /* ---- Expanded Detail Row ---- */
 .row-detail {
   display: none;
   grid-column: 1 / -1;
-  background: #122619;
-  border-top: 1px solid #0e1f14;
+  background: #f0ede5;
+  border-top: 1px solid #d8d3c8;
   padding: 12px 14px;
 }
 
@@ -251,24 +291,25 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 6px 10px;
-  background: rgba(255,255,255,0.04);
+  padding: 7px 10px;
+  background: #ffffff;
   border-radius: 3px;
-  border-left: 3px solid #2a5a3a;
+  border-left: 3px solid #1b3425;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.07);
 }
 
 .player-chip-name {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.78rem;
-  color: rgba(255,255,255,0.85);
-  font-weight: 600;
+  font-size: 0.76rem;
+  color: #111111;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
 
 .player-chip-group {
   font-size: 0.58rem;
-  color: rgba(255,255,255,0.3);
+  color: #999999;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   display: block;
@@ -279,12 +320,12 @@
   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.8rem;
   font-weight: 700;
-  color: #e03030;
+  color: #c41e1e;
   white-space: nowrap;
 }
 
 .player-chip-earnings.zero {
-  color: rgba(255,255,255,0.2);
+  color: #bbbbbb;
 }
 
 /* ---- Board Bottom Bar ---- */
