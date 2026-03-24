@@ -507,6 +507,44 @@ a:hover {
   font-style: italic;
 }
 
+/* ---- Music Button ---- */
+#music-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 900;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #1b3425;
+  color: rgba(255,255,255,0.75);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+  user-select: none;
+}
+
+#music-btn:hover {
+  background: #2a5238;
+  color: #ffffff;
+  transform: scale(1.08);
+}
+
+#music-btn.playing {
+  background: #c9a84c;
+  color: #1b3425;
+  animation: pulse-ring 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse-ring {
+  0%, 100% { box-shadow: 0 4px 14px rgba(0,0,0,0.3), 0 0 0 0 rgba(201,168,76,0.4); }
+  50%       { box-shadow: 0 4px 14px rgba(0,0,0,0.3), 0 0 0 8px rgba(201,168,76,0); }
+}
+
 /* --- Footer --- */
 .site-footer {
   background: var(--masters-green-deep);
