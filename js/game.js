@@ -210,10 +210,8 @@
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    // Event listeners
+    // mousedown on canvas; move/up attach to document when aiming starts
     canvas.addEventListener('mousedown', onMouseDown);
-    canvas.addEventListener('mousemove', onMouseMove);
-    canvas.addEventListener('mouseup', onMouseUp);
     canvas.addEventListener('touchstart', onTouchStart, { passive: false });
     canvas.addEventListener('touchmove', onTouchMove, { passive: false });
     canvas.addEventListener('touchend', onTouchEnd);
@@ -243,6 +241,7 @@
     const rect = canvas.getBoundingClientRect();
     const scaleX = CANVAS_W / rect.width;
     const scaleY = CANVAS_H / rect.height;
+    // No clamping — allow mouse to go outside canvas while aiming
     return {
       x: (e.clientX - rect.left) * scaleX,
       y: (e.clientY - rect.top) * scaleY
@@ -250,19 +249,23 @@
   }
 
   // --- Input Handlers ---
+  // mousedown on canvas only — starts the aim
   function onMouseDown(e) {
     e.preventDefault();
     const pos = getCanvasCoords(e);
     handlePointerDown(pos);
   }
 
-  function onMouseMove(e) {
+  // mousemove + mouseup on document so drag works outside canvas bounds
+  function onDocMouseMove(e) {
     const pos = getCanvasCoords(e);
     handlePointerMove(pos);
   }
 
-  function onMouseUp(e) {
+  function onDocMouseUp(e) {
     handlePointerUp();
+    document.removeEventListener('mousemove', onDocMouseMove);
+    document.removeEventListener('mouseup', onDocMouseUp);
   }
 
   function onTouchStart(e) {
@@ -299,6 +302,9 @@
       power = 0;
       aimStart = { x: ball.x, y: ball.y };
       aimCurrent = pos;
+      // Attach to document so drag outside canvas still registers
+      document.addEventListener('mousemove', onDocMouseMove);
+      document.addEventListener('mouseup', onDocMouseUp);
     }
   }
 
