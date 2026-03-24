@@ -715,39 +715,55 @@
   function drawSlopes(slopes) {
     slopes.forEach(s => {
       ctx.save();
-      // Gradient from uphill (light) to downhill (dark)
+
+      // Gradient: light (uphill) → dark (downhill)
       const cx = s.x + s.w / 2, cy = s.y + s.h / 2;
-      // Uphill direction is opposite of dirX/dirY
       const gx0 = cx - s.dirX * s.w * 0.5;
       const gy0 = cy - s.dirY * s.h * 0.5;
       const gx1 = cx + s.dirX * s.w * 0.5;
       const gy1 = cy + s.dirY * s.h * 0.5;
       const grad = ctx.createLinearGradient(gx0, gy0, gx1, gy1);
-      grad.addColorStop(0, 'rgba(255,255,255,0.07)');
-      grad.addColorStop(1, 'rgba(0,0,0,0.11)');
+      grad.addColorStop(0, 'rgba(255,255,255,0.09)');
+      grad.addColorStop(1, 'rgba(0,0,0,0.13)');
       ctx.fillStyle = grad;
       ctx.fillRect(s.x, s.y, s.w, s.h);
 
-      // Direction arrow at center
-      const arrowLen = 18;
-      const ax = cx, ay = cy;
-      const ex = ax + s.dirX * arrowLen;
-      const ey = ay + s.dirY * arrowLen;
-      ctx.strokeStyle = 'rgba(255,255,255,0.22)';
-      ctx.lineWidth = 1.5;
-      ctx.beginPath();
-      ctx.moveTo(ax, ay);
-      ctx.lineTo(ex, ey);
-      ctx.stroke();
-      // Arrowhead
+      // Grid of arrows across the slope area
+      // Space them ~90px apart so a 800×500 field gets ~5×4 = 20 max, no crowding
+      const ARROW_LEN = 16;
+      const HEAD_LEN  = 6;
       const angle = Math.atan2(s.dirY, s.dirX);
-      const headLen = 6;
-      ctx.beginPath();
-      ctx.moveTo(ex, ey);
-      ctx.lineTo(ex - Math.cos(angle - 0.4) * headLen, ey - Math.sin(angle - 0.4) * headLen);
-      ctx.moveTo(ex, ey);
-      ctx.lineTo(ex - Math.cos(angle + 0.4) * headLen, ey - Math.sin(angle + 0.4) * headLen);
-      ctx.stroke();
+      const SPACING_X = 90;
+      const SPACING_Y = 85;
+
+      // Start half a spacing in from each edge so arrows don't sit on the border
+      const startX = s.x + SPACING_X / 2;
+      const startY = s.y + SPACING_Y / 2;
+
+      ctx.strokeStyle = 'rgba(255,255,255,0.30)';
+      ctx.lineWidth = 1.5;
+      ctx.setLineDash([]);
+
+      for (let gx = startX; gx < s.x + s.w; gx += SPACING_X) {
+        for (let gy = startY; gy < s.y + s.h; gy += SPACING_Y) {
+          const ex = gx + s.dirX * ARROW_LEN;
+          const ey = gy + s.dirY * ARROW_LEN;
+
+          // Shaft
+          ctx.beginPath();
+          ctx.moveTo(gx, gy);
+          ctx.lineTo(ex, ey);
+          ctx.stroke();
+
+          // Arrowhead
+          ctx.beginPath();
+          ctx.moveTo(ex, ey);
+          ctx.lineTo(ex - Math.cos(angle - 0.42) * HEAD_LEN, ey - Math.sin(angle - 0.42) * HEAD_LEN);
+          ctx.moveTo(ex, ey);
+          ctx.lineTo(ex - Math.cos(angle + 0.42) * HEAD_LEN, ey - Math.sin(angle + 0.42) * HEAD_LEN);
+          ctx.stroke();
+        }
+      }
 
       ctx.restore();
     });
