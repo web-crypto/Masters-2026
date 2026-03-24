@@ -320,7 +320,6 @@
     document.getElementById('start-btn').addEventListener('click', startGame);
     document.getElementById('submit-score-btn').addEventListener('click', submitScore);
     document.getElementById('play-again-btn').addEventListener('click', startGame);
-    document.getElementById('clear-scores-btn').addEventListener('click', clearScores);
 
     renderScorecard();
     loadLeaderboard();
@@ -632,49 +631,80 @@
     document.getElementById('end-overlay').classList.remove('hidden');
   }
 
-  function submitScore() {
+  // --- Firebase Realtime Database (REST, no SDK needed) ---
+  const FB_URL = 'https://masters-mini-golf-default-rtdb.firebaseio.com';
+  const TOTAL_PAR = HOLES.reduce((s, h) => s + h.par, 0);
+
+  function todayKey() {
+    return new Date().toISOString().split('T')[0]; // YYYY-MM-DD
+  }
+
+  async function submitScore() {
     const nameInput = document.getElementById('player-name-input');
     const name = nameInput.value.trim() || 'Anonymous';
-    const today = new Date().toISOString().split('T')[0];
-    const key = 'masters-minigolf-scores';
-    const existing = JSON.parse(localStorage.getItem(key) || '[]');
-    existing.push({ name, score: totalStrokes, par: HOLES.reduce((s, h) => s + h.par, 0), date: today, timestamp: Date.now() });
-    existing.sort((a, b) => a.score - b.score);
-    if (existing.length > 20) existing.length = 20;
-    localStorage.setItem(key, JSON.stringify(existing));
-    nameInput.value = '';
-    loadLeaderboard();
     const btn = document.getElementById('submit-score-btn');
-    btn.textContent = 'Submitted!';
+
+    btn.textContent = 'Saving...';
     btn.disabled = true;
-    setTimeout(() => { btn.textContent = 'Submit Score'; btn.disabled = false; }, 2000);
-  }
 
-  function clearScores() {
-    if (confirm('Clear all saved scores?')) {
-      localStorage.removeItem('masters-minigolf-scores');
-      loadLeaderboard();
+    const entry = {
+      name: name.substring(0, 40), // cap length
+      score: totalStrokes,
+      par: TOTAL_PAR,
+      timestamp: Date.now()
+    };
+
+    try {
+      const res = await fetch(`${FB_URL}/scores/${todayKey()}.json`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(entry)
+      });
+      if (!res.ok) throw new Error('Firebase write failed');
+      nameInput.value = '';
+      btn.textContent = 'Submitted! 🐯';
+      await loadLeaderboard();
+    } catch (e) {
+      console.error('Score submit failed:', e);
+      btn.textContent = 'Error — try again';
     }
+
+    setTimeout(() => { btn.textContent = 'Submit Score'; btn.disabled = false; }, 2500);
   }
 
-  function loadLeaderboard() {
+  async function loadLeaderboard() {
     const list = document.getElementById('daily-scores');
-    const entries = JSON.parse(localStorage.getItem('masters-minigolf-scores') || '[]');
-    if (!entries.length) {
-      list.innerHTML = '<li class="no-scores">No scores yet. Be the first to play!</li>';
-      return;
+    list.innerHTML = '<li class="no-scores">Loading...</li>';
+
+    try {
+      const res = await fetch(`${FB_URL}/scores/${todayKey()}.json`);
+      if (!res.ok) throw new Error('Firebase read failed');
+      const data = await res.json();
+
+      if (!data) {
+        list.innerHTML = '<li class="no-scores">No scores today. Be the first to play!</li>';
+        return;
+      }
+
+      // data is an object of pushId → entry — flatten, sort by score asc
+      const entries = Object.values(data)
+        .sort((a, b) => a.score - b.score)
+        .slice(0, 20);
+
+      list.innerHTML = entries.map((s, i) => {
+        const diff = s.score - (s.par || TOTAL_PAR);
+        const diffStr = diff === 0 ? 'E' : (diff > 0 ? `+${diff}` : `${diff}`);
+        const medal = i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : `${i + 1}.`;
+        return `<li>
+          <span class="lb-rank">${medal}</span>
+          <span class="lb-name">${escapeHtml(s.name)}</span>
+          <span class="lb-score">${s.score} (${diffStr})</span>
+        </li>`;
+      }).join('');
+    } catch (e) {
+      console.error('Leaderboard load failed:', e);
+      list.innerHTML = '<li class="no-scores">Leaderboard unavailable.</li>';
     }
-    list.innerHTML = entries.map((s, i) => {
-      const par = s.par || HOLES.reduce((sum, h) => sum + h.par, 0);
-      const diff = s.score - par;
-      const diffStr = diff === 0 ? 'E' : (diff > 0 ? `+${diff}` : `${diff}`);
-      return `<li>
-        <span class="lb-rank">${i + 1}.</span>
-        <span class="lb-name">${escapeHtml(s.name)}</span>
-        <span class="lb-score">${s.score} (${diffStr})</span>
-        <span class="lb-date">${s.date}</span>
-      </li>`;
-    }).join('');
   }
 
   function escapeHtml(t) {
