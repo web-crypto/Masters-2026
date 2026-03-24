@@ -25,6 +25,10 @@ function initLeaderboard() {
   if (lastUpdated) {
     lastUpdated.textContent = `Last updated: ${getTimeSinceUpdate()}`;
   }
+  const boardTime = document.getElementById('board-update-time');
+  if (boardTime) {
+    boardTime.textContent = getTimeSinceUpdate();
+  }
 
   // Render scoreboard rows with staggered animation
   top10.forEach((entry, index) => {
@@ -57,32 +61,35 @@ function createScoreboardRow(entry, index) {
     movementHtml = `<span class="movement same">—</span>`;
   }
 
+  const earningsClass = entry.totalEarnings === 0 ? 'earnings-amount zero' : 'earnings-amount';
+  const chipRows = Object.entries(entry.players).map(([group, player]) => {
+    const chipEarningsClass = player.earnings === 0 ? 'player-chip-earnings zero' : 'player-chip-earnings';
+    return `
+      <div class="player-chip">
+        <div>
+          <div class="player-chip-name">${player.name.toUpperCase()}</div>
+          <div class="player-chip-group">${getGroupLabel(group)}</div>
+        </div>
+        <div class="${chipEarningsClass}">${formatCurrency(player.earnings)}</div>
+      </div>`;
+  }).join('');
+
   row.innerHTML = `
     <div class="rank-cell">
       <div class="rank-plate ${index < 3 ? 'top-three' : ''}">${entry.currentRank}</div>
     </div>
-    <div class="entry-name">
-      ${entry.name}
+    <div class="entry-cell">
+      <div class="entry-name">${entry.name.toUpperCase()}</div>
       <span class="entry-owner">${entry.owner}</span>
     </div>
     <div class="earnings-cell">
-      <span class="earnings-amount" data-amount="${entry.totalEarnings}">$0</span>
+      <span class="${earningsClass}" data-amount="${entry.totalEarnings}">$0</span>
     </div>
     <div class="movement-cell">
       ${movementHtml}
     </div>
     <div class="row-detail" id="detail-${entry.id}">
-      <div class="player-grid">
-        ${Object.entries(entry.players).map(([group, player]) => `
-          <div class="player-chip">
-            <div>
-              <div class="player-chip-name">${player.name}</div>
-              <div class="player-chip-group">${getGroupLabel(group)}</div>
-            </div>
-            <div class="player-chip-earnings">${formatCurrency(player.earnings)}</div>
-          </div>
-        `).join('')}
-      </div>
+      <div class="player-grid">${chipRows}</div>
     </div>
   `;
 

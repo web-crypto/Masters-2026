@@ -74,42 +74,37 @@
 
     <p class="last-updated" id="last-updated">Last updated: loading...</p>
 
-    <!-- Augusta-Style Scoreboard — Top 10 -->
+    <!-- Augusta Physical Scoreboard — Top 10 -->
     <div class="scoreboard-container">
       <div class="scoreboard">
-        <div class="scoreboard-header">
-          <div class="scoreboard-title">Masters Charity Pool</div>
-          <div class="scoreboard-year">Augusta National — 2026</div>
+        <!-- Arched "LEADERS" top -->
+        <div class="scoreboard-arch">
+          <span class="scoreboard-arch-text">Leaders</span>
         </div>
+        <!-- Subtitle bar -->
+        <div class="scoreboard-header">
+          <div class="scoreboard-subtitle">Masters Charity Pool &middot; Augusta National &middot; 2026</div>
+        </div>
+        <!-- Column headers -->
         <div class="scoreboard-columns">
           <span class="col-header">Pos</span>
           <span class="col-header">Entry</span>
           <span class="col-header earnings-header">Earnings</span>
           <span class="col-header movement-header">+/−</span>
         </div>
-        <div id="scoreboard-rows">
-          <!-- Populated by JS -->
+        <!-- Rows populated by JS -->
+        <div id="scoreboard-rows"></div>
+        <!-- Bottom bar -->
+        <div class="scoreboard-footer">
+          <span class="scoreboard-footer-text"><span class="live-dot"></span>Live during tournament week</span>
+          <span class="scoreboard-footer-text" id="board-update-time">—</span>
         </div>
       </div>
     </div>
 
-    <!-- View All Link -->
+    <!-- View All -->
     <div class="text-center mt-lg">
-      <a href="standings.html" style="
-        display: inline-block;
-        font-family: var(--font-display);
-        font-size: 1rem;
-        font-weight: 700;
-        padding: 0.75rem 2rem;
-        background: var(--masters-green);
-        color: var(--cream);
-        border-radius: 6px;
-        letter-spacing: 0.05em;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      " onmouseover="this.style.background='#2a6b4a'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#1a4731'; this.style.transform='translateY(0)'">
-        View All 89 Entries →
-      </a>
+      <a href="standings.html" class="view-all-btn">View All 89 Entries →</a>
     </div>
   </main>
 
