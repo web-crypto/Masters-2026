@@ -92,10 +92,24 @@
 /* ---- Column Headers ---- */
 .scoreboard-columns {
   display: grid;
-  grid-template-columns: 48px 1fr 160px 52px;
-  padding: 5px 12px;
+  grid-template-columns: 48px 1fr 170px 48px;
+  padding: 5px 0;
   background: #142b1c;
   border-bottom: 2px solid #0e1f14;
+}
+
+.scoreboard-columns .col-header {
+  padding: 0 12px;
+}
+
+.scoreboard-columns .col-header:nth-child(2) {
+  border-left: 4px solid #1b3425;
+  border-right: 4px solid #1b3425;
+}
+
+.scoreboard-columns .col-header.earnings-header {
+  border-right: 4px solid #1b3425;
+  text-align: right;
 }
 
 .col-header {
@@ -113,11 +127,11 @@
 /* ---- Scoreboard Rows — WHITE NAME CARDS ---- */
 .scoreboard-row {
   display: grid;
-  grid-template-columns: 48px 1fr 170px 52px;
+  grid-template-columns: 48px 1fr 170px 48px;
   align-items: stretch;
-  min-height: 48px;
+  min-height: 44px;
   cursor: pointer;
-  border-bottom: 2px solid #1b3425;
+  border-bottom: 3px solid #1b3425;
   position: relative;
   background: transparent;
 }
@@ -155,7 +169,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-left: 3px solid #e8e8e8;
+  border-left: 4px solid #1b3425;
+  border-right: 4px solid #1b3425;
   overflow: hidden;
 }
 
@@ -193,8 +208,8 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-right: 10px;
-  border-left: 1px solid #e8e8e8;
+  padding-right: 12px;
+  border-right: 4px solid #1b3425;
   overflow: hidden;
 }
 
