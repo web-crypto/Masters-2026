@@ -65,38 +65,71 @@ body {
   font-size: 1.125rem;
   line-height: 1.6;
   color: var(--text-primary);
-  background-color: var(--cream);
+  background-color: #f0ece2;
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
 }
 
-/* Parchment texture overlay */
+/* ---- Background: Augusta fairway gradient ---- */
 body::before {
   content: '';
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   pointer-events: none;
   z-index: 0;
-  background-image: 
+  background:
+    /* Soft top-to-bottom fairway tint */
+    linear-gradient(
+      180deg,
+      rgba(26, 71, 49, 0.07) 0%,
+      rgba(240, 236, 226, 0) 35%,
+      rgba(240, 236, 226, 0) 65%,
+      rgba(26, 71, 49, 0.05) 100%
+    ),
+    /* Parchment grain lines */
     repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 2px,
-      rgba(0,0,0,0.008) 2px,
-      rgba(0,0,0,0.008) 4px
+      0deg, transparent, transparent 3px,
+      rgba(0,0,0,0.006) 3px, rgba(0,0,0,0.006) 4px
     ),
     repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 2px,
-      rgba(0,0,0,0.005) 2px,
-      rgba(0,0,0,0.005) 4px
+      90deg, transparent, transparent 3px,
+      rgba(0,0,0,0.004) 3px, rgba(0,0,0,0.004) 4px
     );
-  opacity: 0.5;
+}
+
+/* ---- Botanical SVG overlays (azalea + magnolia) ---- */
+/* Left side — azalea branch sweeping in from bottom-left */
+body::after {
+  content: '';
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 340px;
+  height: 420px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.13;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 340 420'%3E%3C!-- Main branch --%3E%3Cpath d='M20 420 Q80 320 160 240 Q220 180 280 120 Q310 90 330 60' stroke='%231a4731' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3C!-- Sub branches --%3E%3Cpath d='M100 350 Q130 310 170 290' stroke='%231a4731' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3Cpath d='M160 240 Q120 220 90 200' stroke='%231a4731' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3Cpath d='M220 180 Q250 150 260 110' stroke='%231a4731' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3Cpath d='M280 120 Q260 100 240 80' stroke='%231a4731' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C!-- Azalea flowers (5-petal) at branch tips --%3E%3Cg transform='translate(170,290)'%3E%3Ccircle cx='0' cy='-12' r='7' fill='%23c0392b' opacity='0.7'/%3E%3Ccircle cx='11' cy='-4' r='7' fill='%23c0392b' opacity='0.7'/%3E%3Ccircle cx='7' cy='9' r='7' fill='%23c0392b' opacity='0.7'/%3E%3Ccircle cx='-7' cy='9' r='7' fill='%23c0392b' opacity='0.7'/%3E%3Ccircle cx='-11' cy='-4' r='7' fill='%23c0392b' opacity='0.7'/%3E%3Ccircle cx='0' cy='0' r='4' fill='%23f5d87a'/%3E%3C/g%3E%3Cg transform='translate(90,200)'%3E%3Ccircle cx='0' cy='-10' r='6' fill='%23e74c8b' opacity='0.65'/%3E%3Ccircle cx='9' cy='-3' r='6' fill='%23e74c8b' opacity='0.65'/%3E%3Ccircle cx='6' cy='8' r='6' fill='%23e74c8b' opacity='0.65'/%3E%3Ccircle cx='-6' cy='8' r='6' fill='%23e74c8b' opacity='0.65'/%3E%3Ccircle cx='-9' cy='-3' r='6' fill='%23e74c8b' opacity='0.65'/%3E%3Ccircle cx='0' cy='0' r='3.5' fill='%23f5d87a'/%3E%3C/g%3E%3Cg transform='translate(260,110)'%3E%3Ccircle cx='0' cy='-9' r='5.5' fill='%23c0392b' opacity='0.6'/%3E%3Ccircle cx='8' cy='-3' r='5.5' fill='%23c0392b' opacity='0.6'/%3E%3Ccircle cx='5' cy='7' r='5.5' fill='%23c0392b' opacity='0.6'/%3E%3Ccircle cx='-5' cy='7' r='5.5' fill='%23c0392b' opacity='0.6'/%3E%3Ccircle cx='-8' cy='-3' r='5.5' fill='%23c0392b' opacity='0.6'/%3E%3Ccircle cx='0' cy='0' r='3' fill='%23f5d87a'/%3E%3C/g%3E%3C!-- Leaves along main branch --%3E%3Cellipse cx='130' cy='295' rx='14' ry='7' fill='%231a4731' opacity='0.5' transform='rotate(-35,130,295)'/%3E%3Cellipse cx='190' cy='220' rx='13' ry='6' fill='%231a4731' opacity='0.5' transform='rotate(-50,190,220)'/%3E%3Cellipse cx='250' cy='155' rx='12' ry='6' fill='%231a4731' opacity='0.45' transform='rotate(-60,250,155)'/%3E%3Cellipse cx='300' cy='90' rx='10' ry='5' fill='%231a4731' opacity='0.4' transform='rotate(-70,300,90)'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom left;
+}
+
+/* Right side — magnolia branch from top-right (separate element via .page-botanical) */
+.page-botanical-right {
+  position: fixed;
+  top: 60px;
+  right: 0;
+  width: 300px;
+  height: 380px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.11;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 380'%3E%3C!-- Main branch top-right sweeping down-left --%3E%3Cpath d='M300 0 Q240 60 180 130 Q130 185 80 260 Q50 310 30 380' stroke='%231a4731' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3Cpath d='M200 100 Q230 80 260 70' stroke='%231a4731' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3Cpath d='M140 165 Q100 150 80 130' stroke='%231a4731' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3Cpath d='M90 240 Q120 230 140 210' stroke='%231a4731' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C!-- Magnolia blooms (cup-shaped, cream petals) --%3E%3Cg transform='translate(200,100)'%3E%3Cellipse cx='0' cy='-14' rx='8' ry='14' fill='%23f5f0e8' opacity='0.9' transform='rotate(-15)'/%3E%3Cellipse cx='13' cy='-5' rx='8' ry='14' fill='%23f0e8d8' opacity='0.85' transform='rotate(30)'/%3E%3Cellipse cx='8' cy='12' rx='8' ry='14' fill='%23f5f0e8' opacity='0.9' transform='rotate(75)'/%3E%3Cellipse cx='-8' cy='12' rx='8' ry='14' fill='%23ede5d5' opacity='0.85' transform='rotate(105)'/%3E%3Cellipse cx='-13' cy='-5' rx='8' ry='14' fill='%23f5f0e8' opacity='0.9' transform='rotate(150)'/%3E%3Ccircle cx='0' cy='0' r='5' fill='%23c9a84c' opacity='0.8'/%3E%3C/g%3E%3Cg transform='translate(82,130)'%3E%3Cellipse cx='0' cy='-12' rx='7' ry='12' fill='%23f5f0e8' opacity='0.85' transform='rotate(-20)'/%3E%3Cellipse cx='11' cy='-4' rx='7' ry='12' fill='%23f0e8d8' opacity='0.8' transform='rotate(25)'/%3E%3Cellipse cx='7' cy='10' rx='7' ry='12' fill='%23f5f0e8' opacity='0.85' transform='rotate(70)'/%3E%3Cellipse cx='-7' cy='10' rx='7' ry='12' fill='%23ede5d5' opacity='0.8' transform='rotate(110)'/%3E%3Cellipse cx='-11' cy='-4' rx='7' ry='12' fill='%23f5f0e8' opacity='0.85' transform='rotate(155)'/%3E%3Ccircle cx='0' cy='0' r='4' fill='%23c9a84c' opacity='0.75'/%3E%3C/g%3E%3Cg transform='translate(135,210)'%3E%3Cellipse cx='0' cy='-10' rx='6' ry='10' fill='%23f5f0e8' opacity='0.8' transform='rotate(-10)'/%3E%3Cellipse cx='9' cy='-3' rx='6' ry='10' fill='%23f0e8d8' opacity='0.75' transform='rotate(32)'/%3E%3Cellipse cx='6' cy='8' rx='6' ry='10' fill='%23f5f0e8' opacity='0.8' transform='rotate(74)'/%3E%3Cellipse cx='-6' cy='8' rx='6' ry='10' fill='%23ede5d5' opacity='0.75' transform='rotate(106)'/%3E%3Cellipse cx='-9' cy='-3' rx='6' ry='10' fill='%23f5f0e8' opacity='0.8' transform='rotate(148)'/%3E%3Ccircle cx='0' cy='0' r='3.5' fill='%23c9a84c' opacity='0.7'/%3E%3C/g%3E%3C!-- Leaves --%3E%3Cellipse cx='160' cy='150' rx='16' ry='8' fill='%231a4731' opacity='0.5' transform='rotate(40,160,150)'/%3E%3Cellipse cx='110' cy='200' rx='14' ry='7' fill='%231a4731' opacity='0.45' transform='rotate(55,110,200)'/%3E%3Cellipse cx='70' cy='280' rx='13' ry='6' fill='%231a4731' opacity='0.4' transform='rotate(70,70,280)'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top right;
 }
 
 /* --- Typography --- */
