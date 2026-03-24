@@ -44,11 +44,12 @@
   };
 
   // --- Hole Definitions ---
-  // Each hole may have: walls[], obstacles[], slopes[], fastZones[]
   // slope: { x, y, w, h, dirX, dirY, strength }
-  // fastZone: { x, y, w, h }
+  // Multiple small slopes per hole = realistic multi-break greens
   const HOLES = [
     {
+      // Tea Olive: classic S-curve break. Left side slopes toward bottom,
+      // right side slopes toward top. Ball must read the green.
       name: 'Tea Olive',
       par: 3,
       ball: { x: 80, y: 250 },
@@ -58,12 +59,18 @@
       ],
       obstacles: [],
       slopes: [
-        // Gentle right-to-left tilt across the whole green
-        { x: 0, y: 0, w: 800, h: 500, dirX: -0.4, dirY: 0, strength: 0.018 },
+        // Left third: slopes downward (toward bottom of screen)
+        { x: 0,   y: 0, w: 260, h: 500, dirX: 0,    dirY:  0.6, strength: 0.020 },
+        // Center: flat-ish with slight left drift
+        { x: 260, y: 0, w: 220, h: 500, dirX: -0.2, dirY:  0,   strength: 0.010 },
+        // Right third: slopes upward (toward top of screen) — opposite break
+        { x: 480, y: 0, w: 320, h: 500, dirX: 0,    dirY: -0.5, strength: 0.018 },
       ],
       fastZones: [],
     },
     {
+      // Pink Dogwood: upper half drains left, lower half drains right.
+      // Ridge runs horizontally across the middle.
       name: 'Pink Dogwood',
       par: 3,
       ball: { x: 80, y: 420 },
@@ -74,13 +81,18 @@
       ],
       obstacles: [],
       slopes: [
-        // Center ridge — left half slopes right, right half slopes left
-        { x: 0,   y: 0, w: 400, h: 500, dirX:  0.5, dirY: 0, strength: 0.02 },
-        { x: 400, y: 0, w: 400, h: 500, dirX: -0.5, dirY: 0, strength: 0.02 },
+        // Upper half: drains left
+        { x: 0, y: 0,   w: 800, h: 220, dirX: -0.5, dirY: 0,   strength: 0.022 },
+        // Narrow ridge band: gentle push downward
+        { x: 0, y: 220, w: 800, h: 60,  dirX:  0,   dirY: 0.3, strength: 0.012 },
+        // Lower half: drains right
+        { x: 0, y: 280, w: 800, h: 220, dirX:  0.5, dirY: 0,   strength: 0.022 },
       ],
       fastZones: [],
     },
     {
+      // Flowering Peach: three zones. Top slopes toward water hazard,
+      // bottom slopes away, right side slopes toward hole.
       name: 'Flowering Peach',
       par: 4,
       ball: { x: 80, y: 250 },
@@ -95,12 +107,17 @@
         { type: 'water', x: 340, y: 250, r: 38 },
       ],
       slopes: [
-        // Diagonal slope pushing ball toward the water
-        { x: 150, y: 150, w: 250, h: 200, dirX: 0.4, dirY: 0.4, strength: 0.025 },
+        // Top corridor: diagonal toward water
+        { x: 150, y: 0,   w: 320, h: 200, dirX:  0.4, dirY:  0.5, strength: 0.024 },
+        // Bottom corridor: slopes away from water downward
+        { x: 150, y: 310, w: 320, h: 190, dirX:  0.3, dirY: -0.4, strength: 0.018 },
+        // Right section: slopes toward hole (right)
+        { x: 480, y: 100, w: 320, h: 300, dirX:  0.6, dirY:  0,   strength: 0.020 },
       ],
       fastZones: [],
     },
     {
+      // Crab Apple: four quadrant swirl + full fast green. Chaos by design.
       name: 'Flowering Crab Apple',
       par: 3,
       ball: { x: 400, y: 440 },
@@ -108,18 +125,18 @@
       walls: [],
       obstacles: [],
       slopes: [
-        // Clockwise swirl around the center — two opposing corner slopes
-        { x: 0,   y: 0,   w: 400, h: 250, dirX:  1,  dirY:  0,   strength: 0.015 },
-        { x: 400, y: 0,   w: 400, h: 250, dirX:  0,  dirY:  1,   strength: 0.015 },
-        { x: 400, y: 250, w: 400, h: 250, dirX: -1,  dirY:  0,   strength: 0.015 },
-        { x: 0,   y: 250, w: 400, h: 250, dirX:  0,  dirY: -1,   strength: 0.015 },
+        { x: 0,   y: 0,   w: 400, h: 250, dirX:  0.7, dirY:  0.3, strength: 0.018 },
+        { x: 400, y: 0,   w: 400, h: 250, dirX: -0.3, dirY:  0.7, strength: 0.018 },
+        { x: 400, y: 250, w: 400, h: 250, dirX: -0.7, dirY: -0.3, strength: 0.018 },
+        { x: 0,   y: 250, w: 400, h: 250, dirX:  0.3, dirY: -0.7, strength: 0.018 },
       ],
-      // Whole green is a fast zone — no friction, no walls, pure chaos
       fastZones: [
         { x: 0, y: 0, w: 800, h: 500 },
       ],
     },
     {
+      // Magnolia: three tiers. Top tier flat, middle slopes right,
+      // bottom tier steep toward hole.
       name: 'Magnolia',
       par: 4,
       ball: { x: 80, y: 80 },
@@ -134,12 +151,18 @@
         { type: 'sand', x: 590, y: 340, r: 35 },
       ],
       slopes: [
-        // Severe downhill toward the hole (bottom-right)
-        { x: 300, y: 200, w: 500, h: 300, dirX: 0.5, dirY: 0.7, strength: 0.035 },
+        // Top tier: relatively flat, slight drift right
+        { x: 0, y: 0,   w: 800, h: 170, dirX:  0.3, dirY:  0.1, strength: 0.012 },
+        // Middle tier: slopes right and down
+        { x: 0, y: 170, w: 800, h: 160, dirX:  0.5, dirY:  0.4, strength: 0.025 },
+        // Bottom tier: steep toward hole (bottom-right corner)
+        { x: 0, y: 330, w: 800, h: 170, dirX:  0.4, dirY:  0.7, strength: 0.035 },
       ],
       fastZones: [],
     },
     {
+      // Juniper: left zone slopes into left water, right zone into right water,
+      // center corridor is flat but fast.
       name: 'Juniper',
       par: 3,
       ball: { x: 400, y: 430 },
@@ -154,17 +177,20 @@
         { type: 'water', x: 560, y: 110, r: 42 },
       ],
       slopes: [
-        // Left slope feeds into left water
-        { x: 0,   y: 0, w: 350, h: 250, dirX: -0.6, dirY: -0.4, strength: 0.028 },
-        // Right slope feeds into right water
-        { x: 450, y: 0, w: 350, h: 250, dirX:  0.6, dirY: -0.4, strength: 0.028 },
+        // Left zone: drains toward left water (up-left)
+        { x: 0,   y: 0,   w: 310, h: 210, dirX: -0.5, dirY: -0.5, strength: 0.026 },
+        // Right zone: drains toward right water (up-right)
+        { x: 490, y: 0,   w: 310, h: 210, dirX:  0.5, dirY: -0.5, strength: 0.026 },
+        // Lower half: slopes upward (toward hole) — reward good approach
+        { x: 100, y: 260, w: 600, h: 240, dirX:  0,   dirY: -0.4, strength: 0.016 },
       ],
       fastZones: [
-        // Fast corridor between the waters
         { x: 310, y: 0, w: 180, h: 200 },
       ],
     },
     {
+      // Azalea/Amen Corner: left section flat, center fast corridor slopes
+      // down toward water, right section near hole slopes upward.
       name: 'Azalea — Amen Corner',
       par: 4,
       ball: { x: 80, y: 250 },
@@ -182,15 +208,20 @@
         { type: 'water', x: 490, y: 250, r: 32 },
       ],
       slopes: [
-        // Amen Corner pushes ball downward toward water
-        { x: 400, y: 150, w: 200, h: 200, dirX: 0.1, dirY: 0.5, strength: 0.03 },
+        // Approach: slight downhill right
+        { x: 0,   y: 150, w: 230, h: 200, dirX:  0.3, dirY: 0,    strength: 0.014 },
+        // Center fast zone: slopes down toward water hazard
+        { x: 248, y: 180, w: 250, h: 140, dirX:  0.4, dirY: 0.5,  strength: 0.028 },
+        // Right of water: upslope — ball won't easily run past hole
+        { x: 530, y: 160, w: 200, h: 180, dirX: -0.3, dirY: 0,    strength: 0.018 },
       ],
-      // Fast corridor connecting tee to flag — treacherous
       fastZones: [
-        { x: 80, y: 180, w: 580, h: 140 },
+        { x: 80, y: 195, w: 560, h: 110 },
       ],
     },
     {
+      // Carolina Cherry: long hole, three lateral sections with different breaks.
+      // Each corridor has its own slope direction.
       name: 'Carolina Cherry',
       par: 5,
       ball: { x: 60, y: 60 },
@@ -211,30 +242,32 @@
         { type: 'sand',  x: 650, y: 300, r: 26 },
       ],
       slopes: [
-        // Top half slopes downward-right
-        { x: 0,   y: 0,   w: 800, h: 250, dirX: 0.5, dirY: 0.3, strength: 0.022 },
-        // Bottom half slopes left-down toward hole
-        { x: 0,   y: 250, w: 800, h: 250, dirX: 0.3, dirY: 0.5, strength: 0.022 },
+        // First corridor (left): slopes downward
+        { x: 0,   y: 0,   w: 160, h: 500, dirX:  0.1, dirY:  0.5, strength: 0.020 },
+        // Second corridor (mid-left): slopes right and slightly up
+        { x: 178, y: 0,   w: 182, h: 500, dirX:  0.5, dirY: -0.2, strength: 0.022 },
+        // Third corridor (mid-right): slopes toward water hazard
+        { x: 378, y: 0,   w: 182, h: 500, dirX:  0.2, dirY: -0.4, strength: 0.020 },
+        // Fourth corridor (right): steep downhill toward hole
+        { x: 578, y: 0,   w: 222, h: 500, dirX:  0.3, dirY:  0.6, strength: 0.028 },
       ],
       fastZones: [
-        // Fast section mid-course
-        { x: 200, y: 200, w: 200, h: 120 },
-        // Fast run to hole
-        { x: 580, y: 360, w: 200, h: 120 },
+        { x: 180, y: 200, w: 185, h: 110 },
+        { x: 578, y: 340, w: 222, h: 120 },
       ],
     },
     {
+      // Holly 18th: three-zone green. Left drains away, center is the
+      // approach ridge, right tilts down toward fortress.
       name: 'Holly — 18th Green',
       par: 4,
       ball: { x: 80, y: 250 },
       hole: { x: 680, y: 250 },
       walls: [
-        // Fortress around hole
         { x: 585, y: 155, w: 130, h: 16 },
         { x: 585, y: 329, w: 130, h: 16 },
         { x: 585, y: 171, w: 16, h: 68 },
         { x: 585, y: 261, w: 16, h: 68 },
-        // Corridor
         { x: 290, y: 40,  w: 16, h: 180 },
         { x: 290, y: 280, w: 16, h: 180 },
       ],
@@ -243,12 +276,15 @@
         { type: 'sand', x: 190, y: 370, r: 26 },
       ],
       slopes: [
-        // Whole green tilts left — forces you to aim right
-        { x: 0, y: 0, w: 800, h: 500, dirX: -0.4, dirY: 0, strength: 0.02 },
-        // Extra downslope in front of fortress
-        { x: 490, y: 160, w: 100, h: 180, dirX: 0.6, dirY: 0, strength: 0.03 },
+        // Left section: drains left (away from hole)
+        { x: 0,   y: 0,   w: 290, h: 500, dirX: -0.5, dirY:  0,   strength: 0.020 },
+        // Center approach: ridge tilts slightly downward
+        { x: 306, y: 0,   w: 280, h: 500, dirX:  0.2, dirY:  0.3, strength: 0.014 },
+        // Right near fortress: tilts down toward hole from above,
+        // up toward hole from below (funnels in)
+        { x: 586, y: 155, w: 130, h: 80,  dirX:  0,   dirY:  0.5, strength: 0.025 },
+        { x: 586, y: 265, w: 130, h: 80,  dirX:  0,   dirY: -0.5, strength: 0.025 },
       ],
-      // Fast moat around the fortress
       fastZones: [
         { x: 430, y: 155, w: 155, h: 190 },
       ],
