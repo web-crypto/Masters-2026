@@ -589,7 +589,7 @@
     scores.push(strokes);
 
     let label;
-    if (strokes === 1)   label = 'Hole in One! 🏆';
+    if (strokes === 1)   label = 'Hole in One! 🐯';
     else if (diff <= -2) label = 'Eagle! 🦅';
     else if (diff === -1) label = 'Birdie! 🐦';
     else if (diff === 0) label = 'Par';
