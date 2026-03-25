@@ -196,55 +196,111 @@ function renderFunFacts() {
   const container = document.getElementById('fun-facts');
   if (!container) return;
 
-  const allPlayers = getAllPlayers();
+  const entries = poolData.entries;
+  const totalEntries = entries.length;
 
-  // Most valuable single player
-  const mvp = allPlayers.sort((a, b) => b.earnings - a.earnings)[0];
+  // --- Build player ownership + earnings map per group slot ---
+  // group slot → { playerName → { count, earnings } }
+  const groupSlots = {};
+  entries.forEach(entry => {
+    Object.entries(entry.players).forEach(([group, player]) => {
+      if (!groupSlots[group]) groupSlots[group] = {};
+      if (!groupSlots[group][player.name]) {
+        groupSlots[group][player.name] = { count: 0, earnings: player.earnings };
+      }
+      groupSlots[group][player.name].count++;
+      // Keep earnings in sync (same player always has same earnings)
+      groupSlots[group][player.name].earnings = player.earnings;
+    });
+  });
 
-  // Most selected player overall
-  const mostPicked = allPlayers.sort((a, b) => b.entries.length - a.entries.length)[0];
+  // --- Compute group median earnings per slot ---
+  function groupMedian(slot) {
+    const earningsArr = Object.values(slot).map(p => p.earnings).sort((a, b) => a - b);
+    if (!earningsArr.length) return 0;
+    const mid = Math.floor(earningsArr.length / 2);
+    return earningsArr.length % 2 !== 0
+      ? earningsArr[mid]
+      : (earningsArr[mid - 1] + earningsArr[mid]) / 2;
+  }
 
-  // Best value (highest earnings from Group D)
-  const groupDPlayers = allPlayers.filter(p => p.group === 'groupD');
-  const bestValue = groupDPlayers.sort((a, b) => b.earnings - a.earnings)[0];
+  // Check if tournament has started (any earnings > 0)
+  const tournamentStarted = entries.some(e =>
+    Object.values(e.players).some(p => p.earnings > 0)
+  );
 
-  // Biggest bust (most picked player with $0)
-  const busts = allPlayers.filter(p => p.earnings === 0 && p.entries.length > 1);
-  const biggestBust = busts.sort((a, b) => b.entries.length - a.entries.length)[0];
+  // --- Bold Picks: low ownership (≤20%) AND above group median ---
+  const boldPicks = [];
+  const fadingField = [];
 
-  const facts = [
-    {
-      label: 'MVP — Highest Earner',
-      value: mvp ? mvp.name : '—',
-      detail: mvp ? `${formatCurrency(mvp.earnings)} in prize money` : ''
-    },
-    {
-      label: 'Most Popular Pick',
-      value: mostPicked ? mostPicked.name : '—',
-      detail: mostPicked ? `Selected by ${mostPicked.entries.length} entries` : ''
-    },
-    {
-      label: 'Best Group D Value',
-      value: bestValue ? bestValue.name : '—',
-      detail: bestValue ? `${formatCurrency(bestValue.earnings)} from the longshot tier` : ''
-    }
-  ];
+  Object.entries(groupSlots).forEach(([group, players]) => {
+    const median = groupMedian(players);
+    Object.entries(players).forEach(([name, { count, earnings }]) => {
+      const ownershipPct = count / totalEntries;
+      if (ownershipPct <= 0.20 && earnings > median && earnings > 0) {
+        const label = earnings > median * 1.5
+          ? 'Exclusivity paying off 🔥'
+          : 'Flying under the radar 👀';
+        boldPicks.push({ name, ownershipPct, earnings, label, group });
+      }
+      // Fading the field: high ownership (>40%) and below group median
+      if (ownershipPct > 0.40 && earnings < median) {
+        fadingField.push({ name, ownershipPct, earnings, group });
+      }
+    });
+  });
 
-  if (biggestBust) {
-    facts.push({
-      label: 'Biggest Bust',
-      value: biggestBust.name,
-      detail: `Picked by ${biggestBust.entries.length} entries, earned $0`
+  boldPicks.sort((a, b) => b.earnings - a.earnings);
+  fadingField.sort((a, b) => b.ownershipPct - a.ownershipPct);
+
+  // --- Render ---
+  if (!tournamentStarted) {
+    container.innerHTML = `
+      <div class="fun-fact" style="grid-column:1/-1; text-align:center; opacity:0.6;">
+        <div class="fun-fact-label">Bold Picks</div>
+        <div class="fun-fact-value" style="font-size:1rem;">Tournament hasn't started yet</div>
+        <div class="fun-fact-detail">Low-owned players outperforming the field will surface here during tournament week.</div>
+      </div>`;
+    return;
+  }
+
+  let html = '';
+
+  if (boldPicks.length === 0) {
+    html += `<div class="fun-fact" style="grid-column:1/-1">
+      <div class="fun-fact-label">Bold Picks</div>
+      <div class="fun-fact-value" style="font-size:1rem;">None yet</div>
+      <div class="fun-fact-detail">No low-owned players are currently outperforming the field.</div>
+    </div>`;
+  } else {
+    boldPicks.slice(0, 5).forEach(pick => {
+      const pct = Math.round(pick.ownershipPct * 100);
+      html += `
+        <div class="fun-fact bold-pick">
+          <div class="fun-fact-label">${pick.label}</div>
+          <div class="fun-fact-value">${pick.name}</div>
+          <div class="fun-fact-detail">
+            Only ${pct}% ownership · ${formatCurrency(pick.earnings)} earned
+          </div>
+        </div>`;
     });
   }
 
-  container.innerHTML = facts.map(f => `
-    <div class="fun-fact">
-      <div class="fun-fact-label">${f.label}</div>
-      <div class="fun-fact-value">${f.value}</div>
-      <div class="fun-fact-detail">${f.detail}</div>
-    </div>
-  `).join('');
+  if (fadingField.length > 0) {
+    fadingField.slice(0, 3).forEach(pick => {
+      const pct = Math.round(pick.ownershipPct * 100);
+      html += `
+        <div class="fun-fact fading-pick">
+          <div class="fun-fact-label">Popular pick not delivering</div>
+          <div class="fun-fact-value">${pick.name}</div>
+          <div class="fun-fact-detail">
+            ${pct}% of entries · Only ${formatCurrency(pick.earnings)} so far
+          </div>
+        </div>`;
+    });
+  }
+
+  container.innerHTML = html;
 }
 
 function renderComboStats() {
