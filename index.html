@@ -123,27 +123,35 @@
     </div>
   </footer>
 
-  <!-- Music player — drop audio/augusta-theme.mp3 to activate -->
+  <!-- Music player — playlist cycles through both tracks -->
   <div id="music-btn" title="Toggle music" onclick="toggleMusic()">♪</div>
-  <audio id="bg-music" loop preload="none">
-    <source src="audio/augusta-theme.mp3" type="audio/mpeg">
-    <source src="audio/augusta-theme.ogg" type="audio/ogg">
-  </audio>
+  <audio id="bg-music" preload="none"></audio>
 
   <script src="data/pool-data.js"></script>
   <script src="js/leaderboard.js"></script>
   <script>
     (function() {
-      const audio = document.getElementById('bg-music');
-      const btn   = document.getElementById('music-btn');
-      let playing = false;
+      const audio   = document.getElementById('bg-music');
+      const btn     = document.getElementById('music-btn');
+      const tracks  = ['audio/augusta-theme.mp3', 'audio/track2.mp3'];
+      let trackIdx  = 0;
+      let playing   = false;
 
-      // Hide button entirely if no audio file present
-      audio.addEventListener('error', () => { btn.style.display = 'none'; });
-      // Show once we know a source is available
-      audio.addEventListener('canplay', () => { btn.style.display = 'flex'; });
-      // Start hidden — only show if file loads
+      // Load first track
+      audio.src = tracks[trackIdx];
+      audio.volume = 0.35;
       btn.style.display = 'none';
+
+      audio.addEventListener('canplay', () => { btn.style.display = 'flex'; });
+      audio.addEventListener('error',   () => { btn.style.display = 'none'; });
+
+      // When a track ends, advance to next
+      audio.addEventListener('ended', () => {
+        trackIdx = (trackIdx + 1) % tracks.length;
+        audio.src = tracks[trackIdx];
+        audio.volume = 0.35;
+        audio.play().catch(() => {});
+      });
 
       window.toggleMusic = function() {
         if (playing) {
@@ -151,7 +159,6 @@
           btn.classList.remove('playing');
           btn.textContent = '♪';
         } else {
-          audio.volume = 0.35;
           audio.play().catch(() => {});
           btn.classList.add('playing');
           btn.textContent = '♫';
