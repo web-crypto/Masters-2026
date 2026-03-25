@@ -13,11 +13,34 @@ function initLeaderboard() {
 
   const top10 = poolData.entries.slice(0, 10);
 
-  // Update stats
-  const statLeader = document.getElementById('stat-leader');
-  if (statLeader && top10.length > 0) {
-    statLeader.textContent = top10[0].name;
-    statLeader.style.fontSize = '0.95rem';
+  // Empty state: no entries yet
+  if (top10.length === 0) {
+    scoreboardRows.innerHTML = `
+      <div style="text-align:center; padding:40px 20px;">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:0.85rem; color:rgba(255,255,255,0.6); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:8px;">Entries Open</div>
+        <div style="font-family:'Playfair Display',serif; font-size:1.1rem; color:#ffffff; margin-bottom:12px;">Leaderboard populates when the tournament begins</div>
+        <a href="enter.html" style="font-family:'IBM Plex Mono',monospace; font-size:0.75rem; color:#c9a84c; text-decoration:none; letter-spacing:0.08em; text-transform:uppercase;">Enter the Pool →</a>
+      </div>
+    `;
+    return;
+  }
+
+  // Update stats (only if entries exist)
+  if (poolData.entries.length > 0) {
+    const statEntries = document.getElementById('stat-entries');
+    if (statEntries) statEntries.textContent = poolData.entries.length;
+
+    const statPrize = document.getElementById('stat-prize-pool');
+    if (statPrize && poolData.prizePool > 0) statPrize.textContent = '$' + poolData.prizePool.toLocaleString();
+
+    const statCharity = document.getElementById('stat-charity');
+    if (statCharity && poolData.totalCharityRaised > 0) statCharity.textContent = '$' + poolData.totalCharityRaised;
+
+    const statLeader = document.getElementById('stat-leader');
+    if (statLeader && top10.length > 0) {
+      statLeader.textContent = top10[0].name;
+      statLeader.style.fontSize = '0.95rem';
+    }
   }
 
   // Update last updated
@@ -174,6 +197,11 @@ function updateFlipTile(tileEl, newAmount) {
 function initStandings() {
   const standingsBody = document.getElementById('standings-body');
   if (!standingsBody) return;
+
+  if (poolData.entries.length === 0) {
+    standingsBody.innerHTML = `<tr><td colspan="4" style="text-align:center; padding:40px; color:#888; font-family:'IBM Plex Mono',monospace; font-size:0.85rem;">Standings will appear once entries are loaded and the tournament begins.<br><a href="enter.html" style="color:#1b3425;">Enter the Pool →</a></td></tr>`;
+    return;
+  }
 
   const searchInput = document.getElementById('standings-search');
   const resultsCount = document.getElementById('results-count');

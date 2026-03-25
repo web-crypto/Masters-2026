@@ -3,15 +3,15 @@
 // Entries loaded from Google Form responses — replace placeholder below
 
 const poolData = {
-  lastUpdated: "2026-04-09T00:00:00",
+  lastUpdated: "2026-03-25T13:00:00",
   tournamentYear: 2026,
   tournamentName: "The Masters Tournament",
   charityName: "Ride to Conquer Cancer",
   entryFee: 30,
   charityPerEntry: 5,
-  totalEntries: 0, // updated when entries finalize
-  totalCharityRaised: 445,
-  prizePool: 2225,
+  totalEntries: 0,
+  totalCharityRaised: 0,
+  prizePool: 0,
   payoutStructure: {
     first: 1000,
     second: 500,
@@ -123,25 +123,8 @@ const poolData = {
   // Group keys: groupA, groupB1, groupB2, groupC1, groupC2, groupD1, groupD2, groupE
   // (2 picks from B/C/D are stored as groupB1+groupB2, groupC1+groupC2, groupD1+groupD2)
 
-  entries: [
-    {
-      id: 1,
-      name: "Placeholder Entry",
-      owner: "—",
-      totalEarnings: 0,
-      previousRank: 1,
-      players: {
-        groupA:  { name: "Scottie Scheffler",  earnings: 0 },
-        groupB1: { name: "Jon Rahm",            earnings: 0 },
-        groupB2: { name: "Tommy Fleetwood",     earnings: 0 },
-        groupC1: { name: "Brooks Koepka",       earnings: 0 },
-        groupC2: { name: "Jordan Spieth",       earnings: 0 },
-        groupD1: { name: "Shane Lowry",         earnings: 0 },
-        groupD2: { name: "Jason Day",           earnings: 0 },
-        groupE:  { name: "Tiger Woods",         earnings: 0 }
-      }
-    }
-  ]
+  // Entries will be loaded from Google Form responses before April 9.
+  entries: []
 };
 
 // ── Auto-calculate totals & ranks ────────────────────────────────────────────
