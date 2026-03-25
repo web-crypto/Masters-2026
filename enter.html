@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enter the Pool — Masters Charity Pool 2026</title>
+  <meta name="description" content="Join the 2026 Masters charity golf pool. $30 entry, 8 picks, $5 to Ride to Conquer Cancer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+  <style>
+    .enter-container { max-width: 780px; margin: 0 auto; }
+
+    .entry-cta {
+      text-align: center;
+      margin-bottom: var(--space-xl);
+    }
+
+    .enter-btn {
+      display: inline-block;
+      padding: 16px 48px;
+      background: #1b3425;
+      color: #ffffff;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background 0.15s, transform 0.1s;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+
+    .enter-btn:hover { background: #2a5238; transform: translateY(-1px); }
+
+    .enter-note {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-top: 12px;
+    }
+
+    .how-it-works {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-md);
+      margin-bottom: var(--space-xl);
+    }
+
+    .step-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: var(--space-lg) var(--space-md);
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .step-num-badge {
+      display: inline-block;
+      width: 36px;
+      height: 36px;
+      line-height: 36px;
+      border-radius: 50%;
+      background: #1b3425;
+      color: #ffffff;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .step-card h4 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: #1b3425;
+      margin-bottom: 6px;
+    }
+
+    .step-card p {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    @media (max-width: 600px) {
+      .how-it-works { grid-template-columns: 1fr; }
+    }
+
+    /* Groups breakdown */
+    .groups-section {
+      margin-bottom: var(--space-xl);
+    }
+
+    .groups-section h2 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: #1b3425;
+      margin-bottom: var(--space-lg);
+      text-align: center;
+    }
+
+    .group-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: var(--space-md) var(--space-lg);
+      margin-bottom: var(--space-md);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      border-left: 4px solid #1b3425;
+    }
+
+    .group-card.group-a { border-left-color: #c9a84c; }
+    .group-card.group-b { border-left-color: #2a6b4a; }
+    .group-card.group-c { border-left-color: #3a7a5a; }
+    .group-card.group-d { border-left-color: #5a9a7a; }
+    .group-card.group-e { border-left-color: #888; }
+
+    .group-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .group-name {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #1b3425;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .group-picks {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--white);
+      background: #1b3425;
+      padding: 3px 10px;
+      border-radius: 3px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .group-players {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .player-tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      background: #f5f2eb;
+      padding: 4px 10px;
+      border-radius: 3px;
+      letter-spacing: 0.03em;
+    }
+
+    /* Payouts */
+    .payouts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 8px;
+      margin-bottom: var(--space-xl);
+    }
+
+    .payout-card {
+      background: var(--white);
+      border-radius: 6px;
+      padding: 14px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    .payout-place {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 4px;
+    }
+
+    .payout-amount {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #1b3425;
+    }
+
+    .payout-card:first-child .payout-amount { color: #c9a84c; font-size: 1.3rem; }
+
+    .deadline-banner {
+      background: #1b3425;
+      color: var(--white);
+      border-radius: 6px;
+      padding: var(--space-lg);
+      text-align: center;
+      margin-bottom: var(--space-xl);
+    }
+
+    .deadline-banner h3 {
+      font-family: var(--font-display);
+      color: #c9a84c;
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+
+    .deadline-banner p {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.7);
+    }
+  </style>
+</head>
+<body>
+  <div class="page-botanical-right" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo">
+        <div class="logo-crest">⛳</div>
+        <div class="logo-text">
+          <span class="logo-title">Masters Pool 2026</span>
+          <span class="logo-subtitle">Charity Tournament</span>
+        </div>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.main-nav').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Leaderboard</a></li>
+          <li><a href="standings.html">Standings</a></li>
+          <li><a href="players.html">Players</a></li>
+          <li><a href="analytics.html">Analytics</a></li>
+          <li><a href="myteam.html">My Team</a></li>
+          <li><a href="predictions.html">Predictions</a></li>
+          <li><a href="game.html">Mini Golf</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <h1>Enter the Pool</h1>
+    <div class="hero-divider"></div>
+    <p class="hero-subtitle">$30 entry · 8 golfer picks · $5 to Ride to Conquer Cancer</p>
+  </section>
+
+  <main class="main-content enter-container">
+
+    <!-- CTA -->
+    <div class="entry-cta">
+      <a href="https://forms.gle/KRdUFj51c4FjHCxE7" target="_blank" class="enter-btn">Open Entry Form ⛳</a>
+      <p class="enter-note">Opens Google Forms in a new tab. Unlimited entries welcome.</p>
+    </div>
+
+    <!-- How it works -->
+    <div class="how-it-works">
+      <div class="step-card">
+        <div class="step-num-badge">1</div>
+        <h4>Pick your 8</h4>
+        <p>Choose golfers across 5 groups. Their Masters prize earnings become your score.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num-badge">2</div>
+        <h4>Pay $30</h4>
+        <p>E-transfer to websterrjames@gmail.com or nathansnowie@gmail.com. $5 goes to charity.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num-badge">3</div>
+        <h4>Watch it unfold</h4>
+        <p>Live leaderboard updates during the tournament. Track your team, run scenarios, talk trash.</p>
+      </div>
+    </div>
+
+    <!-- Deadline -->
+    <div class="deadline-banner">
+      <h3>Entries Close Tuesday, April 8th at Midnight</h3>
+      <p>Masters Round 1 tees off Thursday, April 9</p>
+    </div>
+
+    <!-- Groups -->
+    <div class="groups-section">
+      <h2>The Groups</h2>
+
+      <div class="group-card group-a">
+        <div class="group-header">
+          <span class="group-name">Group A — The Big 3</span>
+          <span class="group-picks">Pick 1</span>
+        </div>
+        <div class="group-players">
+          <span class="player-tag">Scottie Scheffler</span>
+          <span class="player-tag">Rory McIlroy</span>
+          <span class="player-tag">Bryson DeChambeau</span>
+        </div>
+      </div>
+
+      <div class="group-card group-b">
+        <div class="group-header">
+          <span class="group-name">Group B — Top Contenders</span>
+          <span class="group-picks">Pick 2</span>
+        </div>
+        <div class="group-players">
+          <span class="player-tag">Jon Rahm</span>
+          <span class="player-tag">Ludvig Åberg</span>
+          <span class="player-tag">Xander Schauffele</span>
+          <span class="player-tag">Tommy Fleetwood</span>
+          <span class="player-tag">Cameron Young</span>
+          <span class="player-tag">Collin Morikawa</span>
+          <span class="player-tag">Matt Fitzpatrick</span>
+        </div>
+      </div>
+
+      <div class="group-card group-c">
+        <div class="group-header">
+          <span class="group-name">Group C — Strong Mid-Tier</span>
+          <span class="group-picks">Pick 2</span>
+        </div>
+        <div class="group-players">
+          <span class="player-tag">Justin Rose</span>
+          <span class="player-tag">Patrick Reed</span>
+          <span class="player-tag">Brooks Koepka</span>
+          <span class="player-tag">Hideki Matsuyama</span>
+          <span class="player-tag">Viktor Hovland</span>
+          <span class="player-tag">Jordan Spieth</span>
+          <span class="player-tag">Robert MacIntyre</span>
+          <span class="player-tag">Justin Thomas</span>
+          <span class="player-tag">Chris Gotterup</span>
+        </div>
+      </div>
+
+      <div class="group-card group-d">
+        <div class="group-header">
+          <span class="group-name">Group D — Longshot Value</span>
+          <span class="group-picks">Pick 2</span>
+        </div>
+        <div class="group-players">
+          <span class="player-tag">Shane Lowry</span>
+          <span class="player-tag">Patrick Cantlay</span>
+          <span class="player-tag">Tyrrell Hatton</span>
+          <span class="player-tag">Min Woo Lee</span>
+          <span class="player-tag">Akshay Bhatia</span>
+          <span class="player-tag">Russell Henley</span>
+          <span class="player-tag">Joaquin Niemann</span>
+          <span class="player-tag">Sepp Straka</span>
+          <span class="player-tag">Corey Conners</span>
+          <span class="player-tag">Jacob Bridgeman</span>
+          <span class="player-tag">Si Woo Kim</span>
+          <span class="player-tag">Jason Day</span>
+          <span class="player-tag">Sam Burns</span>
+          <span class="player-tag">Sungjae Im</span>
+          <span class="player-tag">Adam Scott</span>
+          <span class="player-tag">Max Homa</span>
+          <span class="player-tag">Sahith Theegala</span>
+          <span class="player-tag">Wyndham Clark</span>
+          <span class="player-tag">Tony Finau</span>
+          <span class="player-tag">Keegan Bradley</span>
+          <span class="player-tag">Brian Harman</span>
+        </div>
+      </div>
+
+      <div class="group-card group-e">
+        <div class="group-header">
+          <span class="group-name">Group E — Past Champs & Legends</span>
+          <span class="group-picks">Pick 1</span>
+        </div>
+        <div class="group-players">
+          <span class="player-tag">Tiger Woods</span>
+          <span class="player-tag">Phil Mickelson</span>
+          <span class="player-tag">Dustin Johnson</span>
+          <span class="player-tag">Bubba Watson</span>
+          <span class="player-tag">Charl Schwartzel</span>
+          <span class="player-tag">Danny Willett</span>
+          <span class="player-tag">Zach Johnson</span>
+          <span class="player-tag">Fred Couples</span>
+          <span class="player-tag">Mike Weir</span>
+          <span class="player-tag">Vijay Singh</span>
+          <span class="player-tag">Jose Maria Olazabal</span>
+          <span class="player-tag">Bernhard Langer</span>
+          <span class="player-tag">Sandy Lyle</span>
+          <span class="player-tag">Larry Mize</span>
+          <span class="player-tag">Angel Cabrera</span>
+          <span class="player-tag" style="font-style:italic; opacity:0.7;">+ Other (write in)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Payouts -->
+    <h2 style="text-align:center; margin-bottom:var(--space-md);">Payouts</h2>
+    <div class="payouts-grid">
+      <div class="payout-card"><div class="payout-place">1st Place</div><div class="payout-amount">$1,000</div></div>
+      <div class="payout-card"><div class="payout-place">2nd Place</div><div class="payout-amount">$500</div></div>
+      <div class="payout-card"><div class="payout-place">3rd Place</div><div class="payout-amount">$300</div></div>
+      <div class="payout-card"><div class="payout-place">4th Place</div><div class="payout-amount">$200</div></div>
+      <div class="payout-card"><div class="payout-place">5th Place</div><div class="payout-amount">$125</div></div>
+      <div class="payout-card"><div class="payout-place">Last Place</div><div class="payout-amount">$100</div></div>
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="entry-cta">
+      <a href="https://forms.gle/KRdUFj51c4FjHCxE7" target="_blank" class="enter-btn">Enter Now ⛳</a>
+      <p class="enter-note">$30 per entry · E-transfer to websterrjames@gmail.com or nathansnowie@gmail.com</p>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">⛳ Masters Charity Pool 2026</div>
+      <div class="footer-charity">Supporting the Ride to Conquer Cancer · Princess Margaret Cancer Centre</div>
+      <div class="footer-note">Not affiliated with Augusta National Golf Club or the Masters Tournament.</div>
+    </div>
+  </footer>
+</body>
+</html>
