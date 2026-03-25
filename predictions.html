@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Round Predictions — Masters Charity Pool 2026</title>
+  <meta name="description" content="Predict the lowest scorer each round at the 2026 Masters. Bragging rights on the line.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+  <style>
+    /* ── Predictions page ── */
+    .pred-container {
+      max-width: 740px;
+      margin: 0 auto;
+    }
+
+    .round-tabs {
+      display: flex;
+      gap: 0;
+      margin-bottom: var(--space-lg);
+      border-radius: 6px;
+      overflow: hidden;
+      border: 2px solid #1b3425;
+    }
+
+    .round-tab {
+      flex: 1;
+      padding: 12px 8px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      text-align: center;
+      cursor: pointer;
+      background: var(--white);
+      color: #1b3425;
+      border: none;
+      border-right: 1px solid rgba(0,0,0,0.08);
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .round-tab:last-child { border-right: none; }
+
+    .round-tab:hover { background: #f0ede5; }
+
+    .round-tab.active {
+      background: #1b3425;
+      color: #ffffff;
+    }
+
+    .round-tab.locked {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .round-tab .tab-status {
+      display: block;
+      font-size: 0.58rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      margin-top: 2px;
+      opacity: 0.7;
+    }
+
+    /* ── Prediction Form ── */
+    .pred-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: var(--space-lg);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      border: 1px solid rgba(0,0,0,0.06);
+      margin-bottom: var(--space-lg);
+    }
+
+    .pred-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      color: #1b3425;
+      margin-bottom: 4px;
+    }
+
+    .pred-card .subtitle {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-bottom: var(--space-md);
+    }
+
+    .pred-name-input {
+      width: 100%;
+      padding: 10px 14px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.85rem;
+      border: 2px solid rgba(0,0,0,0.1);
+      border-radius: 4px;
+      margin-bottom: var(--space-md);
+    }
+
+    .pred-name-input:focus { outline: none; border-color: #1b3425; }
+
+    .golfer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 8px;
+      margin-bottom: var(--space-md);
+      max-height: 360px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+
+    .golfer-option {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border: 2px solid rgba(0,0,0,0.06);
+      border-radius: 6px;
+      cursor: pointer;
+      transition: border-color 0.12s, background 0.12s;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .golfer-option:hover {
+      border-color: var(--masters-gold-dim);
+      background: #faf7f2;
+    }
+
+    .golfer-option.selected {
+      border-color: #1b3425;
+      background: #e8f5ec;
+      color: #1b3425;
+    }
+
+    .golfer-option .radio-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 2px solid #ccc;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.12s;
+    }
+
+    .golfer-option.selected .radio-dot {
+      border-color: #1b3425;
+    }
+
+    .golfer-option.selected .radio-dot::after {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #1b3425;
+    }
+
+    .pred-submit-btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: #1b3425;
+      color: #ffffff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .pred-submit-btn:hover { background: #2a5238; }
+    .pred-submit-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    .pred-locked-msg {
+      text-align: center;
+      padding: var(--space-lg);
+      font-family: var(--font-body);
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+
+    /* ── Results / Leaderboard ── */
+    .pred-results {
+      margin-top: var(--space-lg);
+    }
+
+    .pred-results h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: #1b3425;
+      margin-bottom: var(--space-md);
+    }
+
+    .pred-result-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8rem;
+    }
+
+    .pred-result-row:last-child { border-bottom: none; }
+
+    .pred-result-name {
+      font-weight: 700;
+      color: var(--text-primary);
+      text-transform: uppercase;
+    }
+
+    .pred-result-pick {
+      color: var(--text-secondary);
+    }
+
+    .pred-result-badge {
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 3px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .pred-result-badge.correct {
+      background: #dcfce7;
+      color: #16a34a;
+    }
+
+    .pred-result-badge.incorrect {
+      background: #fef2f2;
+      color: #dc2626;
+    }
+
+    .actual-winner-banner {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 6px;
+      padding: 12px 16px;
+      text-align: center;
+      margin-bottom: var(--space-md);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .actual-winner-banner .winner-label {
+      font-size: 0.65rem;
+      color: #16a34a;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-weight: 700;
+    }
+
+    .actual-winner-banner .winner-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #1b3425;
+    }
+
+    .pred-empty {
+      text-align: center;
+      padding: var(--space-lg);
+      color: var(--text-light);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+    }
+
+    .search-golfer {
+      width: 100%;
+      padding: 8px 12px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8rem;
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+
+    .search-golfer:focus { outline: none; border-color: #1b3425; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo">
+        <div class="logo-crest">⛳</div>
+        <div class="logo-text">
+          <span class="logo-title">Masters Pool 2026</span>
+          <span class="logo-subtitle">Charity Tournament</span>
+        </div>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.main-nav').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Leaderboard</a></li>
+          <li><a href="standings.html">Standings</a></li>
+          <li><a href="players.html">Players</a></li>
+          <li><a href="analytics.html">Analytics</a></li>
+          <li><a href="myteam.html">My Team</a></li>
+          <li><a href="predictions.html" class="active">Predictions</a></li>
+          <li><a href="game.html">Mini Golf</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="charity-banner">
+    <span>🔮 Predict the lowest scorer each round — bragging rights only!</span>
+  </div>
+
+  <section class="page-hero">
+    <h1>Round Predictions</h1>
+    <div class="hero-divider"></div>
+    <p class="hero-subtitle">Pick who shoots the lowest each round. No cost. Just glory.</p>
+  </section>
+
+  <main class="main-content pred-container">
+    <!-- Round Tabs -->
+    <div class="round-tabs" id="round-tabs"></div>
+
+    <!-- Prediction Panel (dynamically populated) -->
+    <div id="pred-panel"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">⛳ Masters Charity Pool 2026</div>
+      <div class="footer-charity">Supporting the Ride to Conquer Cancer</div>
+      <div class="footer-note">Not affiliated with Augusta National Golf Club or the Masters Tournament.</div>
+    </div>
+  </footer>
+
+  <script src="data/pool-data.js"></script>
+  <script>
+  (function() {
+    'use strict';
+
+    const FB_URL = 'https://masters-mini-golf-default-rtdb.firebaseio.com';
+
+    // Round config — update tee times and actual winners as tournament progresses
+    const ROUNDS = [
+      { id: 1, label: 'Round 1', day: 'Thursday',  lockTime: '2026-04-09T12:00:00Z', actualWinner: null },
+      { id: 2, label: 'Round 2', day: 'Friday',    lockTime: '2026-04-10T12:00:00Z', actualWinner: null },
+      { id: 3, label: 'Round 3', day: 'Saturday',   lockTime: '2026-04-12T14:00:00Z', actualWinner: null },
+      { id: 4, label: 'Round 4', day: 'Sunday',     lockTime: '2026-04-13T14:00:00Z', actualWinner: null },
+    ];
+
+    // All golfers from all groups (flattened)
+    const ALL_GOLFERS = [];
+    Object.values(poolData.playerGroups).forEach(g => {
+      g.players.forEach(p => { if (!ALL_GOLFERS.includes(p)) ALL_GOLFERS.push(p); });
+    });
+    ALL_GOLFERS.sort();
+
+    let activeRound = 1;
+    let selectedGolfer = null;
+
+    // ── Init ──
+    renderTabs();
+    loadRound(activeRound);
+
+    // ── Tabs ──
+    function renderTabs() {
+      const container = document.getElementById('round-tabs');
+      ROUNDS.forEach(r => {
+        const now = new Date();
+        const lock = new Date(r.lockTime);
+        const locked = now >= lock;
+        const status = r.actualWinner ? 'Complete' : locked ? 'Locked' : 'Open';
+
+        const btn = document.createElement('button');
+        btn.className = `round-tab ${r.id === activeRound ? 'active' : ''} ${locked && !r.actualWinner ? 'locked' : ''}`;
+        btn.innerHTML = `${r.label}<span class="tab-status">${r.day} · ${status}</span>`;
+        btn.onclick = () => {
+          activeRound = r.id;
+          document.querySelectorAll('.round-tab').forEach(t => t.classList.remove('active'));
+          btn.classList.add('active');
+          loadRound(r.id);
+        };
+        container.appendChild(btn);
+      });
+    }
+
+    // ── Load Round Panel ──
+    function loadRound(roundId) {
+      const panel = document.getElementById('pred-panel');
+      const round = ROUNDS[roundId - 1];
+      const now = new Date();
+      const lock = new Date(round.lockTime);
+      const locked = now >= lock;
+
+      selectedGolfer = null;
+
+      let html = '';
+
+      // If round has an actual winner, show results
+      if (round.actualWinner) {
+        html = `<div class="pred-card">
+          <div class="actual-winner-banner">
+            <div class="winner-label">Lowest Round ${roundId} Score</div>
+            <div class="winner-name">${round.actualWinner}</div>
+          </div>
+          <div class="pred-results" id="pred-results-${roundId}">
+            <h3>Predictions</h3>
+            <div class="pred-empty">Loading...</div>
+          </div>
+        </div>`;
+        panel.innerHTML = html;
+        loadResults(roundId, round.actualWinner);
+        return;
+      }
+
+      // If locked but no winner yet
+      if (locked) {
+        html = `<div class="pred-card">
+          <div class="pred-locked-msg">
+            ⛳ ${round.label} is underway. Predictions are locked.<br>
+            Results will appear once the round is complete.
+          </div>
+          <div class="pred-results" id="pred-results-${roundId}">
+            <h3>Predictions So Far</h3>
+            <div class="pred-empty">Loading...</div>
+          </div>
+        </div>`;
+        panel.innerHTML = html;
+        loadResults(roundId, null);
+        return;
+      }
+
+      // Open — show form
+      const savedName = localStorage.getItem('masters-pred-name') || '';
+      html = `<div class="pred-card">
+        <h3>Who shoots the lowest in ${round.label}?</h3>
+        <div class="subtitle">${round.day}, April ${8 + roundId} — Predictions lock at first tee</div>
+
+        <input type="text" class="pred-name-input" id="pred-name"
+               placeholder="Your name" value="${escapeHtml(savedName)}" maxlength="30">
+
+        <input type="text" class="search-golfer" id="golfer-search"
+               placeholder="Search golfers...">
+
+        <div class="golfer-grid" id="golfer-grid"></div>
+
+        <button class="pred-submit-btn" id="pred-submit" disabled onclick="submitPrediction(${roundId})">
+          Select a golfer to submit
+        </button>
+      </div>
+
+      <div class="pred-results" id="pred-results-${roundId}">
+        <h3>Predictions So Far</h3>
+        <div class="pred-empty">Loading...</div>
+      </div>`;
+
+      panel.innerHTML = html;
+      renderGolferGrid(ALL_GOLFERS);
+      loadResults(roundId, null);
+
+      // Search filter
+      document.getElementById('golfer-search').addEventListener('input', (e) => {
+        const q = e.target.value.toLowerCase();
+        const filtered = ALL_GOLFERS.filter(g => g.toLowerCase().includes(q));
+        renderGolferGrid(filtered);
+      });
+    }
+
+    function renderGolferGrid(golfers) {
+      const grid = document.getElementById('golfer-grid');
+      if (!grid) return;
+      grid.innerHTML = golfers.map(g => `
+        <div class="golfer-option ${selectedGolfer === g ? 'selected' : ''}"
+             onclick="selectGolfer('${escapeHtml(g)}')">
+          <span class="radio-dot"></span>
+          ${g}
+        </div>
+      `).join('');
+    }
+
+    window.selectGolfer = function(name) {
+      selectedGolfer = name;
+      document.querySelectorAll('.golfer-option').forEach(el => {
+        el.classList.toggle('selected', el.textContent.trim() === name);
+      });
+      const btn = document.getElementById('pred-submit');
+      if (btn) {
+        btn.disabled = false;
+        btn.textContent = `Submit: ${name}`;
+      }
+    };
+
+    window.submitPrediction = async function(roundId) {
+      const nameInput = document.getElementById('pred-name');
+      const name = (nameInput.value || '').trim() || 'Anonymous';
+      const btn = document.getElementById('pred-submit');
+
+      if (!selectedGolfer) return;
+
+      localStorage.setItem('masters-pred-name', name);
+      btn.disabled = true;
+      btn.textContent = 'Submitting...';
+
+      const entry = {
+        name: name.substring(0, 30),
+        pick: selectedGolfer,
+        timestamp: Date.now()
+      };
+
+      try {
+        const res = await fetch(`${FB_URL}/predictions/round${roundId}.json`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(entry)
+        });
+        if (!res.ok) throw new Error('Write failed');
+        btn.textContent = 'Submitted! ⛳';
+        localStorage.setItem(`masters-pred-r${roundId}`, selectedGolfer);
+        setTimeout(() => loadResults(roundId, null), 500);
+      } catch (e) {
+        btn.textContent = 'Error — try again';
+        btn.disabled = false;
+      }
+    };
+
+    async function loadResults(roundId, actualWinner) {
+      const container = document.getElementById(`pred-results-${roundId}`);
+      if (!container) return;
+
+      try {
+        const res = await fetch(`${FB_URL}/predictions/round${roundId}.json`);
+        const data = await res.json();
+
+        if (!data) {
+          container.innerHTML = '<h3>Predictions</h3><div class="pred-empty">No predictions yet. Be the first!</div>';
+          return;
+        }
+
+        const preds = Object.values(data).sort((a, b) => a.timestamp - b.timestamp);
+
+        // Count picks
+        const pickCounts = {};
+        preds.forEach(p => { pickCounts[p.pick] = (pickCounts[p.pick] || 0) + 1; });
+        const sortedPicks = Object.entries(pickCounts).sort((a, b) => b[1] - a[1]);
+
+        let html = `<h3>${preds.length} Prediction${preds.length !== 1 ? 's' : ''}</h3>`;
+
+        // Most popular pick summary
+        if (sortedPicks.length > 0) {
+          html += `<div style="margin-bottom:var(--space-md); font-family:'IBM Plex Mono',monospace; font-size:0.75rem; color:var(--text-light);">
+            Most picked: <strong>${sortedPicks[0][0]}</strong> (${sortedPicks[0][1]}×)
+          </div>`;
+        }
+
+        preds.forEach(p => {
+          let badge = '';
+          if (actualWinner) {
+            const correct = p.pick.toLowerCase() === actualWinner.toLowerCase();
+            badge = correct
+              ? '<span class="pred-result-badge correct">Nailed it ✓</span>'
+              : '<span class="pred-result-badge incorrect">Miss</span>';
+          }
+
+          html += `<div class="pred-result-row">
+            <span class="pred-result-name">${escapeHtml(p.name)}</span>
+            <span class="pred-result-pick">${p.pick}</span>
+            ${badge}
+          </div>`;
+        });
+
+        container.innerHTML = html;
+      } catch (e) {
+        container.innerHTML = '<h3>Predictions</h3><div class="pred-empty">Could not load predictions.</div>';
+      }
+    }
+
+    function escapeHtml(t) {
+      const d = document.createElement('div');
+      d.textContent = t;
+      return d.innerHTML;
+    }
+  })();
+  </script>
+</body>
+</html>
