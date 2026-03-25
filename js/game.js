@@ -424,8 +424,12 @@
     currentHole = 0;
     totalStrokes = 0;
     scores = [];
+    scoreSubmitted = false;
     loadHole();
     gameState = 'playing';
+    // Re-enable submit button for new game
+    const btn = document.getElementById('submit-score-btn');
+    if (btn) { btn.textContent = 'Submit Score'; btn.disabled = false; }
     renderScorecard();
     gameLoop();
   }
@@ -639,16 +643,21 @@
     return new Date().toISOString().split('T')[0]; // YYYY-MM-DD
   }
 
+  let scoreSubmitted = false;
+
   async function submitScore() {
+    if (scoreSubmitted) return;
+
     const nameInput = document.getElementById('player-name-input');
     const name = nameInput.value.trim() || 'Anonymous';
     const btn = document.getElementById('submit-score-btn');
 
     btn.textContent = 'Saving...';
     btn.disabled = true;
+    scoreSubmitted = true;
 
     const entry = {
-      name: name.substring(0, 40), // cap length
+      name: name.substring(0, 40),
       score: totalStrokes,
       par: TOTAL_PAR,
       timestamp: Date.now()
@@ -667,9 +676,14 @@
     } catch (e) {
       console.error('Score submit failed:', e);
       btn.textContent = 'Error — try again';
+      scoreSubmitted = false; // allow retry on actual error
+      btn.disabled = false;
+      return;
     }
 
-    setTimeout(() => { btn.textContent = 'Submit Score'; btn.disabled = false; }, 2500);
+    // Keep button disabled permanently for this game
+    btn.textContent = 'Score Submitted ✓';
+    btn.disabled = true;
   }
 
   async function loadLeaderboard() {
