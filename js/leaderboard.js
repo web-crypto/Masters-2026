@@ -13,6 +13,23 @@ function initLeaderboard() {
 
   const top10 = poolData.entries.slice(0, 10);
 
+  // Always update aggregate stats from poolData totals (updates hourly via cron)
+  const statEntries = document.getElementById('stat-entries');
+  if (statEntries) statEntries.textContent = poolData.totalEntries > 0 ? poolData.totalEntries : '—';
+
+  const statPrize = document.getElementById('stat-prize-pool');
+  if (statPrize) statPrize.textContent = poolData.prizePool > 0 ? '$' + poolData.prizePool.toLocaleString() : '—';
+
+  const statCharity = document.getElementById('stat-charity');
+  if (statCharity) statCharity.textContent = poolData.totalCharityRaised > 0 ? '$' + poolData.totalCharityRaised.toLocaleString() : '$5/entry';
+
+  // Only show leader name once entries array is populated (post-close)
+  const statLeader = document.getElementById('stat-leader');
+  if (statLeader && top10.length > 0) {
+    statLeader.textContent = top10[0].name;
+    statLeader.style.fontSize = '0.95rem';
+  }
+
   // Empty state: no entries yet
   if (top10.length === 0) {
     scoreboardRows.innerHTML = `
@@ -22,25 +39,13 @@ function initLeaderboard() {
         <a href="enter.html" style="font-family:'IBM Plex Mono',monospace; font-size:0.75rem; color:#c9a84c; text-decoration:none; letter-spacing:0.08em; text-transform:uppercase;">Enter the Pool →</a>
       </div>
     `;
+
+    // Still update last-updated even in empty state
+    const lastUpdated = document.getElementById('last-updated');
+    if (lastUpdated) lastUpdated.textContent = `Last updated: ${getTimeSinceUpdate()}`;
+    const boardTime = document.getElementById('board-update-time');
+    if (boardTime) boardTime.textContent = getTimeSinceUpdate();
     return;
-  }
-
-  // Update stats (only if entries exist)
-  if (poolData.entries.length > 0) {
-    const statEntries = document.getElementById('stat-entries');
-    if (statEntries) statEntries.textContent = poolData.entries.length;
-
-    const statPrize = document.getElementById('stat-prize-pool');
-    if (statPrize && poolData.prizePool > 0) statPrize.textContent = '$' + poolData.prizePool.toLocaleString();
-
-    const statCharity = document.getElementById('stat-charity');
-    if (statCharity && poolData.totalCharityRaised > 0) statCharity.textContent = '$' + poolData.totalCharityRaised;
-
-    const statLeader = document.getElementById('stat-leader');
-    if (statLeader && top10.length > 0) {
-      statLeader.textContent = top10[0].name;
-      statLeader.style.fontSize = '0.95rem';
-    }
   }
 
   // Update last updated
