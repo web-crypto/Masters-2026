@@ -131,37 +131,6 @@
       </div>
     </div>
 
-    <!-- Live Reaction Bar -->
-    <div class="reaction-bar" id="reaction-bar">
-      <div class="reaction-bar-label">How's your team doing?</div>
-      <div class="reaction-buttons" id="reaction-buttons">
-        <button class="reaction-btn" data-emoji="fire" onclick="react('fire')">
-          <span class="reaction-emoji">🔥</span>
-          <span class="reaction-count" id="rc-fire">0</span>
-        </button>
-        <button class="reaction-btn" data-emoji="tiger" onclick="react('tiger')">
-          <span class="reaction-emoji">🐯</span>
-          <span class="reaction-count" id="rc-tiger">0</span>
-        </button>
-        <button class="reaction-btn" data-emoji="pray" onclick="react('pray')">
-          <span class="reaction-emoji">🙏</span>
-          <span class="reaction-count" id="rc-pray">0</span>
-        </button>
-        <button class="reaction-btn" data-emoji="skull" onclick="react('skull')">
-          <span class="reaction-emoji">💀</span>
-          <span class="reaction-count" id="rc-skull">0</span>
-        </button>
-        <button class="reaction-btn" data-emoji="money" onclick="react('money')">
-          <span class="reaction-emoji">💰</span>
-          <span class="reaction-count" id="rc-money">0</span>
-        </button>
-        <button class="reaction-btn" data-emoji="flag" onclick="react('flag')">
-          <span class="reaction-emoji">⛳</span>
-          <span class="reaction-count" id="rc-flag">0</span>
-        </button>
-      </div>
-    </div>
-
     <!-- View All -->
     <div class="text-center mt-lg">
       <a href="standings.html" class="view-all-btn">View All 89 Entries →</a>
@@ -187,52 +156,6 @@
   <script src="data/pool-data.js"></script>
   <script src="js/leaderboard.js"></script>
   <script>
-    // ── Live Reaction Bar (Firebase) ──
-    const REACT_FB = 'https://masters-mini-golf-default-rtdb.firebaseio.com/reactions';
-    const EMOJIS = ['fire', 'tiger', 'pray', 'skull', 'money', 'flag'];
-
-    function loadReactions() {
-      fetch(REACT_FB + '.json')
-        .then(r => r.json())
-        .then(data => {
-          if (!data) return;
-          EMOJIS.forEach(e => {
-            const el = document.getElementById('rc-' + e);
-            if (el) el.textContent = data[e] || 0;
-          });
-        })
-        .catch(() => {});
-    }
-
-    function react(emoji) {
-      const btn = document.querySelector(`[data-emoji="${emoji}"]`);
-      if (!btn) return;
-
-      // Optimistic UI: bump immediately + pop animation
-      const countEl = document.getElementById('rc-' + emoji);
-      const current = parseInt(countEl.textContent || '0');
-      countEl.textContent = current + 1;
-      btn.classList.add('reacted');
-      setTimeout(() => btn.classList.remove('reacted'), 400);
-
-      // Firebase increment via transaction-style GET+PUT
-      fetch(`${REACT_FB}/${emoji}.json`)
-        .then(r => r.json())
-        .then(val => {
-          return fetch(`${REACT_FB}/${emoji}.json`, {
-            method: 'PUT',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify((val || 0) + 1)
-          });
-        })
-        .then(() => loadReactions()) // sync to actual count
-        .catch(() => {});
-    }
-
-    loadReactions();
-    // Refresh counts every 30s for "live" feel
-    setInterval(loadReactions, 30000);
-
     // Countdown to Masters Round 1 — Thursday April 9, 2026 8:00 AM EDT
     (function() {
       const TARGET = new Date('2026-04-09T12:00:00Z'); // 8am EDT = noon UTC
