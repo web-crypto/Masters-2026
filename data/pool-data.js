@@ -9,7 +9,7 @@ const poolData = {
   charityName: "Ride to Conquer Cancer",
   entryFee: 30,
   charityPerEntry: 5,
-  totalEntries: 89,
+  totalEntries: 0, // updated when entries finalize
   totalCharityRaised: 445,
   prizePool: 2225,
   payoutStructure: {
