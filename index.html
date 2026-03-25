@@ -55,6 +55,32 @@
 
   <!-- Main Content -->
   <main class="main-content">
+    <!-- Countdown Timer -->
+    <div id="countdown-container" class="countdown-container">
+      <div class="countdown-label">First Tee — Round 1</div>
+      <div class="countdown-timer" id="countdown-timer">
+        <div class="countdown-unit">
+          <span class="countdown-num" id="cd-days">--</span>
+          <span class="countdown-text">Days</span>
+        </div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-unit">
+          <span class="countdown-num" id="cd-hours">--</span>
+          <span class="countdown-text">Hours</span>
+        </div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-unit">
+          <span class="countdown-num" id="cd-mins">--</span>
+          <span class="countdown-text">Minutes</span>
+        </div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-unit">
+          <span class="countdown-num" id="cd-secs">--</span>
+          <span class="countdown-text">Seconds</span>
+        </div>
+      </div>
+    </div>
+
     <!-- Pool Stats -->
     <div class="stats-grid">
       <div class="stat-card animate-in">
@@ -129,6 +155,39 @@
 
   <script src="data/pool-data.js"></script>
   <script src="js/leaderboard.js"></script>
+  <script>
+    // Countdown to Masters Round 1 — Thursday April 9, 2026 8:00 AM EDT
+    (function() {
+      const TARGET = new Date('2026-04-09T12:00:00Z'); // 8am EDT = noon UTC
+      const container = document.getElementById('countdown-container');
+      const days = document.getElementById('cd-days');
+      const hours = document.getElementById('cd-hours');
+      const mins = document.getElementById('cd-mins');
+      const secs = document.getElementById('cd-secs');
+
+      function pad(n) { return n < 10 ? '0' + n : n; }
+
+      function tick() {
+        const now = new Date();
+        const diff = TARGET - now;
+        if (diff <= 0) {
+          container.style.display = 'none';
+          return;
+        }
+        const d = Math.floor(diff / 86400000);
+        const h = Math.floor((diff % 86400000) / 3600000);
+        const m = Math.floor((diff % 3600000) / 60000);
+        const s = Math.floor((diff % 60000) / 1000);
+        days.textContent = pad(d);
+        hours.textContent = pad(h);
+        mins.textContent = pad(m);
+        secs.textContent = pad(s);
+      }
+
+      tick();
+      setInterval(tick, 1000);
+    })();
+  </script>
   <script>
     (function() {
       const audio   = document.getElementById('bg-music');

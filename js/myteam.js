@@ -87,7 +87,7 @@ function renderEarningsChart(entry) {
 
   const maxEarnings = Math.max(...Object.values(entry.players).map(p => p.earnings), 1);
 
-  const groupOrder = ['groupA', 'groupB1', 'groupB2', 'groupB3', 'groupC1', 'groupC2', 'groupC3', 'groupD'];
+  const groupOrder = ['groupA', 'groupB1', 'groupB2', 'groupC1', 'groupC2', 'groupD1', 'groupD2', 'groupE'];
 
   groupOrder.forEach((group, i) => {
     const player = entry.players[group];
@@ -124,7 +124,7 @@ function renderRoster(entry) {
   const grid = document.getElementById('roster-grid');
   grid.innerHTML = '';
 
-  const groupOrder = ['groupA', 'groupB1', 'groupB2', 'groupB3', 'groupC1', 'groupC2', 'groupC3', 'groupD'];
+  const groupOrder = ['groupA', 'groupB1', 'groupB2', 'groupC1', 'groupC2', 'groupD1', 'groupD2', 'groupE'];
 
   groupOrder.forEach((group, i) => {
     const player = entry.players[group];
@@ -231,7 +231,7 @@ function renderGapGrid(container, myEntry, otherEntry, isLeading) {
   const gridDiv = document.createElement('div');
   gridDiv.className = 'gap-comparison-grid';
 
-  const groupOrder = ['groupA', 'groupB1', 'groupB2', 'groupB3', 'groupC1', 'groupC2', 'groupC3', 'groupD'];
+  const groupOrder = ['groupA', 'groupB1', 'groupB2', 'groupC1', 'groupC2', 'groupD1', 'groupD2', 'groupE'];
 
   groupOrder.forEach(group => {
     const mine = myEntry.players[group];
@@ -277,7 +277,7 @@ function renderDifferentiators(entry) {
   const body = document.getElementById('diff-body');
   body.innerHTML = '';
 
-  const groupOrder = ['groupA', 'groupB1', 'groupB2', 'groupB3', 'groupC1', 'groupC2', 'groupC3', 'groupD'];
+  const groupOrder = ['groupA', 'groupB1', 'groupB2', 'groupC1', 'groupC2', 'groupD1', 'groupD2', 'groupE'];
   const callouts = [];
 
   groupOrder.forEach(group => {
@@ -344,7 +344,7 @@ function renderScenarioWidget(entry) {
   // Clear existing options (keep placeholder)
   playerSelect.innerHTML = '<option value="">Choose a player...</option>';
 
-  const groupOrder = ['groupA', 'groupB1', 'groupB2', 'groupB3', 'groupC1', 'groupC2', 'groupC3', 'groupD'];
+  const groupOrder = ['groupA', 'groupB1', 'groupB2', 'groupC1', 'groupC2', 'groupD1', 'groupD2', 'groupE'];
   groupOrder.forEach(group => {
     const player = entry.players[group];
     const opt = document.createElement('option');

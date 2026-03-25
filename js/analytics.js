@@ -42,7 +42,7 @@ function renderPopularPicks() {
   const container = document.getElementById('popular-picks');
   if (!container) return;
 
-  const groups = ['groupA', 'groupB1', 'groupB2', 'groupB3', 'groupC1', 'groupC2', 'groupC3', 'groupD'];
+  const groups = ['groupA', 'groupB1', 'groupB2', 'groupC1', 'groupC2', 'groupD1', 'groupD2', 'groupE'];
 
   groups.forEach(group => {
     const pickCounts = {};
@@ -309,10 +309,10 @@ function renderComboStats() {
 
   const entries = poolData.entries;
 
-  // Count unique Group A + Group D combos
+  // Count unique Group A + Group E combos
   const combos = new Set();
   entries.forEach(e => {
-    combos.add(`${e.players.groupA.name}|${e.players.groupD.name}`);
+    combos.add(`${e.players.groupA.name}|${(e.players.groupE || {}).name || '?'}`);
   });
 
   // Entries with all players earning money
@@ -320,18 +320,18 @@ function renderComboStats() {
     return Object.values(e.players).every(p => p.earnings > 0);
   });
 
-  // Entries where Group D outperforms Group A
+  // Entries where Group E outperforms Group A
   const dBeatsA = entries.filter(e => {
-    return e.players.groupD.earnings > e.players.groupA.earnings;
+    return (e.players.groupE || {}).earnings > e.players.groupA.earnings;
   });
 
   // Total pool earnings
   const totalPoolEarnings = entries.reduce((s, e) => s + e.totalEarnings, 0);
 
   const stats = [
-    { icon: '🎯', title: 'Unique A+D Combos', desc: 'Different elite + longshot pairings', value: combos.size },
+    { icon: '🎯', title: 'Unique A+E Combos', desc: 'Different elite + past champ pairings', value: combos.size },
     { icon: '💰', title: 'All Players Earning', desc: 'Entries with zero $0 golfers', value: allEarning.length },
-    { icon: '🐎', title: 'Dark Horse Wins', desc: 'Group D outearned Group A', value: dBeatsA.length },
+    { icon: '🐎', title: 'Dark Horse Wins', desc: 'Group E outearned Group A', value: dBeatsA.length },
     { icon: '🏦', title: 'Total Pool Earnings', desc: 'Combined across all entries', value: formatCurrency(totalPoolEarnings) }
   ];
 
