@@ -137,13 +137,10 @@
       let trackIdx  = 0;
       let playing   = false;
 
-      // Load first track
+      // Load first track — button always visible
       audio.src = tracks[trackIdx];
       audio.volume = 0.35;
-      btn.style.display = 'none';
-
-      audio.addEventListener('canplay', () => { btn.style.display = 'flex'; });
-      audio.addEventListener('error',   () => { btn.style.display = 'none'; });
+      btn.style.display = 'flex';
 
       // When a track ends, advance to next
       audio.addEventListener('ended', () => {
