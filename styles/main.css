@@ -507,6 +507,73 @@ a:hover {
   font-style: italic;
 }
 
+/* ---- Live Reaction Bar ---- */
+.reaction-bar {
+  max-width: 620px;
+  margin: var(--space-md) auto var(--space-lg);
+  text-align: center;
+}
+
+.reaction-bar-label {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  margin-bottom: 10px;
+}
+
+.reaction-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.reaction-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 8px 14px;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 8px;
+  background: var(--white);
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+  min-width: 56px;
+}
+
+.reaction-btn:hover {
+  border-color: var(--masters-gold-dim);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transform: translateY(-1px);
+}
+
+.reaction-btn:active,
+.reaction-btn.reacted {
+  transform: scale(1.2);
+}
+
+.reaction-emoji {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.reaction-count {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  min-width: 14px;
+}
+
+@media (max-width: 480px) {
+  .reaction-buttons { gap: 6px; }
+  .reaction-btn { padding: 6px 10px; min-width: 46px; }
+  .reaction-emoji { font-size: 1.2rem; }
+}
+
 /* ---- Countdown Timer ---- */
 .countdown-container {
   max-width: 620px;
