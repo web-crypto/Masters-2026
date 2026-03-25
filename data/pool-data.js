@@ -107,11 +107,14 @@ const poolData = {
         "Fred Couples",
         "Mike Weir",
         "Vijay Singh",
-        "Jose Maria Olazabal",
-        "Bernhard Langer",
-        "Sandy Lyle",
-        "Larry Mize",
-        "Angel Cabrera"
+        "Ben Griffin",
+        "Harry English",
+        "Will Zalatoris",
+        "JJ Spaun",
+        "Daniel Berger",
+        "Marco Penge",
+        "Maverick McNealy",
+        "Sergio Garcia"
       ]
     }
   },
