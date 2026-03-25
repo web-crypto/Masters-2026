@@ -371,19 +371,44 @@ a:hover {
 /* --- Charity Banner --- */
 .charity-banner {
   background: var(--masters-gold);
-  padding: var(--space-sm) 0;
+  padding: var(--space-sm) var(--space-md);
   text-align: center;
   font-family: var(--font-body);
   font-size: 0.9rem;
   font-weight: 700;
   color: var(--masters-green-deep);
   letter-spacing: 0.05em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
 }
 
 .charity-banner span {
   display: inline-flex;
   align-items: center;
   gap: var(--space-sm);
+}
+
+.enter-pool-link {
+  display: inline-block;
+  padding: 5px 16px;
+  background: var(--masters-green-deep);
+  color: var(--masters-gold);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.enter-pool-link:hover {
+  background: #1a3520;
+  color: #ffffff;
 }
 
 /* --- Main Content --- */
