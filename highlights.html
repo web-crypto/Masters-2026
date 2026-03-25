@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Highlights — Masters Charity Pool 2026</title>
+  <meta name="description" content="Classic Masters moments and highlights. Rory's Grand Slam, Tiger's chip on 16, and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+  <style>
+    .highlights-container { max-width: 900px; margin: 0 auto; }
+
+    .video-section {
+      margin-bottom: var(--space-xl);
+    }
+
+    .video-section h2 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      color: #1b3425;
+      margin-bottom: var(--space-md);
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--masters-gold);
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      gap: var(--space-md);
+    }
+
+    @media (max-width: 480px) {
+      .video-grid { grid-template-columns: 1fr; }
+    }
+
+    .video-card {
+      background: var(--white);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .video-card iframe {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border: none;
+      display: block;
+    }
+
+    .video-info {
+      padding: 12px 16px;
+    }
+
+    .video-title {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 4px;
+    }
+
+    .video-desc {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+
+    .video-year {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.62rem;
+      color: var(--masters-gold-dim);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-botanical-right" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo">
+        <div class="logo-crest">⛳</div>
+        <div class="logo-text">
+          <span class="logo-title">Masters Pool 2026</span>
+          <span class="logo-subtitle">Charity Tournament</span>
+        </div>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.main-nav').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="enter.html">Enter</a></li>
+          <li><a href="index.html">Leaderboard</a></li>
+          <li><a href="standings.html">Standings</a></li>
+          <li><a href="players.html">Players</a></li>
+          <li><a href="analytics.html">Analytics</a></li>
+          <li><a href="myteam.html">My Team</a></li>
+          <li><a href="predictions.html">Predictions</a></li>
+          <li><a href="highlights.html" class="active">Highlights</a></li>
+          <li><a href="game.html">Mini Golf</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <h1>Masters Highlights</h1>
+    <div class="hero-divider"></div>
+    <p class="hero-subtitle">The shots, the moments, the history. Get in the mood.</p>
+  </section>
+
+  <main class="main-content highlights-container">
+
+    <!-- 2025 Masters -->
+    <div class="video-section">
+      <h2>2025 — Rory completes the Grand Slam</h2>
+      <div class="video-grid">
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/hqGjzCatL6Y" loading="lazy" allowfullscreen></iframe>
+          <div class="video-info">
+            <div class="video-title">Rory McIlroy's Final Round</div>
+            <div class="video-desc">Every shot from the round that completed the career Grand Slam. Playoff win over Justin Rose.</div>
+            <div class="video-year">2025 Masters</div>
+          </div>
+        </div>
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/QV0Bz25xbwg" loading="lazy" allowfullscreen></iframe>
+          <div class="video-info">
+            <div class="video-title">Every Hole Out from the 2025 Masters</div>
+            <div class="video-desc">All the chips, putts, and aces that found the bottom of the cup.</div>
+            <div class="video-year">2025 Masters</div>
+          </div>
+        </div>
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/DYii2UaFEtA" loading="lazy" allowfullscreen></iframe>
+          <div class="video-info">
+            <div class="video-title">Justin Rose's First Round</div>
+            <div class="video-desc">Rose took the lead on day one, starting the drama that would last all week.</div>
+            <div class="video-year">2025 Masters</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Iconic moments -->
+    <div class="video-section">
+      <h2>Iconic Masters Moments</h2>
+      <div class="video-grid">
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/B_tkJEAGMDE" loading="lazy" allowfullscreen></iframe>
+          <div class="video-info">
+            <div class="video-title">Tiger's Chip on 16</div>
+            <div class="video-desc">The most replayed shot in Masters history. The ball hangs on the lip, the Nike logo faces the camera, and the roar shakes Augusta.</div>
+            <div class="video-year">2005 Masters</div>
+          </div>
+        </div>
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/TlnQFnzaHsg" loading="lazy" allowfullscreen></iframe>
+          <div class="video-info">
+            <div class="video-title">Tiger Woods: Greatest Iron Shots</div>
+            <div class="video-desc">A compilation of Tiger's finest iron shots across his Masters career. Power, precision, and the occasional miracle.</div>
+            <div class="video-year">Career Highlights</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2024 Masters -->
+    <div class="video-section">
+      <h2>2024 — Scottie's second jacket</h2>
+      <div class="video-grid">
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/gSsSWE5jCwc" loading="lazy" allowfullscreen></iframe>
+          <div class="video-info">
+            <div class="video-title">Tiger Woods First Round 2024</div>
+            <div class="video-desc">Every shot from Tiger's first round at the 2024 Masters. Still competing at Augusta.</div>
+            <div class="video-year">2024 Masters</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">⛳ Masters Charity Pool 2026</div>
+      <div class="footer-charity">Supporting the Ride to Conquer Cancer</div>
+      <div class="footer-note">
+        $30 entry &middot; $5/entry to charity &middot; 89 entries in 2025<br>
+        Not affiliated with Augusta National Golf Club or the Masters Tournament.
+      </div>
+    </div>
+  </footer>
+  <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
