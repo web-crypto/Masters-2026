@@ -46,6 +46,7 @@
   // --- Hole Definitions ---
   // slope: { x, y, w, h, dirX, dirY, strength }
   // Multiple small slopes per hole = realistic multi-break greens
+  // tunnel: { side, pos, width } on entry/exit — ball teleports through border
   const HOLES = [
     {
       // Tea Olive: classic S-curve break. Left side slopes toward bottom,
@@ -67,6 +68,11 @@
         { x: 480, y: 0, w: 320, h: 500, dirX: 0,    dirY: -0.5, strength: 0.018 },
       ],
       fastZones: [],
+      tunnels: [
+        // Secret: top border at x=520 → exits bottom border near hole
+        { entry: { side: 'top', pos: 520, width: 22 },
+          exit:  { side: 'bottom', pos: 690 } },
+      ],
     },
     {
       // Pink Dogwood: upper half drains left, lower half drains right.
@@ -132,6 +138,11 @@
       ],
       fastZones: [
         { x: 0, y: 0, w: 800, h: 500 },
+      ],
+      tunnels: [
+        // Secret: left border at y=80 → exits right border, shoots left toward hole
+        { entry: { side: 'left', pos: 80, width: 22 },
+          exit:  { side: 'right', pos: 55 } },
       ],
     },
     {
@@ -217,6 +228,11 @@
       ],
       fastZones: [
         { x: 80, y: 195, w: 560, h: 110 },
+      ],
+      tunnels: [
+        // Secret: bottom border at x=650 → exits top border, drops toward hole
+        { entry: { side: 'bottom', pos: 650, width: 22 },
+          exit:  { side: 'top', pos: 710 } },
       ],
     },
     {
@@ -548,11 +564,52 @@
       }
     });
 
+    // --- Secret tunnel check (before border bounce) ---
+    let tunneled = false;
+    (hole.tunnels || []).forEach(t => {
+      if (tunneled) return;
+      const e = t.entry, ex = t.exit;
+      const halfW = e.width / 2;
+      let hit = false;
+
+      if (e.side === 'top' && ball.y - BALL_RADIUS < 0 &&
+          ball.x >= e.pos - halfW && ball.x <= e.pos + halfW) hit = true;
+      if (e.side === 'bottom' && ball.y + BALL_RADIUS > CANVAS_H &&
+          ball.x >= e.pos - halfW && ball.x <= e.pos + halfW) hit = true;
+      if (e.side === 'left' && ball.x - BALL_RADIUS < 0 &&
+          ball.y >= e.pos - halfW && ball.y <= e.pos + halfW) hit = true;
+      if (e.side === 'right' && ball.x + BALL_RADIUS > CANVAS_W &&
+          ball.y >= e.pos - halfW && ball.y <= e.pos + halfW) hit = true;
+
+      if (hit) {
+        const speed = Math.sqrt(ball.vx * ball.vx + ball.vy * ball.vy);
+        // Aim exit velocity toward the hole with speed scaled down
+        const hx = hole.hole.x, hy = hole.hole.y;
+        let exitX, exitY;
+        if (ex.side === 'top')    { exitX = ex.pos; exitY = BALL_RADIUS + 2; }
+        if (ex.side === 'bottom') { exitX = ex.pos; exitY = CANVAS_H - BALL_RADIUS - 2; }
+        if (ex.side === 'left')   { exitX = BALL_RADIUS + 2; exitY = ex.pos; }
+        if (ex.side === 'right')  { exitX = CANVAS_W - BALL_RADIUS - 2; exitY = ex.pos; }
+
+        ball.x = exitX;
+        ball.y = exitY;
+
+        const dxH = hx - exitX, dyH = hy - exitY;
+        const dH = Math.sqrt(dxH * dxH + dyH * dyH);
+        // Exit speed: gentle shots (low speed) get a nice roll toward hole,
+        // hard shots overshoot
+        const exitSpeed = speed * 0.45;
+        ball.vx = (dxH / dH) * exitSpeed;
+        ball.vy = (dyH / dH) * exitSpeed;
+        tunneled = true;
+      }
+    });
+
     // --- Border collisions ---
-    if (ball.x - BALL_RADIUS < 0)        { ball.x = BALL_RADIUS;            ball.vx = -ball.vx * WALL_BOUNCE; }
-    if (ball.x + BALL_RADIUS > CANVAS_W)  { ball.x = CANVAS_W - BALL_RADIUS; ball.vx = -ball.vx * WALL_BOUNCE; }
-    if (ball.y - BALL_RADIUS < 0)        { ball.y = BALL_RADIUS;            ball.vy = -ball.vy * WALL_BOUNCE; }
-    if (ball.y + BALL_RADIUS > CANVAS_H)  { ball.y = CANVAS_H - BALL_RADIUS; ball.vy = -ball.vy * WALL_BOUNCE; }
+    if (!tunneled && ball.x - BALL_RADIUS < 0)        { ball.x = BALL_RADIUS;            ball.vx = -ball.vx * WALL_BOUNCE; }
+    if (!tunneled && ball.x + BALL_RADIUS > CANVAS_W)  { ball.x = CANVAS_W - BALL_RADIUS; ball.vx = -ball.vx * WALL_BOUNCE; }
+    if (!tunneled && ball.y - BALL_RADIUS < 0)        { ball.y = BALL_RADIUS;            ball.vy = -ball.vy * WALL_BOUNCE; }
+    if (!tunneled && ball.y + BALL_RADIUS > CANVAS_H)  { ball.y = CANVAS_H - BALL_RADIUS; ball.vy = -ball.vy * WALL_BOUNCE; }
 
     // --- Stop check ---
     const speed = Math.sqrt(ball.vx * ball.vx + ball.vy * ball.vy);
