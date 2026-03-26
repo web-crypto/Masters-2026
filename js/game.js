@@ -69,9 +69,9 @@
       ],
       fastZones: [],
       tunnels: [
-        // Secret: top border at x=520 → exits bottom border near hole
-        { entry: { side: 'top', pos: 520, width: 22 },
-          exit:  { side: 'bottom', pos: 690 } },
+        // Secret: left border at y=100 — shoot backward against the slope
+        { entry: { side: 'left', pos: 100, width: 22 },
+          exit:  { side: 'right', pos: 260 } },
       ],
     },
     {
@@ -140,9 +140,9 @@
         { x: 0, y: 0, w: 800, h: 500 },
       ],
       tunnels: [
-        // Secret: left border at y=80 → exits right border, shoots left toward hole
-        { entry: { side: 'left', pos: 80, width: 22 },
-          exit:  { side: 'right', pos: 55 } },
+        // Secret: bottom border at x=100 — shoot backward away from hole
+        { entry: { side: 'bottom', pos: 100, width: 22 },
+          exit:  { side: 'top', pos: 390 } },
       ],
     },
     {
@@ -230,9 +230,9 @@
         { x: 80, y: 195, w: 560, h: 110 },
       ],
       tunnels: [
-        // Secret: bottom border at x=650 → exits top border, drops toward hole
-        { entry: { side: 'bottom', pos: 650, width: 22 },
-          exit:  { side: 'top', pos: 710 } },
+        // Secret: left border at y=420 — shoot backward against rightward slope
+        { entry: { side: 'left', pos: 420, width: 22 },
+          exit:  { side: 'right', pos: 240 } },
       ],
     },
     {
