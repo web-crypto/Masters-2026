@@ -333,6 +333,20 @@
   let aimCurrent = { x: 0, y: 0 };
   let animFrameId;
 
+  // --- Dog Easter Egg ---
+  let dog = {
+    active: false,       // currently visible on green
+    x: 0, y: 0,         // position
+    spawnAt: 0,          // timestamp to appear
+    expiresAt: 0,        // timestamp to leave
+    scheduled: false,    // whether a dog visit is planned this hole
+    carrying: false,     // dog grabbed the ball
+    dropAt: 0,           // when to drop the ball
+    dropX: 0, dropY: 0, // where to drop
+    runDir: 1,           // running direction for animation
+    frame: 0,            // animation frame counter
+  };
+
   // --- Initialize ---
   document.addEventListener('DOMContentLoaded', () => {
     canvas = document.getElementById('game-canvas');
@@ -479,6 +493,186 @@
     document.getElementById('hud-strokes').textContent = strokes;
     document.getElementById('hud-total').textContent = totalStrokes;
     updatePowerBar(0);
+    scheduleDog();
+  }
+
+  // --- Dog Logic ---
+  function scheduleDog() {
+    dog.active = false;
+    dog.carrying = false;
+    dog.scheduled = false;
+    // ~10% chance per hole
+    if (Math.random() < 0.10) {
+      dog.scheduled = true;
+      // Appear 3-12 seconds into the hole
+      dog.spawnAt = Date.now() + 3000 + Math.random() * 9000;
+    }
+  }
+
+  function spawnDog() {
+    const hole = HOLES[currentHole];
+    // Pick a random spot away from ball, hole, walls, and edges
+    let tries = 0;
+    while (tries < 50) {
+      const dx = 60 + Math.random() * (CANVAS_W - 120);
+      const dy = 60 + Math.random() * (CANVAS_H - 120);
+      const distBall = Math.sqrt((dx - ball.x) ** 2 + (dy - ball.y) ** 2);
+      const distHole = Math.sqrt((dx - hole.hole.x) ** 2 + (dy - hole.hole.y) ** 2);
+      if (distBall > 80 && distHole > 50) {
+        dog.x = dx;
+        dog.y = dy;
+        break;
+      }
+      tries++;
+    }
+    dog.active = true;
+    dog.expiresAt = Date.now() + 5000;
+    dog.runDir = Math.random() < 0.5 ? -1 : 1;
+    dog.frame = 0;
+  }
+
+  function updateDog() {
+    const now = Date.now();
+
+    // Spawn check
+    if (dog.scheduled && !dog.active && !dog.carrying && now >= dog.spawnAt) {
+      spawnDog();
+      dog.scheduled = false;
+    }
+
+    // Expire check — dog runs off
+    if (dog.active && !dog.carrying && now >= dog.expiresAt) {
+      dog.active = false;
+    }
+
+    // Animation frame
+    if (dog.active) dog.frame++;
+
+    // Ball-dog collision (only while rolling and dog is visible, not already carrying)
+    if (dog.active && !dog.carrying && gameState === 'rolling') {
+      const dist = Math.sqrt((ball.x - dog.x) ** 2 + (ball.y - dog.y) ** 2);
+      if (dist < BALL_RADIUS + 14) {
+        dogGrabBall();
+      }
+    }
+
+    // Drop the ball after carrying delay
+    if (dog.carrying && now >= dog.dropAt) {
+      ball.x = dog.dropX;
+      ball.y = dog.dropY;
+      ball.vx = 0;
+      ball.vy = 0;
+      dog.carrying = false;
+      dog.active = false;
+      // Check if dog dropped it in the hole
+      const hole = HOLES[currentHole];
+      const hd = Math.sqrt((ball.x - hole.hole.x) ** 2 + (ball.y - hole.hole.y) ** 2);
+      if (hd < HOLE_RADIUS) {
+        holeComplete();
+      } else {
+        gameState = 'playing';
+      }
+    }
+  }
+
+  function dogGrabBall() {
+    const hole = HOLES[currentHole];
+    dog.carrying = true;
+    ball.vx = 0;
+    ball.vy = 0;
+    // Hide ball off-screen while dog carries it
+    ball.x = -100;
+    ball.y = -100;
+    dog.dropAt = Date.now() + 1200; // dog runs for 1.2s
+
+    const roll = Math.random();
+    if (roll < 0.03) {
+      // 3%: drop in the hole
+      dog.dropX = hole.hole.x;
+      dog.dropY = hole.hole.y;
+    } else if (roll < 0.25) {
+      // 22%: random spot
+      dog.dropX = 60 + Math.random() * (CANVAS_W - 120);
+      dog.dropY = 60 + Math.random() * (CANVAS_H - 120);
+    } else {
+      // 75%: direct line to hole — place ball nearby with clear path
+      const angle = Math.random() * Math.PI * 2;
+      const dist = 40 + Math.random() * 60; // 40-100px from hole
+      dog.dropX = Math.max(30, Math.min(CANVAS_W - 30, hole.hole.x + Math.cos(angle) * dist));
+      dog.dropY = Math.max(30, Math.min(CANVAS_H - 30, hole.hole.y + Math.sin(angle) * dist));
+    }
+  }
+
+  function drawDog() {
+    if (!dog.active) return;
+    ctx.save();
+    const x = dog.x, y = dog.y;
+    const bounce = Math.sin(dog.frame * 0.15) * 2;
+    const flip = dog.carrying ? 1 : dog.runDir;
+
+    ctx.translate(x, y + bounce);
+    ctx.scale(flip, 1);
+
+    // Body
+    ctx.fillStyle = '#c08040';
+    ctx.beginPath();
+    ctx.ellipse(0, 0, 16, 10, 0, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Head
+    ctx.fillStyle = '#a06830';
+    ctx.beginPath();
+    ctx.arc(14, -6, 8, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Ear
+    ctx.fillStyle = '#805020';
+    ctx.beginPath();
+    ctx.ellipse(18, -12, 4, 6, 0.3, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Eye
+    ctx.fillStyle = '#222';
+    ctx.beginPath();
+    ctx.arc(18, -7, 2, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Nose
+    ctx.fillStyle = '#333';
+    ctx.beginPath();
+    ctx.arc(22, -4, 2, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Tail (wagging)
+    const tailWag = Math.sin(dog.frame * 0.25) * 0.4;
+    ctx.strokeStyle = '#c08040';
+    ctx.lineWidth = 3;
+    ctx.lineCap = 'round';
+    ctx.beginPath();
+    ctx.moveTo(-14, -2);
+    ctx.quadraticCurveTo(-22, -10 + tailWag * 10, -18, -16);
+    ctx.stroke();
+
+    // Legs (animated)
+    const legAnim = Math.sin(dog.frame * 0.2) * 3;
+    ctx.strokeStyle = '#a06830';
+    ctx.lineWidth = 2.5;
+    ctx.beginPath();
+    ctx.moveTo(-6, 8); ctx.lineTo(-6 - legAnim, 16);
+    ctx.moveTo(6, 8);  ctx.lineTo(6 + legAnim, 16);
+    ctx.moveTo(-2, 8); ctx.lineTo(-2 + legAnim, 16);
+    ctx.moveTo(10, 8); ctx.lineTo(10 - legAnim, 16);
+    ctx.stroke();
+
+    // Ball in mouth when carrying
+    if (dog.carrying) {
+      ctx.fillStyle = COLORS.ball;
+      ctx.beginPath();
+      ctx.arc(22, -2, 4, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    ctx.restore();
   }
 
   function shoot() {
@@ -505,7 +699,8 @@
   function gameLoop() {
     if (gameState === 'start' || gameState === 'game-over') return;
 
-    if (gameState === 'rolling') updateBall();
+    if (gameState === 'rolling' && !dog.carrying) updateBall();
+    updateDog();
 
     drawHole();
     animFrameId = requestAnimationFrame(gameLoop);
@@ -812,6 +1007,7 @@
     (hole.obstacles || []).forEach(o => drawObstacle(o));
     (hole.walls || []).forEach(w => drawWall(w));
     drawTarget(hole.hole);
+    drawDog();
     if (aiming) drawAimLine();
     drawBall();
 
@@ -1004,6 +1200,7 @@
   }
 
   function drawBall() {
+    if (dog.carrying) return; // ball is in dog's mouth
     ctx.fillStyle = COLORS.ballShadow;
     ctx.beginPath();
     ctx.arc(ball.x + 2, ball.y + 2, BALL_RADIUS, 0, Math.PI * 2);
