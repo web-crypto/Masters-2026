@@ -504,8 +504,8 @@
     // ~10% chance per hole
     if (Math.random() < 0.10) {
       dog.scheduled = true;
-      // Appear 3-12 seconds into the hole
-      dog.spawnAt = Date.now() + 3000 + Math.random() * 9000;
+      // Appear 3-30 seconds into the hole
+      dog.spawnAt = Date.now() + 3000 + Math.random() * 27000;
     }
   }
 
