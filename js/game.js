@@ -123,7 +123,8 @@
       fastZones: [],
     },
     {
-      // Crab Apple: four quadrant swirl + full fast green. Chaos by design.
+      // Crab Apple: zig-zag bumps. Alternating angled slopes funnel the ball
+      // up toward the hole if you read the line right. No obstacles, no fast zones.
       name: 'Flowering Crab Apple',
       par: 3,
       ball: { x: 400, y: 440 },
@@ -131,14 +132,27 @@
       walls: [],
       obstacles: [],
       slopes: [
-        { x: 0,   y: 0,   w: 400, h: 250, dirX:  0.7, dirY:  0.3, strength: 0.018 },
-        { x: 400, y: 0,   w: 400, h: 250, dirX: -0.3, dirY:  0.7, strength: 0.018 },
-        { x: 400, y: 250, w: 400, h: 250, dirX: -0.7, dirY: -0.3, strength: 0.018 },
-        { x: 0,   y: 250, w: 400, h: 250, dirX:  0.3, dirY: -0.7, strength: 0.018 },
+        // Row 1 (bottom, y=380-440): gentle kick right + up to get started
+        { x: 100, y: 380, w: 600, h: 60,  dirX:  0.5, dirY: -0.3, strength: 0.016 },
+
+        // Row 2 (y=300-380): slope kicks left + up
+        { x: 50,  y: 300, w: 700, h: 80,  dirX: -0.6, dirY: -0.3, strength: 0.020 },
+
+        // Row 3 (y=220-300): slope kicks right + up
+        { x: 50,  y: 220, w: 700, h: 80,  dirX:  0.6, dirY: -0.3, strength: 0.020 },
+
+        // Row 4 (y=140-220): slope kicks left + up — tighter toward center
+        { x: 100, y: 140, w: 600, h: 80,  dirX: -0.5, dirY: -0.4, strength: 0.018 },
+
+        // Row 5 (y=60-140): final approach — funnels center toward hole
+        { x: 0,   y: 60,  w: 400, h: 80,  dirX:  0.4, dirY: -0.2, strength: 0.014 },
+        { x: 400, y: 60,  w: 400, h: 80,  dirX: -0.4, dirY: -0.2, strength: 0.014 },
+
+        // Gutter slopes on edges — push ball back toward center if it drifts wide
+        { x: 0,   y: 0,   w: 80,  h: 500, dirX:  0.8, dirY:  0,   strength: 0.022 },
+        { x: 720, y: 0,   w: 80,  h: 500, dirX: -0.8, dirY:  0,   strength: 0.022 },
       ],
-      fastZones: [
-        { x: 0, y: 0, w: 800, h: 500 },
-      ],
+      fastZones: [],
       tunnels: [
         // Secret: bottom border at x=100 — shoot backward away from hole
         { entry: { side: 'bottom', pos: 100, width: 22 },
