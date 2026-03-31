@@ -360,6 +360,7 @@
 .name-input:focus {
   outline: none;
   border-color: var(--masters-gold);
+  box-shadow: 0 0 0 3px rgba(201,168,76,0.2);
 }
 
 /* --- Daily Leaderboard --- */

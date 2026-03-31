@@ -575,6 +575,7 @@
 .search-box input:focus {
   outline: none;
   border-color: #1b3425;
+  box-shadow: 0 0 0 3px rgba(26,71,49,0.15);
 }
 
 .search-box::before {
