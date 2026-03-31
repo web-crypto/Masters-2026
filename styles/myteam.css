@@ -49,7 +49,7 @@
   appearance: none;
   -webkit-appearance: none;
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
@@ -346,7 +346,7 @@
   padding: var(--space-md) var(--space-lg);
   border-left: 4px solid var(--masters-green);
   position: relative;
-  transition: all var(--transition-fast);
+  transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
 }
 
 .roster-player-card:hover {
@@ -595,7 +595,7 @@
   padding: var(--space-md) var(--space-lg);
   border-radius: 10px;
   background: var(--cream-light);
-  transition: all var(--transition-fast);
+  transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
 }
 
 .scenario-outcome:hover {

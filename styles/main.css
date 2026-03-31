@@ -248,7 +248,7 @@ a:hover {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   border-radius: 4px;
-  transition: all var(--transition-fast);
+  transition: color var(--transition-fast), background-color var(--transition-fast);
   position: relative;
 }
 
@@ -292,7 +292,7 @@ a:hover {
   height: 2px;
   background: var(--cream);
   margin: 5px 0;
-  transition: all var(--transition-fast);
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
 }
 
 /* --- Page Hero --- */
@@ -463,10 +463,10 @@ a:hover {
   background: var(--white);
   border-radius: 8px;
   padding: var(--space-lg);
-  box-shadow: 
+  box-shadow:
     0 1px 3px rgba(0,0,0,0.08),
     0 4px 12px rgba(0,0,0,0.04);
-  transition: all var(--transition-medium);
+  transition: box-shadow var(--transition-medium), transform var(--transition-medium);
   border: 1px solid rgba(0,0,0,0.06);
 }
 
