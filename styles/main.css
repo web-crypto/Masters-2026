@@ -892,6 +892,26 @@ a:hover {
   white-space: nowrap;
 }
 
+/* --- Skip Link --- */
+.skip-link:focus {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 10000;
+  padding: 8px 16px;
+  background: var(--masters-green-deep);
+  color: var(--masters-gold);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: 4px;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
 /* --- Focus-Visible --- */
 :focus-visible {
   outline: 2px solid var(--masters-gold);
