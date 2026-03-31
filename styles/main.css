@@ -240,7 +240,7 @@ a:hover {
 
 .main-nav a {
   display: block;
-  padding: var(--space-sm) var(--space-md);
+  padding: 10px var(--space-md);
   color: var(--cream-dark);
   font-family: var(--font-body);
   font-size: 0.95rem;
@@ -250,6 +250,9 @@ a:hover {
   border-radius: 4px;
   transition: color var(--transition-fast), background-color var(--transition-fast);
   position: relative;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
 }
 
 .main-nav a::after {
@@ -396,7 +399,7 @@ a:hover {
 
 .enter-pool-link {
   display: inline-block;
-  padding: 5px 16px;
+  padding: 10px 16px;
   background: var(--masters-green-deep);
   color: var(--masters-gold);
   font-family: 'IBM Plex Mono', monospace;
@@ -406,7 +409,9 @@ a:hover {
   text-transform: uppercase;
   border-radius: 3px;
   text-decoration: none;
-  transition: background 0.15s;
+  transition: background-color 0.15s;
+  min-height: 44px;
+  line-height: 24px;
 }
 
 .enter-pool-link:hover {
