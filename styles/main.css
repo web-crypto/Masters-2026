@@ -891,3 +891,25 @@ a:hover {
   clip: rect(0,0,0,0);
   white-space: nowrap;
 }
+
+/* --- Focus-Visible --- */
+:focus-visible {
+  outline: 2px solid var(--masters-gold);
+  outline-offset: 2px;
+}
+
+.site-header :focus-visible {
+  outline-color: var(--masters-gold);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* --- Reduced Motion --- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
