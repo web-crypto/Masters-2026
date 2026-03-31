@@ -84,7 +84,7 @@
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 0.7rem;
   font-weight: 400;
-  color: rgba(255,255,255,0.45);
+  color: rgba(255,255,255,0.6);
   letter-spacing: 0.3em;
   text-transform: uppercase;
 }
@@ -115,7 +115,7 @@
 .col-header {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.62rem;
-  color: rgba(255,255,255,0.45);
+  color: rgba(255,255,255,0.6);
   text-transform: uppercase;
   letter-spacing: 0.18em;
   font-weight: 600;
@@ -356,7 +356,7 @@
 .scoreboard-footer-text {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.6rem;
-  color: rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.5);
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }

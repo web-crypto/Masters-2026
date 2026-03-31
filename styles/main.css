@@ -619,8 +619,8 @@ a:hover {
 .countdown-label {
   font-family: var(--font-display);
   font-size: 0.75rem;
-  font-weight: 400;
-  color: var(--text-light);
+  font-weight: 600;
+  color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.25em;
   margin-bottom: var(--space-md);
@@ -757,7 +757,7 @@ a:hover {
 }
 
 .footer-note {
-  color: rgba(245, 240, 232, 0.5);
+  color: rgba(245, 240, 232, 0.7);
   font-size: 0.8rem;
   line-height: 1.8;
 }
