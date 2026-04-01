@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Vault — Masters Charity Pool History</title>
+  <meta name="description" content="Historical results from the Masters Charity Pool. 2024 and 2025 final standings, pick analysis, and year-over-year trends.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/leaderboard.css">
+  <style>
+    /* ── History Page Styles ── */
+    .year-tabs {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-sm);
+      margin-bottom: var(--space-xl);
+    }
+
+    .year-tab {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 10px 24px;
+      border: 2px solid var(--masters-green);
+      background: transparent;
+      color: var(--masters-green);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.2s, color 0.2s;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      min-height: 44px;
+    }
+
+    .year-tab.active {
+      background: var(--masters-green);
+      color: var(--cream);
+    }
+
+    .year-tab:hover:not(.active) {
+      background: rgba(26, 71, 49, 0.08);
+    }
+
+    .year-section { display: none; }
+    .year-section.active { display: block; }
+
+    /* Leaderboard table */
+    .history-table-wrapper {
+      background: var(--white);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      border: 1px solid rgba(0,0,0,0.06);
+      margin-bottom: var(--space-xl);
+    }
+
+    .history-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-body);
+    }
+
+    .history-table thead {
+      background: var(--masters-green);
+      color: var(--cream);
+    }
+
+    .history-table th {
+      padding: 12px 14px;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      text-align: left;
+      color: rgba(255,255,255,0.75);
+    }
+
+    .history-table th.text-right { text-align: right; }
+
+    .history-table td {
+      padding: 10px 14px;
+      font-size: 0.9rem;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .history-table tr:hover {
+      background: rgba(26, 71, 49, 0.03);
+    }
+
+    .history-table .pos-cell {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      color: var(--masters-green);
+      width: 50px;
+      text-align: center;
+    }
+
+    .history-table .earnings-cell {
+      font-family: var(--font-mono);
+      font-weight: 600;
+      color: var(--masters-green);
+      text-align: right;
+    }
+
+    .history-table .name-cell {
+      font-weight: 600;
+    }
+
+    .history-table .picks-cell {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+    }
+
+    .top3 .pos-cell {
+      color: var(--masters-gold);
+      font-size: 1.1rem;
+    }
+
+    /* Expandable row for picks */
+    .picks-row {
+      display: none;
+      background: rgba(245, 240, 232, 0.5);
+    }
+
+    .picks-row.open { display: table-row; }
+
+    .picks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 8px;
+      padding: 12px 14px;
+    }
+
+    .pick-chip {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      padding: 6px 10px;
+      border-radius: 4px;
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,0.08);
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .pick-chip .pick-name { font-weight: 600; color: var(--masters-green); }
+    .pick-chip .pick-earn { color: var(--text-secondary); }
+    .pick-chip .pick-earn.zero { color: var(--red-movement); }
+
+    /* Section cards (analytics-style) */
+    .vault-card {
+      background: var(--white);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      border: 1px solid rgba(0,0,0,0.06);
+      margin-bottom: var(--space-lg);
+    }
+
+    .vault-card-header {
+      background: var(--masters-green);
+      padding: var(--space-md) var(--space-lg);
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .vault-card-header h3 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: var(--cream);
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .vault-card-body {
+      padding: var(--space-lg);
+    }
+
+    /* Daily race chart */
+    .daily-race {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-md);
+    }
+
+    .daily-snapshot {
+      text-align: center;
+    }
+
+    .daily-snapshot h4 {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: var(--space-sm);
+      font-weight: 700;
+    }
+
+    .daily-entry {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 4px 8px;
+      font-size: 0.78rem;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+    }
+
+    .daily-entry:first-child {
+      font-weight: 700;
+      color: var(--masters-green);
+    }
+
+    .daily-entry .daily-earn {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-secondary);
+    }
+
+    /* Pick heatmap */
+    .heatmap-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .heatmap-table th {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      padding: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-secondary);
+      border-bottom: 2px solid rgba(0,0,0,0.1);
+      text-align: left;
+    }
+
+    .heatmap-table td {
+      padding: 6px 8px;
+      font-size: 0.82rem;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+    }
+
+    .heatmap-table .golfer-name {
+      font-weight: 600;
+    }
+
+    .heatmap-table .pick-count {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-align: center;
+      border-radius: 4px;
+      padding: 4px 8px;
+    }
+
+    .heatmap-table .earn-cell {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-align: right;
+    }
+
+    /* Fun facts */
+    .fun-fact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: var(--space-md);
+    }
+
+    .fun-fact-item {
+      padding: var(--space-md);
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 8px;
+      background: rgba(245, 240, 232, 0.3);
+    }
+
+    .fun-fact-label {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 4px;
+    }
+
+    .fun-fact-value {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--masters-green);
+    }
+
+    .fun-fact-detail {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      margin-top: 4px;
+    }
+
+    /* Loyalty section */
+    .loyalty-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--space-md);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .loyalty-card:last-child { border-bottom: none; }
+
+    .loyalty-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .loyalty-years {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-secondary);
+    }
+
+    .loyalty-badges {
+      display: flex;
+      gap: 6px;
+    }
+
+    .loyalty-badge {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      padding: 3px 8px;
+      border-radius: 3px;
+      font-weight: 700;
+    }
+
+    .loyalty-badge.rank-good { background: rgba(39, 174, 96, 0.12); color: #27ae60; }
+    .loyalty-badge.rank-mid { background: rgba(201, 168, 76, 0.15); color: var(--masters-gold-dim); }
+    .loyalty-badge.rank-bad { background: rgba(192, 57, 43, 0.1); color: #c0392b; }
+
+    /* Confidentiality notice */
+    .confidential-notice {
+      text-align: center;
+      padding: var(--space-lg);
+      color: var(--text-secondary);
+      font-style: italic;
+      font-size: 0.9rem;
+    }
+
+    .confidential-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      padding: 4px 12px;
+      background: rgba(0,0,0,0.05);
+      border-radius: 3px;
+      color: var(--text-light);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* Stats summary row */
+    .vault-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: var(--space-md);
+      margin-bottom: var(--space-xl);
+    }
+
+    .vault-stat {
+      text-align: center;
+      padding: var(--space-md);
+      background: var(--white);
+      border-radius: 8px;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .vault-stat .stat-value {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--masters-green);
+    }
+
+    .vault-stat .stat-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 4px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .daily-race { grid-template-columns: 1fr; }
+      .fun-fact-grid { grid-template-columns: 1fr; }
+      .vault-stats { grid-template-columns: repeat(2, 1fr); }
+      .picks-grid { grid-template-columns: 1fr 1fr; }
+      .history-table .picks-cell { display: none; }
+    }
+
+    @media (max-width: 480px) {
+      .year-tabs { flex-wrap: wrap; }
+      .vault-stats { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link visually-hidden">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo">
+        <div class="logo-crest">⛳</div>
+        <div class="logo-text">
+          <span class="logo-title">Masters Pool 2026</span>
+          <span class="logo-subtitle">Charity Tournament</span>
+        </div>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.main-nav').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="enter.html">Enter</a></li>
+          <li><a href="index.html">Leaderboard</a></li>
+          <li><a href="standings.html">Standings</a></li>
+          <li><a href="players.html">Players</a></li>
+          <li><a href="analytics.html">Analytics</a></li>
+          <li><a href="myteam.html">My Team</a></li>
+          <li><a href="predictions.html">Predictions</a></li>
+          <li><a href="highlights.html">Highlights</a></li>
+          <li><a href="history.html" class="active">History</a></li>
+          <li><a href="game.html">Mini Golf</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-botanical-right" aria-hidden="true"></div>
+
+  <section class="page-hero">
+    <h1>The Vault</h1>
+    <div class="hero-divider"></div>
+    <p class="hero-subtitle">Masters Pool History — How did your past picks hold up?</p>
+  </section>
+
+  <main id="main-content" class="main-content">
+    <!-- Year Tabs -->
+    <div class="year-tabs">
+      <button class="year-tab active" data-year="2025" onclick="switchYear(2025)">2025</button>
+      <button class="year-tab" data-year="2024" onclick="switchYear(2024)">2024</button>
+      <button class="year-tab" data-year="loyalty" onclick="switchYear('loyalty')">Year over Year</button>
+    </div>
+
+    <!-- 2025 Section -->
+    <div class="year-section active" id="section-2025">
+      <div class="vault-stats" id="stats-2025"></div>
+      <div class="vault-card">
+        <div class="vault-card-header"><h3>2025 Final Standings</h3></div>
+        <div class="vault-card-body" style="padding: 0;">
+          <div style="padding: var(--space-md) var(--space-lg);">
+            <input type="text" id="search-2025" placeholder="Search entries or players..." style="width:100%; padding:10px 14px; border:1px solid rgba(0,0,0,0.1); border-radius:4px; font-family:var(--font-body); font-size:0.9rem;" aria-label="Search 2025 standings">
+          </div>
+          <div class="history-table-wrapper" style="box-shadow:none; border:none; border-radius:0;">
+            <table class="history-table">
+              <thead>
+                <tr>
+                  <th style="width:50px;text-align:center">Pos</th>
+                  <th>Entry</th>
+                  <th class="text-right" style="width:130px">Earnings</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-2025"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Daily Race -->
+      <div class="vault-card">
+        <div class="vault-card-header"><h3>The Daily Race — 2025</h3></div>
+        <div class="vault-card-body">
+          <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:var(--space-md);">Top 10 standings as of each morning. Watch the lead change hands.</p>
+          <div class="daily-race" id="daily-2025"></div>
+        </div>
+      </div>
+
+      <!-- Pick Heatmap -->
+      <div class="vault-card">
+        <div class="vault-card-header"><h3>Pick Popularity — 2025</h3></div>
+        <div class="vault-card-body" id="heatmap-2025"></div>
+      </div>
+
+      <!-- Fun Facts -->
+      <div class="vault-card">
+        <div class="vault-card-header"><h3>Fun Facts — 2025</h3></div>
+        <div class="vault-card-body">
+          <div class="fun-fact-grid" id="facts-2025"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2024 Section -->
+    <div class="year-section" id="section-2024">
+      <div class="vault-stats" id="stats-2024"></div>
+      <div class="vault-card">
+        <div class="vault-card-header"><h3>2024 Final Standings</h3></div>
+        <div class="vault-card-body" style="padding: 0;">
+          <div style="padding: var(--space-md) var(--space-lg);">
+            <input type="text" id="search-2024" placeholder="Search entries or players..." style="width:100%; padding:10px 14px; border:1px solid rgba(0,0,0,0.1); border-radius:4px; font-family:var(--font-body); font-size:0.9rem;" aria-label="Search 2024 standings">
+          </div>
+          <div class="history-table-wrapper" style="box-shadow:none; border:none; border-radius:0;">
+            <table class="history-table">
+              <thead>
+                <tr>
+                  <th style="width:50px;text-align:center">Pos</th>
+                  <th>Entry</th>
+                  <th class="text-right" style="width:130px">Earnings</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-2024"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Daily Race -->
+      <div class="vault-card">
+        <div class="vault-card-header"><h3>The Daily Race — 2024</h3></div>
+        <div class="vault-card-body">
+          <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:var(--space-md);">Top 10 standings as of each morning. Watch the lead change hands.</p>
+          <div class="daily-race" id="daily-2024"></div>
+        </div>
+      </div>
+
+      <!-- Pick Heatmap -->
+      <div class="vault-card">
+        <div class="vault-card-header"><h3>Pick Popularity — 2024</h3></div>
+        <div class="vault-card-body" id="heatmap-2024"></div>
+      </div>
+
+      <!-- Fun Facts -->
+      <div class="vault-card">
+        <div class="vault-card-header"><h3>Fun Facts — 2024</h3></div>
+        <div class="vault-card-body">
+          <div class="fun-fact-grid" id="facts-2024"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Year over Year Section -->
+    <div class="year-section" id="section-loyalty">
+      <div class="vault-stats" id="stats-loyalty"></div>
+
+      <!-- Returning Players -->
+      <div class="vault-card">
+        <div class="vault-card-header"><h3>Returning Poolies</h3></div>
+        <div class="vault-card-body" style="padding:0;" id="loyalty-list"></div>
+      </div>
+
+      <!-- 2026 teaser -->
+      <div class="confidential-notice">
+        <span class="confidential-badge">2026 picks revealed April 9</span>
+        <p style="margin-top:var(--space-sm);">Current year picks remain confidential until the tournament begins.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">⛳ Masters Charity Pool 2026</div>
+      <div class="footer-charity">Supporting the Ride to Conquer Cancer</div>
+      <div class="footer-note">
+        $30 entry &middot; $5/entry to charity<br>
+        Not affiliated with Augusta National Golf Club or the Masters Tournament.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Data: historical only, NO 2026 picks -->
+  <script src="data/pool-2024.js"></script>
+  <script src="data/pool-2025.js"></script>
+  <script src="data/owner-aliases.js"></script>
+  <script>
+    // ── Helpers ──
+    function fmt(n) {
+      if (n >= 1000000) return '$' + (n / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+      if (n >= 1000) return '$' + Math.round(n / 1000) + 'K';
+      return '$' + n.toLocaleString();
+    }
+
+    function getCanonical(name) {
+      return ownerAliases[name] || name;
+    }
+
+    function getAllPicks(entry) {
+      return Object.values(entry.players).map(p => p.name).filter(Boolean);
+    }
+
+    function getPicksWithEarnings(entry) {
+      return Object.entries(entry.players).map(([group, p]) => ({
+        group: group,
+        name: p.name,
+        earnings: p.earnings
+      })).filter(p => p.name);
+    }
+
+    // ── Tab switching ──
+    function switchYear(year) {
+      document.querySelectorAll('.year-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.year-section').forEach(s => s.classList.remove('active'));
+      document.querySelector('[data-year="' + year + '"]').classList.add('active');
+      document.getElementById('section-' + year).classList.add('active');
+    }
+
+    // ── Render leaderboard table ──
+    function renderTable(pool, tbodyId, searchId) {
+      const tbody = document.getElementById(tbodyId);
+      const entries = pool.entries;
+
+      function render(filter) {
+        const f = (filter || '').toLowerCase();
+        const filtered = entries.filter(e => {
+          if (!f) return true;
+          const picks = getAllPicks(e).join(' ').toLowerCase();
+          return e.name.toLowerCase().includes(f) || picks.includes(f);
+        });
+
+        tbody.innerHTML = filtered.map(e => {
+          const isTop3 = e.finalRank <= 3;
+          const picks = getPicksWithEarnings(e);
+          return `
+            <tr class="${isTop3 ? 'top3' : ''}" style="cursor:pointer" onclick="this.nextElementSibling.classList.toggle('open')">
+              <td class="pos-cell">${e.finalRank}</td>
+              <td class="name-cell">${e.name}</td>
+              <td class="earnings-cell">${fmt(e.totalEarnings)}</td>
+            </tr>
+            <tr class="picks-row">
+              <td colspan="3">
+                <div class="picks-grid">
+                  ${picks.map(p => `
+                    <div class="pick-chip">
+                      <span class="pick-name">${p.name}</span>
+                      <span class="pick-earn ${p.earnings === 0 ? 'zero' : ''}">${fmt(p.earnings)}</span>
+                    </div>
+                  `).join('')}
+                </div>
+              </td>
+            </tr>
+          `;
+        }).join('');
+      }
+
+      render('');
+      if (searchId) {
+        document.getElementById(searchId).addEventListener('input', function() {
+          render(this.value);
+        });
+      }
+    }
+
+    // ── Render stats summary ──
+    function renderStats(pool, containerId) {
+      const container = document.getElementById(containerId);
+      const entries = pool.entries;
+      const totalPrize = entries.reduce((s, e) => s + e.totalEarnings, 0);
+      const avgEarnings = Math.round(totalPrize / entries.length);
+      const spread = entries[0].totalEarnings - entries[entries.length - 1].totalEarnings;
+
+      container.innerHTML = `
+        <div class="vault-stat"><div class="stat-value">${entries.length}</div><div class="stat-label">Entries</div></div>
+        <div class="vault-stat"><div class="stat-value">${fmt(entries[0].totalEarnings)}</div><div class="stat-label">Winner</div></div>
+        <div class="vault-stat"><div class="stat-value">${fmt(avgEarnings)}</div><div class="stat-label">Average</div></div>
+        <div class="vault-stat"><div class="stat-value">${fmt(spread)}</div><div class="stat-label">1st to Last</div></div>
+      `;
+    }
+
+    // ── Render daily race ──
+    function renderDaily(pool, containerId) {
+      const container = document.getElementById(containerId);
+      const labels = { fridayMorning: 'Friday AM', saturdayMorning: 'Saturday AM', sundayMorning: 'Sunday AM' };
+      let html = '';
+      for (const [key, label] of Object.entries(labels)) {
+        const standings = pool.dailyStandings[key] || [];
+        html += `<div class="daily-snapshot"><h4>${label}</h4>`;
+        standings.forEach(e => {
+          html += `<div class="daily-entry"><span>${e.name}</span><span class="daily-earn">${fmt(e.earnings)}</span></div>`;
+        });
+        if (!standings.length) html += '<div style="color:var(--text-light); font-size:0.85rem; padding:8px;">No data</div>';
+        html += '</div>';
+      }
+      container.innerHTML = html;
+    }
+
+    // ── Render pick heatmap ──
+    function renderHeatmap(pool, containerId) {
+      const container = document.getElementById(containerId);
+      const entries = pool.entries;
+
+      // Count picks per golfer per group
+      const golferData = {};
+      entries.forEach(e => {
+        Object.entries(e.players).forEach(([group, p]) => {
+          if (!p.name) return;
+          const key = p.name;
+          if (!golferData[key]) golferData[key] = { name: p.name, count: 0, earnings: p.earnings, groups: new Set() };
+          golferData[key].count++;
+          golferData[key].groups.add(group.replace(/[0-9]/g, ''));
+        });
+      });
+
+      const golfers = Object.values(golferData).sort((a, b) => b.count - a.count);
+      const maxCount = golfers[0]?.count || 1;
+
+      let html = '<table class="heatmap-table"><thead><tr><th>Golfer</th><th style="text-align:center">Times Picked</th><th style="text-align:center">% of Pool</th><th style="text-align:right">Earnings</th></tr></thead><tbody>';
+      golfers.slice(0, 30).forEach(g => {
+        const pct = Math.round((g.count / entries.length) * 100);
+        const alpha = Math.max(0.08, g.count / maxCount * 0.4);
+        const earnColor = g.earnings === 0 ? 'color:var(--red-movement)' : '';
+        html += `<tr>
+          <td class="golfer-name">${g.name}</td>
+          <td class="pick-count" style="background:rgba(26,71,49,${alpha})">${g.count}</td>
+          <td class="pick-count">${pct}%</td>
+          <td class="earn-cell" style="${earnColor}">${fmt(g.earnings)}</td>
+        </tr>`;
+      });
+      html += '</tbody></table>';
+      container.innerHTML = html;
+    }
+
+    // ── Render fun facts ──
+    function renderFacts(pool, containerId) {
+      const container = document.getElementById(containerId);
+      const entries = pool.entries;
+
+      // Best single player pick
+      let bestPick = { name: '', golfer: '', earnings: 0 };
+      let worstPick = { name: '', golfer: '', earnings: Infinity, found: false };
+      let totalGolfersAtZero = 0;
+      const golferEarnings = {};
+
+      entries.forEach(e => {
+        Object.values(e.players).forEach(p => {
+          if (!p.name) return;
+          golferEarnings[p.name] = p.earnings;
+          if (p.earnings > bestPick.earnings) {
+            bestPick = { name: e.name, golfer: p.name, earnings: p.earnings };
+          }
+          if (p.earnings === 0) totalGolfersAtZero++;
+        });
+      });
+
+      // Most popular pick that earned $0
+      const pickCounts = {};
+      entries.forEach(e => {
+        Object.values(e.players).forEach(p => {
+          if (!p.name) return;
+          pickCounts[p.name] = (pickCounts[p.name] || 0) + 1;
+        });
+      });
+      const zeroPicks = Object.entries(pickCounts)
+        .filter(([name]) => golferEarnings[name] === 0)
+        .sort((a, b) => b[1] - a[1]);
+
+      // Best dark horse (picked by fewest, earned the most)
+      const darkHorses = Object.entries(pickCounts)
+        .filter(([name, count]) => count <= 3 && golferEarnings[name] > 0)
+        .map(([name, count]) => ({ name, count, earnings: golferEarnings[name] }))
+        .sort((a, b) => b.earnings - a.earnings);
+
+      // Closest race (smallest gap between adjacent positions)
+      let closestRace = { gap: Infinity, pos: 0, name1: '', name2: '' };
+      for (let i = 0; i < entries.length - 1; i++) {
+        const gap = entries[i].totalEarnings - entries[i + 1].totalEarnings;
+        if (gap < closestRace.gap && gap > 0) {
+          closestRace = { gap, pos: i + 1, name1: entries[i].name, name2: entries[i + 1].name };
+        }
+      }
+
+      let html = '';
+      html += `<div class="fun-fact-item"><div class="fun-fact-label">Best Single Pick</div><div class="fun-fact-value">${fmt(bestPick.earnings)}</div><div class="fun-fact-detail">${bestPick.golfer} (picked by ${bestPick.name})</div></div>`;
+      if (zeroPicks.length) {
+        html += `<div class="fun-fact-item"><div class="fun-fact-label">Most Popular Bust</div><div class="fun-fact-value">${zeroPicks[0][0]}</div><div class="fun-fact-detail">Picked by ${zeroPicks[0][1]} entries. Earned $0.</div></div>`;
+      }
+      if (darkHorses.length) {
+        html += `<div class="fun-fact-item"><div class="fun-fact-label">Best Dark Horse</div><div class="fun-fact-value">${darkHorses[0].name}</div><div class="fun-fact-detail">Only ${darkHorses[0].count} pick${darkHorses[0].count > 1 ? 's' : ''}. Earned ${fmt(darkHorses[0].earnings)}.</div></div>`;
+      }
+      html += `<div class="fun-fact-item"><div class="fun-fact-label">Zero Earners</div><div class="fun-fact-value">${totalGolfersAtZero}</div><div class="fun-fact-detail">Total $0 golfer picks across all entries</div></div>`;
+      html += `<div class="fun-fact-item"><div class="fun-fact-label">Tightest Race</div><div class="fun-fact-value">${fmt(closestRace.gap)}</div><div class="fun-fact-detail">${closestRace.name1} vs ${closestRace.name2} (Pos ${closestRace.pos}-${closestRace.pos + 1})</div></div>`;
+      html += `<div class="fun-fact-item"><div class="fun-fact-label">Winner's Edge</div><div class="fun-fact-value">${fmt(entries[0].totalEarnings - entries[1].totalEarnings)}</div><div class="fun-fact-detail">${entries[0].name} over ${entries[1].name}</div></div>`;
+      container.innerHTML = html;
+    }
+
+    // ── Render loyalty / Year-over-Year ──
+    function renderLoyalty() {
+      const statsContainer = document.getElementById('stats-loyalty');
+      const listContainer = document.getElementById('loyalty-list');
+
+      // Build canonical owner -> year data
+      const ownerData = {};
+
+      function processEntries(pool) {
+        pool.entries.forEach(e => {
+          const canon = getCanonical(e.name);
+          if (!ownerData[canon]) ownerData[canon] = {};
+          if (!ownerData[canon][pool.year]) ownerData[canon][pool.year] = [];
+          ownerData[canon][pool.year].push(e);
+        });
+      }
+
+      processEntries(pool2024);
+      processEntries(pool2025);
+
+      // Find returning poolies (appeared in both years)
+      const returning = Object.entries(ownerData)
+        .filter(([_, years]) => years[2024] && years[2025])
+        .map(([canon, years]) => {
+          const best2024 = years[2024].sort((a, b) => a.finalRank - b.finalRank)[0];
+          const best2025 = years[2025].sort((a, b) => a.finalRank - b.finalRank)[0];
+          return {
+            name: canon,
+            entries2024: years[2024].length,
+            entries2025: years[2025].length,
+            bestRank2024: best2024.finalRank,
+            bestRank2025: best2025.finalRank,
+            bestEarnings2024: best2024.totalEarnings,
+            bestEarnings2025: best2025.totalEarnings,
+            improved: best2025.finalRank < best2024.finalRank,
+            // Count golfers picked in both years
+            loyalPicks: (() => {
+              const picks24 = new Set();
+              years[2024].forEach(e => getAllPicks(e).forEach(p => picks24.add(p)));
+              const picks25 = new Set();
+              years[2025].forEach(e => getAllPicks(e).forEach(p => picks25.add(p)));
+              return [...picks24].filter(p => picks25.has(p)).length;
+            })()
+          };
+        })
+        .sort((a, b) => a.bestRank2025 - b.bestRank2025);
+
+      const totalOwners2024 = new Set(pool2024.entries.map(e => getCanonical(e.name))).size;
+      const totalOwners2025 = new Set(pool2025.entries.map(e => getCanonical(e.name))).size;
+      const improvedCount = returning.filter(r => r.improved).length;
+
+      statsContainer.innerHTML = `
+        <div class="vault-stat"><div class="stat-value">${returning.length}</div><div class="stat-label">Returning Poolies</div></div>
+        <div class="vault-stat"><div class="stat-value">${totalOwners2024}</div><div class="stat-label">2024 Unique Owners</div></div>
+        <div class="vault-stat"><div class="stat-value">${totalOwners2025}</div><div class="stat-label">2025 Unique Owners</div></div>
+        <div class="vault-stat"><div class="stat-value">${improvedCount}</div><div class="stat-label">Improved in 2025</div></div>
+      `;
+
+      let html = '';
+      returning.forEach(r => {
+        const rankDelta = r.bestRank2024 - r.bestRank2025;
+        const rankClass = rankDelta > 10 ? 'rank-good' : (rankDelta < -10 ? 'rank-bad' : 'rank-mid');
+        const arrow = rankDelta > 0 ? '&#9650;' + rankDelta : (rankDelta < 0 ? '&#9660;' + Math.abs(rankDelta) : '&#8212;');
+
+        html += `
+          <div class="loyalty-card">
+            <div>
+              <div class="loyalty-name">${r.name}</div>
+              <div class="loyalty-years">
+                2024: #${r.bestRank2024} (${fmt(r.bestEarnings2024)})${r.entries2024 > 1 ? ' &middot; ' + r.entries2024 + ' entries' : ''}
+                &nbsp;&rarr;&nbsp;
+                2025: #${r.bestRank2025} (${fmt(r.bestEarnings2025)})${r.entries2025 > 1 ? ' &middot; ' + r.entries2025 + ' entries' : ''}
+              </div>
+            </div>
+            <div class="loyalty-badges">
+              <span class="loyalty-badge ${rankClass}">${arrow}</span>
+              ${r.loyalPicks > 0 ? '<span class="loyalty-badge rank-mid">' + r.loyalPicks + ' repeat picks</span>' : ''}
+            </div>
+          </div>
+        `;
+      });
+      listContainer.innerHTML = html;
+    }
+
+    // ── Initialize ──
+    renderStats(pool2025, 'stats-2025');
+    renderTable(pool2025, 'tbody-2025', 'search-2025');
+    renderDaily(pool2025, 'daily-2025');
+    renderHeatmap(pool2025, 'heatmap-2025');
+    renderFacts(pool2025, 'facts-2025');
+
+    renderStats(pool2024, 'stats-2024');
+    renderTable(pool2024, 'tbody-2024', 'search-2024');
+    renderDaily(pool2024, 'daily-2024');
+    renderHeatmap(pool2024, 'heatmap-2024');
+    renderFacts(pool2024, 'facts-2024');
+
+    renderLoyalty();
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
