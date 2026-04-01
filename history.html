@@ -832,9 +832,7 @@
       const container = document.getElementById(containerId);
       const entries = pool.entries;
 
-      // Best single player pick
-      let bestPick = { name: '', golfer: '', earnings: 0 };
-      let worstPick = { name: '', golfer: '', earnings: Infinity, found: false };
+      // Highest-earning golfer
       let totalGolfersAtZero = 0;
       const golferEarnings = {};
 
@@ -842,9 +840,6 @@
         Object.values(e.players).forEach(p => {
           if (!p.name) return;
           golferEarnings[p.name] = p.earnings;
-          if (p.earnings > bestPick.earnings) {
-            bestPick = { name: e.name, golfer: p.name, earnings: p.earnings };
-          }
           if (p.earnings === 0) totalGolfersAtZero++;
         });
       });
@@ -876,8 +871,12 @@
         }
       }
 
+      // Find the highest-earning golfer and how many entries picked them
+      const topGolfer = Object.entries(golferEarnings).sort((a, b) => b[1] - a[1])[0];
+      const topGolferCount = pickCounts[topGolfer[0]] || 0;
+
       let html = '';
-      html += `<div class="fun-fact-item"><div class="fun-fact-label">Best Single Pick</div><div class="fun-fact-value">${fmt(bestPick.earnings)}</div><div class="fun-fact-detail">${bestPick.golfer} (picked by ${bestPick.name})</div></div>`;
+      html += `<div class="fun-fact-item"><div class="fun-fact-label">Highest Earner</div><div class="fun-fact-value">${topGolfer[0]}</div><div class="fun-fact-detail">${fmt(topGolfer[1])} earnings. Picked by ${topGolferCount} of ${entries.length} entries.</div></div>`;
       if (zeroPicks.length) {
         html += `<div class="fun-fact-item"><div class="fun-fact-label">Most Popular Bust</div><div class="fun-fact-value">${zeroPicks[0][0]}</div><div class="fun-fact-detail">Picked by ${zeroPicks[0][1]} entries. Earned $0.</div></div>`;
       }
