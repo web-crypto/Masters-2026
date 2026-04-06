@@ -3,7 +3,7 @@
 // Entries loaded from Google Form responses — replace placeholder below
 
 const poolData = {
-  lastUpdated: "2026-04-06T09:31:16",
+  lastUpdated: "2026-04-06T10:01:19",
   tournamentYear: 2026,
   tournamentName: "The Masters Tournament",
   charityName: "Ride to Conquer Cancer",
