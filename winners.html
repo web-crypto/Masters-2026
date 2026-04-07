@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Winners Circle — Masters Charity Pool</title>
+  <meta name="description" content="The Winners Circle. Every Masters Charity Pool champion, immortalized in green.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+  <style>
+    /* ── Winners Circle Styles ── */
+
+    .winners-intro {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto var(--space-xl);
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* Trophy room layout */
+    .trophy-room {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--space-xl);
+      max-width: 1100px;
+      margin: 0 auto var(--space-2xl);
+      padding: 0 var(--space-md);
+    }
+
+    /* Individual jacket display */
+    .jacket-case {
+      position: relative;
+      width: 300px;
+      background: linear-gradient(170deg, var(--cream-light) 0%, var(--cream-dark) 100%);
+      border: 1px solid rgba(26, 71, 49, 0.15);
+      border-radius: 8px;
+      padding: var(--space-lg) var(--space-lg) var(--space-md);
+      text-align: center;
+      box-shadow:
+        0 4px 20px rgba(0,0,0,0.08),
+        inset 0 1px 0 rgba(255,255,255,0.6);
+      transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+    }
+
+    .jacket-case:hover {
+      transform: translateY(-4px);
+      box-shadow:
+        0 8px 32px rgba(0,0,0,0.12),
+        inset 0 1px 0 rgba(255,255,255,0.6);
+    }
+
+    /* Year ribbon */
+    .jacket-year {
+      position: absolute;
+      top: -1px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--masters-green);
+      color: var(--masters-gold-light);
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      padding: 6px 24px;
+      border-radius: 0 0 6px 6px;
+    }
+
+    /* Green jacket SVG */
+    .jacket-display {
+      position: relative;
+      width: 180px;
+      height: 200px;
+      margin: var(--space-lg) auto var(--space-md);
+    }
+
+    .jacket-svg {
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 4px 12px rgba(26, 71, 49, 0.3));
+    }
+
+    /* Champion name on the jacket */
+    .jacket-nameplate {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--masters-gold);
+      color: var(--masters-green-deep);
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 12px;
+      border-radius: 2px;
+      white-space: nowrap;
+      max-width: 160px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* Champion details */
+    .champion-name {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--masters-green);
+      margin-bottom: var(--space-xs);
+      line-height: 1.3;
+    }
+
+    .champion-earnings {
+      font-family: var(--font-mono);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--masters-gold-dim);
+      margin-bottom: var(--space-sm);
+    }
+
+    .champion-meta {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    /* Top 5 mini-leaderboard */
+    .jacket-top5 {
+      margin-top: var(--space-md);
+      padding-top: var(--space-sm);
+      border-top: 1px solid rgba(26, 71, 49, 0.1);
+      text-align: left;
+    }
+
+    .jacket-top5-title {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: var(--space-xs);
+    }
+
+    .top5-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 3px 0;
+      font-size: 0.82rem;
+    }
+
+    .top5-rank {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      color: var(--masters-green-light);
+      width: 20px;
+      flex-shrink: 0;
+    }
+
+    .top5-name {
+      font-family: var(--font-body);
+      color: var(--text-primary);
+      flex: 1;
+      padding: 0 var(--space-xs);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .top5-earnings {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      flex-shrink: 0;
+    }
+
+    .top5-row:first-child {
+      font-weight: 600;
+    }
+
+    /* Empty jacket (future/unknown) */
+    .jacket-case.future {
+      opacity: 0.5;
+      border-style: dashed;
+    }
+
+    .jacket-case.future .jacket-svg {
+      filter: drop-shadow(0 4px 12px rgba(26, 71, 49, 0.15)) grayscale(0.5);
+      opacity: 0.6;
+    }
+
+    /* Pool stats banner */
+    .pool-legacy {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-xl);
+      flex-wrap: wrap;
+      max-width: 800px;
+      margin: 0 auto var(--space-xl);
+      padding: var(--space-lg);
+      background: var(--masters-green);
+      border-radius: 8px;
+      color: var(--cream);
+    }
+
+    .legacy-stat {
+      text-align: center;
+    }
+
+    .legacy-stat-value {
+      font-family: var(--font-mono);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--masters-gold-light);
+    }
+
+    .legacy-stat-label {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      color: var(--cream-dark);
+      margin-top: 2px;
+    }
+
+    /* Responsive */
+    @media (max-width: 720px) {
+      .jacket-case { width: 100%; max-width: 340px; }
+      .trophy-room { gap: var(--space-lg); }
+      .pool-legacy { gap: var(--space-md); padding: var(--space-md); }
+      .legacy-stat-value { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo">
+        <div class="logo-crest">⛳</div>
+        <div class="logo-text">
+          <span class="logo-title">Masters Pool 2026</span>
+          <span class="logo-subtitle">Charity Tournament</span>
+        </div>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.main-nav').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="enter.html">Enter</a></li>
+          <li><a href="index.html">Leaderboard</a></li>
+          <li><a href="standings.html">Standings</a></li>
+          <li><a href="players.html">Players</a></li>
+          <li><a href="analytics.html">Analytics</a></li>
+          <li><a href="myteam.html">My Team</a></li>
+          <li><a href="predictions.html">Predictions</a></li>
+          <li><a href="highlights.html">Highlights</a></li>
+          <li><a href="history.html">History</a></li>
+          <li><a href="winners.html" class="active">Winners</a></li>
+          <li><a href="game.html">Mini Golf</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-botanical-right" aria-hidden="true"></div>
+
+  <section class="page-hero">
+    <h1>The Winners Circle</h1>
+    <div class="hero-divider"></div>
+    <p class="hero-subtitle">Every champion earns a green jacket. These are theirs.</p>
+  </section>
+
+  <main class="main-content">
+
+    <!-- Pool Legacy Stats -->
+    <div class="pool-legacy">
+      <div class="legacy-stat">
+        <div class="legacy-stat-value" id="legacy-years">4</div>
+        <div class="legacy-stat-label">Tournaments</div>
+      </div>
+      <div class="legacy-stat">
+        <div class="legacy-stat-value" id="legacy-entries">213+</div>
+        <div class="legacy-stat-label">Total Entries</div>
+      </div>
+      <div class="legacy-stat">
+        <div class="legacy-stat-value" id="legacy-charity">$1,000+</div>
+        <div class="legacy-stat-label">Raised for Charity</div>
+      </div>
+      <div class="legacy-stat">
+        <div class="legacy-stat-value">4</div>
+        <div class="legacy-stat-label">Green Jackets Awarded</div>
+      </div>
+    </div>
+
+    <p class="winners-intro">
+      In the tradition of Augusta National, each year's champion is draped in green.
+      Their jackets hang here in perpetuity.
+    </p>
+
+    <!-- Trophy Room -->
+    <div class="trophy-room" id="trophy-room"></div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">⛳ Masters Charity Pool 2026</div>
+      <div class="footer-charity">Supporting the Ride to Conquer Cancer</div>
+      <div class="footer-note">
+        $30 entry &middot; $5/entry to charity<br>
+        Not affiliated with Augusta National Golf Club or the Masters Tournament.
+      </div>
+    </div>
+  </footer>
+
+  <script src="data/pool-2024.js"></script>
+  <script src="data/pool-2025.js"></script>
+  <script>
+    // ── Winners data ──
+    // Full data from pool files for 2024 & 2025; manual entries for earlier years
+    const champions = [
+      {
+        year: 2025,
+        name: 'I like big putts and I cannot lie',
+        earnings: 8381100,
+        entries: 89,
+        prizeWon: '$1,000',
+        top5: getTop5(pool2025),
+      },
+      {
+        year: 2024,
+        name: 'MacAtk 1',
+        earnings: 6662900,
+        entries: 82,
+        prizeWon: '$1,000',
+        top5: getTop5(pool2024),
+      },
+      {
+        year: 2023,
+        name: 'Josh Marks',
+        earnings: null,
+        entries: null,
+        prizeWon: null,
+        top5: null,
+      },
+      {
+        year: 2022,
+        name: 'Jim Coughlin',
+        earnings: null,
+        entries: null,
+        prizeWon: null,
+        top5: null,
+      },
+    ];
+
+    function getTop5(pool) {
+      if (!pool || !pool.entries) return null;
+      return pool.entries
+        .sort((a, b) => a.finalRank - b.finalRank)
+        .slice(0, 5)
+        .map(e => ({ name: e.name, earnings: e.totalEarnings, rank: e.finalRank }));
+    }
+
+    function fmtMoney(cents) {
+      if (!cents) return '--';
+      return '$' + (cents / 100).toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+    }
+
+    // The data is already in dollars, not cents
+    function fmtEarnings(val) {
+      if (!val) return '--';
+      return '$' + val.toLocaleString('en-US');
+    }
+
+    function jacketSVG(color) {
+      // Green jacket on a hanger
+      return `<svg class="jacket-svg" viewBox="0 0 180 200" xmlns="http://www.w3.org/2000/svg">
+        <!-- Hanger -->
+        <path d="M90 8 C90 8 90 2 90 2 C90 -2 96 -2 96 2 L96 8" fill="none" stroke="#8B7355" stroke-width="2.5"/>
+        <path d="M50 35 Q90 10 130 35" fill="none" stroke="#8B7355" stroke-width="3" stroke-linecap="round"/>
+        <!-- Jacket body -->
+        <path d="M40 40 L30 180 Q30 192 50 192 L130 192 Q150 192 150 180 L140 40 Q130 32 90 28 Q50 32 40 40Z"
+              fill="${color}" stroke="${color}" stroke-width="1"/>
+        <!-- Lapels -->
+        <path d="M90 28 L70 70 L90 90 L110 70 Z" fill="#0f2e1f" opacity="0.3"/>
+        <!-- Left lapel -->
+        <path d="M90 28 Q85 45 70 70 L90 88" fill="${color}" stroke="#0f2e1f" stroke-width="1.5" fill-opacity="0.9"/>
+        <!-- Right lapel -->
+        <path d="M90 28 Q95 45 110 70 L90 88" fill="${color}" stroke="#0f2e1f" stroke-width="1.5" fill-opacity="0.9"/>
+        <!-- Collar -->
+        <path d="M75 30 Q90 22 105 30" fill="#0f2e1f" opacity="0.4" stroke="none"/>
+        <!-- Breast pocket -->
+        <rect x="95" y="80" width="22" height="2" rx="1" fill="#0f2e1f" opacity="0.2"/>
+        <!-- Buttons -->
+        <circle cx="90" cy="100" r="3" fill="#c9a84c" opacity="0.8"/>
+        <circle cx="90" cy="120" r="3" fill="#c9a84c" opacity="0.8"/>
+        <circle cx="90" cy="140" r="3" fill="#c9a84c" opacity="0.8"/>
+        <!-- Sleeves -->
+        <path d="M40 40 L15 110 Q12 120 22 122 L38 115 L42 70" fill="${color}" stroke="${color}" stroke-width="1"/>
+        <path d="M140 40 L165 110 Q168 120 158 122 L142 115 L138 70" fill="${color}" stroke="${color}" stroke-width="1"/>
+        <!-- Sleeve cuffs -->
+        <path d="M15 110 Q12 120 22 122 L38 115" fill="none" stroke="#0f2e1f" stroke-width="1" opacity="0.3"/>
+        <path d="M165 110 Q168 120 158 122 L142 115" fill="none" stroke="#0f2e1f" stroke-width="1" opacity="0.3"/>
+        <!-- Augusta patch hint -->
+        <circle cx="60" cy="85" r="8" fill="#c9a84c" opacity="0.15"/>
+        <text x="60" y="88" text-anchor="middle" font-size="7" fill="#c9a84c" opacity="0.5" font-family="serif">A</text>
+      </svg>`;
+    }
+
+    function renderChampion(champ) {
+      const isFuture = !champ.earnings && champ.name === 'TBD';
+      const caseClass = isFuture ? 'jacket-case future' : 'jacket-case';
+
+      let top5HTML = '';
+      if (champ.top5) {
+        const rows = champ.top5.map(e =>
+          `<div class="top5-row">
+            <span class="top5-rank">${e.rank}</span>
+            <span class="top5-name">${e.name}</span>
+            <span class="top5-earnings">${fmtEarnings(e.earnings)}</span>
+          </div>`
+        ).join('');
+        top5HTML = `
+          <div class="jacket-top5">
+            <div class="jacket-top5-title">Final Top 5</div>
+            ${rows}
+          </div>`;
+      }
+
+      const displayName = champ.name.length > 20
+        ? champ.name.substring(0, 18) + '...'
+        : champ.name;
+
+      return `
+        <div class="${caseClass}">
+          <div class="jacket-year">${champ.year}</div>
+          <div class="jacket-display">
+            ${jacketSVG('#2a6b4a')}
+            <div class="jacket-nameplate">${displayName}</div>
+          </div>
+          <div class="champion-name">${champ.name}</div>
+          <div class="champion-earnings">${fmtEarnings(champ.earnings)}</div>
+          <div class="champion-meta">
+            ${champ.entries ? champ.entries + ' entries' : ''}
+            ${champ.prizeWon ? ' &middot; Won ' + champ.prizeWon : ''}
+          </div>
+          ${top5HTML}
+        </div>`;
+    }
+
+    // Render all jackets
+    const room = document.getElementById('trophy-room');
+    room.innerHTML = champions.map(renderChampion).join('');
+  </script>
+</body>
+</html>
