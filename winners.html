@@ -291,8 +291,8 @@
         <div class="legacy-stat-label">Green Jackets Awarded</div>
       </div>
       <div class="legacy-stat">
-        <div class="legacy-stat-value">500+</div>
-        <div class="legacy-stat-label">All-Time Entries</div>
+        <div class="legacy-stat-value">$1,600+</div>
+        <div class="legacy-stat-label">Raised for RTCC</div>
       </div>
       <div class="legacy-stat">
         <div class="legacy-stat-value">2016</div>
@@ -333,7 +333,8 @@
         name: 'I like big putts and I cannot lie',
         earnings: 8381100,
         entries: 89,
-        prizeWon: '$1,000',
+        prizeWon: '$900',
+        charityRaised: '$435',
         top5: getTop5(pool2025),
       },
       {
@@ -341,7 +342,8 @@
         name: 'MacAtk 1',
         earnings: 6662900,
         entries: 82,
-        prizeWon: '$1,000',
+        prizeWon: '$1,025',
+        charityRaised: '$410',
         top5: getTop5(pool2024),
       },
       {
@@ -349,7 +351,8 @@
         name: 'Josh Marks',
         earnings: 6826380,
         entries: 85,
-        prizeWon: '$1,000',
+        prizeWon: null,
+        charityRaised: '$425',
         top5: [
           { rank: 1, name: 'Josh Marks', earnings: 6826380 },
           { rank: 2, name: 'Jared Doyle', earnings: 6355500 },
@@ -364,6 +367,7 @@
         earnings: null,
         entries: null,
         prizeWon: null,
+        charityRaised: '$360',
         top5: null,
       },
       {
@@ -477,6 +481,7 @@
           <div class="champion-meta">
             ${champ.entries ? champ.entries + ' entries' : ''}
             ${champ.prizeWon ? ' &middot; Won ' + champ.prizeWon : ''}
+            ${champ.charityRaised ? '<br>Raised ' + champ.charityRaised + ' for RTCC' : ''}
             ${champ.note ? '<br>' + champ.note : ''}
           </div>
           ${top5HTML}
