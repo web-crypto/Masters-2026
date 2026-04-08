@@ -3,15 +3,15 @@
 // Entries loaded from Google Form responses — replace placeholder below
 
 const poolData = {
-  lastUpdated: "2026-04-07T13:50:28",
+  lastUpdated: "2026-04-08T12:13:36",
   tournamentYear: 2026,
   tournamentName: "The Masters Tournament",
   charityName: "Ride to Conquer Cancer",
   entryFee: 30,
   charityPerEntry: 5,
-  totalEntries: 42,
-  totalCharityRaised: 210,  // 2 × $5
-  prizePool: 1050,           // (2 × $30) - $10
+  totalEntries: 51,
+  totalCharityRaised: 255,  // 2 × $5
+  prizePool: 1275,           // (2 × $30) - $10
   payoutStructure: {
     first: 1000,
     second: 500,
