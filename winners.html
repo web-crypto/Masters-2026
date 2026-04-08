@@ -198,6 +198,32 @@
       opacity: 0.6;
     }
 
+    /* Skipped year (COVID) */
+    .jacket-case.skipped {
+      opacity: 0.45;
+      border-style: dashed;
+      border-color: rgba(26, 71, 49, 0.2);
+    }
+
+    .jacket-case.skipped .jacket-img {
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.1)) grayscale(1);
+      opacity: 0.35;
+    }
+
+    .jacket-case.skipped .jacket-nameplate {
+      display: none;
+    }
+
+    .skipped-label {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-top: var(--space-sm);
+    }
+
     /* Pool stats banner */
     .pool-legacy {
       display: flex;
@@ -283,7 +309,7 @@
     <!-- Pool Legacy Stats -->
     <div class="pool-legacy">
       <div class="legacy-stat">
-        <div class="legacy-stat-value">11</div>
+        <div class="legacy-stat-value">10</div>
         <div class="legacy-stat-label">Seasons</div>
       </div>
       <div class="legacy-stat">
@@ -386,12 +412,13 @@
       },
       {
         year: 2020,
-        name: 'TBD',
+        name: 'No Pool',
         earnings: null,
         entries: null,
         prizeWon: null,
         top5: null,
-        note: 'November Masters (COVID)',
+        note: 'Pool skipped due to COVID-19',
+        skipped: true,
       },
       {
         year: 2019,
@@ -464,8 +491,9 @@
     }
 
     function renderChampion(champ) {
+      const isSkipped = champ.skipped;
       const isFuture = !champ.earnings && champ.name === 'TBD';
-      const caseClass = isFuture ? 'jacket-case future' : 'jacket-case';
+      const caseClass = isSkipped ? 'jacket-case skipped' : isFuture ? 'jacket-case future' : 'jacket-case';
 
       let top5HTML = '';
       if (champ.top5) {
@@ -486,6 +514,18 @@
       const displayName = champ.name.length > 20
         ? champ.name.substring(0, 18) + '...'
         : champ.name;
+
+      if (isSkipped) {
+        return `
+          <div class="${caseClass}">
+            <div class="jacket-year">${champ.year}</div>
+            <div class="jacket-display">
+              ${jacketImage()}
+            </div>
+            <div class="skipped-label">No jacket awarded</div>
+            <div class="champion-meta">${champ.note || ''}</div>
+          </div>`;
+      }
 
       return `
         <div class="${caseClass}">
