@@ -4,37 +4,77 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   const select = document.getElementById('entry-select');
+  const searchInput = document.getElementById('entry-search');
+  const dropdown = document.getElementById('entry-dropdown');
   const emptyState = document.getElementById('empty-state');
   const dashboard = document.getElementById('team-dashboard');
 
-  // Populate dropdown
-  poolData.entries.forEach(entry => {
+  // Sort entries alphabetically
+  const sortedEntries = [...poolData.entries].sort((a, b) =>
+    a.name.toLowerCase().localeCompare(b.name.toLowerCase())
+  );
+
+  // Populate hidden select (for compatibility)
+  sortedEntries.forEach(entry => {
     const opt = document.createElement('option');
     opt.value = entry.id;
-    opt.textContent = `${entry.name} (${entry.owner})`;
+    opt.textContent = entry.name;
     select.appendChild(opt);
+  });
+
+  function renderDropdown(filter) {
+    const q = (filter || '').toLowerCase();
+    const matches = q
+      ? sortedEntries.filter(e => e.name.toLowerCase().includes(q))
+      : sortedEntries;
+
+    if (matches.length === 0) {
+      dropdown.innerHTML = '<div style="padding:10px 16px; color:var(--text-light); font-size:0.9rem;">No matches</div>';
+      dropdown.style.display = 'block';
+      return;
+    }
+
+    dropdown.innerHTML = matches.map(e =>
+      `<div class="entry-option" data-id="${e.id}" style="padding:10px 16px; cursor:pointer; font-family:var(--font-body); font-size:0.95rem; border-bottom:1px solid rgba(0,0,0,0.05);"
+        onmouseover="this.style.background='rgba(26,71,49,0.06)'"
+        onmouseout="this.style.background='transparent'">${e.name}</div>`
+    ).join('');
+    dropdown.style.display = 'block';
+
+    dropdown.querySelectorAll('.entry-option').forEach(opt => {
+      opt.addEventListener('click', () => {
+        const id = parseInt(opt.dataset.id);
+        const entry = poolData.entries.find(e => e.id === id);
+        searchInput.value = entry.name;
+        dropdown.style.display = 'none';
+        select.value = id;
+        localStorage.setItem('masters-my-entry', id);
+        loadDashboard(id);
+      });
+    });
+  }
+
+  searchInput.addEventListener('focus', () => renderDropdown(searchInput.value));
+  searchInput.addEventListener('input', () => renderDropdown(searchInput.value));
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!searchInput.contains(e.target) && !dropdown.contains(e.target)) {
+      dropdown.style.display = 'none';
+    }
   });
 
   // Check URL param or localStorage for saved selection
   const params = new URLSearchParams(window.location.search);
   const savedId = params.get('entry') || localStorage.getItem('masters-my-entry');
   if (savedId) {
-    select.value = savedId;
-    if (select.value === savedId) {
+    const entry = poolData.entries.find(e => e.id === parseInt(savedId));
+    if (entry) {
+      searchInput.value = entry.name;
+      select.value = savedId;
       loadDashboard(parseInt(savedId));
     }
   }
-
-  select.addEventListener('change', () => {
-    const id = parseInt(select.value);
-    if (id) {
-      localStorage.setItem('masters-my-entry', id);
-      loadDashboard(id);
-    } else {
-      emptyState.classList.remove('hidden');
-      dashboard.classList.add('hidden');
-    }
-  });
 });
 
 function loadDashboard(entryId) {
