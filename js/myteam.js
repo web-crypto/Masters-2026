@@ -525,7 +525,7 @@ function renderSwapSimulator(entry) {
 
     const currentPlayer = entry.players[slot].name;
     const parentGroup = slotToGroup[slot];
-    const groupPlayers = poolData.groups[parentGroup]?.players || [];
+    const groupPlayers = poolData.playerGroups[parentGroup]?.players || [];
 
     // Add all players in the group except the current pick
     groupPlayers.filter(p => p !== currentPlayer).forEach(name => {
