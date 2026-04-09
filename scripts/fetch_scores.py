@@ -266,12 +266,32 @@ def parse_espn_data(data: dict, force_final: bool = False, verbose: bool = False
         pos = p["position"]
         pos_groups.setdefault(pos, []).append(p)
 
-    # Assign earnings
+    # Determine projected cut line (top 50 + ties at Masters)
+    # Find the score at position 50, then include all ties at that score
+    active_by_pos = sorted(active_players, key=lambda p: p["position"])
+    cut_score = None
+    if len(active_by_pos) >= 50:
+        cut_score = active_by_pos[49]["toPar"]  # score at position 50
+
+    # Assign earnings only to players projected to make the cut
     for pos, group in pos_groups.items():
-        tied_positions = list(range(pos, pos + len(group)))
-        prize = calculate_tied_prize(tied_positions)
-        for p in group:
-            p["projectedEarnings"] = prize
+        # If we have a cut line and tournament isn't complete, apply projected cut
+        if cut_score is not None and tourney_status != "complete":
+            # Players above the cut score make the cut
+            if group[0]["toPar"] <= cut_score:
+                tied_positions = list(range(pos, pos + len(group)))
+                prize = calculate_tied_prize(tied_positions)
+                for p in group:
+                    p["projectedEarnings"] = prize
+            else:
+                for p in group:
+                    p["projectedEarnings"] = 0
+        else:
+            # Tournament complete or < 50 players: assign normally
+            tied_positions = list(range(pos, pos + len(group)))
+            prize = calculate_tied_prize(tied_positions)
+            for p in group:
+                p["projectedEarnings"] = prize
 
     # Cut/WD players get $0
     for p in players_raw:
