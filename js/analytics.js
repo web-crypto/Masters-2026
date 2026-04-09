@@ -42,15 +42,26 @@ function renderPopularPicks() {
   const container = document.getElementById('popular-picks');
   if (!container) return;
 
-  const groups = ['groupA', 'groupB1', 'groupB2', 'groupC1', 'groupC2', 'groupD1', 'groupD2', 'groupE'];
+  // Combine sub-slots into parent groups (B1+B2 -> B, etc.)
+  const groupConfig = [
+    { key: 'A', label: 'Group A', slots: ['groupA'] },
+    { key: 'B', label: 'Group B', slots: ['groupB1', 'groupB2'] },
+    { key: 'C', label: 'Group C', slots: ['groupC1', 'groupC2'] },
+    { key: 'D', label: 'Group D', slots: ['groupD1', 'groupD2'] },
+    { key: 'E', label: 'Group E', slots: ['groupE'] },
+  ];
 
-  groups.forEach(group => {
+  groupConfig.forEach(group => {
     const pickCounts = {};
     poolData.entries.forEach(entry => {
-      const player = entry.players[group];
-      if (player) {
-        pickCounts[player.name] = (pickCounts[player.name] || 0) + 1;
-      }
+      const seen = new Set(); // avoid double-counting same player in same entry
+      group.slots.forEach(slot => {
+        const player = entry.players[slot];
+        if (player && !seen.has(player.name)) {
+          pickCounts[player.name] = (pickCounts[player.name] || 0) + 1;
+          seen.add(player.name);
+        }
+      });
     });
 
     const sorted = Object.entries(pickCounts)
@@ -62,7 +73,7 @@ function renderPopularPicks() {
     const groupDiv = document.createElement('div');
     groupDiv.className = 'pick-bar-group';
     groupDiv.innerHTML = `
-      <div class="pick-bar-group-label">${getGroupLabel(group)}</div>
+      <div class="pick-bar-group-label">${group.label}</div>
       ${sorted.map(([name, count]) => {
         const pct = (count / maxCount) * 100;
         return `
@@ -81,7 +92,6 @@ function renderPopularPicks() {
 
     container.appendChild(groupDiv);
 
-    // Animate bars after a delay
     setTimeout(() => {
       groupDiv.querySelectorAll('.pick-bar-fill').forEach(bar => {
         bar.style.width = bar.dataset.width + '%';
@@ -199,22 +209,31 @@ function renderFunFacts() {
   const entries = poolData.entries;
   const totalEntries = entries.length;
 
-  // --- Build player ownership + earnings map per group slot ---
-  // group slot → { playerName → { count, earnings } }
+  // --- Build player ownership + earnings map per parent group ---
+  // Combine sub-slots (B1+B2 -> B, etc.) so ownership is per-entry not per-slot
+  const parentGroups = {
+    groupA: 'A', groupB1: 'B', groupB2: 'B',
+    groupC1: 'C', groupC2: 'C', groupD1: 'D', groupD2: 'D',
+    groupE: 'E',
+  };
   const groupSlots = {};
   entries.forEach(entry => {
-    Object.entries(entry.players).forEach(([group, player]) => {
+    const seenPerGroup = {}; // avoid double-counting same player in same group per entry
+    Object.entries(entry.players).forEach(([slot, player]) => {
+      const group = parentGroups[slot] || slot;
       if (!groupSlots[group]) groupSlots[group] = {};
+      const key = group + '|' + player.name;
+      if (seenPerGroup[key]) return;
+      seenPerGroup[key] = true;
       if (!groupSlots[group][player.name]) {
         groupSlots[group][player.name] = { count: 0, earnings: player.earnings };
       }
       groupSlots[group][player.name].count++;
-      // Keep earnings in sync (same player always has same earnings)
       groupSlots[group][player.name].earnings = player.earnings;
     });
   });
 
-  // --- Compute group median earnings per slot ---
+  // --- Compute group median earnings ---
   function groupMedian(slot) {
     const earningsArr = Object.values(slot).map(p => p.earnings).sort((a, b) => a - b);
     if (!earningsArr.length) return 0;
