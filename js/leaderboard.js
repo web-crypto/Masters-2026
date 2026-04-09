@@ -247,7 +247,6 @@ function initStandings() {
         <td class="rank-num">${entry.currentRank}</td>
         <td class="entry-name-cell">
           ${entry.name}
-          <span class="owner-name">${entry.owner}</span>
         </td>
         <td class="earnings">${formatCurrency(entry.totalEarnings)}</td>
         <td class="movement-indicator ${movementClass}">${movementText}</td>
