@@ -95,11 +95,13 @@ def calculate_tied_prize(positions: list[int]) -> int:
 # Name normalization for fuzzy matching
 # ---------------------------------------------------------------------------
 
+_CHAR_MAP = str.maketrans("øæåöüäñ", "oaeouaN")
+
 def normalize_name(name: str) -> str:
     """Normalize to ASCII lowercase for fuzzy matching."""
     nfkd = unicodedata.normalize("NFKD", name)
     ascii_str = "".join(c for c in nfkd if not unicodedata.combining(c))
-    return ascii_str.lower().strip()
+    return ascii_str.lower().strip().translate(_CHAR_MAP)
 
 
 # ---------------------------------------------------------------------------
