@@ -110,7 +110,6 @@ function createScoreboardRow(entry, index) {
     </div>
     <div class="entry-cell">
       <div class="entry-name">${entry.name.toUpperCase()}</div>
-      <span class="entry-owner">${entry.owner}</span>
     </div>
     <div class="earnings-cell">
       <div class="flip-tile" data-amount="${entry.totalEarnings}">
