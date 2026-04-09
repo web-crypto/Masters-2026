@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-09T22:50:18Z",
+  "fetchedAt": "2026-04-09T23:03:27Z",
   "tournamentStatus": "in_progress",
   "currentRound": 1,
   "entries": [
@@ -289,9 +289,9 @@
         "groupE": {
           "name": "Marco Penge",
           "earnings": 0,
-          "position": 64,
-          "toPar": 5,
-          "toParDisplay": "+5",
+          "position": 56,
+          "toPar": 4,
+          "toParDisplay": "+4",
           "status": "active"
         }
       },
@@ -635,9 +635,9 @@
         "groupC2": {
           "name": "Robert MacIntyre",
           "earnings": 0,
-          "position": 77,
-          "toPar": 7,
-          "toParDisplay": "+7",
+          "position": 82,
+          "toPar": 8,
+          "toParDisplay": "+8",
           "status": "active"
         },
         "groupD1": {
@@ -807,9 +807,9 @@
         "groupE": {
           "name": "Marco Penge",
           "earnings": 0,
-          "position": 64,
-          "toPar": 5,
-          "toParDisplay": "+5",
+          "position": 56,
+          "toPar": 4,
+          "toParDisplay": "+4",
           "status": "active"
         }
       },
@@ -1005,9 +1005,9 @@
         "groupC2": {
           "name": "Robert MacIntyre",
           "earnings": 0,
-          "position": 77,
-          "toPar": 7,
-          "toParDisplay": "+7",
+          "position": 82,
+          "toPar": 8,
+          "toParDisplay": "+8",
           "status": "active"
         },
         "groupD1": {
@@ -1227,15 +1227,15 @@
         "groupC2": {
           "name": "Robert MacIntyre",
           "earnings": 0,
-          "position": 77,
-          "toPar": 7,
-          "toParDisplay": "+7",
+          "position": 82,
+          "toPar": 8,
+          "toParDisplay": "+8",
           "status": "active"
         },
         "groupD1": {
           "name": "Patrick Cantlay",
           "earnings": 0,
-          "position": 64,
+          "position": 65,
           "toPar": 5,
           "toParDisplay": "+5",
           "status": "active"
@@ -1301,9 +1301,9 @@
         "groupC2": {
           "name": "Robert MacIntyre",
           "earnings": 0,
-          "position": 77,
-          "toPar": 7,
-          "toParDisplay": "+7",
+          "position": 82,
+          "toPar": 8,
+          "toParDisplay": "+8",
           "status": "active"
         },
         "groupD1": {
@@ -1465,7 +1465,7 @@
         "groupD2": {
           "name": "Patrick Cantlay",
           "earnings": 0,
-          "position": 64,
+          "position": 65,
           "toPar": 5,
           "toParDisplay": "+5",
           "status": "active"
@@ -1523,9 +1523,9 @@
         "groupC2": {
           "name": "Robert MacIntyre",
           "earnings": 0,
-          "position": 77,
-          "toPar": 7,
-          "toParDisplay": "+7",
+          "position": 82,
+          "toPar": 8,
+          "toParDisplay": "+8",
           "status": "active"
         },
         "groupD1": {
@@ -1547,7 +1547,7 @@
         "groupE": {
           "name": "Maverick McNealy",
           "earnings": 0,
-          "position": 64,
+          "position": 65,
           "toPar": 5,
           "toParDisplay": "+5",
           "status": "active"
@@ -2041,9 +2041,9 @@
         "groupC2": {
           "name": "Robert MacIntyre",
           "earnings": 0,
-          "position": 77,
-          "toPar": 7,
-          "toParDisplay": "+7",
+          "position": 82,
+          "toPar": 8,
+          "toParDisplay": "+8",
           "status": "active"
         },
         "groupD1": {
@@ -2213,9 +2213,9 @@
         "groupE": {
           "name": "Marco Penge",
           "earnings": 0,
-          "position": 64,
-          "toPar": 5,
-          "toParDisplay": "+5",
+          "position": 56,
+          "toPar": 4,
+          "toParDisplay": "+4",
           "status": "active"
         }
       },
@@ -2559,9 +2559,9 @@
         "groupC2": {
           "name": "Robert MacIntyre",
           "earnings": 0,
-          "position": 77,
-          "toPar": 7,
-          "toParDisplay": "+7",
+          "position": 82,
+          "toPar": 8,
+          "toParDisplay": "+8",
           "status": "active"
         },
         "groupD1": {
@@ -2855,9 +2855,9 @@
         "groupC2": {
           "name": "Robert MacIntyre",
           "earnings": 0,
-          "position": 77,
-          "toPar": 7,
-          "toParDisplay": "+7",
+          "position": 82,
+          "toPar": 8,
+          "toParDisplay": "+8",
           "status": "active"
         },
         "groupD1": {
@@ -3003,9 +3003,9 @@
         "groupC2": {
           "name": "Robert MacIntyre",
           "earnings": 0,
-          "position": 77,
-          "toPar": 7,
-          "toParDisplay": "+7",
+          "position": 82,
+          "toPar": 8,
+          "toParDisplay": "+8",
           "status": "active"
         },
         "groupD1": {
@@ -3077,9 +3077,9 @@
         "groupC2": {
           "name": "Robert MacIntyre",
           "earnings": 0,
-          "position": 77,
-          "toPar": 7,
-          "toParDisplay": "+7",
+          "position": 82,
+          "toPar": 8,
+          "toParDisplay": "+8",
           "status": "active"
         },
         "groupD1": {
@@ -3101,7 +3101,7 @@
         "groupE": {
           "name": "Maverick McNealy",
           "earnings": 0,
-          "position": 64,
+          "position": 65,
           "toPar": 5,
           "toParDisplay": "+5",
           "status": "active"
@@ -3225,9 +3225,9 @@
         "groupC2": {
           "name": "Robert MacIntyre",
           "earnings": 0,
-          "position": 77,
-          "toPar": 7,
-          "toParDisplay": "+7",
+          "position": 82,
+          "toPar": 8,
+          "toParDisplay": "+8",
           "status": "active"
         },
         "groupD1": {
@@ -3299,9 +3299,9 @@
         "groupC2": {
           "name": "Robert MacIntyre",
           "earnings": 0,
-          "position": 77,
-          "toPar": 7,
-          "toParDisplay": "+7",
+          "position": 82,
+          "toPar": 8,
+          "toParDisplay": "+8",
           "status": "active"
         },
         "groupD1": {
@@ -3669,9 +3669,9 @@
         "groupC2": {
           "name": "Robert MacIntyre",
           "earnings": 0,
-          "position": 77,
-          "toPar": 7,
-          "toParDisplay": "+7",
+          "position": 82,
+          "toPar": 8,
+          "toParDisplay": "+8",
           "status": "active"
         },
         "groupD1": {
@@ -3693,7 +3693,7 @@
         "groupE": {
           "name": "Maverick McNealy",
           "earnings": 0,
-          "position": 64,
+          "position": 65,
           "toPar": 5,
           "toParDisplay": "+5",
           "status": "active"
@@ -3751,7 +3751,7 @@
         "groupD1": {
           "name": "Patrick Cantlay",
           "earnings": 0,
-          "position": 64,
+          "position": 65,
           "toPar": 5,
           "toParDisplay": "+5",
           "status": "active"
@@ -3841,9 +3841,9 @@
         "groupE": {
           "name": "Marco Penge",
           "earnings": 0,
-          "position": 64,
-          "toPar": 5,
-          "toParDisplay": "+5",
+          "position": 56,
+          "toPar": 4,
+          "toParDisplay": "+4",
           "status": "active"
         }
       },
@@ -3891,9 +3891,9 @@
         "groupC2": {
           "name": "Robert MacIntyre",
           "earnings": 0,
-          "position": 77,
-          "toPar": 7,
-          "toParDisplay": "+7",
+          "position": 82,
+          "toPar": 8,
+          "toParDisplay": "+8",
           "status": "active"
         },
         "groupD1": {
@@ -3965,9 +3965,9 @@
         "groupC2": {
           "name": "Robert MacIntyre",
           "earnings": 0,
-          "position": 77,
-          "toPar": 7,
-          "toParDisplay": "+7",
+          "position": 82,
+          "toPar": 8,
+          "toParDisplay": "+8",
           "status": "active"
         },
         "groupD1": {
@@ -4137,7 +4137,7 @@
         "groupE": {
           "name": "Maverick McNealy",
           "earnings": 0,
-          "position": 64,
+          "position": 65,
           "toPar": 5,
           "toParDisplay": "+5",
           "status": "active"
@@ -4285,7 +4285,7 @@
         "groupE": {
           "name": "Maverick McNealy",
           "earnings": 0,
-          "position": 64,
+          "position": 65,
           "toPar": 5,
           "toParDisplay": "+5",
           "status": "active"
@@ -4343,7 +4343,7 @@
         "groupD1": {
           "name": "Patrick Cantlay",
           "earnings": 0,
-          "position": 64,
+          "position": 65,
           "toPar": 5,
           "toParDisplay": "+5",
           "status": "active"
@@ -4409,9 +4409,9 @@
         "groupC2": {
           "name": "Robert MacIntyre",
           "earnings": 0,
-          "position": 77,
-          "toPar": 7,
-          "toParDisplay": "+7",
+          "position": 82,
+          "toPar": 8,
+          "toParDisplay": "+8",
           "status": "active"
         },
         "groupD1": {
@@ -5083,7 +5083,7 @@
         "groupD1": {
           "name": "Patrick Cantlay",
           "earnings": 0,
-          "position": 64,
+          "position": 65,
           "toPar": 5,
           "toParDisplay": "+5",
           "status": "active"
@@ -5157,7 +5157,7 @@
         "groupD1": {
           "name": "Patrick Cantlay",
           "earnings": 0,
-          "position": 64,
+          "position": 65,
           "toPar": 5,
           "toParDisplay": "+5",
           "status": "active"
@@ -5297,9 +5297,9 @@
         "groupC2": {
           "name": "Robert MacIntyre",
           "earnings": 0,
-          "position": 77,
-          "toPar": 7,
-          "toParDisplay": "+7",
+          "position": 82,
+          "toPar": 8,
+          "toParDisplay": "+8",
           "status": "active"
         },
         "groupD1": {
@@ -5371,9 +5371,9 @@
         "groupC2": {
           "name": "Robert MacIntyre",
           "earnings": 0,
-          "position": 77,
-          "toPar": 7,
-          "toParDisplay": "+7",
+          "position": 82,
+          "toPar": 8,
+          "toParDisplay": "+8",
           "status": "active"
         },
         "groupD1": {
@@ -5543,7 +5543,7 @@
         "groupE": {
           "name": "Maverick McNealy",
           "earnings": 0,
-          "position": 64,
+          "position": 65,
           "toPar": 5,
           "toParDisplay": "+5",
           "status": "active"
@@ -5667,9 +5667,9 @@
         "groupC2": {
           "name": "Robert MacIntyre",
           "earnings": 0,
-          "position": 77,
-          "toPar": 7,
-          "toParDisplay": "+7",
+          "position": 82,
+          "toPar": 8,
+          "toParDisplay": "+8",
           "status": "active"
         },
         "groupD1": {
@@ -5691,9 +5691,9 @@
         "groupE": {
           "name": "Marco Penge",
           "earnings": 0,
-          "position": 64,
-          "toPar": 5,
-          "toParDisplay": "+5",
+          "position": 56,
+          "toPar": 4,
+          "toParDisplay": "+4",
           "status": "active"
         }
       },
@@ -5757,7 +5757,7 @@
         "groupD2": {
           "name": "Patrick Cantlay",
           "earnings": 0,
-          "position": 64,
+          "position": 65,
           "toPar": 5,
           "toParDisplay": "+5",
           "status": "active"
@@ -5815,9 +5815,9 @@
         "groupC2": {
           "name": "Robert MacIntyre",
           "earnings": 0,
-          "position": 77,
-          "toPar": 7,
-          "toParDisplay": "+7",
+          "position": 82,
+          "toPar": 8,
+          "toParDisplay": "+8",
           "status": "active"
         },
         "groupD1": {
@@ -5839,7 +5839,7 @@
         "groupE": {
           "name": "Maverick McNealy",
           "earnings": 0,
-          "position": 64,
+          "position": 65,
           "toPar": 5,
           "toParDisplay": "+5",
           "status": "active"
@@ -5897,7 +5897,7 @@
         "groupD1": {
           "name": "Patrick Cantlay",
           "earnings": 0,
-          "position": 64,
+          "position": 65,
           "toPar": 5,
           "toParDisplay": "+5",
           "status": "active"
@@ -6185,9 +6185,9 @@
         "groupC2": {
           "name": "Robert MacIntyre",
           "earnings": 0,
-          "position": 77,
-          "toPar": 7,
-          "toParDisplay": "+7",
+          "position": 82,
+          "toPar": 8,
+          "toParDisplay": "+8",
           "status": "active"
         },
         "groupD1": {
@@ -6283,7 +6283,7 @@
         "groupE": {
           "name": "Maverick McNealy",
           "earnings": 0,
-          "position": 64,
+          "position": 65,
           "toPar": 5,
           "toParDisplay": "+5",
           "status": "active"
@@ -6333,9 +6333,9 @@
         "groupC2": {
           "name": "Robert MacIntyre",
           "earnings": 0,
-          "position": 77,
-          "toPar": 7,
-          "toParDisplay": "+7",
+          "position": 82,
+          "toPar": 8,
+          "toParDisplay": "+8",
           "status": "active"
         },
         "groupD1": {
@@ -6489,7 +6489,7 @@
         "groupD1": {
           "name": "Patrick Cantlay",
           "earnings": 0,
-          "position": 64,
+          "position": 65,
           "toPar": 5,
           "toParDisplay": "+5",
           "status": "active"
@@ -6555,9 +6555,9 @@
         "groupC2": {
           "name": "Robert MacIntyre",
           "earnings": 0,
-          "position": 77,
-          "toPar": 7,
-          "toParDisplay": "+7",
+          "position": 82,
+          "toPar": 8,
+          "toParDisplay": "+8",
           "status": "active"
         },
         "groupD1": {
@@ -6637,7 +6637,7 @@
         "groupD1": {
           "name": "Patrick Cantlay",
           "earnings": 0,
-          "position": 64,
+          "position": 65,
           "toPar": 5,
           "toParDisplay": "+5",
           "status": "active"
