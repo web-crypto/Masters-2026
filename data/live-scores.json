@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-09T20:06:34Z",
+  "fetchedAt": "2026-04-09T20:10:12Z",
   "tournamentStatus": "in_progress",
   "currentRound": 1,
   "players": [
@@ -145,7 +145,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 546000
+      "projectedEarnings": 525000
     },
     {
       "espnId": "10140",
@@ -161,7 +161,23 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 546000
+      "projectedEarnings": 525000
+    },
+    {
+      "espnId": "91",
+      "name": "Fred Couples",
+      "position": 9,
+      "toPar": -2,
+      "toParDisplay": "-2",
+      "rounds": [
+        50,
+        null,
+        null,
+        null
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 525000
     },
     {
       "espnId": "5467",
@@ -177,7 +193,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 546000
+      "projectedEarnings": 525000
     },
     {
       "espnId": "4848",
@@ -193,12 +209,12 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 546000
+      "projectedEarnings": 525000
     },
     {
       "espnId": "9221",
       "name": "Haotong Li",
-      "position": 13,
+      "position": 14,
       "toPar": -1,
       "toParDisplay": "-1",
       "rounds": [
@@ -209,12 +225,12 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 328020
+      "projectedEarnings": 315467
     },
     {
       "espnId": "3792",
       "name": "Nick Taylor",
-      "position": 13,
+      "position": 14,
       "toPar": -1,
       "toParDisplay": "-1",
       "rounds": [
@@ -225,12 +241,12 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 328020
+      "projectedEarnings": 315467
     },
     {
       "espnId": "5539",
       "name": "Tommy Fleetwood",
-      "position": 13,
+      "position": 14,
       "toPar": -1,
       "toParDisplay": "-1",
       "rounds": [
@@ -241,12 +257,12 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 328020
+      "projectedEarnings": 315467
     },
     {
       "espnId": "9525",
       "name": "Brian Campbell",
-      "position": 13,
+      "position": 14,
       "toPar": -1,
       "toParDisplay": "-1",
       "rounds": [
@@ -257,12 +273,12 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 328020
+      "projectedEarnings": 315467
     },
     {
       "espnId": "11119",
       "name": "Wyndham Clark",
-      "position": 13,
+      "position": 14,
       "toPar": -1,
       "toParDisplay": "-1",
       "rounds": [
@@ -273,12 +289,12 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 328020
+      "projectedEarnings": 315467
     },
     {
       "espnId": "4304",
       "name": "Danny Willett",
-      "position": 13,
+      "position": 14,
       "toPar": -1,
       "toParDisplay": "-1",
       "rounds": [
@@ -289,12 +305,12 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 328020
+      "projectedEarnings": 315467
     },
     {
       "espnId": "388",
       "name": "Adam Scott",
-      "position": 13,
+      "position": 14,
       "toPar": -1,
       "toParDisplay": "-1",
       "rounds": [
@@ -305,28 +321,12 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 328020
-    },
-    {
-      "espnId": "91",
-      "name": "Fred Couples",
-      "position": 13,
-      "toPar": -1,
-      "toParDisplay": "-1",
-      "rounds": [
-        46,
-        null,
-        null,
-        null
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 328020
+      "projectedEarnings": 315467
     },
     {
       "espnId": "10906",
       "name": "Aaron Rai",
-      "position": 13,
+      "position": 14,
       "toPar": -1,
       "toParDisplay": "-1",
       "rounds": [
@@ -337,12 +337,12 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 328020
+      "projectedEarnings": 315467
     },
     {
       "espnId": "8961",
       "name": "Sepp Straka",
-      "position": 13,
+      "position": 14,
       "toPar": -1,
       "toParDisplay": "-1",
       "rounds": [
@@ -353,7 +353,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 328020
+      "projectedEarnings": 315467
     },
     {
       "espnId": "8973",
@@ -948,22 +948,6 @@
       "projectedEarnings": 0
     },
     {
-      "espnId": "4410932",
-      "name": "Min Woo Lee",
-      "position": 55,
-      "toPar": 3,
-      "toParDisplay": "+3",
-      "rounds": [
-        50,
-        null,
-        null,
-        null
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 0
-    },
-    {
       "espnId": "4589438",
       "name": "Harry Hall",
       "position": 55,
@@ -998,7 +982,7 @@
     {
       "espnId": "5217048",
       "name": "Johnny Keefer",
-      "position": 63,
+      "position": 62,
       "toPar": 4,
       "toParDisplay": "+4",
       "rounds": [
@@ -1014,7 +998,7 @@
     {
       "espnId": "5344766",
       "name": "Jackson Herrington",
-      "position": 63,
+      "position": 62,
       "toPar": 4,
       "toParDisplay": "+4",
       "rounds": [
@@ -1030,7 +1014,7 @@
     {
       "espnId": "780",
       "name": "Bubba Watson",
-      "position": 63,
+      "position": 62,
       "toPar": 4,
       "toParDisplay": "+4",
       "rounds": [
@@ -1046,7 +1030,7 @@
     {
       "espnId": "10046",
       "name": "Bryson DeChambeau",
-      "position": 63,
+      "position": 62,
       "toPar": 4,
       "toParDisplay": "+4",
       "rounds": [
@@ -1062,7 +1046,7 @@
     {
       "espnId": "11382",
       "name": "Sungjae Im",
-      "position": 63,
+      "position": 62,
       "toPar": 4,
       "toParDisplay": "+4",
       "rounds": [
@@ -1078,7 +1062,7 @@
     {
       "espnId": "9530",
       "name": "Maverick McNealy",
-      "position": 63,
+      "position": 62,
       "toPar": 4,
       "toParDisplay": "+4",
       "rounds": [
@@ -1094,7 +1078,7 @@
     {
       "espnId": "9780",
       "name": "Jon Rahm",
-      "position": 63,
+      "position": 62,
       "toPar": 4,
       "toParDisplay": "+4",
       "rounds": [
@@ -1110,7 +1094,7 @@
     {
       "espnId": "4585549",
       "name": "Marco Penge",
-      "position": 63,
+      "position": 62,
       "toPar": 4,
       "toParDisplay": "+4",
       "rounds": [
@@ -1126,7 +1110,7 @@
     {
       "espnId": "4858859",
       "name": "Rasmus Neergaard-Petersen",
-      "position": 71,
+      "position": 70,
       "toPar": 5,
       "toParDisplay": "+5",
       "rounds": [
@@ -1142,7 +1126,7 @@
     {
       "espnId": "4251",
       "name": "Ryan Fox",
-      "position": 71,
+      "position": 70,
       "toPar": 5,
       "toParDisplay": "+5",
       "rounds": [
@@ -1158,7 +1142,7 @@
     {
       "espnId": "4610056",
       "name": "Casey Jarvis",
-      "position": 71,
+      "position": 70,
       "toPar": 5,
       "toParDisplay": "+5",
       "rounds": [
@@ -1174,7 +1158,7 @@
     {
       "espnId": "5289811",
       "name": "Mason Howell",
-      "position": 71,
+      "position": 70,
       "toPar": 5,
       "toParDisplay": "+5",
       "rounds": [
@@ -1190,7 +1174,7 @@
     {
       "espnId": "3832",
       "name": "Alex Noren",
-      "position": 71,
+      "position": 70,
       "toPar": 5,
       "toParDisplay": "+5",
       "rounds": [
@@ -1206,7 +1190,7 @@
     {
       "espnId": "6007",
       "name": "Patrick Cantlay",
-      "position": 71,
+      "position": 70,
       "toPar": 5,
       "toParDisplay": "+5",
       "rounds": [
@@ -1222,7 +1206,39 @@
     {
       "espnId": "1225",
       "name": "Brian Harman",
-      "position": 71,
+      "position": 70,
+      "toPar": 5,
+      "toParDisplay": "+5",
+      "rounds": [
+        61,
+        null,
+        null,
+        null
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 0
+    },
+    {
+      "espnId": "4410932",
+      "name": "Min Woo Lee",
+      "position": 70,
+      "toPar": 5,
+      "toParDisplay": "+5",
+      "rounds": [
+        57,
+        null,
+        null,
+        null
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 0
+    },
+    {
+      "espnId": "5327297",
+      "name": "Fifa Laopakdee",
+      "position": 70,
       "toPar": 5,
       "toParDisplay": "+5",
       "rounds": [
@@ -1238,7 +1254,7 @@
     {
       "espnId": "11253",
       "name": "Rasmus H\u00f8jgaard",
-      "position": 78,
+      "position": 79,
       "toPar": 6,
       "toParDisplay": "+6",
       "rounds": [
@@ -1254,7 +1270,7 @@
     {
       "espnId": "453",
       "name": "Mike Weir",
-      "position": 78,
+      "position": 79,
       "toPar": 6,
       "toParDisplay": "+6",
       "rounds": [
@@ -1270,27 +1286,11 @@
     {
       "espnId": "10058",
       "name": "Davis Riley",
-      "position": 78,
+      "position": 79,
       "toPar": 6,
       "toParDisplay": "+6",
       "rounds": [
         62,
-        null,
-        null,
-        null
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 0
-    },
-    {
-      "espnId": "5327297",
-      "name": "Fifa Laopakdee",
-      "position": 78,
-      "toPar": 6,
-      "toParDisplay": "+6",
-      "rounds": [
-        53,
         null,
         null,
         null
