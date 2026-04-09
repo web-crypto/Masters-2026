@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-09T19:35:39Z",
+  "fetchedAt": "2026-04-09T19:40:11Z",
   "tournamentStatus": "in_progress",
   "currentRound": 1,
   "entries": [
@@ -807,9 +807,9 @@
         "groupE": {
           "name": "Michael Kim",
           "earnings": 0,
-          "position": 55,
-          "toPar": 2,
-          "toParDisplay": "+2",
+          "position": 60,
+          "toPar": 3,
+          "toParDisplay": "+3",
           "status": "active"
         }
       },
@@ -955,9 +955,9 @@
         "groupE": {
           "name": "Michael Kim",
           "earnings": 0,
-          "position": 55,
-          "toPar": 2,
-          "toParDisplay": "+2",
+          "position": 60,
+          "toPar": 3,
+          "toParDisplay": "+3",
           "status": "active"
         }
       },
@@ -3619,9 +3619,9 @@
         "groupE": {
           "name": "Michael Kim",
           "earnings": 0,
-          "position": 55,
-          "toPar": 2,
-          "toParDisplay": "+2",
+          "position": 60,
+          "toPar": 3,
+          "toParDisplay": "+3",
           "status": "active"
         }
       },
