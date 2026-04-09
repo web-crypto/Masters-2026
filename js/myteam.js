@@ -484,64 +484,74 @@ function renderSwapSimulator(entry) {
 
   fromSelect.innerHTML = '<option value="">Your player...</option>';
   toSelect.innerHTML = '<option value="">Swap to...</option>';
-  toSelect.disabled = true;
   results.classList.add('hidden');
 
-  // Map slots to parent group keys for looking up available players
+  // Map slots to parent group keys
   const slotToGroup = {
     groupA: 'groupA', groupB1: 'groupB', groupB2: 'groupB',
     groupC1: 'groupC', groupC2: 'groupC', groupD1: 'groupD', groupD2: 'groupD',
     groupE: 'groupE',
   };
 
+  // Sibling slots in the same group
+  const siblingSlots = {
+    groupB1: 'groupB2', groupB2: 'groupB1',
+    groupC1: 'groupC2', groupC2: 'groupC1',
+    groupD1: 'groupD2', groupD2: 'groupD1',
+  };
+
   const groupOrder = ['groupA', 'groupB1', 'groupB2', 'groupC1', 'groupC2', 'groupD1', 'groupD2', 'groupE'];
   groupOrder.forEach(slot => {
     const player = entry.players[slot];
+    if (!player) return;
     const opt = document.createElement('option');
     opt.value = slot;
-    opt.textContent = `${player.name} (${getGroupLabel(slot)})`;
+    opt.textContent = player.name + ' (' + getGroupLabel(slot) + ')';
     fromSelect.appendChild(opt);
   });
 
-  // Build earnings lookup from live data across all entries
-  function getPlayerEarnings(name) {
-    for (const e of poolData.entries) {
-      for (const p of Object.values(e.players)) {
-        if (p.name === name) return p.earnings;
+  // Build earnings lookup from all entries
+  const earningsLookup = {};
+  poolData.entries.forEach(function(e) {
+    Object.values(e.players).forEach(function(p) {
+      if (p.name && !(p.name in earningsLookup)) {
+        earningsLookup[p.name] = p.earnings;
       }
-    }
-    return 0;
-  }
+    });
+  });
 
-  fromSelect.onchange = () => {
-    const slot = fromSelect.value;
+  fromSelect.onchange = function() {
+    var slot = fromSelect.value;
     toSelect.innerHTML = '<option value="">Swap to...</option>';
     results.classList.add('hidden');
 
-    if (!slot) {
-      toSelect.disabled = true;
-      return;
+    if (!slot) return;
+
+    var parentGroup = slotToGroup[slot];
+    var pg = poolData.playerGroups ? poolData.playerGroups[parentGroup] : null;
+    if (!pg || !pg.players) return;
+
+    // Exclude current pick AND sibling slot pick
+    var exclude = {};
+    exclude[entry.players[slot].name] = true;
+    var sib = siblingSlots[slot];
+    if (sib && entry.players[sib]) {
+      exclude[entry.players[sib].name] = true;
     }
 
-    const currentPlayer = entry.players[slot].name;
-    const parentGroup = slotToGroup[slot];
-    const groupPlayers = poolData.playerGroups[parentGroup]?.players || [];
-
-    // Add all players in the group except the current pick
-    groupPlayers.filter(p => p !== currentPlayer).forEach(name => {
-      const earnings = getPlayerEarnings(name);
-      const opt = document.createElement('option');
+    pg.players.forEach(function(name) {
+      if (exclude[name]) return;
+      var earn = earningsLookup[name] || 0;
+      var opt = document.createElement('option');
       opt.value = name;
-      opt.textContent = `${name} (${formatCurrency(earnings)})`;
+      opt.textContent = name + ' (' + formatCurrency(earn) + ')';
       toSelect.appendChild(opt);
     });
-
-    toSelect.disabled = false;
   };
 
-  toSelect.onchange = () => {
-    const slot = fromSelect.value;
-    const swapTo = toSelect.value;
+  toSelect.onchange = function() {
+    var slot = fromSelect.value;
+    var swapTo = toSelect.value;
     if (!slot || !swapTo) {
       results.classList.add('hidden');
       return;
