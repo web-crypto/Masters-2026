@@ -90,6 +90,7 @@ function loadDashboard(entryId) {
   renderGapAnalysis(entry);
   renderDifferentiators(entry);
   renderScenarioWidget(entry);
+  renderSwapSimulator(entry);
 }
 
 // ============================================
@@ -471,6 +472,145 @@ function simulateScenarios(entry, group, container) {
 
     container.appendChild(outcomeDiv);
   });
+}
+
+// ============================================
+// SWAP SIMULATOR — Hindsight 20/20
+// ============================================
+function renderSwapSimulator(entry) {
+  const fromSelect = document.getElementById('swap-from-select');
+  const toSelect = document.getElementById('swap-to-select');
+  const results = document.getElementById('swap-results');
+
+  fromSelect.innerHTML = '<option value="">Your player...</option>';
+  toSelect.innerHTML = '<option value="">Swap to...</option>';
+  toSelect.disabled = true;
+  results.classList.add('hidden');
+
+  // Map slots to parent group keys for looking up available players
+  const slotToGroup = {
+    groupA: 'groupA', groupB1: 'groupB', groupB2: 'groupB',
+    groupC1: 'groupC', groupC2: 'groupC', groupD1: 'groupD', groupD2: 'groupD',
+    groupE: 'groupE',
+  };
+
+  const groupOrder = ['groupA', 'groupB1', 'groupB2', 'groupC1', 'groupC2', 'groupD1', 'groupD2', 'groupE'];
+  groupOrder.forEach(slot => {
+    const player = entry.players[slot];
+    const opt = document.createElement('option');
+    opt.value = slot;
+    opt.textContent = `${player.name} (${getGroupLabel(slot)})`;
+    fromSelect.appendChild(opt);
+  });
+
+  // Build earnings lookup from live data across all entries
+  function getPlayerEarnings(name) {
+    for (const e of poolData.entries) {
+      for (const p of Object.values(e.players)) {
+        if (p.name === name) return p.earnings;
+      }
+    }
+    return 0;
+  }
+
+  fromSelect.onchange = () => {
+    const slot = fromSelect.value;
+    toSelect.innerHTML = '<option value="">Swap to...</option>';
+    results.classList.add('hidden');
+
+    if (!slot) {
+      toSelect.disabled = true;
+      return;
+    }
+
+    const currentPlayer = entry.players[slot].name;
+    const parentGroup = slotToGroup[slot];
+    const groupPlayers = poolData.groups[parentGroup]?.players || [];
+
+    // Add all players in the group except the current pick
+    groupPlayers.filter(p => p !== currentPlayer).forEach(name => {
+      const earnings = getPlayerEarnings(name);
+      const opt = document.createElement('option');
+      opt.value = name;
+      opt.textContent = `${name} (${formatCurrency(earnings)})`;
+      toSelect.appendChild(opt);
+    });
+
+    toSelect.disabled = false;
+  };
+
+  toSelect.onchange = () => {
+    const slot = fromSelect.value;
+    const swapTo = toSelect.value;
+    if (!slot || !swapTo) {
+      results.classList.add('hidden');
+      return;
+    }
+    results.classList.remove('hidden');
+    computeSwap(entry, slot, swapTo, results);
+  };
+}
+
+function computeSwap(entry, slot, swapToName, container) {
+  const currentPlayer = entry.players[slot];
+
+  // Find swap player's current earnings from any entry that has them
+  let swapEarnings = 0;
+  for (const e of poolData.entries) {
+    for (const p of Object.values(e.players)) {
+      if (p.name === swapToName) { swapEarnings = p.earnings; break; }
+    }
+    if (swapEarnings > 0) break;
+  }
+
+  const earningsDelta = swapEarnings - currentPlayer.earnings;
+  const newTotal = entry.totalEarnings + earningsDelta;
+
+  // Recalculate full pool standings
+  const simTotals = poolData.entries.map(e => ({
+    id: e.id,
+    total: e.id === entry.id ? newTotal : e.totalEarnings,
+  }));
+  simTotals.sort((a, b) => b.total - a.total);
+  const newRank = simTotals.findIndex(e => e.id === entry.id) + 1;
+  const rankDelta = entry.currentRank - newRank;
+
+  let rankClass, rankText;
+  if (rankDelta > 0) {
+    rankClass = 'improved';
+    rankText = `▲ ${rankDelta} to #${newRank}`;
+  } else if (rankDelta < 0) {
+    rankClass = 'worsened';
+    rankText = `▼ ${Math.abs(rankDelta)} to #${newRank}`;
+  } else {
+    rankClass = 'unchanged';
+    rankText = `Stays #${newRank}`;
+  }
+
+  const diffSign = earningsDelta >= 0 ? '+' : '-';
+  const diffClass = earningsDelta > 0 ? 'positive' : earningsDelta < 0 ? 'negative' : 'neutral';
+
+  container.innerHTML = `
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:var(--space-md); margin-bottom:var(--space-md);">
+      <div style="text-align:center; padding:var(--space-sm); background:rgba(192,57,43,0.06); border-radius:6px;">
+        <div style="font-family:var(--font-mono); font-size:0.7rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--text-light); margin-bottom:4px;">You picked</div>
+        <div style="font-family:var(--font-display); font-size:1rem; font-weight:600;">${currentPlayer.name}</div>
+        <div style="font-family:var(--font-mono); font-size:0.9rem; color:var(--text-secondary);">${formatCurrency(currentPlayer.earnings)}</div>
+      </div>
+      <div style="text-align:center; padding:var(--space-sm); background:rgba(39,174,96,0.06); border-radius:6px;">
+        <div style="font-family:var(--font-mono); font-size:0.7rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--text-light); margin-bottom:4px;">If you picked</div>
+        <div style="font-family:var(--font-display); font-size:1rem; font-weight:600;">${swapToName}</div>
+        <div style="font-family:var(--font-mono); font-size:0.9rem; color:var(--text-secondary);">${formatCurrency(swapEarnings)}</div>
+      </div>
+    </div>
+    <div style="display:flex; justify-content:space-between; align-items:center; padding:var(--space-sm) var(--space-md); background:var(--cream); border-radius:6px;">
+      <div>
+        <div style="font-family:var(--font-mono); font-size:0.85rem; font-weight:700;">${formatCurrency(newTotal)}</div>
+        <div style="font-family:var(--font-body); font-size:0.8rem; color:var(--text-light);">New total (<span class="${diffClass}" style="font-weight:600;">${diffSign}${formatCurrency(Math.abs(earningsDelta))}</span>)</div>
+      </div>
+      <div class="scenario-rank-change ${rankClass}" style="font-size:0.9rem;">${rankText}</div>
+    </div>
+  `;
 }
 
 // ============================================
