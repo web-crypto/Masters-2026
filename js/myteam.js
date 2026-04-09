@@ -324,24 +324,19 @@ function renderDifferentiators(entry) {
     const player = entry.players[group];
     const stats = getFieldStats(group, player.name);
 
-    // "Bold pick" threshold: picked by fewer than 25% of entries
-    const threshold = Math.ceil(poolData.entries.length * 0.25);
+    // "Bold pick" threshold: picked by fewer than 10% of entries
+    const threshold = Math.ceil(poolData.entries.length * 0.10);
 
     if (stats.pickCount <= 3) {
-      // Very unique
-      const word = stats.pickCount === 1 ? "the only one" : `one of only ${stats.pickCount}`;
+      const word = stats.pickCount === 1 ? "only you" : `${stats.pickCount} entries`;
       callouts.push({
         icon: '💎',
-        html: `You're <strong>${word}</strong> with <strong>${player.name}</strong> in ${getGroupLabel(group)}.${
-          player.earnings > 0
-            ? ` That pick is earning ${formatCurrency(player.earnings)} — exclusivity that's paying off.`
-            : ' A contrarian play that hasn\'t paid off yet.'
-        }`
+        html: `<strong>${player.name}</strong> (${getGroupLabel(group)}) — ${word} · ${formatCurrency(player.earnings)}`
       });
     } else if (stats.pickCount <= threshold) {
       callouts.push({
         icon: '🎯',
-        html: `<strong>${player.name}</strong> (${getGroupLabel(group)}) — picked by only <span class="diff-count">${stats.pickCount}</span> entries (${stats.pickPct}%). A less obvious choice.`
+        html: `<strong>${player.name}</strong> (${getGroupLabel(group)}) — ${stats.pickCount} entries (${stats.pickPct}%) · ${formatCurrency(player.earnings)}`
       });
     }
   });
@@ -353,7 +348,7 @@ function renderDifferentiators(entry) {
     if (stats.pickPct >= 60) {
       callouts.push({
         icon: '📢',
-        html: `<strong>${player.name}</strong> (${getGroupLabel(group)}) is the consensus pick — ${stats.pickPct}% of the field has them. Safety in numbers.`
+        html: `<strong>${player.name}</strong> (${getGroupLabel(group)}) — ${stats.pickPct}% ownership · ${formatCurrency(player.earnings)}`
       });
     }
   });
