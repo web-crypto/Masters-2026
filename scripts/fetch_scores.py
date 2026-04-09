@@ -411,6 +411,73 @@ def build_standings(live_data: dict, entries: list[dict], verbose: bool = False)
 
 
 # ---------------------------------------------------------------------------
+# Update pool-data.js with live earnings
+# ---------------------------------------------------------------------------
+
+def update_pool_data_entries(standings: list[dict], live_data: dict):
+    """Write live earnings back into pool-data.js so the frontend can display them."""
+    import re
+
+    js_text = POOL_DATA_JS.read_text(encoding="utf-8")
+
+    # Build standings lookup by entry id
+    standings_by_id = {s["id"]: s for s in standings}
+
+    # Find the entries array
+    match = re.search(r'entries:\s*\[', js_text)
+    if not match:
+        print("WARNING: Could not find entries array in pool-data.js", file=sys.stderr)
+        return
+
+    bracket_start = js_text.index('[', match.start())
+    depth = 0
+    end = bracket_start
+    for i, ch in enumerate(js_text[bracket_start:], bracket_start):
+        if ch == '[':
+            depth += 1
+        elif ch == ']':
+            depth -= 1
+            if depth == 0:
+                end = i + 1
+                break
+
+    entries_str = js_text[bracket_start:end]
+
+    # Fix JS -> JSON
+    entries_str = re.sub(r'([{,]\s*)([a-zA-Z_][a-zA-Z0-9_]*)(\s*:)', r'\1"\2"\3', entries_str)
+    entries_str = re.sub(r',\s*([}\]])', r'\1', entries_str)
+    entries_str = re.sub(r'//[^\n]*', '', entries_str)
+
+    try:
+        entries = json.loads(entries_str)
+    except json.JSONDecodeError as e:
+        print(f"WARNING: Could not parse entries: {e}", file=sys.stderr)
+        return
+
+    # Update each entry with live data
+    for entry in entries:
+        eid = entry.get("id")
+        s = standings_by_id.get(eid)
+        if s:
+            entry["totalEarnings"] = s["totalEarnings"]
+            entry["previousRank"] = s.get("previousRank", 0)
+            entry["currentRank"] = s["rank"]
+            for gk, pdata in s["players"].items():
+                if gk in entry.get("players", {}):
+                    entry["players"][gk]["earnings"] = pdata["earnings"]
+
+    # Sort by earnings desc
+    entries.sort(key=lambda x: -x.get("totalEarnings", 0))
+    for i, e in enumerate(entries, 1):
+        e["currentRank"] = i
+
+    # Write back
+    new_entries_js = json.dumps(entries, indent=4)
+    new_js = js_text[:bracket_start] + new_entries_js + js_text[end:]
+    POOL_DATA_JS.write_text(new_js, encoding="utf-8")
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 
@@ -486,7 +553,11 @@ def main():
     LIVE_SCORES_JSON.write_text(json.dumps(live_scores_out, indent=2), encoding="utf-8")
     POOL_STANDINGS_JSON.write_text(json.dumps(pool_standings_out, indent=2), encoding="utf-8")
 
-    print(f"Updated: {LIVE_SCORES_JSON.name}, {POOL_STANDINGS_JSON.name}")
+    # 6. Update pool-data.js entries with live earnings
+    if standings:
+        update_pool_data_entries(standings, live_data)
+
+    print(f"Updated: {LIVE_SCORES_JSON.name}, {POOL_STANDINGS_JSON.name}, {POOL_DATA_JS.name}")
 
 
 if __name__ == "__main__":
