@@ -407,28 +407,35 @@ function simulateScenarios(entry, group, container) {
   container.innerHTML = '';
 
   const player = entry.players[group];
+  const playerName = player.name;
 
-  // Masters prize money scenarios (approximate 2026 purse: $20M total)
   const scenarios = [
-    { label: 'Wins the Masters', newEarnings: 4000000 },
-    { label: 'Top 5 Finish', newEarnings: 1400000 },
-    { label: 'Top 10 Finish', newEarnings: 700000 },
-    { label: 'Top 25 Finish', newEarnings: 250000 },
-    { label: 'Makes the Cut', newEarnings: 80000 },
+    { label: 'Wins the Masters', newEarnings: 4200000 },
+    { label: 'Top 5 Finish', newEarnings: 840000 },
+    { label: 'Top 10 Finish', newEarnings: 567000 },
+    { label: 'Top 25 Finish', newEarnings: 184800 },
+    { label: 'Makes the Cut', newEarnings: 52920 },
     { label: 'Misses the Cut', newEarnings: 0 }
   ];
 
   scenarios.forEach(scenario => {
     const earningsDelta = scenario.newEarnings - player.earnings;
-    const newTotal = entry.totalEarnings + earningsDelta;
 
-    // Calculate new rank by comparing against all other entries
-    let newRank = 1;
-    poolData.entries.forEach(other => {
-      if (other.id !== entry.id && other.totalEarnings > newTotal) {
-        newRank++;
-      }
+    // Recalculate the ENTIRE pool: every entry that has this player gets the same delta
+    const simTotals = poolData.entries.map(e => {
+      let delta = 0;
+      Object.values(e.players).forEach(p => {
+        if (p.name === playerName) {
+          delta += scenario.newEarnings - p.earnings;
+        }
+      });
+      return { id: e.id, total: e.totalEarnings + delta };
     });
+
+    // Sort and find new rank
+    simTotals.sort((a, b) => b.total - a.total);
+    const mySimTotal = entry.totalEarnings + earningsDelta;
+    const newRank = simTotals.findIndex(e => e.id === entry.id) + 1;
 
     const rankDelta = entry.currentRank - newRank;
     let rankClass, rankText;
@@ -447,7 +454,7 @@ function simulateScenarios(entry, group, container) {
     outcomeDiv.className = 'scenario-outcome';
     outcomeDiv.innerHTML = `
       <div class="scenario-finish">${scenario.label}</div>
-      <div class="scenario-new-earnings">${formatCurrency(newTotal)}</div>
+      <div class="scenario-new-earnings">${formatCurrency(mySimTotal)}</div>
       <div class="scenario-rank-change ${rankClass}">${rankText}</div>
     `;
 
