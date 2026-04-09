@@ -197,23 +197,34 @@ function renderRoster(entry) {
   });
 }
 
+// Map sub-slots to parent groups
+const _parentSlots = {
+  groupA: ['groupA'], groupB1: ['groupB1','groupB2'], groupB2: ['groupB1','groupB2'],
+  groupC1: ['groupC1','groupC2'], groupC2: ['groupC1','groupC2'],
+  groupD1: ['groupD1','groupD2'], groupD2: ['groupD1','groupD2'],
+  groupE: ['groupE'],
+};
+
 function getFieldStats(group, playerName) {
-  // Count picks and earnings for each player in this group slot
+  // Count picks across the entire parent group (not just one slot)
+  const slots = _parentSlots[group] || [group];
   const pickCounts = {};
   const earningsMap = {};
 
   poolData.entries.forEach(entry => {
-    const pick = entry.players[group];
-    if (pick) {
-      pickCounts[pick.name] = (pickCounts[pick.name] || 0) + 1;
-      earningsMap[pick.name] = pick.earnings;
-    }
+    const seen = new Set();
+    slots.forEach(slot => {
+      const pick = entry.players[slot];
+      if (pick && !seen.has(pick.name)) {
+        pickCounts[pick.name] = (pickCounts[pick.name] || 0) + 1;
+        earningsMap[pick.name] = pick.earnings;
+        seen.add(pick.name);
+      }
+    });
   });
 
-  // Rank by earnings within this group
   const sorted = Object.entries(earningsMap).sort((a, b) => b[1] - a[1]);
   const rank = sorted.findIndex(([name]) => name === playerName) + 1;
-
   const pickPct = Math.round(((pickCounts[playerName] || 0) / poolData.entries.length) * 100);
 
   return {
