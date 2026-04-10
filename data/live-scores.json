@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-10T07:50:19Z",
+  "fetchedAt": "2026-04-10T08:05:05Z",
   "tournamentStatus": "complete",
   "currentRound": 1,
   "players": [
@@ -529,7 +529,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 106312
+      "projectedEarnings": 108600
     },
     {
       "espnId": "3448",
@@ -545,7 +545,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 106312
+      "projectedEarnings": 108600
     },
     {
       "espnId": "4419142",
@@ -561,7 +561,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 106312
+      "projectedEarnings": 108600
     },
     {
       "espnId": "5409",
@@ -577,7 +577,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 106312
+      "projectedEarnings": 108600
     },
     {
       "espnId": "4425906",
@@ -593,7 +593,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 106312
+      "projectedEarnings": 108600
     },
     {
       "espnId": "8961",
@@ -609,7 +609,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 106312
+      "projectedEarnings": 108600
     },
     {
       "espnId": "5408",
@@ -625,12 +625,12 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 106312
+      "projectedEarnings": 108600
     },
     {
       "espnId": "329",
       "name": "Jos\u00e9 Mar\u00eda Olaz\u00e1bal",
-      "position": 41,
+      "position": 40,
       "toPar": 2,
       "toParDisplay": "+2",
       "rounds": [
@@ -641,12 +641,12 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 71505
+      "projectedEarnings": 75600
     },
     {
       "espnId": "9131",
       "name": "Cameron Smith",
-      "position": 41,
+      "position": 40,
       "toPar": 2,
       "toParDisplay": "+2",
       "rounds": [
@@ -657,12 +657,12 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 71505
+      "projectedEarnings": 75600
     },
     {
       "espnId": "9037",
       "name": "Matt Fitzpatrick",
-      "position": 41,
+      "position": 40,
       "toPar": 2,
       "toParDisplay": "+2",
       "rounds": [
@@ -673,12 +673,12 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 71505
+      "projectedEarnings": 75600
     },
     {
       "espnId": "10592",
       "name": "Collin Morikawa",
-      "position": 41,
+      "position": 40,
       "toPar": 2,
       "toParDisplay": "+2",
       "rounds": [
@@ -689,12 +689,12 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 71505
+      "projectedEarnings": 75600
     },
     {
       "espnId": "5293232",
       "name": "Ethan Fang",
-      "position": 41,
+      "position": 40,
       "toPar": 2,
       "toParDisplay": "+2",
       "rounds": [
@@ -705,12 +705,12 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 71505
+      "projectedEarnings": 75600
     },
     {
       "espnId": "5553",
       "name": "Tyrrell Hatton",
-      "position": 41,
+      "position": 40,
       "toPar": 2,
       "toParDisplay": "+2",
       "rounds": [
@@ -721,12 +721,12 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 71505
+      "projectedEarnings": 75600
     },
     {
       "espnId": "10166",
       "name": "J.J. Spaun",
-      "position": 41,
+      "position": 40,
       "toPar": 2,
       "toParDisplay": "+2",
       "rounds": [
@@ -737,12 +737,12 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 71505
+      "projectedEarnings": 75600
     },
     {
       "espnId": "4375972",
       "name": "Ludvig \u00c5berg",
-      "position": 41,
+      "position": 40,
       "toPar": 2,
       "toParDisplay": "+2",
       "rounds": [
@@ -753,12 +753,12 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 71505
+      "projectedEarnings": 75600
     },
     {
       "espnId": "1097",
       "name": "Charl Schwartzel",
-      "position": 49,
+      "position": 48,
       "toPar": 3,
       "toParDisplay": "+3",
       "rounds": [
@@ -769,12 +769,12 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 51360
+      "projectedEarnings": 52132
     },
     {
       "espnId": "4364873",
       "name": "Viktor Hovland",
-      "position": 49,
+      "position": 48,
       "toPar": 3,
       "toParDisplay": "+3",
       "rounds": [
@@ -785,12 +785,12 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 51360
+      "projectedEarnings": 52132
     },
     {
       "espnId": "11332",
       "name": "Andrew Novak",
-      "position": 49,
+      "position": 48,
       "toPar": 3,
       "toParDisplay": "+3",
       "rounds": [
@@ -801,12 +801,12 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 51360
+      "projectedEarnings": 52132
     },
     {
       "espnId": "4348444",
       "name": "Tom McKibbin",
-      "position": 49,
+      "position": 48,
       "toPar": 3,
       "toParDisplay": "+3",
       "rounds": [
@@ -817,12 +817,12 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 51360
+      "projectedEarnings": 52132
     },
     {
       "espnId": "686",
       "name": "Zach Johnson",
-      "position": 49,
+      "position": 48,
       "toPar": 3,
       "toParDisplay": "+3",
       "rounds": [
@@ -833,14 +833,14 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 51360
+      "projectedEarnings": 52132
     },
     {
       "espnId": "8974",
       "name": "Michael Kim",
-      "position": 33,
-      "toPar": 1,
-      "toParDisplay": "+1",
+      "position": 48,
+      "toPar": 3,
+      "toParDisplay": "+3",
       "rounds": [
         75,
         null,
@@ -849,12 +849,12 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 106312
+      "projectedEarnings": 52132
     },
     {
       "espnId": "9126",
       "name": "Corey Conners",
-      "position": 49,
+      "position": 48,
       "toPar": 3,
       "toParDisplay": "+3",
       "rounds": [
@@ -865,12 +865,12 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 51360
+      "projectedEarnings": 52132
     },
     {
       "espnId": "7081",
       "name": "Si Woo Kim",
-      "position": 49,
+      "position": 48,
       "toPar": 3,
       "toParDisplay": "+3",
       "rounds": [
@@ -881,7 +881,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 51360
+      "projectedEarnings": 52132
     },
     {
       "espnId": "5217048",
