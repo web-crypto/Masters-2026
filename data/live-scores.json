@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-10T23:02:51Z",
+  "fetchedAt": "2026-04-10T23:10:24Z",
   "tournamentStatus": "in_progress",
   "currentRound": 2,
   "players": [
@@ -395,6 +395,23 @@
       "projectedEarnings": 244650
     },
     {
+      "espnId": "6007",
+      "name": "Patrick Cantlay",
+      "amateur": false,
+      "position": 24,
+      "toPar": 0,
+      "toParDisplay": "E",
+      "rounds": [
+        77,
+        67,
+        null,
+        null
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 162488
+    },
+    {
       "espnId": "4375972",
       "name": "Ludvig \u00c5berg",
       "amateur": false,
@@ -506,23 +523,6 @@
       "rounds": [
         70,
         74,
-        null,
-        null
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 162488
-    },
-    {
-      "espnId": "6007",
-      "name": "Patrick Cantlay",
-      "amateur": false,
-      "position": 24,
-      "toPar": 0,
-      "toParDisplay": "E",
-      "rounds": [
-        77,
-        63,
         null,
         null
       ],
@@ -650,6 +650,23 @@
       "projectedEarnings": 113700
     },
     {
+      "espnId": "4364873",
+      "name": "Viktor Hovland",
+      "amateur": false,
+      "position": 39,
+      "toPar": 2,
+      "toParDisplay": "+2",
+      "rounds": [
+        75,
+        71,
+        null,
+        null
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 84000
+    },
+    {
       "espnId": "4426181",
       "name": "Sam Stevens",
       "amateur": false,
@@ -727,23 +744,6 @@
       "rounds": [
         71,
         75,
-        null,
-        null
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 84000
-    },
-    {
-      "espnId": "4364873",
-      "name": "Viktor Hovland",
-      "amateur": false,
-      "position": 39,
-      "toPar": 2,
-      "toParDisplay": "+2",
-      "rounds": [
-        75,
-        67,
         null,
         null
       ],
@@ -837,6 +837,23 @@
       "projectedEarnings": 53445
     },
     {
+      "espnId": "3832",
+      "name": "Alex Noren",
+      "amateur": false,
+      "position": 47,
+      "toPar": 4,
+      "toParDisplay": "+4",
+      "rounds": [
+        77,
+        71,
+        null,
+        null
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 53445
+    },
+    {
       "espnId": "9126",
       "name": "Corey Conners",
       "amateur": false,
@@ -897,23 +914,6 @@
       "rounds": [
         69,
         79,
-        null,
-        null
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 53445
-    },
-    {
-      "espnId": "3832",
-      "name": "Alex Noren",
-      "amateur": false,
-      "position": 47,
-      "toPar": 4,
-      "toParDisplay": "+4",
-      "rounds": [
-        77,
-        67,
         null,
         null
       ],
