@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-04-10T23:10:24Z",
-  "tournamentStatus": "in_progress",
+  "fetchedAt": "2026-04-10T23:20:14Z",
+  "tournamentStatus": "complete",
   "currentRound": 2,
   "players": [
     {
@@ -936,7 +936,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 0
+      "projectedEarnings": 50400
     },
     {
       "espnId": "4251",
@@ -953,7 +953,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 0
+      "projectedEarnings": 50400
     },
     {
       "espnId": "4304",
@@ -970,7 +970,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 0
+      "projectedEarnings": 50400
     },
     {
       "espnId": "780",
@@ -987,7 +987,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 0
+      "projectedEarnings": 50400
     },
     {
       "espnId": "10166",
@@ -1004,7 +1004,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 0
+      "projectedEarnings": 50400
     },
     {
       "espnId": "11250",
@@ -1021,7 +1021,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 0
+      "projectedEarnings": 50400
     },
     {
       "espnId": "10046",
@@ -1038,7 +1038,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 0
+      "projectedEarnings": 50400
     },
     {
       "espnId": "686",
@@ -1055,7 +1055,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 0
+      "projectedEarnings": 50400
     },
     {
       "espnId": "4419142",
@@ -1072,7 +1072,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 0
+      "projectedEarnings": 50400
     },
     {
       "espnId": "11378",
@@ -1089,7 +1089,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 0
+      "projectedEarnings": 50400
     },
     {
       "espnId": "4858859",
@@ -1106,7 +1106,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 0
+      "projectedEarnings": 50400
     },
     {
       "espnId": "11332",
@@ -1123,7 +1123,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 0
+      "projectedEarnings": 50400
     },
     {
       "espnId": "4348444",
@@ -1140,7 +1140,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 0
+      "projectedEarnings": 50400
     },
     {
       "espnId": "9131",
@@ -1157,7 +1157,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 0
+      "projectedEarnings": 50400
     },
     {
       "espnId": "4610056",
@@ -1174,7 +1174,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 0
+      "projectedEarnings": 84000
     },
     {
       "espnId": "9025",
@@ -1191,7 +1191,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 0
+      "projectedEarnings": 84000
     },
     {
       "espnId": "5344766",
@@ -1225,7 +1225,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 0
+      "projectedEarnings": 84000
     },
     {
       "espnId": "5293232",
@@ -1259,7 +1259,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 0
+      "projectedEarnings": 75600
     },
     {
       "espnId": "5289811",
@@ -1293,7 +1293,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 0
+      "projectedEarnings": 75600
     },
     {
       "espnId": "453",
@@ -1310,7 +1310,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 0
+      "projectedEarnings": 50400
     },
     {
       "espnId": "392",
@@ -1327,7 +1327,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 0
+      "projectedEarnings": 50400
     },
     {
       "espnId": "5327297",
@@ -1361,7 +1361,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 0
+      "projectedEarnings": 63000
     },
     {
       "espnId": "4585548",
@@ -1378,7 +1378,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 0
+      "projectedEarnings": 63000
     },
     {
       "espnId": "4410932",
@@ -1395,7 +1395,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 0
+      "projectedEarnings": 63000
     },
     {
       "espnId": "5217048",
@@ -1412,7 +1412,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 0
+      "projectedEarnings": 63000
     },
     {
       "espnId": "11101",
@@ -1429,7 +1429,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 0
+      "projectedEarnings": 50400
     },
     {
       "espnId": "4408316",
@@ -1446,7 +1446,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 0
+      "projectedEarnings": 50400
     },
     {
       "espnId": "4837226",
@@ -1463,7 +1463,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 0
+      "projectedEarnings": 67200
     },
     {
       "espnId": "5080439",
@@ -1480,7 +1480,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 0
+      "projectedEarnings": 67200
     },
     {
       "espnId": "5344763",
@@ -1497,7 +1497,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 0
+      "projectedEarnings": 67200
     },
     {
       "espnId": "2201886",
@@ -1531,7 +1531,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 0
+      "projectedEarnings": 50400
     },
     {
       "espnId": "10058",
@@ -1548,7 +1548,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 0
+      "projectedEarnings": 50400
     }
   ]
 }
