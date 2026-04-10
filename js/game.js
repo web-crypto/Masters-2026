@@ -1,6 +1,6 @@
 // ============================================
-// AUGUSTA MINI GOLF — 9-Hole Game Engine
-// Pull-back to shoot | Slopes | Fast zones
+// AUGUSTA MINI GOLF — 6-Hole Game Engine
+// Pull-back to shoot | Shaped fairways | Slopes | Fast zones
 // ============================================
 
 (function () {
@@ -44,279 +44,236 @@
   };
 
   // --- Hole Definitions ---
+  // boundary: optional array of {x, y} points forming playable fairway polygon
   // slope: { x, y, w, h, dirX, dirY, strength }
-  // Multiple small slopes per hole = realistic multi-break greens
   // tunnel: { side, pos, width } on entry/exit — ball teleports through border
+
+  // Helper: generate smooth oval/capsule boundary
+  function makeCapsule(cx, cy, rx, ry, steps) {
+    const pts = [];
+    steps = steps || 28;
+    for (let i = 0; i < steps; i++) {
+      const a = (i / steps) * Math.PI * 2;
+      pts.push({ x: cx + Math.cos(a) * rx, y: cy + Math.sin(a) * ry });
+    }
+    return pts;
+  }
+
   const HOLES = [
     {
-      // Tea Olive: classic S-curve break. Left side slopes toward bottom,
-      // right side slopes toward top. Ball must read the green.
+      // #1 Tea Olive — Opener. Gentle oval fairway with subtle right drift.
       name: 'Tea Olive',
       par: 3,
-      ball: { x: 80, y: 250 },
-      hole: { x: 700, y: 250 },
-      walls: [
-        { x: 310, y: 140, w: 18, h: 210 },
+      ball: { x: 110, y: 250 },
+      hole: { x: 690, y: 220 },
+      boundary: [
+        { x: 50,  y: 260 }, { x: 55,  y: 205 }, { x: 80,  y: 160 }, { x: 125, y: 130 },
+        { x: 180, y: 115 }, { x: 240, y: 108 }, { x: 320, y: 105 }, { x: 410, y: 108 },
+        { x: 500, y: 115 }, { x: 580, y: 125 }, { x: 650, y: 138 }, { x: 710, y: 160 },
+        { x: 745, y: 195 }, { x: 760, y: 235 }, { x: 758, y: 275 }, { x: 740, y: 315 },
+        { x: 700, y: 350 }, { x: 640, y: 375 }, { x: 560, y: 390 }, { x: 470, y: 398 },
+        { x: 370, y: 395 }, { x: 270, y: 385 }, { x: 190, y: 370 }, { x: 125, y: 345 },
+        { x: 80,  y: 315 }, { x: 58,  y: 290 },
       ],
-      obstacles: [],
-      slopes: [
-        // Left third: slopes downward (toward bottom of screen)
-        { x: 0,   y: 0, w: 260, h: 500, dirX: 0,    dirY:  0.6, strength: 0.020 },
-        // Center: flat-ish with slight left drift
-        { x: 260, y: 0, w: 220, h: 500, dirX: -0.2, dirY:  0,   strength: 0.010 },
-        // Right third: slopes upward (toward top of screen) — opposite break
-        { x: 480, y: 0, w: 320, h: 500, dirX: 0,    dirY: -0.5, strength: 0.018 },
-      ],
-      fastZones: [],
-      tunnels: [
-        // Secret: left border at y=100 — shoot backward against the slope
-        { entry: { side: 'left', pos: 100, width: 22 },
-          exit:  { side: 'right', pos: 260 } },
-      ],
-    },
-    {
-      // Pink Dogwood: upper half drains left, lower half drains right.
-      // Ridge runs horizontally across the middle.
-      name: 'Pink Dogwood',
-      par: 3,
-      ball: { x: 80, y: 420 },
-      hole: { x: 700, y: 80 },
-      walls: [
-        { x: 260, y: 0, w: 18, h: 290 },
-        { x: 510, y: 210, w: 18, h: 290 },
-      ],
-      obstacles: [],
-      slopes: [
-        // Upper half: drains left
-        { x: 0, y: 0,   w: 800, h: 220, dirX: -0.5, dirY: 0,   strength: 0.022 },
-        // Narrow ridge band: gentle push downward
-        { x: 0, y: 220, w: 800, h: 60,  dirX:  0,   dirY: 0.3, strength: 0.012 },
-        // Lower half: drains right
-        { x: 0, y: 280, w: 800, h: 220, dirX:  0.5, dirY: 0,   strength: 0.022 },
-      ],
-      fastZones: [],
-    },
-    {
-      // Flowering Peach: three zones. Top slopes toward water hazard,
-      // bottom slopes away, right side slopes toward hole.
-      name: 'Flowering Peach',
-      par: 4,
-      ball: { x: 80, y: 250 },
-      hole: { x: 700, y: 250 },
-      walls: [
-        { x: 210, y: 90,  w: 18, h: 170 },
-        { x: 210, y: 310, w: 18, h: 170 },
-        { x: 460, y: 0,   w: 18, h: 210 },
-        { x: 460, y: 290, w: 18, h: 210 },
-      ],
+      walls: [],
       obstacles: [
-        { type: 'water', x: 340, y: 250, r: 38 },
+        { type: 'sand', x: 600, y: 260, r: 22 },
+        { type: 'sand', x: 635, y: 195, r: 20 },
       ],
       slopes: [
-        // Top corridor: diagonal toward water
-        { x: 150, y: 0,   w: 320, h: 200, dirX:  0.4, dirY:  0.5, strength: 0.024 },
-        // Bottom corridor: slopes away from water downward
-        { x: 150, y: 310, w: 320, h: 190, dirX:  0.3, dirY: -0.4, strength: 0.018 },
-        // Right section: slopes toward hole (right)
-        { x: 480, y: 100, w: 320, h: 300, dirX:  0.6, dirY:  0,   strength: 0.020 },
+        { x: 80, y: 100, w: 680, h: 300, dirX: 0.3, dirY: 0.15, strength: 0.014 },
       ],
       fastZones: [],
     },
+
     {
-      // Crab Apple: zig-zag bumps. Alternating angled slopes funnel the ball
-      // up toward the hole if you read the line right. No obstacles, no fast zones.
-      name: 'Flowering Crab Apple',
+      // #12 Golden Bell — Iconic Par 3 with Rae's Creek in front. Small kidney green.
+      name: 'Golden Bell',
       par: 3,
       ball: { x: 400, y: 440 },
-      hole: { x: 400, y: 60 },
+      hole: { x: 400, y: 90 },
+      boundary: [
+        // Bottom tee pad (wide)
+        { x: 120, y: 480 }, { x: 280, y: 485 }, { x: 400, y: 488 },
+        { x: 520, y: 485 }, { x: 680, y: 480 }, { x: 720, y: 440 },
+        { x: 735, y: 380 }, { x: 720, y: 330 }, { x: 680, y: 300 },
+        // Narrow waist (creek crossing)
+        { x: 620, y: 275 }, { x: 560, y: 260 }, { x: 520, y: 240 },
+        { x: 530, y: 210 }, { x: 580, y: 190 }, { x: 650, y: 170 },
+        // Top green area (wide)
+        { x: 720, y: 140 }, { x: 745, y: 95 },  { x: 720, y: 45 },
+        { x: 640, y: 25 },  { x: 520, y: 18 },  { x: 400, y: 15 },
+        { x: 280, y: 18 },  { x: 160, y: 25 },  { x: 80,  y: 45 },
+        { x: 55,  y: 95 },  { x: 80,  y: 140 }, { x: 150, y: 170 },
+        { x: 220, y: 190 }, { x: 270, y: 210 }, { x: 280, y: 240 },
+        { x: 240, y: 260 }, { x: 180, y: 275 }, { x: 120, y: 300 },
+        { x: 80,  y: 330 }, { x: 65,  y: 380 }, { x: 80,  y: 440 },
+      ],
       walls: [],
-      obstacles: [],
-      slopes: [
-        // Row 1 (bottom, y=380-440): gentle kick right + up to get started
-        { x: 100, y: 380, w: 600, h: 60,  dirX:  0.5, dirY: -0.3, strength: 0.016 },
-
-        // Row 2 (y=300-380): slope kicks left + up
-        { x: 50,  y: 300, w: 700, h: 80,  dirX: -0.6, dirY: -0.3, strength: 0.020 },
-
-        // Row 3 (y=220-300): slope kicks right + up
-        { x: 50,  y: 220, w: 700, h: 80,  dirX:  0.6, dirY: -0.3, strength: 0.020 },
-
-        // Row 4 (y=140-220): slope kicks left + up — tighter toward center
-        { x: 100, y: 140, w: 600, h: 80,  dirX: -0.5, dirY: -0.4, strength: 0.018 },
-
-        // Row 5 (y=60-140): final approach — funnels center toward hole
-        { x: 0,   y: 60,  w: 400, h: 80,  dirX:  0.4, dirY: -0.2, strength: 0.014 },
-        { x: 400, y: 60,  w: 400, h: 80,  dirX: -0.4, dirY: -0.2, strength: 0.014 },
-
-        // Gutter slopes on edges — push ball back toward center if it drifts wide
-        { x: 0,   y: 0,   w: 80,  h: 500, dirX:  0.8, dirY:  0,   strength: 0.022 },
-        { x: 720, y: 0,   w: 80,  h: 500, dirX: -0.8, dirY:  0,   strength: 0.022 },
-      ],
-      fastZones: [],
-      tunnels: [
-        // Secret: bottom border at x=100 — shoot backward away from hole
-        { entry: { side: 'bottom', pos: 100, width: 22 },
-          exit:  { side: 'top', pos: 390 } },
-      ],
-    },
-    {
-      // Magnolia: three tiers. Top tier flat, middle slopes right,
-      // bottom tier steep toward hole.
-      name: 'Magnolia',
-      par: 4,
-      ball: { x: 80, y: 80 },
-      hole: { x: 700, y: 420 },
-      walls: [
-        { x: 190, y: 0,   w: 18, h: 200 },
-        { x: 360, y: 180, w: 18, h: 320 },
-        { x: 510, y: 0,   w: 18, h: 280 },
-        { x: 640, y: 200, w: 18, h: 300 },
-      ],
       obstacles: [
-        { type: 'sand', x: 590, y: 340, r: 35 },
+        // Rae's Creek - three water bodies forming a ribbon across the waist
+        { type: 'water', x: 260, y: 250, r: 30 },
+        { type: 'water', x: 400, y: 245, r: 35 },
+        { type: 'water', x: 500, y: 245, r: 30 },
+        // Three bunkers behind/around the green
+        { type: 'sand',  x: 300, y: 70,  r: 20 },
+        { type: 'sand',  x: 400, y: 55,  r: 22 },
+        { type: 'sand',  x: 500, y: 70,  r: 20 },
       ],
       slopes: [
-        // Top tier: relatively flat, slight drift right
-        { x: 0, y: 0,   w: 800, h: 170, dirX:  0.3, dirY:  0.1, strength: 0.012 },
-        // Middle tier: slopes right and down
-        { x: 0, y: 170, w: 800, h: 160, dirX:  0.5, dirY:  0.4, strength: 0.025 },
-        // Bottom tier: steep toward hole (bottom-right corner)
-        { x: 0, y: 330, w: 800, h: 170, dirX:  0.4, dirY:  0.7, strength: 0.035 },
-      ],
-      fastZones: [],
-    },
-    {
-      // Juniper: left zone slopes into left water, right zone into right water,
-      // center corridor is flat but fast.
-      name: 'Juniper',
-      par: 3,
-      ball: { x: 400, y: 430 },
-      hole: { x: 400, y: 70 },
-      walls: [
-        { x: 140, y: 190, w: 210, h: 18 },
-        { x: 450, y: 190, w: 210, h: 18 },
-        { x: 320, y: 270, w: 160, h: 18 },
-      ],
-      obstacles: [
-        { type: 'water', x: 240, y: 110, r: 42 },
-        { type: 'water', x: 560, y: 110, r: 42 },
-      ],
-      slopes: [
-        // Left zone: drains toward left water (up-left)
-        { x: 0,   y: 0,   w: 310, h: 210, dirX: -0.5, dirY: -0.5, strength: 0.026 },
-        // Right zone: drains toward right water (up-right)
-        { x: 490, y: 0,   w: 310, h: 210, dirX:  0.5, dirY: -0.5, strength: 0.026 },
-        // Lower half: slopes upward (toward hole) — reward good approach
-        { x: 100, y: 260, w: 600, h: 240, dirX:  0,   dirY: -0.4, strength: 0.016 },
+        // Green tilts gently back toward creek — overshoots roll off the back
+        { x: 80, y: 20, w: 640, h: 160, dirX: 0, dirY: 0.5, strength: 0.018 },
       ],
       fastZones: [
-        { x: 310, y: 0, w: 180, h: 200 },
+        { x: 120, y: 40, w: 560, h: 140 }, // fast green
       ],
     },
+
     {
-      // Azalea/Amen Corner: left section flat, center fast corridor slopes
-      // down toward water, right section near hole slopes upward.
-      name: 'Azalea — Amen Corner',
-      par: 4,
-      ball: { x: 80, y: 250 },
-      hole: { x: 700, y: 250 },
-      walls: [
-        { x: 230, y: 90,  w: 18, h: 150 },
-        { x: 230, y: 300, w: 18, h: 160 },
-        { x: 400, y: 0,   w: 18, h: 190 },
-        { x: 400, y: 280, w: 18, h: 220 },
-        { x: 570, y: 110, w: 18, h: 150 },
-        { x: 570, y: 330, w: 18, h: 160 },
-      ],
-      obstacles: [
-        { type: 'sand',  x: 315, y: 250, r: 26 },
-        { type: 'water', x: 490, y: 250, r: 32 },
-      ],
-      slopes: [
-        // Approach: slight downhill right
-        { x: 0,   y: 150, w: 230, h: 200, dirX:  0.3, dirY: 0,    strength: 0.014 },
-        // Center fast zone: slopes down toward water hazard
-        { x: 248, y: 180, w: 250, h: 140, dirX:  0.4, dirY: 0.5,  strength: 0.028 },
-        // Right of water: upslope — ball won't easily run past hole
-        { x: 530, y: 160, w: 200, h: 180, dirX: -0.3, dirY: 0,    strength: 0.018 },
-      ],
-      fastZones: [
-        { x: 80, y: 195, w: 560, h: 110 },
-      ],
-      tunnels: [
-        // Secret: left border at y=420 — shoot backward against rightward slope
-        { entry: { side: 'left', pos: 420, width: 22 },
-          exit:  { side: 'right', pos: 240 } },
-      ],
-    },
-    {
-      // Carolina Cherry: long hole, three lateral sections with different breaks.
-      // Each corridor has its own slope direction.
-      name: 'Carolina Cherry',
+      // #13 Azalea — Sharp dogleg left par 5. Creek winds around the corner.
+      name: 'Azalea',
       par: 5,
-      ball: { x: 60, y: 60 },
-      hole: { x: 720, y: 440 },
-      walls: [
-        { x: 160, y: 0,   w: 18, h: 160 },
-        { x: 160, y: 220, w: 18, h: 120 },
-        { x: 160, y: 400, w: 18, h: 100 },
-        { x: 360, y: 80,  w: 18, h: 160 },
-        { x: 360, y: 300, w: 18, h: 200 },
-        { x: 560, y: 0,   w: 18, h: 220 },
-        { x: 560, y: 280, w: 18, h: 100 },
-        { x: 560, y: 440, w: 18, h: 60  },
+      ball: { x: 90, y: 90 },
+      hole: { x: 720, y: 430 },
+      boundary: [
+        // Outer edge: starts top-left, sweeps right along top, curves down-right to green
+        { x: 55,  y: 110 }, { x: 80,  y: 65 },  { x: 150, y: 40 },  { x: 250, y: 30 },
+        { x: 360, y: 30 },  { x: 460, y: 40 },  { x: 550, y: 65 },  { x: 630, y: 105 },
+        { x: 695, y: 155 }, { x: 740, y: 220 }, { x: 760, y: 300 }, { x: 760, y: 380 },
+        { x: 745, y: 440 }, { x: 710, y: 475 }, { x: 650, y: 485 }, { x: 580, y: 480 },
+        // Inner curve — carve out the dogleg
+        { x: 520, y: 455 }, { x: 470, y: 420 }, { x: 430, y: 370 },
+        { x: 400, y: 315 }, { x: 360, y: 270 }, { x: 310, y: 240 },
+        { x: 250, y: 220 }, { x: 180, y: 205 }, { x: 120, y: 190 },
+        { x: 75,  y: 170 },
       ],
+      walls: [],
       obstacles: [
-        { type: 'sand',  x: 260, y: 360, r: 30 },
-        { type: 'water', x: 460, y: 150, r: 36 },
-        { type: 'sand',  x: 650, y: 300, r: 26 },
+        // Creek along the inside of the dogleg (the "Rae's Creek" that wraps around 13 green)
+        { type: 'water', x: 460, y: 340, r: 30 },
+        { type: 'water', x: 520, y: 380, r: 32 },
+        { type: 'water', x: 590, y: 420, r: 30 },
+        // Greenside bunkers
+        { type: 'sand',  x: 680, y: 380, r: 20 },
+        { type: 'sand',  x: 700, y: 450, r: 18 },
       ],
       slopes: [
-        // First corridor (left): slopes downward
-        { x: 0,   y: 0,   w: 160, h: 500, dirX:  0.1, dirY:  0.5, strength: 0.020 },
-        // Second corridor (mid-left): slopes right and slightly up
-        { x: 178, y: 0,   w: 182, h: 500, dirX:  0.5, dirY: -0.2, strength: 0.022 },
-        // Third corridor (mid-right): slopes toward water hazard
-        { x: 378, y: 0,   w: 182, h: 500, dirX:  0.2, dirY: -0.4, strength: 0.020 },
-        // Fourth corridor (right): steep downhill toward hole
-        { x: 578, y: 0,   w: 222, h: 500, dirX:  0.3, dirY:  0.6, strength: 0.028 },
+        // Top fairway drifts right
+        { x: 70,  y: 40,  w: 620, h: 130, dirX: 0.6, dirY: 0.1, strength: 0.018 },
+        // Approach slopes toward hole (down-right)
+        { x: 480, y: 170, w: 280, h: 300, dirX: 0.3, dirY: 0.5, strength: 0.022 },
       ],
       fastZones: [
-        { x: 180, y: 200, w: 185, h: 110 },
-        { x: 578, y: 340, w: 222, h: 120 },
+        { x: 180, y: 60, w: 380, h: 100 },
+      ],
+      tunnels: [
+        // Secret shortcut: top border at x=400, pops out near the green
+        { entry: { side: 'top', pos: 400, width: 22 },
+          exit:  { side: 'right', pos: 430 } },
       ],
     },
+
     {
-      // Holly 18th: three-zone green. Left drains away, center is the
-      // approach ridge, right tilts down toward fortress.
-      name: 'Holly — 18th Green',
-      par: 4,
-      ball: { x: 80, y: 250 },
-      hole: { x: 680, y: 250 },
-      walls: [
-        { x: 585, y: 155, w: 130, h: 16 },
-        { x: 585, y: 329, w: 130, h: 16 },
-        { x: 585, y: 171, w: 16, h: 68 },
-        { x: 585, y: 261, w: 16, h: 68 },
-        { x: 290, y: 40,  w: 16, h: 180 },
-        { x: 290, y: 280, w: 16, h: 180 },
+      // #15 Firethorn — Reachable par 5 with water short AND behind the green.
+      name: 'Firethorn',
+      par: 5,
+      ball: { x: 80, y: 340 },
+      hole: { x: 700, y: 150 },
+      boundary: [
+        // Diagonal capsule running lower-left to upper-right
+        { x: 45,  y: 360 }, { x: 70,  y: 400 }, { x: 130, y: 425 }, { x: 210, y: 440 },
+        { x: 300, y: 440 }, { x: 390, y: 420 }, { x: 470, y: 385 }, { x: 540, y: 340 },
+        { x: 600, y: 285 }, { x: 650, y: 230 }, { x: 700, y: 185 }, { x: 745, y: 150 },
+        { x: 760, y: 110 }, { x: 755, y: 65 },  { x: 720, y: 30 },  { x: 650, y: 25 },
+        { x: 570, y: 45 },  { x: 490, y: 85 },  { x: 410, y: 135 }, { x: 330, y: 190 },
+        { x: 250, y: 235 }, { x: 180, y: 270 }, { x: 120, y: 295 }, { x: 75,  y: 315 },
+        { x: 50,  y: 335 },
       ],
+      walls: [],
       obstacles: [
-        { type: 'sand', x: 190, y: 130, r: 26 },
-        { type: 'sand', x: 190, y: 370, r: 26 },
+        // Water short of green
+        { type: 'water', x: 620, y: 200, r: 30 },
+        // Bunker behind green
+        { type: 'sand',  x: 735, y: 80,  r: 22 },
+        // Sand trap left of approach
+        { type: 'sand',  x: 480, y: 330, r: 20 },
       ],
       slopes: [
-        // Left section: drains left (away from hole)
-        { x: 0,   y: 0,   w: 290, h: 500, dirX: -0.5, dirY:  0,   strength: 0.020 },
-        // Center approach: ridge tilts slightly downward
-        { x: 306, y: 0,   w: 280, h: 500, dirX:  0.2, dirY:  0.3, strength: 0.014 },
-        // Right near fortress: tilts down toward hole from above,
-        // up toward hole from below (funnels in)
-        { x: 586, y: 155, w: 130, h: 80,  dirX:  0,   dirY:  0.5, strength: 0.025 },
-        { x: 586, y: 265, w: 130, h: 80,  dirX:  0,   dirY: -0.5, strength: 0.025 },
+        // Fairway slopes up-right toward green
+        { x: 70, y: 30, w: 700, h: 420, dirX: 0.5, dirY: -0.3, strength: 0.018 },
       ],
       fastZones: [
-        { x: 430, y: 155, w: 155, h: 190 },
+        { x: 350, y: 150, w: 280, h: 180 },
+      ],
+    },
+
+    {
+      // #11 White Dogwood — Gentle dogleg left par 4, pond guards green on left.
+      name: 'White Dogwood',
+      par: 4,
+      ball: { x: 100, y: 130 },
+      hole: { x: 690, y: 410 },
+      boundary: [
+        // Outer edge: tee top-left, sweeps right then down to green bottom-right
+        { x: 50,  y: 150 }, { x: 70,  y: 95 },  { x: 120, y: 55 },  { x: 200, y: 40 },
+        { x: 290, y: 45 },  { x: 370, y: 65 },  { x: 440, y: 95 },  { x: 510, y: 135 },
+        { x: 575, y: 180 }, { x: 640, y: 230 }, { x: 695, y: 285 }, { x: 735, y: 345 },
+        { x: 760, y: 400 }, { x: 760, y: 445 }, { x: 730, y: 475 }, { x: 660, y: 485 },
+        { x: 580, y: 480 }, { x: 510, y: 465 }, { x: 450, y: 440 }, { x: 395, y: 405 },
+        // Inner curve
+        { x: 355, y: 360 }, { x: 315, y: 310 }, { x: 275, y: 260 }, { x: 235, y: 220 },
+        { x: 190, y: 195 }, { x: 140, y: 185 }, { x: 95,  y: 180 }, { x: 60,  y: 190 },
+      ],
+      walls: [],
+      obstacles: [
+        // Pond left of green (guards the left pin)
+        { type: 'water', x: 550, y: 440, r: 38 },
+        // Bunker right of green
+        { type: 'sand',  x: 720, y: 355, r: 22 },
+        // Fairway bunker in the landing area
+        { type: 'sand',  x: 340, y: 140, r: 24 },
+      ],
+      slopes: [
+        // Fairway drifts right and slightly down
+        { x: 70, y: 50, w: 700, h: 430, dirX: 0.4, dirY: 0.3, strength: 0.016 },
+        // Approach: steep downhill right into the green
+        { x: 500, y: 280, w: 260, h: 210, dirX: 0.4, dirY: 0.5, strength: 0.024 },
+      ],
+      fastZones: [],
+    },
+
+    {
+      // #18 Holly — Uphill finishing hole, dogleg right, big bunker left.
+      name: 'Holly',
+      par: 4,
+      ball: { x: 150, y: 440 },
+      hole: { x: 680, y: 100 },
+      boundary: [
+        { x: 55,  y: 440 }, { x: 90,  y: 480 }, { x: 180, y: 490 }, { x: 290, y: 480 },
+        { x: 390, y: 455 }, { x: 480, y: 415 }, { x: 555, y: 360 }, { x: 620, y: 300 },
+        { x: 680, y: 235 }, { x: 725, y: 170 }, { x: 755, y: 110 }, { x: 755, y: 60 },
+        { x: 720, y: 25 },  { x: 640, y: 15 },  { x: 560, y: 25 },  { x: 490, y: 50 },
+        { x: 430, y: 90 },  { x: 375, y: 140 }, { x: 325, y: 195 }, { x: 280, y: 250 },
+        { x: 240, y: 305 }, { x: 200, y: 360 }, { x: 160, y: 410 }, { x: 110, y: 445 },
+        { x: 60,  y: 460 },
+      ],
+      walls: [],
+      obstacles: [
+        // Big fairway bunker on the inside of the bend (left of fairway)
+        { type: 'sand', x: 260, y: 400, r: 32 },
+        { type: 'sand', x: 320, y: 330, r: 24 },
+        // Greenside bunkers
+        { type: 'sand', x: 620, y: 70,  r: 22 },
+        { type: 'sand', x: 720, y: 155, r: 20 },
+      ],
+      slopes: [
+        // Uphill diagonally toward the green
+        { x: 60, y: 30, w: 700, h: 470, dirX: 0.5, dirY: -0.5, strength: 0.020 },
+        // Approach: funnels toward the hole from below
+        { x: 560, y: 30, w: 200, h: 180, dirX: 0.2, dirY: -0.3, strength: 0.022 },
+      ],
+      fastZones: [
+        { x: 450, y: 140, w: 280, h: 160 },
       ],
     },
   ];
@@ -511,14 +468,15 @@
 
   function spawnDog() {
     const hole = HOLES[currentHole];
-    // Pick a random spot away from ball, hole, walls, and edges
+    const hasBoundary = hole.boundary && hole.boundary.length >= 3;
     let tries = 0;
-    while (tries < 50) {
+    while (tries < 80) {
       const dx = 60 + Math.random() * (CANVAS_W - 120);
       const dy = 60 + Math.random() * (CANVAS_H - 120);
       const distBall = Math.sqrt((dx - ball.x) ** 2 + (dy - ball.y) ** 2);
       const distHole = Math.sqrt((dx - hole.hole.x) ** 2 + (dy - hole.hole.y) ** 2);
-      if (distBall > 80 && distHole > 50) {
+      const insideFairway = !hasBoundary || pointInPolygon(dx, dy, hole.boundary);
+      if (distBall > 80 && distHole > 50 && insideFairway) {
         dog.x = dx;
         dog.y = dy;
         break;
@@ -814,11 +772,18 @@
       }
     });
 
-    // --- Border collisions ---
-    if (!tunneled && ball.x - BALL_RADIUS < 0)        { ball.x = BALL_RADIUS;            ball.vx = -ball.vx * WALL_BOUNCE; }
-    if (!tunneled && ball.x + BALL_RADIUS > CANVAS_W)  { ball.x = CANVAS_W - BALL_RADIUS; ball.vx = -ball.vx * WALL_BOUNCE; }
-    if (!tunneled && ball.y - BALL_RADIUS < 0)        { ball.y = BALL_RADIUS;            ball.vy = -ball.vy * WALL_BOUNCE; }
-    if (!tunneled && ball.y + BALL_RADIUS > CANVAS_H)  { ball.y = CANVAS_H - BALL_RADIUS; ball.vy = -ball.vy * WALL_BOUNCE; }
+    // --- Boundary collisions ---
+    if (!tunneled) {
+      if (hole.boundary && hole.boundary.length >= 3) {
+        handleBoundaryCollision(ball, hole.boundary);
+      } else {
+        // Fallback: canvas edges
+        if (ball.x - BALL_RADIUS < 0)        { ball.x = BALL_RADIUS;            ball.vx = -ball.vx * WALL_BOUNCE; }
+        if (ball.x + BALL_RADIUS > CANVAS_W) { ball.x = CANVAS_W - BALL_RADIUS;  ball.vx = -ball.vx * WALL_BOUNCE; }
+        if (ball.y - BALL_RADIUS < 0)        { ball.y = BALL_RADIUS;            ball.vy = -ball.vy * WALL_BOUNCE; }
+        if (ball.y + BALL_RADIUS > CANVAS_H) { ball.y = CANVAS_H - BALL_RADIUS;  ball.vy = -ball.vy * WALL_BOUNCE; }
+      }
+    }
 
     // --- Stop check ---
     const speed = Math.sqrt(ball.vx * ball.vx + ball.vy * ball.vy);
@@ -832,6 +797,70 @@
     const hx = hole.hole.x, hy = hole.hole.y;
     const hd = Math.sqrt((ball.x - hx) ** 2 + (ball.y - hy) ** 2);
     if (hd < HOLE_RADIUS && speed < 12) holeComplete();
+  }
+
+  // --- Polygon boundary helpers ---
+  function pointInPolygon(px, py, poly) {
+    let inside = false;
+    for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
+      const xi = poly[i].x, yi = poly[i].y;
+      const xj = poly[j].x, yj = poly[j].y;
+      const intersect = ((yi > py) !== (yj > py)) &&
+        (px < (xj - xi) * (py - yi) / (yj - yi) + xi);
+      if (intersect) inside = !inside;
+    }
+    return inside;
+  }
+
+  function closestPointOnSegment(px, py, x1, y1, x2, y2) {
+    const dx = x2 - x1, dy = y2 - y1;
+    const lenSq = dx * dx + dy * dy;
+    if (lenSq === 0) return { x: x1, y: y1 };
+    let t = ((px - x1) * dx + (py - y1) * dy) / lenSq;
+    if (t < 0) t = 0; else if (t > 1) t = 1;
+    return { x: x1 + t * dx, y: y1 + t * dy };
+  }
+
+  function handleBoundaryCollision(b, poly) {
+    // Find nearest edge
+    let nearestDist = Infinity;
+    let nearestCpX = 0, nearestCpY = 0;
+    for (let i = 0; i < poly.length; i++) {
+      const p1 = poly[i];
+      const p2 = poly[(i + 1) % poly.length];
+      const cp = closestPointOnSegment(b.x, b.y, p1.x, p1.y, p2.x, p2.y);
+      const dx = b.x - cp.x;
+      const dy = b.y - cp.y;
+      const d = Math.sqrt(dx * dx + dy * dy);
+      if (d < nearestDist) {
+        nearestDist = d;
+        nearestCpX = cp.x;
+        nearestCpY = cp.y;
+      }
+    }
+
+    const inside = pointInPolygon(b.x, b.y, poly);
+    if (nearestDist >= BALL_RADIUS && inside) return; // plenty of clearance
+
+    // Compute normal from edge toward ball (or reversed if outside)
+    let nx = b.x - nearestCpX;
+    let ny = b.y - nearestCpY;
+    const nlen = Math.sqrt(nx * nx + ny * ny) || 1;
+    nx /= nlen; ny /= nlen;
+    if (!inside) { nx = -nx; ny = -ny; }
+
+    // Push ball back inside
+    b.x = nearestCpX + nx * (BALL_RADIUS + 0.5);
+    b.y = nearestCpY + ny * (BALL_RADIUS + 0.5);
+
+    // Reflect velocity if ball is moving into the edge
+    const dot = b.vx * nx + b.vy * ny;
+    if (dot < 0) {
+      b.vx -= 2 * dot * nx;
+      b.vy -= 2 * dot * ny;
+      b.vx *= WALL_BOUNCE;
+      b.vy *= WALL_BOUNCE;
+    }
   }
 
   function checkWallCollision(ball, wall) {
@@ -897,7 +926,7 @@
     const diff = totalStrokes - totalPar;
     const diffStr = diff === 0 ? 'E' : (diff > 0 ? `+${diff}` : `${diff}`);
     document.getElementById('end-summary').textContent =
-      `${totalStrokes} strokes (${diffStr}) over 9 holes at Augusta Mini Golf`;
+      `${totalStrokes} strokes (${diffStr}) over ${HOLES.length} holes at Augusta Mini Golf`;
     document.getElementById('end-overlay').classList.remove('hidden');
   }
 
@@ -1001,12 +1030,27 @@
     const hole = HOLES[currentHole];
     ctx.clearRect(0, 0, CANVAS_W, CANVAS_H);
 
-    drawFelt();
+    drawFelt(hole);
+    // Clip inner drawings to the fairway polygon so they don't bleed into the rough
+    const hasBoundary = hole.boundary && hole.boundary.length >= 3;
+    if (hasBoundary) {
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(hole.boundary[0].x, hole.boundary[0].y);
+      for (let i = 1; i < hole.boundary.length; i++) {
+        ctx.lineTo(hole.boundary[i].x, hole.boundary[i].y);
+      }
+      ctx.closePath();
+      ctx.clip();
+    }
     drawFastZones(hole.fastZones || []);
     drawSlopes(hole.slopes || []);
     (hole.obstacles || []).forEach(o => drawObstacle(o));
     (hole.walls || []).forEach(w => drawWall(w));
     drawTarget(hole.hole);
+    if (hasBoundary) {
+      ctx.restore(); // release the clip — ball/dog/aim draw above the rough
+    }
     drawDog();
     if (aiming) drawAimLine();
     drawBall();
@@ -1019,25 +1063,83 @@
     ctx.restore();
   }
 
-  function drawFelt() {
-    ctx.fillStyle = COLORS.felt;
-    ctx.fillRect(0, 0, CANVAS_W, CANVAS_H);
+  function drawFelt(hole) {
+    const hasBoundary = hole && hole.boundary && hole.boundary.length >= 3;
 
-    // Subtle mowing stripes
+    if (hasBoundary) {
+      // Draw rough (dark, mottled) across the whole canvas
+      ctx.fillStyle = '#1a2e18';
+      ctx.fillRect(0, 0, CANVAS_W, CANVAS_H);
+
+      // Mottled rough texture
+      ctx.save();
+      ctx.globalAlpha = 0.15;
+      for (let i = 0; i < 180; i++) {
+        const rx = Math.random() * CANVAS_W;
+        const ry = Math.random() * CANVAS_H;
+        const rr = 4 + Math.random() * 10;
+        ctx.fillStyle = Math.random() < 0.5 ? '#244021' : '#12240f';
+        ctx.beginPath();
+        ctx.arc(rx, ry, rr, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.restore();
+    }
+
+    // Fairway felt — either a polygon or full rectangle fallback
     ctx.save();
+    if (hasBoundary) {
+      ctx.beginPath();
+      ctx.moveTo(hole.boundary[0].x, hole.boundary[0].y);
+      for (let i = 1; i < hole.boundary.length; i++) {
+        ctx.lineTo(hole.boundary[i].x, hole.boundary[i].y);
+      }
+      ctx.closePath();
+
+      // Soft rough→fairway transition (drop shadow on the edge of the fairway)
+      ctx.save();
+      ctx.shadowColor = 'rgba(0,0,0,0.45)';
+      ctx.shadowBlur = 12;
+      ctx.fillStyle = COLORS.felt;
+      ctx.fill();
+      ctx.restore();
+
+      ctx.clip();
+    } else {
+      ctx.fillStyle = COLORS.felt;
+      ctx.fillRect(0, 0, CANVAS_W, CANVAS_H);
+    }
+
+    // Mowing stripes inside the fairway
     ctx.globalAlpha = 0.05;
     for (let y = 0; y < CANVAS_H; y += 14) {
       ctx.fillStyle = y % 28 === 0 ? COLORS.feltLight : COLORS.feltDark;
       ctx.fillRect(0, y, CANVAS_W, 14);
     }
-    ctx.restore();
+    ctx.globalAlpha = 1;
 
-    // Vignette
+    // Vignette inside fairway
     const vig = ctx.createRadialGradient(CANVAS_W / 2, CANVAS_H / 2, CANVAS_W * 0.25, CANVAS_W / 2, CANVAS_H / 2, CANVAS_W * 0.75);
     vig.addColorStop(0, 'transparent');
     vig.addColorStop(1, 'rgba(0,0,0,0.18)');
     ctx.fillStyle = vig;
     ctx.fillRect(0, 0, CANVAS_W, CANVAS_H);
+    ctx.restore();
+
+    // Fairway border line (subtle)
+    if (hasBoundary) {
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(hole.boundary[0].x, hole.boundary[0].y);
+      for (let i = 1; i < hole.boundary.length; i++) {
+        ctx.lineTo(hole.boundary[i].x, hole.boundary[i].y);
+      }
+      ctx.closePath();
+      ctx.strokeStyle = 'rgba(200,210,150,0.18)';
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+      ctx.restore();
+    }
   }
 
   function drawFastZones(fastZones) {
