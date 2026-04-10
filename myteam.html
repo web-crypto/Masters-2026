@@ -152,14 +152,14 @@
         <div class="dashboard-card-body">
           <p class="scenario-intro">What if you'd picked a different player? Swap anyone on your team for another golfer in their group.</p>
           <div class="scenario-controls" style="display:flex; gap:8px; flex-wrap:wrap;">
-            <div class="select-wrapper scenario-select-wrapper" style="flex:1; min-width:140px;">
-              <select id="swap-from-select">
+            <div class="scenario-select-wrapper" style="flex:1; min-width:140px; position:relative;">
+              <select id="swap-from-select" style="width:100%; padding:14px 44px 14px 20px; font-family:var(--font-display); font-size:1.05rem; font-weight:600; color:var(--text-primary); background:var(--white); border:2px solid rgba(0,0,0,0.1); border-radius:10px; cursor:pointer;">
                 <option value="">Your player...</option>
               </select>
             </div>
             <span style="align-self:center; font-family:var(--font-mono); font-size:0.85rem; color:var(--text-light);">→</span>
-            <div class="select-wrapper scenario-select-wrapper" style="flex:1; min-width:140px;">
-              <select id="swap-to-select">
+            <div class="scenario-select-wrapper" style="flex:1; min-width:140px; position:relative;">
+              <select id="swap-to-select" style="width:100%; padding:14px 44px 14px 20px; font-family:var(--font-display); font-size:1.05rem; font-weight:600; color:var(--text-primary); background:var(--white); border:2px solid rgba(0,0,0,0.1); border-radius:10px; cursor:pointer;">
                 <option value="">Swap to...</option>
               </select>
             </div>
