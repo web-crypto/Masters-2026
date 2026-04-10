@@ -478,40 +478,30 @@ function simulateScenarios(entry, group, container) {
 // SWAP SIMULATOR — Hindsight 20/20
 // ============================================
 function renderSwapSimulator(entry) {
-  const fromSelect = document.getElementById('swap-from-select');
-  const toSelect = document.getElementById('swap-to-select');
-  const results = document.getElementById('swap-results');
+  var fromButtons = document.getElementById('swap-from-buttons');
+  var toSection = document.getElementById('swap-to-section');
+  var toButtons = document.getElementById('swap-to-buttons');
+  var results = document.getElementById('swap-results');
 
-  fromSelect.innerHTML = '<option value="">Your player...</option>';
-  toSelect.innerHTML = '<option value="">Swap to...</option>';
+  if (!fromButtons || !toButtons) return;
+
+  fromButtons.innerHTML = '';
+  toButtons.innerHTML = '';
+  toSection.style.display = 'none';
   results.classList.add('hidden');
 
-  // Map slots to parent group keys
-  const slotToGroup = {
+  var slotToGroup = {
     groupA: 'groupA', groupB1: 'groupB', groupB2: 'groupB',
     groupC1: 'groupC', groupC2: 'groupC', groupD1: 'groupD', groupD2: 'groupD',
     groupE: 'groupE',
   };
-
-  // Sibling slots in the same group
-  const siblingSlots = {
+  var siblingSlots = {
     groupB1: 'groupB2', groupB2: 'groupB1',
     groupC1: 'groupC2', groupC2: 'groupC1',
     groupD1: 'groupD2', groupD2: 'groupD1',
   };
 
-  const groupOrder = ['groupA', 'groupB1', 'groupB2', 'groupC1', 'groupC2', 'groupD1', 'groupD2', 'groupE'];
-  groupOrder.forEach(slot => {
-    const player = entry.players[slot];
-    if (!player) return;
-    const opt = document.createElement('option');
-    opt.value = slot;
-    opt.textContent = player.name + ' (' + getGroupLabel(slot) + ')';
-    fromSelect.appendChild(opt);
-  });
-
-  // Build earnings lookup from all entries
-  const earningsLookup = {};
+  var earningsLookup = {};
   poolData.entries.forEach(function(e) {
     Object.values(e.players).forEach(function(p) {
       if (p.name && !(p.name in earningsLookup)) {
@@ -520,45 +510,61 @@ function renderSwapSimulator(entry) {
     });
   });
 
-  fromSelect.onchange = function() {
-    var slot = fromSelect.value;
-    toSelect.innerHTML = '<option value="">Swap to...</option>';
-    results.classList.add('hidden');
+  var btnStyle = 'padding:6px 12px; border:1.5px solid var(--masters-green); background:var(--white); color:var(--masters-green); border-radius:4px; font-family:var(--font-mono); font-size:0.75rem; cursor:pointer; transition:all 0.15s;';
+  var btnActiveStyle = 'padding:6px 12px; border:1.5px solid var(--masters-green); background:var(--masters-green); color:var(--cream); border-radius:4px; font-family:var(--font-mono); font-size:0.75rem; cursor:pointer;';
 
-    if (!slot) return;
+  var groupOrder = ['groupA', 'groupB1', 'groupB2', 'groupC1', 'groupC2', 'groupD1', 'groupD2', 'groupE'];
+  var selectedSlot = null;
 
+  function selectSlot(slot) {
+    selectedSlot = slot;
+    // Update from button styles
+    Array.from(fromButtons.children).forEach(function(b) {
+      b.setAttribute('style', b.dataset.slot === slot ? btnActiveStyle : btnStyle);
+    });
+
+    // Populate to buttons
+    toButtons.innerHTML = '';
     var parentGroup = slotToGroup[slot];
-    var pg = poolData.playerGroups ? poolData.playerGroups[parentGroup] : null;
-    if (!pg || !pg.players) return;
+    var pg = poolData.playerGroups[parentGroup];
+    if (!pg) return;
 
-    // Exclude current pick AND sibling slot pick
     var exclude = {};
     exclude[entry.players[slot].name] = true;
     var sib = siblingSlots[slot];
-    if (sib && entry.players[sib]) {
-      exclude[entry.players[sib].name] = true;
-    }
+    if (sib && entry.players[sib]) exclude[entry.players[sib].name] = true;
 
     pg.players.forEach(function(name) {
       if (exclude[name]) return;
       var earn = earningsLookup[name] || 0;
-      var opt = document.createElement('option');
-      opt.value = name;
-      opt.textContent = name + ' (' + formatCurrency(earn) + ')';
-      toSelect.appendChild(opt);
+      var b = document.createElement('button');
+      b.setAttribute('style', btnStyle);
+      b.dataset.name = name;
+      b.textContent = name + ' (' + formatCurrency(earn) + ')';
+      b.onclick = function() {
+        Array.from(toButtons.children).forEach(function(bb) {
+          bb.setAttribute('style', bb.dataset.name === name ? btnActiveStyle : btnStyle);
+        });
+        results.classList.remove('hidden');
+        computeSwap(entry, slot, name, results);
+      };
+      toButtons.appendChild(b);
     });
-  };
 
-  toSelect.onchange = function() {
-    var slot = fromSelect.value;
-    var swapTo = toSelect.value;
-    if (!slot || !swapTo) {
-      results.classList.add('hidden');
-      return;
-    }
-    results.classList.remove('hidden');
-    computeSwap(entry, slot, swapTo, results);
-  };
+    toSection.style.display = 'block';
+    results.classList.add('hidden');
+  }
+
+  groupOrder.forEach(function(slot) {
+    var player = entry.players[slot];
+    if (!player) return;
+    var b = document.createElement('button');
+    b.setAttribute('style', btnStyle);
+    b.dataset.slot = slot;
+    b.textContent = player.name + ' (' + getGroupLabel(slot).replace('Group ','') + ')';
+    b.onclick = function() { selectSlot(slot); };
+    fromButtons.appendChild(b);
+  });
 }
 
 function computeSwap(entry, slot, swapToName, container) {
