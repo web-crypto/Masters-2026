@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-10T12:20:14Z",
+  "fetchedAt": "2026-04-10T12:32:28Z",
   "tournamentStatus": "in_progress",
   "currentRound": 2,
   "players": [
@@ -267,7 +267,7 @@
       "toParDisplay": "E",
       "rounds": [
         72,
-        9,
+        13,
         null,
         null
       ],
@@ -859,7 +859,7 @@
       "toParDisplay": "+4",
       "rounds": [
         76,
-        9,
+        13,
         null,
         null
       ],
@@ -870,22 +870,6 @@
     {
       "espnId": "11332",
       "name": "Andrew Novak",
-      "position": 54,
-      "toPar": 4,
-      "toParDisplay": "+4",
-      "rounds": [
-        75,
-        5,
-        null,
-        null
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 0
-    },
-    {
-      "espnId": "4348444",
-      "name": "Tom McKibbin",
       "position": 54,
       "toPar": 4,
       "toParDisplay": "+4",
@@ -1030,7 +1014,7 @@
     {
       "espnId": "4858859",
       "name": "Rasmus Neergaard-Petersen",
-      "position": 65,
+      "position": 64,
       "toPar": 5,
       "toParDisplay": "+5",
       "rounds": [
@@ -1046,7 +1030,7 @@
     {
       "espnId": "4251",
       "name": "Ryan Fox",
-      "position": 65,
+      "position": 64,
       "toPar": 5,
       "toParDisplay": "+5",
       "rounds": [
@@ -1062,7 +1046,7 @@
     {
       "espnId": "4610056",
       "name": "Casey Jarvis",
-      "position": 65,
+      "position": 64,
       "toPar": 5,
       "toParDisplay": "+5",
       "rounds": [
@@ -1078,7 +1062,7 @@
     {
       "espnId": "5289811",
       "name": "Mason Howell",
-      "position": 65,
+      "position": 64,
       "toPar": 5,
       "toParDisplay": "+5",
       "rounds": [
@@ -1094,7 +1078,7 @@
     {
       "espnId": "3832",
       "name": "Alex Noren",
-      "position": 65,
+      "position": 64,
       "toPar": 5,
       "toParDisplay": "+5",
       "rounds": [
@@ -1110,7 +1094,7 @@
     {
       "espnId": "6007",
       "name": "Patrick Cantlay",
-      "position": 65,
+      "position": 64,
       "toPar": 5,
       "toParDisplay": "+5",
       "rounds": [
@@ -1126,7 +1110,7 @@
     {
       "espnId": "4589438",
       "name": "Harry Hall",
-      "position": 65,
+      "position": 64,
       "toPar": 5,
       "toParDisplay": "+5",
       "rounds": [
@@ -1142,7 +1126,7 @@
     {
       "espnId": "9530",
       "name": "Maverick McNealy",
-      "position": 65,
+      "position": 64,
       "toPar": 5,
       "toParDisplay": "+5",
       "rounds": [
@@ -1156,9 +1140,25 @@
       "projectedEarnings": 0
     },
     {
+      "espnId": "4348444",
+      "name": "Tom McKibbin",
+      "position": 72,
+      "toPar": 6,
+      "toParDisplay": "+6",
+      "rounds": [
+        75,
+        12,
+        null,
+        null
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 0
+    },
+    {
       "espnId": "11253",
       "name": "Rasmus H\u00f8jgaard",
-      "position": 73,
+      "position": 72,
       "toPar": 6,
       "toParDisplay": "+6",
       "rounds": [
@@ -1174,7 +1174,7 @@
     {
       "espnId": "91",
       "name": "Fred Couples",
-      "position": 73,
+      "position": 72,
       "toPar": 6,
       "toParDisplay": "+6",
       "rounds": [
@@ -1190,7 +1190,7 @@
     {
       "espnId": "4410932",
       "name": "Min Woo Lee",
-      "position": 73,
+      "position": 72,
       "toPar": 6,
       "toParDisplay": "+6",
       "rounds": [
@@ -1206,7 +1206,7 @@
     {
       "espnId": "9780",
       "name": "Jon Rahm",
-      "position": 73,
+      "position": 72,
       "toPar": 6,
       "toParDisplay": "+6",
       "rounds": [
