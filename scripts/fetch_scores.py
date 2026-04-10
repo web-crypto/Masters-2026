@@ -26,6 +26,16 @@ from pathlib import Path
 # ---------------------------------------------------------------------------
 
 ESPN_URL = "http://site.api.espn.com/apis/site/v2/sports/golf/pga/scoreboard?event=401811941"
+
+# 2026 Masters amateurs (ESPN's scoreboard API doesn't expose the amateur flag
+# so we hardcode the list — names match ESPN's fullName spelling).
+AMATEUR_NAMES = {
+    "Jackson Herrington",
+    "Ethan Fang",
+    "Mason Howell",
+    "Brandon Holtz",
+    "Fifa Laopakdee",
+}
 SCRIPT_DIR = Path(__file__).parent
 PROJECT_DIR = SCRIPT_DIR.parent
 POOL_DATA_JS = PROJECT_DIR / "data" / "pool-data.js"
@@ -208,6 +218,8 @@ def parse_espn_data(data: dict, force_final: bool = False, verbose: bool = False
             display = athlete.get("displayName", "") or ""
             if display.strip().endswith("(a)") or name.strip().endswith("(a)"):
                 is_amateur = True
+        if not is_amateur and name in AMATEUR_NAMES:
+            is_amateur = True
         espn_id = c["id"]
         score_str = c.get("score", "E")
         to_par = parse_score_to_int(score_str)
