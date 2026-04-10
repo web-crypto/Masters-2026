@@ -1,7 +1,7 @@
 {
-  "fetchedAt": "2026-04-10T11:50:18Z",
-  "tournamentStatus": "complete",
-  "currentRound": 1,
+  "fetchedAt": "2026-04-10T12:04:17Z",
+  "tournamentStatus": "in_progress",
+  "currentRound": 2,
   "entries": [
     {
       "id": 34,
@@ -240,7 +240,7 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 73,
           "toPar": 6,
           "toParDisplay": "+6",
@@ -288,14 +288,14 @@
         },
         "groupE": {
           "name": "Marco Penge",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 56,
           "toPar": 4,
           "toParDisplay": "+4",
           "status": "active"
         }
       },
-      "totalEarnings": 5500481,
+      "totalEarnings": 5399681,
       "previousRank": 0,
       "rank": 4
     },
@@ -314,7 +314,7 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 73,
           "toPar": 6,
           "toParDisplay": "+6",
@@ -346,7 +346,7 @@
         },
         "groupD1": {
           "name": "Min Woo Lee",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 73,
           "toPar": 6,
           "toParDisplay": "+6",
@@ -369,7 +369,7 @@
           "status": "active"
         }
       },
-      "totalEarnings": 5477013,
+      "totalEarnings": 5376213,
       "previousRank": 0,
       "rank": 5
     },
@@ -388,7 +388,7 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 73,
           "toPar": 6,
           "toParDisplay": "+6",
@@ -443,83 +443,9 @@
           "status": "active"
         }
       },
-      "totalEarnings": 5264803,
+      "totalEarnings": 5214403,
       "previousRank": 0,
       "rank": 6
-    },
-    {
-      "id": 26,
-      "name": "Know Nothing About Golf",
-      "owner": "Know Nothing About Golf",
-      "players": {
-        "groupA": {
-          "name": "Rory McIlroy",
-          "earnings": 3234000,
-          "position": 1,
-          "toPar": -5,
-          "toParDisplay": "-5",
-          "status": "active"
-        },
-        "groupB1": {
-          "name": "Ludvig \u00c5berg",
-          "earnings": 75600,
-          "position": 40,
-          "toPar": 2,
-          "toParDisplay": "+2",
-          "status": "active"
-        },
-        "groupB2": {
-          "name": "Xander Schauffele",
-          "earnings": 679875,
-          "position": 6,
-          "toPar": -2,
-          "toParDisplay": "-2",
-          "status": "active"
-        },
-        "groupC1": {
-          "name": "Justin Rose",
-          "earnings": 679875,
-          "position": 6,
-          "toPar": -2,
-          "toParDisplay": "-2",
-          "status": "active"
-        },
-        "groupC2": {
-          "name": "Hideki Matsuyama",
-          "earnings": 209606,
-          "position": 17,
-          "toPar": 0,
-          "toParDisplay": "E",
-          "status": "active"
-        },
-        "groupD1": {
-          "name": "Min Woo Lee",
-          "earnings": 50400,
-          "position": 73,
-          "toPar": 6,
-          "toParDisplay": "+6",
-          "status": "active"
-        },
-        "groupD2": {
-          "name": "Russell Henley",
-          "earnings": 108600,
-          "position": 33,
-          "toPar": 1,
-          "toParDisplay": "+1",
-          "status": "active"
-        },
-        "groupE": {
-          "name": "Dustin Johnson",
-          "earnings": 108600,
-          "position": 33,
-          "toPar": 1,
-          "toParDisplay": "+1",
-          "status": "active"
-        }
-      },
-      "totalEarnings": 5146556,
-      "previousRank": 0,
-      "rank": 7
     },
     {
       "id": 65,
@@ -593,6 +519,80 @@
       },
       "totalEarnings": 5115288,
       "previousRank": 0,
+      "rank": 7
+    },
+    {
+      "id": 26,
+      "name": "Know Nothing About Golf",
+      "owner": "Know Nothing About Golf",
+      "players": {
+        "groupA": {
+          "name": "Rory McIlroy",
+          "earnings": 3234000,
+          "position": 1,
+          "toPar": -5,
+          "toParDisplay": "-5",
+          "status": "active"
+        },
+        "groupB1": {
+          "name": "Ludvig \u00c5berg",
+          "earnings": 75600,
+          "position": 40,
+          "toPar": 2,
+          "toParDisplay": "+2",
+          "status": "active"
+        },
+        "groupB2": {
+          "name": "Xander Schauffele",
+          "earnings": 679875,
+          "position": 6,
+          "toPar": -2,
+          "toParDisplay": "-2",
+          "status": "active"
+        },
+        "groupC1": {
+          "name": "Justin Rose",
+          "earnings": 679875,
+          "position": 6,
+          "toPar": -2,
+          "toParDisplay": "-2",
+          "status": "active"
+        },
+        "groupC2": {
+          "name": "Hideki Matsuyama",
+          "earnings": 209606,
+          "position": 17,
+          "toPar": 0,
+          "toParDisplay": "E",
+          "status": "active"
+        },
+        "groupD1": {
+          "name": "Min Woo Lee",
+          "earnings": 0,
+          "position": 73,
+          "toPar": 6,
+          "toParDisplay": "+6",
+          "status": "active"
+        },
+        "groupD2": {
+          "name": "Russell Henley",
+          "earnings": 108600,
+          "position": 33,
+          "toPar": 1,
+          "toParDisplay": "+1",
+          "status": "active"
+        },
+        "groupE": {
+          "name": "Dustin Johnson",
+          "earnings": 108600,
+          "position": 33,
+          "toPar": 1,
+          "toParDisplay": "+1",
+          "status": "active"
+        }
+      },
+      "totalEarnings": 5096156,
+      "previousRank": 0,
       "rank": 8
     },
     {
@@ -634,7 +634,7 @@
         },
         "groupC2": {
           "name": "Robert MacIntyre",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 82,
           "toPar": 8,
           "toParDisplay": "+8",
@@ -665,7 +665,7 @@
           "status": "active"
         }
       },
-      "totalEarnings": 5012550,
+      "totalEarnings": 4962150,
       "previousRank": 0,
       "rank": 9
     },
@@ -684,7 +684,7 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 73,
           "toPar": 6,
           "toParDisplay": "+6",
@@ -716,7 +716,7 @@
         },
         "groupD1": {
           "name": "Min Woo Lee",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 73,
           "toPar": 6,
           "toParDisplay": "+6",
@@ -739,7 +739,7 @@
           "status": "active"
         }
       },
-      "totalEarnings": 4695625,
+      "totalEarnings": 4594825,
       "previousRank": 0,
       "rank": 10
     },
@@ -758,7 +758,7 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 73,
           "toPar": 6,
           "toParDisplay": "+6",
@@ -806,164 +806,16 @@
         },
         "groupE": {
           "name": "Marco Penge",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 56,
           "toPar": 4,
           "toParDisplay": "+4",
           "status": "active"
         }
       },
-      "totalEarnings": 4460613,
+      "totalEarnings": 4359813,
       "previousRank": 0,
       "rank": 11
-    },
-    {
-      "id": 50,
-      "name": "Snowdogg #1",
-      "owner": "Snowdogg #1",
-      "players": {
-        "groupA": {
-          "name": "Rory McIlroy",
-          "earnings": 3234000,
-          "position": 1,
-          "toPar": -5,
-          "toParDisplay": "-5",
-          "status": "active"
-        },
-        "groupB1": {
-          "name": "Jon Rahm",
-          "earnings": 50400,
-          "position": 73,
-          "toPar": 6,
-          "toParDisplay": "+6",
-          "status": "active"
-        },
-        "groupB2": {
-          "name": "Matt Fitzpatrick",
-          "earnings": 75600,
-          "position": 40,
-          "toPar": 2,
-          "toParDisplay": "+2",
-          "status": "active"
-        },
-        "groupC1": {
-          "name": "Justin Rose",
-          "earnings": 679875,
-          "position": 6,
-          "toPar": -2,
-          "toParDisplay": "-2",
-          "status": "active"
-        },
-        "groupC2": {
-          "name": "Robert MacIntyre",
-          "earnings": 50400,
-          "position": 82,
-          "toPar": 8,
-          "toParDisplay": "+8",
-          "status": "active"
-        },
-        "groupD1": {
-          "name": "Sepp Straka",
-          "earnings": 108600,
-          "position": 33,
-          "toPar": 1,
-          "toParDisplay": "+1",
-          "status": "active"
-        },
-        "groupD2": {
-          "name": "Corey Conners",
-          "earnings": 52132,
-          "position": 48,
-          "toPar": 3,
-          "toParDisplay": "+3",
-          "status": "active"
-        },
-        "groupE": {
-          "name": "JJ Spaun",
-          "earnings": 75600,
-          "position": 40,
-          "toPar": 2,
-          "toParDisplay": "+2",
-          "status": "active"
-        }
-      },
-      "totalEarnings": 4326607,
-      "previousRank": 0,
-      "rank": 12
-    },
-    {
-      "id": 58,
-      "name": "Daniel Jennings",
-      "owner": "Daniel Jennings",
-      "players": {
-        "groupA": {
-          "name": "Bryson DeChambeau",
-          "earnings": 50400,
-          "position": 56,
-          "toPar": 4,
-          "toParDisplay": "+4",
-          "status": "active"
-        },
-        "groupB1": {
-          "name": "Ludvig \u00c5berg",
-          "earnings": 75600,
-          "position": 40,
-          "toPar": 2,
-          "toParDisplay": "+2",
-          "status": "active"
-        },
-        "groupB2": {
-          "name": "Cameron Young",
-          "earnings": 108600,
-          "position": 33,
-          "toPar": 1,
-          "toParDisplay": "+1",
-          "status": "active"
-        },
-        "groupC1": {
-          "name": "Justin Rose",
-          "earnings": 679875,
-          "position": 6,
-          "toPar": -2,
-          "toParDisplay": "-2",
-          "status": "active"
-        },
-        "groupC2": {
-          "name": "Robert MacIntyre",
-          "earnings": 50400,
-          "position": 82,
-          "toPar": 8,
-          "toParDisplay": "+8",
-          "status": "active"
-        },
-        "groupD1": {
-          "name": "Patrick Cantlay",
-          "earnings": 50400,
-          "position": 65,
-          "toPar": 5,
-          "toParDisplay": "+5",
-          "status": "active"
-        },
-        "groupD2": {
-          "name": "Sam Burns",
-          "earnings": 3234000,
-          "position": 1,
-          "toPar": -5,
-          "toParDisplay": "-5",
-          "status": "active"
-        },
-        "groupE": {
-          "name": "JJ Spaun",
-          "earnings": 75600,
-          "position": 40,
-          "toPar": 2,
-          "toParDisplay": "+2",
-          "status": "active"
-        }
-      },
-      "totalEarnings": 4324875,
-      "previousRank": 0,
-      "rank": 13
     },
     {
       "id": 33,
@@ -1037,7 +889,7 @@
       },
       "totalEarnings": 4286550,
       "previousRank": 0,
-      "rank": 14
+      "rank": 12
     },
     {
       "id": 60,
@@ -1111,81 +963,7 @@
       },
       "totalEarnings": 4257670,
       "previousRank": 0,
-      "rank": 15
-    },
-    {
-      "id": 29,
-      "name": "Ana G.",
-      "owner": "Ana G.",
-      "players": {
-        "groupA": {
-          "name": "Rory McIlroy",
-          "earnings": 3234000,
-          "position": 1,
-          "toPar": -5,
-          "toParDisplay": "-5",
-          "status": "active"
-        },
-        "groupB1": {
-          "name": "Ludvig \u00c5berg",
-          "earnings": 75600,
-          "position": 40,
-          "toPar": 2,
-          "toParDisplay": "+2",
-          "status": "active"
-        },
-        "groupB2": {
-          "name": "Tommy Fleetwood",
-          "earnings": 450000,
-          "position": 10,
-          "toPar": -1,
-          "toParDisplay": "-1",
-          "status": "active"
-        },
-        "groupC1": {
-          "name": "Viktor Hovland",
-          "earnings": 52132,
-          "position": 48,
-          "toPar": 3,
-          "toParDisplay": "+3",
-          "status": "active"
-        },
-        "groupC2": {
-          "name": "Robert MacIntyre",
-          "earnings": 50400,
-          "position": 82,
-          "toPar": 8,
-          "toParDisplay": "+8",
-          "status": "active"
-        },
-        "groupD1": {
-          "name": "Max Homa",
-          "earnings": 209606,
-          "position": 17,
-          "toPar": 0,
-          "toParDisplay": "E",
-          "status": "active"
-        },
-        "groupD2": {
-          "name": "Tyrell Hatton",
-          "earnings": 75600,
-          "position": 40,
-          "toPar": 2,
-          "toParDisplay": "+2",
-          "status": "active"
-        },
-        "groupE": {
-          "name": "Dustin Johnson",
-          "earnings": 108600,
-          "position": 33,
-          "toPar": 1,
-          "toParDisplay": "+1",
-          "status": "active"
-        }
-      },
-      "totalEarnings": 4255938,
-      "previousRank": 0,
-      "rank": 16
+      "rank": 13
     },
     {
       "id": 22,
@@ -1259,6 +1037,228 @@
       },
       "totalEarnings": 4238306,
       "previousRank": 0,
+      "rank": 14
+    },
+    {
+      "id": 50,
+      "name": "Snowdogg #1",
+      "owner": "Snowdogg #1",
+      "players": {
+        "groupA": {
+          "name": "Rory McIlroy",
+          "earnings": 3234000,
+          "position": 1,
+          "toPar": -5,
+          "toParDisplay": "-5",
+          "status": "active"
+        },
+        "groupB1": {
+          "name": "Jon Rahm",
+          "earnings": 0,
+          "position": 73,
+          "toPar": 6,
+          "toParDisplay": "+6",
+          "status": "active"
+        },
+        "groupB2": {
+          "name": "Matt Fitzpatrick",
+          "earnings": 75600,
+          "position": 40,
+          "toPar": 2,
+          "toParDisplay": "+2",
+          "status": "active"
+        },
+        "groupC1": {
+          "name": "Justin Rose",
+          "earnings": 679875,
+          "position": 6,
+          "toPar": -2,
+          "toParDisplay": "-2",
+          "status": "active"
+        },
+        "groupC2": {
+          "name": "Robert MacIntyre",
+          "earnings": 0,
+          "position": 82,
+          "toPar": 8,
+          "toParDisplay": "+8",
+          "status": "active"
+        },
+        "groupD1": {
+          "name": "Sepp Straka",
+          "earnings": 108600,
+          "position": 33,
+          "toPar": 1,
+          "toParDisplay": "+1",
+          "status": "active"
+        },
+        "groupD2": {
+          "name": "Corey Conners",
+          "earnings": 52132,
+          "position": 48,
+          "toPar": 3,
+          "toParDisplay": "+3",
+          "status": "active"
+        },
+        "groupE": {
+          "name": "JJ Spaun",
+          "earnings": 75600,
+          "position": 40,
+          "toPar": 2,
+          "toParDisplay": "+2",
+          "status": "active"
+        }
+      },
+      "totalEarnings": 4225807,
+      "previousRank": 0,
+      "rank": 15
+    },
+    {
+      "id": 29,
+      "name": "Ana G.",
+      "owner": "Ana G.",
+      "players": {
+        "groupA": {
+          "name": "Rory McIlroy",
+          "earnings": 3234000,
+          "position": 1,
+          "toPar": -5,
+          "toParDisplay": "-5",
+          "status": "active"
+        },
+        "groupB1": {
+          "name": "Ludvig \u00c5berg",
+          "earnings": 75600,
+          "position": 40,
+          "toPar": 2,
+          "toParDisplay": "+2",
+          "status": "active"
+        },
+        "groupB2": {
+          "name": "Tommy Fleetwood",
+          "earnings": 450000,
+          "position": 10,
+          "toPar": -1,
+          "toParDisplay": "-1",
+          "status": "active"
+        },
+        "groupC1": {
+          "name": "Viktor Hovland",
+          "earnings": 52132,
+          "position": 48,
+          "toPar": 3,
+          "toParDisplay": "+3",
+          "status": "active"
+        },
+        "groupC2": {
+          "name": "Robert MacIntyre",
+          "earnings": 0,
+          "position": 82,
+          "toPar": 8,
+          "toParDisplay": "+8",
+          "status": "active"
+        },
+        "groupD1": {
+          "name": "Max Homa",
+          "earnings": 209606,
+          "position": 17,
+          "toPar": 0,
+          "toParDisplay": "E",
+          "status": "active"
+        },
+        "groupD2": {
+          "name": "Tyrell Hatton",
+          "earnings": 75600,
+          "position": 40,
+          "toPar": 2,
+          "toParDisplay": "+2",
+          "status": "active"
+        },
+        "groupE": {
+          "name": "Dustin Johnson",
+          "earnings": 108600,
+          "position": 33,
+          "toPar": 1,
+          "toParDisplay": "+1",
+          "status": "active"
+        }
+      },
+      "totalEarnings": 4205538,
+      "previousRank": 0,
+      "rank": 16
+    },
+    {
+      "id": 58,
+      "name": "Daniel Jennings",
+      "owner": "Daniel Jennings",
+      "players": {
+        "groupA": {
+          "name": "Bryson DeChambeau",
+          "earnings": 0,
+          "position": 56,
+          "toPar": 4,
+          "toParDisplay": "+4",
+          "status": "active"
+        },
+        "groupB1": {
+          "name": "Ludvig \u00c5berg",
+          "earnings": 75600,
+          "position": 40,
+          "toPar": 2,
+          "toParDisplay": "+2",
+          "status": "active"
+        },
+        "groupB2": {
+          "name": "Cameron Young",
+          "earnings": 108600,
+          "position": 33,
+          "toPar": 1,
+          "toParDisplay": "+1",
+          "status": "active"
+        },
+        "groupC1": {
+          "name": "Justin Rose",
+          "earnings": 679875,
+          "position": 6,
+          "toPar": -2,
+          "toParDisplay": "-2",
+          "status": "active"
+        },
+        "groupC2": {
+          "name": "Robert MacIntyre",
+          "earnings": 0,
+          "position": 82,
+          "toPar": 8,
+          "toParDisplay": "+8",
+          "status": "active"
+        },
+        "groupD1": {
+          "name": "Patrick Cantlay",
+          "earnings": 0,
+          "position": 65,
+          "toPar": 5,
+          "toParDisplay": "+5",
+          "status": "active"
+        },
+        "groupD2": {
+          "name": "Sam Burns",
+          "earnings": 3234000,
+          "position": 1,
+          "toPar": -5,
+          "toParDisplay": "-5",
+          "status": "active"
+        },
+        "groupE": {
+          "name": "JJ Spaun",
+          "earnings": 75600,
+          "position": 40,
+          "toPar": 2,
+          "toParDisplay": "+2",
+          "status": "active"
+        }
+      },
+      "totalEarnings": 4173675,
+      "previousRank": 0,
       "rank": 17
     },
     {
@@ -1276,7 +1276,7 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 73,
           "toPar": 6,
           "toParDisplay": "+6",
@@ -1331,7 +1331,7 @@
           "status": "active"
         }
       },
-      "totalEarnings": 4048544,
+      "totalEarnings": 3998144,
       "previousRank": 0,
       "rank": 18
     },
@@ -1382,7 +1382,7 @@
         },
         "groupD1": {
           "name": "Min Woo Lee",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 73,
           "toPar": 6,
           "toParDisplay": "+6",
@@ -1390,7 +1390,7 @@
         },
         "groupD2": {
           "name": "Patrick Cantlay",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 65,
           "toPar": 5,
           "toParDisplay": "+5",
@@ -1405,83 +1405,9 @@
           "status": "active"
         }
       },
-      "totalEarnings": 4013812,
+      "totalEarnings": 3913012,
       "previousRank": 0,
       "rank": 19
-    },
-    {
-      "id": 75,
-      "name": "Jost Kaempffer",
-      "owner": "Jost Kaempffer",
-      "players": {
-        "groupA": {
-          "name": "Rory McIlroy",
-          "earnings": 3234000,
-          "position": 1,
-          "toPar": -5,
-          "toParDisplay": "-5",
-          "status": "active"
-        },
-        "groupB1": {
-          "name": "Ludvig \u00c5berg",
-          "earnings": 75600,
-          "position": 40,
-          "toPar": 2,
-          "toParDisplay": "+2",
-          "status": "active"
-        },
-        "groupB2": {
-          "name": "Matt Fitzpatrick",
-          "earnings": 75600,
-          "position": 40,
-          "toPar": 2,
-          "toParDisplay": "+2",
-          "status": "active"
-        },
-        "groupC1": {
-          "name": "Viktor Hovland",
-          "earnings": 52132,
-          "position": 48,
-          "toPar": 3,
-          "toParDisplay": "+3",
-          "status": "active"
-        },
-        "groupC2": {
-          "name": "Robert MacIntyre",
-          "earnings": 50400,
-          "position": 82,
-          "toPar": 8,
-          "toParDisplay": "+8",
-          "status": "active"
-        },
-        "groupD1": {
-          "name": "Akshay Bhatia",
-          "earnings": 108600,
-          "position": 33,
-          "toPar": 1,
-          "toParDisplay": "+1",
-          "status": "active"
-        },
-        "groupD2": {
-          "name": "Max Homa",
-          "earnings": 209606,
-          "position": 17,
-          "toPar": 0,
-          "toParDisplay": "E",
-          "status": "active"
-        },
-        "groupE": {
-          "name": "Maverick McNealy",
-          "earnings": 50400,
-          "position": 65,
-          "toPar": 5,
-          "toParDisplay": "+5",
-          "status": "active"
-        }
-      },
-      "totalEarnings": 3856338,
-      "previousRank": 0,
-      "rank": 20
     },
     {
       "id": 37,
@@ -1530,7 +1456,7 @@
         },
         "groupD1": {
           "name": "Min Woo Lee",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 73,
           "toPar": 6,
           "toParDisplay": "+6",
@@ -1553,7 +1479,81 @@
           "status": "active"
         }
       },
-      "totalEarnings": 3849225,
+      "totalEarnings": 3798825,
+      "previousRank": 0,
+      "rank": 20
+    },
+    {
+      "id": 75,
+      "name": "Jost Kaempffer",
+      "owner": "Jost Kaempffer",
+      "players": {
+        "groupA": {
+          "name": "Rory McIlroy",
+          "earnings": 3234000,
+          "position": 1,
+          "toPar": -5,
+          "toParDisplay": "-5",
+          "status": "active"
+        },
+        "groupB1": {
+          "name": "Ludvig \u00c5berg",
+          "earnings": 75600,
+          "position": 40,
+          "toPar": 2,
+          "toParDisplay": "+2",
+          "status": "active"
+        },
+        "groupB2": {
+          "name": "Matt Fitzpatrick",
+          "earnings": 75600,
+          "position": 40,
+          "toPar": 2,
+          "toParDisplay": "+2",
+          "status": "active"
+        },
+        "groupC1": {
+          "name": "Viktor Hovland",
+          "earnings": 52132,
+          "position": 48,
+          "toPar": 3,
+          "toParDisplay": "+3",
+          "status": "active"
+        },
+        "groupC2": {
+          "name": "Robert MacIntyre",
+          "earnings": 0,
+          "position": 82,
+          "toPar": 8,
+          "toParDisplay": "+8",
+          "status": "active"
+        },
+        "groupD1": {
+          "name": "Akshay Bhatia",
+          "earnings": 108600,
+          "position": 33,
+          "toPar": 1,
+          "toParDisplay": "+1",
+          "status": "active"
+        },
+        "groupD2": {
+          "name": "Max Homa",
+          "earnings": 209606,
+          "position": 17,
+          "toPar": 0,
+          "toParDisplay": "E",
+          "status": "active"
+        },
+        "groupE": {
+          "name": "Maverick McNealy",
+          "earnings": 0,
+          "position": 65,
+          "toPar": 5,
+          "toParDisplay": "+5",
+          "status": "active"
+        }
+      },
+      "totalEarnings": 3755538,
       "previousRank": 0,
       "rank": 21
     },
@@ -1564,7 +1564,7 @@
       "players": {
         "groupA": {
           "name": "Bryson DeChambeau",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 56,
           "toPar": 4,
           "toParDisplay": "+4",
@@ -1627,7 +1627,7 @@
           "status": "active"
         }
       },
-      "totalEarnings": 3474825,
+      "totalEarnings": 3424425,
       "previousRank": 0,
       "rank": 22
     },
@@ -1646,7 +1646,7 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 73,
           "toPar": 6,
           "toParDisplay": "+6",
@@ -1694,14 +1694,14 @@
         },
         "groupE": {
           "name": "Nicolai Hojgaard",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 56,
           "toPar": 4,
           "toParDisplay": "+4",
           "status": "active"
         }
       },
-      "totalEarnings": 3393157,
+      "totalEarnings": 3292357,
       "previousRank": 0,
       "rank": 23
     },
@@ -1720,7 +1720,7 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 73,
           "toPar": 6,
           "toParDisplay": "+6",
@@ -1752,7 +1752,7 @@
         },
         "groupD1": {
           "name": "Min Woo Lee",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 73,
           "toPar": 6,
           "toParDisplay": "+6",
@@ -1768,90 +1768,16 @@
         },
         "groupE": {
           "name": "Nicolai Hojgaard",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 56,
           "toPar": 4,
           "toParDisplay": "+4",
           "status": "active"
         }
       },
-      "totalEarnings": 3334957,
+      "totalEarnings": 3183757,
       "previousRank": 0,
       "rank": 24
-    },
-    {
-      "id": 13,
-      "name": "Ange",
-      "owner": "Ange",
-      "players": {
-        "groupA": {
-          "name": "Bryson DeChambeau",
-          "earnings": 50400,
-          "position": 56,
-          "toPar": 4,
-          "toParDisplay": "+4",
-          "status": "active"
-        },
-        "groupB1": {
-          "name": "Xander Schauffele",
-          "earnings": 679875,
-          "position": 6,
-          "toPar": -2,
-          "toParDisplay": "-2",
-          "status": "active"
-        },
-        "groupB2": {
-          "name": "Tommy Fleetwood",
-          "earnings": 450000,
-          "position": 10,
-          "toPar": -1,
-          "toParDisplay": "-1",
-          "status": "active"
-        },
-        "groupC1": {
-          "name": "Justin Rose",
-          "earnings": 679875,
-          "position": 6,
-          "toPar": -2,
-          "toParDisplay": "-2",
-          "status": "active"
-        },
-        "groupC2": {
-          "name": "Patrick Reed",
-          "earnings": 1092000,
-          "position": 3,
-          "toPar": -3,
-          "toParDisplay": "-3",
-          "status": "active"
-        },
-        "groupD1": {
-          "name": "Akshay Bhatia",
-          "earnings": 108600,
-          "position": 33,
-          "toPar": 1,
-          "toParDisplay": "+1",
-          "status": "active"
-        },
-        "groupD2": {
-          "name": "Russell Henley",
-          "earnings": 108600,
-          "position": 33,
-          "toPar": 1,
-          "toParDisplay": "+1",
-          "status": "active"
-        },
-        "groupE": {
-          "name": "Daniel Berger",
-          "earnings": 50400,
-          "position": 56,
-          "toPar": 4,
-          "toParDisplay": "+4",
-          "status": "active"
-        }
-      },
-      "totalEarnings": 3219750,
-      "previousRank": 0,
-      "rank": 25
     },
     {
       "id": 39,
@@ -1900,7 +1826,7 @@
         },
         "groupD1": {
           "name": "Min Woo Lee",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 73,
           "toPar": 6,
           "toParDisplay": "+6",
@@ -1923,83 +1849,9 @@
           "status": "active"
         }
       },
-      "totalEarnings": 3211950,
+      "totalEarnings": 3161550,
       "previousRank": 0,
-      "rank": 26
-    },
-    {
-      "id": 32,
-      "name": "David Iudiciani #1",
-      "owner": "David Iudiciani #1",
-      "players": {
-        "groupA": {
-          "name": "Scottie Scheffler",
-          "earnings": 679875,
-          "position": 6,
-          "toPar": -2,
-          "toParDisplay": "-2",
-          "status": "active"
-        },
-        "groupB1": {
-          "name": "Jon Rahm",
-          "earnings": 50400,
-          "position": 73,
-          "toPar": 6,
-          "toParDisplay": "+6",
-          "status": "active"
-        },
-        "groupB2": {
-          "name": "Xander Schauffele",
-          "earnings": 679875,
-          "position": 6,
-          "toPar": -2,
-          "toParDisplay": "-2",
-          "status": "active"
-        },
-        "groupC1": {
-          "name": "Patrick Reed",
-          "earnings": 1092000,
-          "position": 3,
-          "toPar": -3,
-          "toParDisplay": "-3",
-          "status": "active"
-        },
-        "groupC2": {
-          "name": "Robert MacIntyre",
-          "earnings": 50400,
-          "position": 82,
-          "toPar": 8,
-          "toParDisplay": "+8",
-          "status": "active"
-        },
-        "groupD1": {
-          "name": "Akshay Bhatia",
-          "earnings": 108600,
-          "position": 33,
-          "toPar": 1,
-          "toParDisplay": "+1",
-          "status": "active"
-        },
-        "groupD2": {
-          "name": "Corey Conners",
-          "earnings": 52132,
-          "position": 48,
-          "toPar": 3,
-          "toParDisplay": "+3",
-          "status": "active"
-        },
-        "groupE": {
-          "name": "Gary Woodland",
-          "earnings": 450000,
-          "position": 10,
-          "toPar": -1,
-          "toParDisplay": "-1",
-          "status": "active"
-        }
-      },
-      "totalEarnings": 3163282,
-      "previousRank": 0,
-      "rank": 27
+      "rank": 25
     },
     {
       "id": 64,
@@ -2073,6 +1925,154 @@
       },
       "totalEarnings": 3132438,
       "previousRank": 0,
+      "rank": 26
+    },
+    {
+      "id": 13,
+      "name": "Ange",
+      "owner": "Ange",
+      "players": {
+        "groupA": {
+          "name": "Bryson DeChambeau",
+          "earnings": 0,
+          "position": 56,
+          "toPar": 4,
+          "toParDisplay": "+4",
+          "status": "active"
+        },
+        "groupB1": {
+          "name": "Xander Schauffele",
+          "earnings": 679875,
+          "position": 6,
+          "toPar": -2,
+          "toParDisplay": "-2",
+          "status": "active"
+        },
+        "groupB2": {
+          "name": "Tommy Fleetwood",
+          "earnings": 450000,
+          "position": 10,
+          "toPar": -1,
+          "toParDisplay": "-1",
+          "status": "active"
+        },
+        "groupC1": {
+          "name": "Justin Rose",
+          "earnings": 679875,
+          "position": 6,
+          "toPar": -2,
+          "toParDisplay": "-2",
+          "status": "active"
+        },
+        "groupC2": {
+          "name": "Patrick Reed",
+          "earnings": 1092000,
+          "position": 3,
+          "toPar": -3,
+          "toParDisplay": "-3",
+          "status": "active"
+        },
+        "groupD1": {
+          "name": "Akshay Bhatia",
+          "earnings": 108600,
+          "position": 33,
+          "toPar": 1,
+          "toParDisplay": "+1",
+          "status": "active"
+        },
+        "groupD2": {
+          "name": "Russell Henley",
+          "earnings": 108600,
+          "position": 33,
+          "toPar": 1,
+          "toParDisplay": "+1",
+          "status": "active"
+        },
+        "groupE": {
+          "name": "Daniel Berger",
+          "earnings": 0,
+          "position": 56,
+          "toPar": 4,
+          "toParDisplay": "+4",
+          "status": "active"
+        }
+      },
+      "totalEarnings": 3118950,
+      "previousRank": 0,
+      "rank": 27
+    },
+    {
+      "id": 32,
+      "name": "David Iudiciani #1",
+      "owner": "David Iudiciani #1",
+      "players": {
+        "groupA": {
+          "name": "Scottie Scheffler",
+          "earnings": 679875,
+          "position": 6,
+          "toPar": -2,
+          "toParDisplay": "-2",
+          "status": "active"
+        },
+        "groupB1": {
+          "name": "Jon Rahm",
+          "earnings": 0,
+          "position": 73,
+          "toPar": 6,
+          "toParDisplay": "+6",
+          "status": "active"
+        },
+        "groupB2": {
+          "name": "Xander Schauffele",
+          "earnings": 679875,
+          "position": 6,
+          "toPar": -2,
+          "toParDisplay": "-2",
+          "status": "active"
+        },
+        "groupC1": {
+          "name": "Patrick Reed",
+          "earnings": 1092000,
+          "position": 3,
+          "toPar": -3,
+          "toParDisplay": "-3",
+          "status": "active"
+        },
+        "groupC2": {
+          "name": "Robert MacIntyre",
+          "earnings": 0,
+          "position": 82,
+          "toPar": 8,
+          "toParDisplay": "+8",
+          "status": "active"
+        },
+        "groupD1": {
+          "name": "Akshay Bhatia",
+          "earnings": 108600,
+          "position": 33,
+          "toPar": 1,
+          "toParDisplay": "+1",
+          "status": "active"
+        },
+        "groupD2": {
+          "name": "Corey Conners",
+          "earnings": 52132,
+          "position": 48,
+          "toPar": 3,
+          "toParDisplay": "+3",
+          "status": "active"
+        },
+        "groupE": {
+          "name": "Gary Woodland",
+          "earnings": 450000,
+          "position": 10,
+          "toPar": -1,
+          "toParDisplay": "-1",
+          "status": "active"
+        }
+      },
+      "totalEarnings": 3062482,
+      "previousRank": 0,
       "rank": 28
     },
     {
@@ -2090,7 +2090,7 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 73,
           "toPar": 6,
           "toParDisplay": "+6",
@@ -2122,7 +2122,7 @@
         },
         "groupD1": {
           "name": "Min Woo Lee",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 73,
           "toPar": 6,
           "toParDisplay": "+6",
@@ -2138,90 +2138,16 @@
         },
         "groupE": {
           "name": "Marco Penge",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 56,
           "toPar": 4,
           "toParDisplay": "+4",
           "status": "active"
         }
       },
-      "totalEarnings": 3022162,
+      "totalEarnings": 2870962,
       "previousRank": 0,
       "rank": 29
-    },
-    {
-      "id": 90,
-      "name": "Andy White",
-      "owner": "Andy White",
-      "players": {
-        "groupA": {
-          "name": "Scottie Scheffler",
-          "earnings": 679875,
-          "position": 6,
-          "toPar": -2,
-          "toParDisplay": "-2",
-          "status": "active"
-        },
-        "groupB1": {
-          "name": "Cameron Young",
-          "earnings": 108600,
-          "position": 33,
-          "toPar": 1,
-          "toParDisplay": "+1",
-          "status": "active"
-        },
-        "groupB2": {
-          "name": "Collin Morikawa",
-          "earnings": 75600,
-          "position": 40,
-          "toPar": 2,
-          "toParDisplay": "+2",
-          "status": "active"
-        },
-        "groupC1": {
-          "name": "Justin Rose",
-          "earnings": 679875,
-          "position": 6,
-          "toPar": -2,
-          "toParDisplay": "-2",
-          "status": "active"
-        },
-        "groupC2": {
-          "name": "Patrick Reed",
-          "earnings": 1092000,
-          "position": 3,
-          "toPar": -3,
-          "toParDisplay": "-3",
-          "status": "active"
-        },
-        "groupD1": {
-          "name": "Min Woo Lee",
-          "earnings": 50400,
-          "position": 73,
-          "toPar": 6,
-          "toParDisplay": "+6",
-          "status": "active"
-        },
-        "groupD2": {
-          "name": "Akshay Bhatia",
-          "earnings": 108600,
-          "position": 33,
-          "toPar": 1,
-          "toParDisplay": "+1",
-          "status": "active"
-        },
-        "groupE": {
-          "name": "Zach Johnson",
-          "earnings": 52132,
-          "position": 48,
-          "toPar": 3,
-          "toParDisplay": "+3",
-          "status": "active"
-        }
-      },
-      "totalEarnings": 2847082,
-      "previousRank": 0,
-      "rank": 30
     },
     {
       "id": 46,
@@ -2295,12 +2221,12 @@
       },
       "totalEarnings": 2806282,
       "previousRank": 0,
-      "rank": 31
+      "rank": 30
     },
     {
-      "id": 51,
-      "name": "Lion Woods",
-      "owner": "Lion Woods",
+      "id": 90,
+      "name": "Andy White",
+      "owner": "Andy White",
       "players": {
         "groupA": {
           "name": "Scottie Scheffler",
@@ -2311,22 +2237,30 @@
           "status": "active"
         },
         "groupB1": {
-          "name": "Jon Rahm",
-          "earnings": 50400,
-          "position": 73,
-          "toPar": 6,
-          "toParDisplay": "+6",
+          "name": "Cameron Young",
+          "earnings": 108600,
+          "position": 33,
+          "toPar": 1,
+          "toParDisplay": "+1",
           "status": "active"
         },
         "groupB2": {
-          "name": "Xander Schauffele",
+          "name": "Collin Morikawa",
+          "earnings": 75600,
+          "position": 40,
+          "toPar": 2,
+          "toParDisplay": "+2",
+          "status": "active"
+        },
+        "groupC1": {
+          "name": "Justin Rose",
           "earnings": 679875,
           "position": 6,
           "toPar": -2,
           "toParDisplay": "-2",
           "status": "active"
         },
-        "groupC1": {
+        "groupC2": {
           "name": "Patrick Reed",
           "earnings": 1092000,
           "position": 3,
@@ -2334,42 +2268,34 @@
           "toParDisplay": "-3",
           "status": "active"
         },
-        "groupC2": {
-          "name": "Robert MacIntyre",
-          "earnings": 50400,
-          "position": 82,
-          "toPar": 8,
-          "toParDisplay": "+8",
-          "status": "active"
-        },
         "groupD1": {
           "name": "Min Woo Lee",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 73,
           "toPar": 6,
           "toParDisplay": "+6",
           "status": "active"
         },
         "groupD2": {
-          "name": "Corey Conners",
+          "name": "Akshay Bhatia",
+          "earnings": 108600,
+          "position": 33,
+          "toPar": 1,
+          "toParDisplay": "+1",
+          "status": "active"
+        },
+        "groupE": {
+          "name": "Zach Johnson",
           "earnings": 52132,
           "position": 48,
           "toPar": 3,
           "toParDisplay": "+3",
           "status": "active"
-        },
-        "groupE": {
-          "name": "JJ Spaun",
-          "earnings": 75600,
-          "position": 40,
-          "toPar": 2,
-          "toParDisplay": "+2",
-          "status": "active"
         }
       },
-      "totalEarnings": 2730682,
+      "totalEarnings": 2796682,
       "previousRank": 0,
-      "rank": 32
+      "rank": 31
     },
     {
       "id": 56,
@@ -2386,7 +2312,7 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 73,
           "toPar": 6,
           "toParDisplay": "+6",
@@ -2441,231 +2367,9 @@
           "status": "active"
         }
       },
-      "totalEarnings": 2705482,
+      "totalEarnings": 2655082,
       "previousRank": 0,
-      "rank": 33
-    },
-    {
-      "id": 19,
-      "name": "Logs",
-      "owner": "Logs",
-      "players": {
-        "groupA": {
-          "name": "Scottie Scheffler",
-          "earnings": 679875,
-          "position": 6,
-          "toPar": -2,
-          "toParDisplay": "-2",
-          "status": "active"
-        },
-        "groupB1": {
-          "name": "Jon Rahm",
-          "earnings": 50400,
-          "position": 73,
-          "toPar": 6,
-          "toParDisplay": "+6",
-          "status": "active"
-        },
-        "groupB2": {
-          "name": "Xander Schauffele",
-          "earnings": 679875,
-          "position": 6,
-          "toPar": -2,
-          "toParDisplay": "-2",
-          "status": "active"
-        },
-        "groupC1": {
-          "name": "Hideki Matsuyama",
-          "earnings": 209606,
-          "position": 17,
-          "toPar": 0,
-          "toParDisplay": "E",
-          "status": "active"
-        },
-        "groupC2": {
-          "name": "Justin Thomas",
-          "earnings": 209606,
-          "position": 17,
-          "toPar": 0,
-          "toParDisplay": "E",
-          "status": "active"
-        },
-        "groupD1": {
-          "name": "Shane Lowry",
-          "earnings": 679875,
-          "position": 6,
-          "toPar": -2,
-          "toParDisplay": "-2",
-          "status": "active"
-        },
-        "groupD2": {
-          "name": "Corey Conners",
-          "earnings": 52132,
-          "position": 48,
-          "toPar": 3,
-          "toParDisplay": "+3",
-          "status": "active"
-        },
-        "groupE": {
-          "name": "Dustin Johnson",
-          "earnings": 108600,
-          "position": 33,
-          "toPar": 1,
-          "toParDisplay": "+1",
-          "status": "active"
-        }
-      },
-      "totalEarnings": 2669969,
-      "previousRank": 0,
-      "rank": 34
-    },
-    {
-      "id": 21,
-      "name": "Wren & Willow Webs",
-      "owner": "Wren & Willow Webs",
-      "players": {
-        "groupA": {
-          "name": "Bryson DeChambeau",
-          "earnings": 50400,
-          "position": 56,
-          "toPar": 4,
-          "toParDisplay": "+4",
-          "status": "active"
-        },
-        "groupB1": {
-          "name": "Jon Rahm",
-          "earnings": 50400,
-          "position": 73,
-          "toPar": 6,
-          "toParDisplay": "+6",
-          "status": "active"
-        },
-        "groupB2": {
-          "name": "Xander Schauffele",
-          "earnings": 679875,
-          "position": 6,
-          "toPar": -2,
-          "toParDisplay": "-2",
-          "status": "active"
-        },
-        "groupC1": {
-          "name": "Justin Rose",
-          "earnings": 679875,
-          "position": 6,
-          "toPar": -2,
-          "toParDisplay": "-2",
-          "status": "active"
-        },
-        "groupC2": {
-          "name": "Chris Gotterup",
-          "earnings": 209606,
-          "position": 17,
-          "toPar": 0,
-          "toParDisplay": "E",
-          "status": "active"
-        },
-        "groupD1": {
-          "name": "Shane Lowry",
-          "earnings": 679875,
-          "position": 6,
-          "toPar": -2,
-          "toParDisplay": "-2",
-          "status": "active"
-        },
-        "groupD2": {
-          "name": "Wyndham Clark",
-          "earnings": 209606,
-          "position": 17,
-          "toPar": 0,
-          "toParDisplay": "E",
-          "status": "active"
-        },
-        "groupE": {
-          "name": "Dustin Johnson",
-          "earnings": 108600,
-          "position": 33,
-          "toPar": 1,
-          "toParDisplay": "+1",
-          "status": "active"
-        }
-      },
-      "totalEarnings": 2668237,
-      "previousRank": 0,
-      "rank": 35
-    },
-    {
-      "id": 30,
-      "name": "Rob Frawley",
-      "owner": "Rob Frawley",
-      "players": {
-        "groupA": {
-          "name": "Bryson DeChambeau",
-          "earnings": 50400,
-          "position": 56,
-          "toPar": 4,
-          "toParDisplay": "+4",
-          "status": "active"
-        },
-        "groupB1": {
-          "name": "Xander Schauffele",
-          "earnings": 679875,
-          "position": 6,
-          "toPar": -2,
-          "toParDisplay": "-2",
-          "status": "active"
-        },
-        "groupB2": {
-          "name": "Tommy Fleetwood",
-          "earnings": 450000,
-          "position": 10,
-          "toPar": -1,
-          "toParDisplay": "-1",
-          "status": "active"
-        },
-        "groupC1": {
-          "name": "Patrick Reed",
-          "earnings": 1092000,
-          "position": 3,
-          "toPar": -3,
-          "toParDisplay": "-3",
-          "status": "active"
-        },
-        "groupC2": {
-          "name": "Hideki Matsuyama",
-          "earnings": 209606,
-          "position": 17,
-          "toPar": 0,
-          "toParDisplay": "E",
-          "status": "active"
-        },
-        "groupD1": {
-          "name": "Corey Conners",
-          "earnings": 52132,
-          "position": 48,
-          "toPar": 3,
-          "toParDisplay": "+3",
-          "status": "active"
-        },
-        "groupD2": {
-          "name": "Sunjae Im",
-          "earnings": 0,
-          "position": 999,
-          "toPar": 0,
-          "toParDisplay": "E",
-          "status": "unknown"
-        },
-        "groupE": {
-          "name": "Dustin Johnson",
-          "earnings": 108600,
-          "position": 33,
-          "toPar": 1,
-          "toParDisplay": "+1",
-          "status": "active"
-        }
-      },
-      "totalEarnings": 2642613,
-      "previousRank": 0,
-      "rank": 36
+      "rank": 32
     },
     {
       "id": 1,
@@ -2739,6 +2443,302 @@
       },
       "totalEarnings": 2638701,
       "previousRank": 0,
+      "rank": 33
+    },
+    {
+      "id": 19,
+      "name": "Logs",
+      "owner": "Logs",
+      "players": {
+        "groupA": {
+          "name": "Scottie Scheffler",
+          "earnings": 679875,
+          "position": 6,
+          "toPar": -2,
+          "toParDisplay": "-2",
+          "status": "active"
+        },
+        "groupB1": {
+          "name": "Jon Rahm",
+          "earnings": 0,
+          "position": 73,
+          "toPar": 6,
+          "toParDisplay": "+6",
+          "status": "active"
+        },
+        "groupB2": {
+          "name": "Xander Schauffele",
+          "earnings": 679875,
+          "position": 6,
+          "toPar": -2,
+          "toParDisplay": "-2",
+          "status": "active"
+        },
+        "groupC1": {
+          "name": "Hideki Matsuyama",
+          "earnings": 209606,
+          "position": 17,
+          "toPar": 0,
+          "toParDisplay": "E",
+          "status": "active"
+        },
+        "groupC2": {
+          "name": "Justin Thomas",
+          "earnings": 209606,
+          "position": 17,
+          "toPar": 0,
+          "toParDisplay": "E",
+          "status": "active"
+        },
+        "groupD1": {
+          "name": "Shane Lowry",
+          "earnings": 679875,
+          "position": 6,
+          "toPar": -2,
+          "toParDisplay": "-2",
+          "status": "active"
+        },
+        "groupD2": {
+          "name": "Corey Conners",
+          "earnings": 52132,
+          "position": 48,
+          "toPar": 3,
+          "toParDisplay": "+3",
+          "status": "active"
+        },
+        "groupE": {
+          "name": "Dustin Johnson",
+          "earnings": 108600,
+          "position": 33,
+          "toPar": 1,
+          "toParDisplay": "+1",
+          "status": "active"
+        }
+      },
+      "totalEarnings": 2619569,
+      "previousRank": 0,
+      "rank": 34
+    },
+    {
+      "id": 30,
+      "name": "Rob Frawley",
+      "owner": "Rob Frawley",
+      "players": {
+        "groupA": {
+          "name": "Bryson DeChambeau",
+          "earnings": 0,
+          "position": 56,
+          "toPar": 4,
+          "toParDisplay": "+4",
+          "status": "active"
+        },
+        "groupB1": {
+          "name": "Xander Schauffele",
+          "earnings": 679875,
+          "position": 6,
+          "toPar": -2,
+          "toParDisplay": "-2",
+          "status": "active"
+        },
+        "groupB2": {
+          "name": "Tommy Fleetwood",
+          "earnings": 450000,
+          "position": 10,
+          "toPar": -1,
+          "toParDisplay": "-1",
+          "status": "active"
+        },
+        "groupC1": {
+          "name": "Patrick Reed",
+          "earnings": 1092000,
+          "position": 3,
+          "toPar": -3,
+          "toParDisplay": "-3",
+          "status": "active"
+        },
+        "groupC2": {
+          "name": "Hideki Matsuyama",
+          "earnings": 209606,
+          "position": 17,
+          "toPar": 0,
+          "toParDisplay": "E",
+          "status": "active"
+        },
+        "groupD1": {
+          "name": "Corey Conners",
+          "earnings": 52132,
+          "position": 48,
+          "toPar": 3,
+          "toParDisplay": "+3",
+          "status": "active"
+        },
+        "groupD2": {
+          "name": "Sunjae Im",
+          "earnings": 0,
+          "position": 999,
+          "toPar": 0,
+          "toParDisplay": "E",
+          "status": "unknown"
+        },
+        "groupE": {
+          "name": "Dustin Johnson",
+          "earnings": 108600,
+          "position": 33,
+          "toPar": 1,
+          "toParDisplay": "+1",
+          "status": "active"
+        }
+      },
+      "totalEarnings": 2592213,
+      "previousRank": 0,
+      "rank": 35
+    },
+    {
+      "id": 51,
+      "name": "Lion Woods",
+      "owner": "Lion Woods",
+      "players": {
+        "groupA": {
+          "name": "Scottie Scheffler",
+          "earnings": 679875,
+          "position": 6,
+          "toPar": -2,
+          "toParDisplay": "-2",
+          "status": "active"
+        },
+        "groupB1": {
+          "name": "Jon Rahm",
+          "earnings": 0,
+          "position": 73,
+          "toPar": 6,
+          "toParDisplay": "+6",
+          "status": "active"
+        },
+        "groupB2": {
+          "name": "Xander Schauffele",
+          "earnings": 679875,
+          "position": 6,
+          "toPar": -2,
+          "toParDisplay": "-2",
+          "status": "active"
+        },
+        "groupC1": {
+          "name": "Patrick Reed",
+          "earnings": 1092000,
+          "position": 3,
+          "toPar": -3,
+          "toParDisplay": "-3",
+          "status": "active"
+        },
+        "groupC2": {
+          "name": "Robert MacIntyre",
+          "earnings": 0,
+          "position": 82,
+          "toPar": 8,
+          "toParDisplay": "+8",
+          "status": "active"
+        },
+        "groupD1": {
+          "name": "Min Woo Lee",
+          "earnings": 0,
+          "position": 73,
+          "toPar": 6,
+          "toParDisplay": "+6",
+          "status": "active"
+        },
+        "groupD2": {
+          "name": "Corey Conners",
+          "earnings": 52132,
+          "position": 48,
+          "toPar": 3,
+          "toParDisplay": "+3",
+          "status": "active"
+        },
+        "groupE": {
+          "name": "JJ Spaun",
+          "earnings": 75600,
+          "position": 40,
+          "toPar": 2,
+          "toParDisplay": "+2",
+          "status": "active"
+        }
+      },
+      "totalEarnings": 2579482,
+      "previousRank": 0,
+      "rank": 36
+    },
+    {
+      "id": 21,
+      "name": "Wren & Willow Webs",
+      "owner": "Wren & Willow Webs",
+      "players": {
+        "groupA": {
+          "name": "Bryson DeChambeau",
+          "earnings": 0,
+          "position": 56,
+          "toPar": 4,
+          "toParDisplay": "+4",
+          "status": "active"
+        },
+        "groupB1": {
+          "name": "Jon Rahm",
+          "earnings": 0,
+          "position": 73,
+          "toPar": 6,
+          "toParDisplay": "+6",
+          "status": "active"
+        },
+        "groupB2": {
+          "name": "Xander Schauffele",
+          "earnings": 679875,
+          "position": 6,
+          "toPar": -2,
+          "toParDisplay": "-2",
+          "status": "active"
+        },
+        "groupC1": {
+          "name": "Justin Rose",
+          "earnings": 679875,
+          "position": 6,
+          "toPar": -2,
+          "toParDisplay": "-2",
+          "status": "active"
+        },
+        "groupC2": {
+          "name": "Chris Gotterup",
+          "earnings": 209606,
+          "position": 17,
+          "toPar": 0,
+          "toParDisplay": "E",
+          "status": "active"
+        },
+        "groupD1": {
+          "name": "Shane Lowry",
+          "earnings": 679875,
+          "position": 6,
+          "toPar": -2,
+          "toParDisplay": "-2",
+          "status": "active"
+        },
+        "groupD2": {
+          "name": "Wyndham Clark",
+          "earnings": 209606,
+          "position": 17,
+          "toPar": 0,
+          "toParDisplay": "E",
+          "status": "active"
+        },
+        "groupE": {
+          "name": "Dustin Johnson",
+          "earnings": 108600,
+          "position": 33,
+          "toPar": 1,
+          "toParDisplay": "+1",
+          "status": "active"
+        }
+      },
+      "totalEarnings": 2567437,
+      "previousRank": 0,
       "rank": 37
     },
     {
@@ -2796,7 +2796,7 @@
         },
         "groupD2": {
           "name": "Min Woo Lee",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 73,
           "toPar": 6,
           "toParDisplay": "+6",
@@ -2811,157 +2811,9 @@
           "status": "active"
         }
       },
-      "totalEarnings": 2592431,
+      "totalEarnings": 2542031,
       "previousRank": 0,
       "rank": 38
-    },
-    {
-      "id": 81,
-      "name": "FloydSwine2",
-      "owner": "FloydSwine2",
-      "players": {
-        "groupA": {
-          "name": "Scottie Scheffler",
-          "earnings": 679875,
-          "position": 6,
-          "toPar": -2,
-          "toParDisplay": "-2",
-          "status": "active"
-        },
-        "groupB1": {
-          "name": "Ludvig \u00c5berg",
-          "earnings": 75600,
-          "position": 40,
-          "toPar": 2,
-          "toParDisplay": "+2",
-          "status": "active"
-        },
-        "groupB2": {
-          "name": "Matt Fitzpatrick",
-          "earnings": 75600,
-          "position": 40,
-          "toPar": 2,
-          "toParDisplay": "+2",
-          "status": "active"
-        },
-        "groupC1": {
-          "name": "Patrick Reed",
-          "earnings": 1092000,
-          "position": 3,
-          "toPar": -3,
-          "toParDisplay": "-3",
-          "status": "active"
-        },
-        "groupC2": {
-          "name": "Robert MacIntyre",
-          "earnings": 50400,
-          "position": 82,
-          "toPar": 8,
-          "toParDisplay": "+8",
-          "status": "active"
-        },
-        "groupD1": {
-          "name": "Min Woo Lee",
-          "earnings": 50400,
-          "position": 73,
-          "toPar": 6,
-          "toParDisplay": "+6",
-          "status": "active"
-        },
-        "groupD2": {
-          "name": "Jacob Bridgeman",
-          "earnings": 450000,
-          "position": 10,
-          "toPar": -1,
-          "toParDisplay": "-1",
-          "status": "active"
-        },
-        "groupE": {
-          "name": "Michael Kim",
-          "earnings": 52132,
-          "position": 48,
-          "toPar": 3,
-          "toParDisplay": "+3",
-          "status": "active"
-        }
-      },
-      "totalEarnings": 2526007,
-      "previousRank": 0,
-      "rank": 39
-    },
-    {
-      "id": 71,
-      "name": "Arnprior Bob",
-      "owner": "Arnprior Bob",
-      "players": {
-        "groupA": {
-          "name": "Scottie Scheffler",
-          "earnings": 679875,
-          "position": 6,
-          "toPar": -2,
-          "toParDisplay": "-2",
-          "status": "active"
-        },
-        "groupB1": {
-          "name": "Ludvig \u00c5berg",
-          "earnings": 75600,
-          "position": 40,
-          "toPar": 2,
-          "toParDisplay": "+2",
-          "status": "active"
-        },
-        "groupB2": {
-          "name": "Xander Schauffele",
-          "earnings": 679875,
-          "position": 6,
-          "toPar": -2,
-          "toParDisplay": "-2",
-          "status": "active"
-        },
-        "groupC1": {
-          "name": "Justin Thomas",
-          "earnings": 209606,
-          "position": 17,
-          "toPar": 0,
-          "toParDisplay": "E",
-          "status": "active"
-        },
-        "groupC2": {
-          "name": "Robert MacIntyre",
-          "earnings": 50400,
-          "position": 82,
-          "toPar": 8,
-          "toParDisplay": "+8",
-          "status": "active"
-        },
-        "groupD1": {
-          "name": "Shane Lowry",
-          "earnings": 679875,
-          "position": 6,
-          "toPar": -2,
-          "toParDisplay": "-2",
-          "status": "active"
-        },
-        "groupD2": {
-          "name": "Tyrell Hatton",
-          "earnings": 75600,
-          "position": 40,
-          "toPar": 2,
-          "toParDisplay": "+2",
-          "status": "active"
-        },
-        "groupE": {
-          "name": "Maverick McNealy",
-          "earnings": 50400,
-          "position": 65,
-          "toPar": 5,
-          "toParDisplay": "+5",
-          "status": "active"
-        }
-      },
-      "totalEarnings": 2501231,
-      "previousRank": 0,
-      "rank": 40
     },
     {
       "id": 88,
@@ -3035,12 +2887,12 @@
       },
       "totalEarnings": 2498294,
       "previousRank": 0,
-      "rank": 41
+      "rank": 39
     },
     {
-      "id": 2,
-      "name": "Mike Graham",
-      "owner": "Mike Graham",
+      "id": 81,
+      "name": "FloydSwine2",
+      "owner": "FloydSwine2",
       "players": {
         "groupA": {
           "name": "Scottie Scheffler",
@@ -3051,6 +2903,88 @@
           "status": "active"
         },
         "groupB1": {
+          "name": "Ludvig \u00c5berg",
+          "earnings": 75600,
+          "position": 40,
+          "toPar": 2,
+          "toParDisplay": "+2",
+          "status": "active"
+        },
+        "groupB2": {
+          "name": "Matt Fitzpatrick",
+          "earnings": 75600,
+          "position": 40,
+          "toPar": 2,
+          "toParDisplay": "+2",
+          "status": "active"
+        },
+        "groupC1": {
+          "name": "Patrick Reed",
+          "earnings": 1092000,
+          "position": 3,
+          "toPar": -3,
+          "toParDisplay": "-3",
+          "status": "active"
+        },
+        "groupC2": {
+          "name": "Robert MacIntyre",
+          "earnings": 0,
+          "position": 82,
+          "toPar": 8,
+          "toParDisplay": "+8",
+          "status": "active"
+        },
+        "groupD1": {
+          "name": "Min Woo Lee",
+          "earnings": 0,
+          "position": 73,
+          "toPar": 6,
+          "toParDisplay": "+6",
+          "status": "active"
+        },
+        "groupD2": {
+          "name": "Jacob Bridgeman",
+          "earnings": 450000,
+          "position": 10,
+          "toPar": -1,
+          "toParDisplay": "-1",
+          "status": "active"
+        },
+        "groupE": {
+          "name": "Michael Kim",
+          "earnings": 52132,
+          "position": 48,
+          "toPar": 3,
+          "toParDisplay": "+3",
+          "status": "active"
+        }
+      },
+      "totalEarnings": 2425207,
+      "previousRank": 0,
+      "rank": 40
+    },
+    {
+      "id": 71,
+      "name": "Arnprior Bob",
+      "owner": "Arnprior Bob",
+      "players": {
+        "groupA": {
+          "name": "Scottie Scheffler",
+          "earnings": 679875,
+          "position": 6,
+          "toPar": -2,
+          "toParDisplay": "-2",
+          "status": "active"
+        },
+        "groupB1": {
+          "name": "Ludvig \u00c5berg",
+          "earnings": 75600,
+          "position": 40,
+          "toPar": 2,
+          "toParDisplay": "+2",
+          "status": "active"
+        },
+        "groupB2": {
           "name": "Xander Schauffele",
           "earnings": 679875,
           "position": 6,
@@ -3058,16 +2992,8 @@
           "toParDisplay": "-2",
           "status": "active"
         },
-        "groupB2": {
-          "name": "Tommy Fleetwood",
-          "earnings": 450000,
-          "position": 10,
-          "toPar": -1,
-          "toParDisplay": "-1",
-          "status": "active"
-        },
         "groupC1": {
-          "name": "Jordan Spieth",
+          "name": "Justin Thomas",
           "earnings": 209606,
           "position": 17,
           "toPar": 0,
@@ -3076,40 +3002,40 @@
         },
         "groupC2": {
           "name": "Robert MacIntyre",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 82,
           "toPar": 8,
           "toParDisplay": "+8",
           "status": "active"
         },
         "groupD1": {
-          "name": "Min Woo Lee",
-          "earnings": 50400,
-          "position": 73,
-          "toPar": 6,
-          "toParDisplay": "+6",
+          "name": "Shane Lowry",
+          "earnings": 679875,
+          "position": 6,
+          "toPar": -2,
+          "toParDisplay": "-2",
           "status": "active"
         },
         "groupD2": {
-          "name": "Russell Henley",
-          "earnings": 108600,
-          "position": 33,
-          "toPar": 1,
-          "toParDisplay": "+1",
+          "name": "Tyrell Hatton",
+          "earnings": 75600,
+          "position": 40,
+          "toPar": 2,
+          "toParDisplay": "+2",
           "status": "active"
         },
         "groupE": {
-          "name": "Ben Griffin",
-          "earnings": 209606,
-          "position": 17,
-          "toPar": 0,
-          "toParDisplay": "E",
+          "name": "Maverick McNealy",
+          "earnings": 0,
+          "position": 65,
+          "toPar": 5,
+          "toParDisplay": "+5",
           "status": "active"
         }
       },
-      "totalEarnings": 2438362,
+      "totalEarnings": 2400431,
       "previousRank": 0,
-      "rank": 42
+      "rank": 41
     },
     {
       "id": 43,
@@ -3158,7 +3084,7 @@
         },
         "groupD1": {
           "name": "Min Woo Lee",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 73,
           "toPar": 6,
           "toParDisplay": "+6",
@@ -3181,9 +3107,9 @@
           "status": "active"
         }
       },
-      "totalEarnings": 2433281,
+      "totalEarnings": 2382881,
       "previousRank": 0,
-      "rank": 43
+      "rank": 42
     },
     {
       "id": 15,
@@ -3248,16 +3174,16 @@
         },
         "groupE": {
           "name": "Daniel Berger",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 56,
           "toPar": 4,
           "toParDisplay": "+4",
           "status": "active"
         }
       },
-      "totalEarnings": 2407094,
+      "totalEarnings": 2356694,
       "previousRank": 0,
-      "rank": 44
+      "rank": 43
     },
     {
       "id": 6,
@@ -3322,16 +3248,16 @@
         },
         "groupE": {
           "name": "Bubba Watson",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 56,
           "toPar": 4,
           "toParDisplay": "+4",
           "status": "active"
         }
       },
-      "totalEarnings": 2407094,
+      "totalEarnings": 2356694,
       "previousRank": 0,
-      "rank": 45
+      "rank": 44
     },
     {
       "id": 20,
@@ -3372,7 +3298,7 @@
         },
         "groupC2": {
           "name": "Robert MacIntyre",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 82,
           "toPar": 8,
           "toParDisplay": "+8",
@@ -3403,14 +3329,14 @@
           "status": "active"
         }
       },
-      "totalEarnings": 2401957,
+      "totalEarnings": 2351557,
       "previousRank": 0,
-      "rank": 46
+      "rank": 45
     },
     {
-      "id": 67,
-      "name": "Kelsey Webster",
-      "owner": "Kelsey Webster",
+      "id": 2,
+      "name": "Mike Graham",
+      "owner": "Mike Graham",
       "players": {
         "groupA": {
           "name": "Scottie Scheffler",
@@ -3421,11 +3347,11 @@
           "status": "active"
         },
         "groupB1": {
-          "name": "Jon Rahm",
-          "earnings": 50400,
-          "position": 73,
-          "toPar": 6,
-          "toParDisplay": "+6",
+          "name": "Xander Schauffele",
+          "earnings": 679875,
+          "position": 6,
+          "toPar": -2,
+          "toParDisplay": "-2",
           "status": "active"
         },
         "groupB2": {
@@ -3437,101 +3363,27 @@
           "status": "active"
         },
         "groupC1": {
-          "name": "Justin Rose",
-          "earnings": 679875,
-          "position": 6,
-          "toPar": -2,
-          "toParDisplay": "-2",
-          "status": "active"
-        },
-        "groupC2": {
-          "name": "Hideki Matsuyama",
+          "name": "Jordan Spieth",
           "earnings": 209606,
           "position": 17,
           "toPar": 0,
           "toParDisplay": "E",
-          "status": "active"
-        },
-        "groupD1": {
-          "name": "Corey Conners",
-          "earnings": 52132,
-          "position": 48,
-          "toPar": 3,
-          "toParDisplay": "+3",
-          "status": "active"
-        },
-        "groupD2": {
-          "name": "Max Homa",
-          "earnings": 209606,
-          "position": 17,
-          "toPar": 0,
-          "toParDisplay": "E",
-          "status": "active"
-        },
-        "groupE": {
-          "name": "Marco Penge",
-          "earnings": 50400,
-          "position": 56,
-          "toPar": 4,
-          "toParDisplay": "+4",
-          "status": "active"
-        }
-      },
-      "totalEarnings": 2381894,
-      "previousRank": 0,
-      "rank": 47
-    },
-    {
-      "id": 78,
-      "name": "Mike rik",
-      "owner": "Mike rik",
-      "players": {
-        "groupA": {
-          "name": "Scottie Scheffler",
-          "earnings": 679875,
-          "position": 6,
-          "toPar": -2,
-          "toParDisplay": "-2",
-          "status": "active"
-        },
-        "groupB1": {
-          "name": "Jon Rahm",
-          "earnings": 50400,
-          "position": 73,
-          "toPar": 6,
-          "toParDisplay": "+6",
-          "status": "active"
-        },
-        "groupB2": {
-          "name": "Ludvig \u00c5berg",
-          "earnings": 75600,
-          "position": 40,
-          "toPar": 2,
-          "toParDisplay": "+2",
-          "status": "active"
-        },
-        "groupC1": {
-          "name": "Justin Rose",
-          "earnings": 679875,
-          "position": 6,
-          "toPar": -2,
-          "toParDisplay": "-2",
           "status": "active"
         },
         "groupC2": {
           "name": "Robert MacIntyre",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 82,
           "toPar": 8,
           "toParDisplay": "+8",
           "status": "active"
         },
         "groupD1": {
-          "name": "Shane Lowry",
-          "earnings": 679875,
-          "position": 6,
-          "toPar": -2,
-          "toParDisplay": "-2",
+          "name": "Min Woo Lee",
+          "earnings": 0,
+          "position": 73,
+          "toPar": 6,
+          "toParDisplay": "+6",
           "status": "active"
         },
         "groupD2": {
@@ -3543,17 +3395,17 @@
           "status": "active"
         },
         "groupE": {
-          "name": "Maverick McNealy",
-          "earnings": 50400,
-          "position": 65,
-          "toPar": 5,
-          "toParDisplay": "+5",
+          "name": "Ben Griffin",
+          "earnings": 209606,
+          "position": 17,
+          "toPar": 0,
+          "toParDisplay": "E",
           "status": "active"
         }
       },
-      "totalEarnings": 2375025,
+      "totalEarnings": 2337562,
       "previousRank": 0,
-      "rank": 48
+      "rank": 46
     },
     {
       "id": 59,
@@ -3570,7 +3422,7 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 73,
           "toPar": 6,
           "toParDisplay": "+6",
@@ -3625,9 +3477,9 @@
           "status": "active"
         }
       },
-      "totalEarnings": 2367281,
+      "totalEarnings": 2316881,
       "previousRank": 0,
-      "rank": 49
+      "rank": 47
     },
     {
       "id": 52,
@@ -3636,7 +3488,7 @@
       "players": {
         "groupA": {
           "name": "Bryson DeChambeau",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 56,
           "toPar": 4,
           "toParDisplay": "+4",
@@ -3699,7 +3551,155 @@
           "status": "active"
         }
       },
-      "totalEarnings": 2343813,
+      "totalEarnings": 2293413,
+      "previousRank": 0,
+      "rank": 48
+    },
+    {
+      "id": 67,
+      "name": "Kelsey Webster",
+      "owner": "Kelsey Webster",
+      "players": {
+        "groupA": {
+          "name": "Scottie Scheffler",
+          "earnings": 679875,
+          "position": 6,
+          "toPar": -2,
+          "toParDisplay": "-2",
+          "status": "active"
+        },
+        "groupB1": {
+          "name": "Jon Rahm",
+          "earnings": 0,
+          "position": 73,
+          "toPar": 6,
+          "toParDisplay": "+6",
+          "status": "active"
+        },
+        "groupB2": {
+          "name": "Tommy Fleetwood",
+          "earnings": 450000,
+          "position": 10,
+          "toPar": -1,
+          "toParDisplay": "-1",
+          "status": "active"
+        },
+        "groupC1": {
+          "name": "Justin Rose",
+          "earnings": 679875,
+          "position": 6,
+          "toPar": -2,
+          "toParDisplay": "-2",
+          "status": "active"
+        },
+        "groupC2": {
+          "name": "Hideki Matsuyama",
+          "earnings": 209606,
+          "position": 17,
+          "toPar": 0,
+          "toParDisplay": "E",
+          "status": "active"
+        },
+        "groupD1": {
+          "name": "Corey Conners",
+          "earnings": 52132,
+          "position": 48,
+          "toPar": 3,
+          "toParDisplay": "+3",
+          "status": "active"
+        },
+        "groupD2": {
+          "name": "Max Homa",
+          "earnings": 209606,
+          "position": 17,
+          "toPar": 0,
+          "toParDisplay": "E",
+          "status": "active"
+        },
+        "groupE": {
+          "name": "Marco Penge",
+          "earnings": 0,
+          "position": 56,
+          "toPar": 4,
+          "toParDisplay": "+4",
+          "status": "active"
+        }
+      },
+      "totalEarnings": 2281094,
+      "previousRank": 0,
+      "rank": 49
+    },
+    {
+      "id": 78,
+      "name": "Mike rik",
+      "owner": "Mike rik",
+      "players": {
+        "groupA": {
+          "name": "Scottie Scheffler",
+          "earnings": 679875,
+          "position": 6,
+          "toPar": -2,
+          "toParDisplay": "-2",
+          "status": "active"
+        },
+        "groupB1": {
+          "name": "Jon Rahm",
+          "earnings": 0,
+          "position": 73,
+          "toPar": 6,
+          "toParDisplay": "+6",
+          "status": "active"
+        },
+        "groupB2": {
+          "name": "Ludvig \u00c5berg",
+          "earnings": 75600,
+          "position": 40,
+          "toPar": 2,
+          "toParDisplay": "+2",
+          "status": "active"
+        },
+        "groupC1": {
+          "name": "Justin Rose",
+          "earnings": 679875,
+          "position": 6,
+          "toPar": -2,
+          "toParDisplay": "-2",
+          "status": "active"
+        },
+        "groupC2": {
+          "name": "Robert MacIntyre",
+          "earnings": 0,
+          "position": 82,
+          "toPar": 8,
+          "toParDisplay": "+8",
+          "status": "active"
+        },
+        "groupD1": {
+          "name": "Shane Lowry",
+          "earnings": 679875,
+          "position": 6,
+          "toPar": -2,
+          "toParDisplay": "-2",
+          "status": "active"
+        },
+        "groupD2": {
+          "name": "Russell Henley",
+          "earnings": 108600,
+          "position": 33,
+          "toPar": 1,
+          "toParDisplay": "+1",
+          "status": "active"
+        },
+        "groupE": {
+          "name": "Maverick McNealy",
+          "earnings": 0,
+          "position": 65,
+          "toPar": 5,
+          "toParDisplay": "+5",
+          "status": "active"
+        }
+      },
+      "totalEarnings": 2223825,
       "previousRank": 0,
       "rank": 50
     },
@@ -3750,7 +3750,7 @@
         },
         "groupD1": {
           "name": "Patrick Cantlay",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 65,
           "toPar": 5,
           "toParDisplay": "+5",
@@ -3766,14 +3766,14 @@
         },
         "groupE": {
           "name": "Daniel Berger",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 56,
           "toPar": 4,
           "toParDisplay": "+4",
           "status": "active"
         }
       },
-      "totalEarnings": 2320289,
+      "totalEarnings": 2219489,
       "previousRank": 0,
       "rank": 51
     },
@@ -3784,7 +3784,7 @@
       "players": {
         "groupA": {
           "name": "Bryson DeChambeau",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 56,
           "toPar": 4,
           "toParDisplay": "+4",
@@ -3824,7 +3824,7 @@
         },
         "groupD1": {
           "name": "Min Woo Lee",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 73,
           "toPar": 6,
           "toParDisplay": "+6",
@@ -3847,231 +3847,9 @@
           "status": "active"
         }
       },
-      "totalEarnings": 2285613,
+      "totalEarnings": 2184813,
       "previousRank": 0,
       "rank": 52
-    },
-    {
-      "id": 17,
-      "name": "DUIkitty",
-      "owner": "DUIkitty",
-      "players": {
-        "groupA": {
-          "name": "Scottie Scheffler",
-          "earnings": 679875,
-          "position": 6,
-          "toPar": -2,
-          "toParDisplay": "-2",
-          "status": "active"
-        },
-        "groupB1": {
-          "name": "Xander Schauffele",
-          "earnings": 679875,
-          "position": 6,
-          "toPar": -2,
-          "toParDisplay": "-2",
-          "status": "active"
-        },
-        "groupB2": {
-          "name": "Tommy Fleetwood",
-          "earnings": 450000,
-          "position": 10,
-          "toPar": -1,
-          "toParDisplay": "-1",
-          "status": "active"
-        },
-        "groupC1": {
-          "name": "Chris Gotterup",
-          "earnings": 209606,
-          "position": 17,
-          "toPar": 0,
-          "toParDisplay": "E",
-          "status": "active"
-        },
-        "groupC2": {
-          "name": "Robert MacIntyre",
-          "earnings": 50400,
-          "position": 82,
-          "toPar": 8,
-          "toParDisplay": "+8",
-          "status": "active"
-        },
-        "groupD1": {
-          "name": "Min Woo Lee",
-          "earnings": 50400,
-          "position": 73,
-          "toPar": 6,
-          "toParDisplay": "+6",
-          "status": "active"
-        },
-        "groupD2": {
-          "name": "Sepp Straka",
-          "earnings": 108600,
-          "position": 33,
-          "toPar": 1,
-          "toParDisplay": "+1",
-          "status": "active"
-        },
-        "groupE": {
-          "name": "Danny Willett",
-          "earnings": 50400,
-          "position": 56,
-          "toPar": 4,
-          "toParDisplay": "+4",
-          "status": "active"
-        }
-      },
-      "totalEarnings": 2279156,
-      "previousRank": 0,
-      "rank": 53
-    },
-    {
-      "id": 3,
-      "name": "Stuart",
-      "owner": "Stuart",
-      "players": {
-        "groupA": {
-          "name": "Bryson DeChambeau",
-          "earnings": 50400,
-          "position": 56,
-          "toPar": 4,
-          "toParDisplay": "+4",
-          "status": "active"
-        },
-        "groupB1": {
-          "name": "Jon Rahm",
-          "earnings": 50400,
-          "position": 73,
-          "toPar": 6,
-          "toParDisplay": "+6",
-          "status": "active"
-        },
-        "groupB2": {
-          "name": "Ludvig \u00c5berg",
-          "earnings": 75600,
-          "position": 40,
-          "toPar": 2,
-          "toParDisplay": "+2",
-          "status": "active"
-        },
-        "groupC1": {
-          "name": "Patrick Reed",
-          "earnings": 1092000,
-          "position": 3,
-          "toPar": -3,
-          "toParDisplay": "-3",
-          "status": "active"
-        },
-        "groupC2": {
-          "name": "Robert MacIntyre",
-          "earnings": 50400,
-          "position": 82,
-          "toPar": 8,
-          "toParDisplay": "+8",
-          "status": "active"
-        },
-        "groupD1": {
-          "name": "Shane Lowry",
-          "earnings": 679875,
-          "position": 6,
-          "toPar": -2,
-          "toParDisplay": "-2",
-          "status": "active"
-        },
-        "groupD2": {
-          "name": "Corey Conners",
-          "earnings": 52132,
-          "position": 48,
-          "toPar": 3,
-          "toParDisplay": "+3",
-          "status": "active"
-        },
-        "groupE": {
-          "name": "Ben Griffin",
-          "earnings": 209606,
-          "position": 17,
-          "toPar": 0,
-          "toParDisplay": "E",
-          "status": "active"
-        }
-      },
-      "totalEarnings": 2260413,
-      "previousRank": 0,
-      "rank": 54
-    },
-    {
-      "id": 10,
-      "name": "Tigers Wood",
-      "owner": "Tigers Wood",
-      "players": {
-        "groupA": {
-          "name": "Bryson DeChambeau",
-          "earnings": 50400,
-          "position": 56,
-          "toPar": 4,
-          "toParDisplay": "+4",
-          "status": "active"
-        },
-        "groupB1": {
-          "name": "Xander Schauffele",
-          "earnings": 679875,
-          "position": 6,
-          "toPar": -2,
-          "toParDisplay": "-2",
-          "status": "active"
-        },
-        "groupB2": {
-          "name": "Matt Fitzpatrick",
-          "earnings": 75600,
-          "position": 40,
-          "toPar": 2,
-          "toParDisplay": "+2",
-          "status": "active"
-        },
-        "groupC1": {
-          "name": "Patrick Reed",
-          "earnings": 1092000,
-          "position": 3,
-          "toPar": -3,
-          "toParDisplay": "-3",
-          "status": "active"
-        },
-        "groupC2": {
-          "name": "Brooks Koepka",
-          "earnings": 209606,
-          "position": 17,
-          "toPar": 0,
-          "toParDisplay": "E",
-          "status": "active"
-        },
-        "groupD1": {
-          "name": "Patrick Cantlay",
-          "earnings": 50400,
-          "position": 65,
-          "toPar": 5,
-          "toParDisplay": "+5",
-          "status": "active"
-        },
-        "groupD2": {
-          "name": "Corey Conners",
-          "earnings": 52132,
-          "position": 48,
-          "toPar": 3,
-          "toParDisplay": "+3",
-          "status": "active"
-        },
-        "groupE": {
-          "name": "Daniel Berger",
-          "earnings": 50400,
-          "position": 56,
-          "toPar": 4,
-          "toParDisplay": "+4",
-          "status": "active"
-        }
-      },
-      "totalEarnings": 2260413,
-      "previousRank": 0,
-      "rank": 55
     },
     {
       "id": 73,
@@ -4136,90 +3914,16 @@
         },
         "groupE": {
           "name": "Maverick McNealy",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 65,
           "toPar": 5,
           "toParDisplay": "+5",
           "status": "active"
         }
       },
-      "totalEarnings": 2223168,
+      "totalEarnings": 2172768,
       "previousRank": 0,
-      "rank": 56
-    },
-    {
-      "id": 5,
-      "name": "Jacob Hodgson",
-      "owner": "Jacob Hodgson",
-      "players": {
-        "groupA": {
-          "name": "Bryson DeChambeau",
-          "earnings": 50400,
-          "position": 56,
-          "toPar": 4,
-          "toParDisplay": "+4",
-          "status": "active"
-        },
-        "groupB1": {
-          "name": "Jon Rahm",
-          "earnings": 50400,
-          "position": 73,
-          "toPar": 6,
-          "toParDisplay": "+6",
-          "status": "active"
-        },
-        "groupB2": {
-          "name": "Tommy Fleetwood",
-          "earnings": 450000,
-          "position": 10,
-          "toPar": -1,
-          "toParDisplay": "-1",
-          "status": "active"
-        },
-        "groupC1": {
-          "name": "Justin Rose",
-          "earnings": 679875,
-          "position": 6,
-          "toPar": -2,
-          "toParDisplay": "-2",
-          "status": "active"
-        },
-        "groupC2": {
-          "name": "Brooks Koepka",
-          "earnings": 209606,
-          "position": 17,
-          "toPar": 0,
-          "toParDisplay": "E",
-          "status": "active"
-        },
-        "groupD1": {
-          "name": "Shane Lowry",
-          "earnings": 679875,
-          "position": 6,
-          "toPar": -2,
-          "toParDisplay": "-2",
-          "status": "active"
-        },
-        "groupD2": {
-          "name": "Corey Conners",
-          "earnings": 52132,
-          "position": 48,
-          "toPar": 3,
-          "toParDisplay": "+3",
-          "status": "active"
-        },
-        "groupE": {
-          "name": "Bubba Watson",
-          "earnings": 50400,
-          "position": 56,
-          "toPar": 4,
-          "toParDisplay": "+4",
-          "status": "active"
-        }
-      },
-      "totalEarnings": 2222688,
-      "previousRank": 0,
-      "rank": 57
+      "rank": 53
     },
     {
       "id": 77,
@@ -4284,25 +3988,99 @@
         },
         "groupE": {
           "name": "Maverick McNealy",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 65,
           "toPar": 5,
           "toParDisplay": "+5",
           "status": "active"
         }
       },
-      "totalEarnings": 2219339,
+      "totalEarnings": 2168939,
       "previousRank": 0,
-      "rank": 58
+      "rank": 54
     },
     {
-      "id": 86,
-      "name": "Maad Grenadez 1",
-      "owner": "Maad Grenadez 1",
+      "id": 17,
+      "name": "DUIkitty",
+      "owner": "DUIkitty",
+      "players": {
+        "groupA": {
+          "name": "Scottie Scheffler",
+          "earnings": 679875,
+          "position": 6,
+          "toPar": -2,
+          "toParDisplay": "-2",
+          "status": "active"
+        },
+        "groupB1": {
+          "name": "Xander Schauffele",
+          "earnings": 679875,
+          "position": 6,
+          "toPar": -2,
+          "toParDisplay": "-2",
+          "status": "active"
+        },
+        "groupB2": {
+          "name": "Tommy Fleetwood",
+          "earnings": 450000,
+          "position": 10,
+          "toPar": -1,
+          "toParDisplay": "-1",
+          "status": "active"
+        },
+        "groupC1": {
+          "name": "Chris Gotterup",
+          "earnings": 209606,
+          "position": 17,
+          "toPar": 0,
+          "toParDisplay": "E",
+          "status": "active"
+        },
+        "groupC2": {
+          "name": "Robert MacIntyre",
+          "earnings": 0,
+          "position": 82,
+          "toPar": 8,
+          "toParDisplay": "+8",
+          "status": "active"
+        },
+        "groupD1": {
+          "name": "Min Woo Lee",
+          "earnings": 0,
+          "position": 73,
+          "toPar": 6,
+          "toParDisplay": "+6",
+          "status": "active"
+        },
+        "groupD2": {
+          "name": "Sepp Straka",
+          "earnings": 108600,
+          "position": 33,
+          "toPar": 1,
+          "toParDisplay": "+1",
+          "status": "active"
+        },
+        "groupE": {
+          "name": "Danny Willett",
+          "earnings": 0,
+          "position": 56,
+          "toPar": 4,
+          "toParDisplay": "+4",
+          "status": "active"
+        }
+      },
+      "totalEarnings": 2127956,
+      "previousRank": 0,
+      "rank": 55
+    },
+    {
+      "id": 3,
+      "name": "Stuart",
+      "owner": "Stuart",
       "players": {
         "groupA": {
           "name": "Bryson DeChambeau",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 56,
           "toPar": 4,
           "toParDisplay": "+4",
@@ -4310,10 +4088,84 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 73,
           "toPar": 6,
           "toParDisplay": "+6",
+          "status": "active"
+        },
+        "groupB2": {
+          "name": "Ludvig \u00c5berg",
+          "earnings": 75600,
+          "position": 40,
+          "toPar": 2,
+          "toParDisplay": "+2",
+          "status": "active"
+        },
+        "groupC1": {
+          "name": "Patrick Reed",
+          "earnings": 1092000,
+          "position": 3,
+          "toPar": -3,
+          "toParDisplay": "-3",
+          "status": "active"
+        },
+        "groupC2": {
+          "name": "Robert MacIntyre",
+          "earnings": 0,
+          "position": 82,
+          "toPar": 8,
+          "toParDisplay": "+8",
+          "status": "active"
+        },
+        "groupD1": {
+          "name": "Shane Lowry",
+          "earnings": 679875,
+          "position": 6,
+          "toPar": -2,
+          "toParDisplay": "-2",
+          "status": "active"
+        },
+        "groupD2": {
+          "name": "Corey Conners",
+          "earnings": 52132,
+          "position": 48,
+          "toPar": 3,
+          "toParDisplay": "+3",
+          "status": "active"
+        },
+        "groupE": {
+          "name": "Ben Griffin",
+          "earnings": 209606,
+          "position": 17,
+          "toPar": 0,
+          "toParDisplay": "E",
+          "status": "active"
+        }
+      },
+      "totalEarnings": 2109213,
+      "previousRank": 0,
+      "rank": 56
+    },
+    {
+      "id": 10,
+      "name": "Tigers Wood",
+      "owner": "Tigers Wood",
+      "players": {
+        "groupA": {
+          "name": "Bryson DeChambeau",
+          "earnings": 0,
+          "position": 56,
+          "toPar": 4,
+          "toParDisplay": "+4",
+          "status": "active"
+        },
+        "groupB1": {
+          "name": "Xander Schauffele",
+          "earnings": 679875,
+          "position": 6,
+          "toPar": -2,
+          "toParDisplay": "-2",
           "status": "active"
         },
         "groupB2": {
@@ -4333,7 +4185,7 @@
           "status": "active"
         },
         "groupC2": {
-          "name": "Hideki Matsuyama",
+          "name": "Brooks Koepka",
           "earnings": 209606,
           "position": 17,
           "toPar": 0,
@@ -4341,33 +4193,33 @@
           "status": "active"
         },
         "groupD1": {
-          "name": "Si Woo Kim",
+          "name": "Patrick Cantlay",
+          "earnings": 0,
+          "position": 65,
+          "toPar": 5,
+          "toParDisplay": "+5",
+          "status": "active"
+        },
+        "groupD2": {
+          "name": "Corey Conners",
           "earnings": 52132,
           "position": 48,
           "toPar": 3,
           "toParDisplay": "+3",
           "status": "active"
         },
-        "groupD2": {
-          "name": "Jacob Bridgeman",
-          "earnings": 450000,
-          "position": 10,
-          "toPar": -1,
-          "toParDisplay": "-1",
-          "status": "active"
-        },
         "groupE": {
-          "name": "Sergio Garcia",
-          "earnings": 209606,
-          "position": 17,
-          "toPar": 0,
-          "toParDisplay": "E",
+          "name": "Daniel Berger",
+          "earnings": 0,
+          "position": 56,
+          "toPar": 4,
+          "toParDisplay": "+4",
           "status": "active"
         }
       },
-      "totalEarnings": 2189744,
+      "totalEarnings": 2109213,
       "previousRank": 0,
-      "rank": 59
+      "rank": 57
     },
     {
       "id": 31,
@@ -4441,31 +4293,31 @@
       },
       "totalEarnings": 2090894,
       "previousRank": 0,
-      "rank": 60
+      "rank": 58
     },
     {
-      "id": 27,
-      "name": "Know Nothing About Golf 2",
-      "owner": "Know Nothing About Golf 2",
+      "id": 86,
+      "name": "Maad Grenadez 1",
+      "owner": "Maad Grenadez 1",
       "players": {
         "groupA": {
-          "name": "Scottie Scheffler",
-          "earnings": 679875,
-          "position": 6,
-          "toPar": -2,
-          "toParDisplay": "-2",
+          "name": "Bryson DeChambeau",
+          "earnings": 0,
+          "position": 56,
+          "toPar": 4,
+          "toParDisplay": "+4",
           "status": "active"
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 73,
           "toPar": 6,
           "toParDisplay": "+6",
           "status": "active"
         },
         "groupB2": {
-          "name": "Ludvig \u00c5berg",
+          "name": "Matt Fitzpatrick",
           "earnings": 75600,
           "position": 40,
           "toPar": 2,
@@ -4473,15 +4325,89 @@
           "status": "active"
         },
         "groupC1": {
-          "name": "Brooks Koepka",
+          "name": "Patrick Reed",
+          "earnings": 1092000,
+          "position": 3,
+          "toPar": -3,
+          "toParDisplay": "-3",
+          "status": "active"
+        },
+        "groupC2": {
+          "name": "Hideki Matsuyama",
           "earnings": 209606,
           "position": 17,
           "toPar": 0,
           "toParDisplay": "E",
           "status": "active"
         },
+        "groupD1": {
+          "name": "Si Woo Kim",
+          "earnings": 52132,
+          "position": 48,
+          "toPar": 3,
+          "toParDisplay": "+3",
+          "status": "active"
+        },
+        "groupD2": {
+          "name": "Jacob Bridgeman",
+          "earnings": 450000,
+          "position": 10,
+          "toPar": -1,
+          "toParDisplay": "-1",
+          "status": "active"
+        },
+        "groupE": {
+          "name": "Sergio Garcia",
+          "earnings": 209606,
+          "position": 17,
+          "toPar": 0,
+          "toParDisplay": "E",
+          "status": "active"
+        }
+      },
+      "totalEarnings": 2088944,
+      "previousRank": 0,
+      "rank": 59
+    },
+    {
+      "id": 5,
+      "name": "Jacob Hodgson",
+      "owner": "Jacob Hodgson",
+      "players": {
+        "groupA": {
+          "name": "Bryson DeChambeau",
+          "earnings": 0,
+          "position": 56,
+          "toPar": 4,
+          "toParDisplay": "+4",
+          "status": "active"
+        },
+        "groupB1": {
+          "name": "Jon Rahm",
+          "earnings": 0,
+          "position": 73,
+          "toPar": 6,
+          "toParDisplay": "+6",
+          "status": "active"
+        },
+        "groupB2": {
+          "name": "Tommy Fleetwood",
+          "earnings": 450000,
+          "position": 10,
+          "toPar": -1,
+          "toParDisplay": "-1",
+          "status": "active"
+        },
+        "groupC1": {
+          "name": "Justin Rose",
+          "earnings": 679875,
+          "position": 6,
+          "toPar": -2,
+          "toParDisplay": "-2",
+          "status": "active"
+        },
         "groupC2": {
-          "name": "Jordan Spieth",
+          "name": "Brooks Koepka",
           "earnings": 209606,
           "position": 17,
           "toPar": 0,
@@ -4497,72 +4423,6 @@
           "status": "active"
         },
         "groupD2": {
-          "name": "Min Woo Lee",
-          "earnings": 50400,
-          "position": 73,
-          "toPar": 6,
-          "toParDisplay": "+6",
-          "status": "active"
-        },
-        "groupE": {
-          "name": "Dustin Johnson",
-          "earnings": 108600,
-          "position": 33,
-          "toPar": 1,
-          "toParDisplay": "+1",
-          "status": "active"
-        }
-      },
-      "totalEarnings": 2063962,
-      "previousRank": 0,
-      "rank": 61
-    },
-    {
-      "id": 41,
-      "name": "David Iudiciani #4",
-      "owner": "David Iudiciani #4",
-      "players": {
-        "groupA": {
-          "name": "Bryson DeChambeau",
-          "earnings": 50400,
-          "position": 56,
-          "toPar": 4,
-          "toParDisplay": "+4",
-          "status": "active"
-        },
-        "groupB1": {
-          "name": "Jon Rahm",
-          "earnings": 50400,
-          "position": 73,
-          "toPar": 6,
-          "toParDisplay": "+6",
-          "status": "active"
-        },
-        "groupB2": {
-          "name": "Tommy Fleetwood",
-          "earnings": 450000,
-          "position": 10,
-          "toPar": -1,
-          "toParDisplay": "-1",
-          "status": "active"
-        },
-        "groupC1": {
-          "name": "Chris Gotterup",
-          "earnings": 209606,
-          "position": 17,
-          "toPar": 0,
-          "toParDisplay": "E",
-          "status": "active"
-        },
-        "groupC2": {
-          "name": "Robert MacIntyre",
-          "earnings": 50400,
-          "position": 82,
-          "toPar": 8,
-          "toParDisplay": "+8",
-          "status": "active"
-        },
-        "groupD1": {
           "name": "Corey Conners",
           "earnings": 52132,
           "position": 48,
@@ -4570,26 +4430,18 @@
           "toParDisplay": "+3",
           "status": "active"
         },
-        "groupD2": {
-          "name": "Jason Day",
-          "earnings": 1092000,
-          "position": 3,
-          "toPar": -3,
-          "toParDisplay": "-3",
-          "status": "active"
-        },
         "groupE": {
-          "name": "Harry English",
-          "earnings": 108600,
-          "position": 33,
-          "toPar": 1,
-          "toParDisplay": "+1",
+          "name": "Bubba Watson",
+          "earnings": 0,
+          "position": 56,
+          "toPar": 4,
+          "toParDisplay": "+4",
           "status": "active"
         }
       },
-      "totalEarnings": 2063538,
+      "totalEarnings": 2071488,
       "previousRank": 0,
-      "rank": 62
+      "rank": 60
     },
     {
       "id": 44,
@@ -4638,7 +4490,7 @@
         },
         "groupD1": {
           "name": "Min Woo Lee",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 73,
           "toPar": 6,
           "toParDisplay": "+6",
@@ -4661,9 +4513,9 @@
           "status": "active"
         }
       },
-      "totalEarnings": 2056162,
+      "totalEarnings": 2005762,
       "previousRank": 0,
-      "rank": 63
+      "rank": 61
     },
     {
       "id": 7,
@@ -4672,7 +4524,7 @@
       "players": {
         "groupA": {
           "name": "Bryson DeChambeau",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 56,
           "toPar": 4,
           "toParDisplay": "+4",
@@ -4735,14 +4587,14 @@
           "status": "active"
         }
       },
-      "totalEarnings": 2056162,
+      "totalEarnings": 2005762,
       "previousRank": 0,
-      "rank": 64
+      "rank": 62
     },
     {
-      "id": 87,
-      "name": "Tiger Woo",
-      "owner": "Tiger Woo",
+      "id": 27,
+      "name": "Know Nothing About Golf 2",
+      "owner": "Know Nothing About Golf 2",
       "players": {
         "groupA": {
           "name": "Scottie Scheffler",
@@ -4754,7 +4606,7 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 73,
           "toPar": 6,
           "toParDisplay": "+6",
@@ -4769,15 +4621,15 @@
           "status": "active"
         },
         "groupC1": {
-          "name": "Justin Rose",
-          "earnings": 679875,
-          "position": 6,
-          "toPar": -2,
-          "toParDisplay": "-2",
+          "name": "Brooks Koepka",
+          "earnings": 209606,
+          "position": 17,
+          "toPar": 0,
+          "toParDisplay": "E",
           "status": "active"
         },
         "groupC2": {
-          "name": "Hideki Matsuyama",
+          "name": "Jordan Spieth",
           "earnings": 209606,
           "position": 17,
           "toPar": 0,
@@ -4785,181 +4637,33 @@
           "status": "active"
         },
         "groupD1": {
+          "name": "Shane Lowry",
+          "earnings": 679875,
+          "position": 6,
+          "toPar": -2,
+          "toParDisplay": "-2",
+          "status": "active"
+        },
+        "groupD2": {
           "name": "Min Woo Lee",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 73,
           "toPar": 6,
           "toParDisplay": "+6",
           "status": "active"
         },
-        "groupD2": {
-          "name": "Si Woo Kim",
-          "earnings": 52132,
-          "position": 48,
-          "toPar": 3,
-          "toParDisplay": "+3",
-          "status": "active"
-        },
         "groupE": {
-          "name": "Sergio Garcia",
-          "earnings": 209606,
-          "position": 17,
-          "toPar": 0,
-          "toParDisplay": "E",
+          "name": "Dustin Johnson",
+          "earnings": 108600,
+          "position": 33,
+          "toPar": 1,
+          "toParDisplay": "+1",
           "status": "active"
         }
       },
-      "totalEarnings": 2007494,
+      "totalEarnings": 1963162,
       "previousRank": 0,
-      "rank": 65
-    },
-    {
-      "id": 61,
-      "name": "FrenchGPT",
-      "owner": "FrenchGPT",
-      "players": {
-        "groupA": {
-          "name": "Scottie Scheffler",
-          "earnings": 679875,
-          "position": 6,
-          "toPar": -2,
-          "toParDisplay": "-2",
-          "status": "active"
-        },
-        "groupB1": {
-          "name": "Jon Rahm",
-          "earnings": 50400,
-          "position": 73,
-          "toPar": 6,
-          "toParDisplay": "+6",
-          "status": "active"
-        },
-        "groupB2": {
-          "name": "Xander Schauffele",
-          "earnings": 679875,
-          "position": 6,
-          "toPar": -2,
-          "toParDisplay": "-2",
-          "status": "active"
-        },
-        "groupC1": {
-          "name": "Brooks Koepka",
-          "earnings": 209606,
-          "position": 17,
-          "toPar": 0,
-          "toParDisplay": "E",
-          "status": "active"
-        },
-        "groupC2": {
-          "name": "Hideki Matsuyama",
-          "earnings": 209606,
-          "position": 17,
-          "toPar": 0,
-          "toParDisplay": "E",
-          "status": "active"
-        },
-        "groupD1": {
-          "name": "Patrick Cantlay",
-          "earnings": 50400,
-          "position": 65,
-          "toPar": 5,
-          "toParDisplay": "+5",
-          "status": "active"
-        },
-        "groupD2": {
-          "name": "Corey Conners",
-          "earnings": 52132,
-          "position": 48,
-          "toPar": 3,
-          "toParDisplay": "+3",
-          "status": "active"
-        },
-        "groupE": {
-          "name": "JJ Spaun",
-          "earnings": 75600,
-          "position": 40,
-          "toPar": 2,
-          "toParDisplay": "+2",
-          "status": "active"
-        }
-      },
-      "totalEarnings": 2007494,
-      "previousRank": 0,
-      "rank": 66
-    },
-    {
-      "id": 9,
-      "name": "MartyBoy1",
-      "owner": "MartyBoy1",
-      "players": {
-        "groupA": {
-          "name": "Scottie Scheffler",
-          "earnings": 679875,
-          "position": 6,
-          "toPar": -2,
-          "toParDisplay": "-2",
-          "status": "active"
-        },
-        "groupB1": {
-          "name": "Jon Rahm",
-          "earnings": 50400,
-          "position": 73,
-          "toPar": 6,
-          "toParDisplay": "+6",
-          "status": "active"
-        },
-        "groupB2": {
-          "name": "Xander Schauffele",
-          "earnings": 679875,
-          "position": 6,
-          "toPar": -2,
-          "toParDisplay": "-2",
-          "status": "active"
-        },
-        "groupC1": {
-          "name": "Brooks Koepka",
-          "earnings": 209606,
-          "position": 17,
-          "toPar": 0,
-          "toParDisplay": "E",
-          "status": "active"
-        },
-        "groupC2": {
-          "name": "Hideki Matsuyama",
-          "earnings": 209606,
-          "position": 17,
-          "toPar": 0,
-          "toParDisplay": "E",
-          "status": "active"
-        },
-        "groupD1": {
-          "name": "Patrick Cantlay",
-          "earnings": 50400,
-          "position": 65,
-          "toPar": 5,
-          "toParDisplay": "+5",
-          "status": "active"
-        },
-        "groupD2": {
-          "name": "Corey Conners",
-          "earnings": 52132,
-          "position": 48,
-          "toPar": 3,
-          "toParDisplay": "+3",
-          "status": "active"
-        },
-        "groupE": {
-          "name": "Cameron Smith",
-          "earnings": 75600,
-          "position": 40,
-          "toPar": 2,
-          "toParDisplay": "+2",
-          "status": "active"
-        }
-      },
-      "totalEarnings": 2007494,
-      "previousRank": 0,
-      "rank": 67
+      "rank": 63
     },
     {
       "id": 23,
@@ -5016,7 +4720,7 @@
         },
         "groupD2": {
           "name": "Brian Harman",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 77,
           "toPar": 7,
           "toParDisplay": "+7",
@@ -5031,33 +4735,107 @@
           "status": "active"
         }
       },
-      "totalEarnings": 1988156,
+      "totalEarnings": 1937756,
       "previousRank": 0,
-      "rank": 68
+      "rank": 64
     },
     {
-      "id": 84,
-      "name": "Mark Watson 1",
-      "owner": "Mark Watson 1",
+      "id": 41,
+      "name": "David Iudiciani #4",
+      "owner": "David Iudiciani #4",
       "players": {
         "groupA": {
           "name": "Bryson DeChambeau",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 56,
           "toPar": 4,
           "toParDisplay": "+4",
           "status": "active"
         },
         "groupB1": {
-          "name": "Cameron Young",
+          "name": "Jon Rahm",
+          "earnings": 0,
+          "position": 73,
+          "toPar": 6,
+          "toParDisplay": "+6",
+          "status": "active"
+        },
+        "groupB2": {
+          "name": "Tommy Fleetwood",
+          "earnings": 450000,
+          "position": 10,
+          "toPar": -1,
+          "toParDisplay": "-1",
+          "status": "active"
+        },
+        "groupC1": {
+          "name": "Chris Gotterup",
+          "earnings": 209606,
+          "position": 17,
+          "toPar": 0,
+          "toParDisplay": "E",
+          "status": "active"
+        },
+        "groupC2": {
+          "name": "Robert MacIntyre",
+          "earnings": 0,
+          "position": 82,
+          "toPar": 8,
+          "toParDisplay": "+8",
+          "status": "active"
+        },
+        "groupD1": {
+          "name": "Corey Conners",
+          "earnings": 52132,
+          "position": 48,
+          "toPar": 3,
+          "toParDisplay": "+3",
+          "status": "active"
+        },
+        "groupD2": {
+          "name": "Jason Day",
+          "earnings": 1092000,
+          "position": 3,
+          "toPar": -3,
+          "toParDisplay": "-3",
+          "status": "active"
+        },
+        "groupE": {
+          "name": "Harry English",
           "earnings": 108600,
           "position": 33,
           "toPar": 1,
           "toParDisplay": "+1",
           "status": "active"
+        }
+      },
+      "totalEarnings": 1912338,
+      "previousRank": 0,
+      "rank": 65
+    },
+    {
+      "id": 87,
+      "name": "Tiger Woo",
+      "owner": "Tiger Woo",
+      "players": {
+        "groupA": {
+          "name": "Scottie Scheffler",
+          "earnings": 679875,
+          "position": 6,
+          "toPar": -2,
+          "toParDisplay": "-2",
+          "status": "active"
+        },
+        "groupB1": {
+          "name": "Jon Rahm",
+          "earnings": 0,
+          "position": 73,
+          "toPar": 6,
+          "toParDisplay": "+6",
+          "status": "active"
         },
         "groupB2": {
-          "name": "Matt Fitzpatrick",
+          "name": "Ludvig \u00c5berg",
           "earnings": 75600,
           "position": 40,
           "toPar": 2,
@@ -5065,49 +4843,197 @@
           "status": "active"
         },
         "groupC1": {
-          "name": "Patrick Reed",
-          "earnings": 1092000,
-          "position": 3,
-          "toPar": -3,
-          "toParDisplay": "-3",
+          "name": "Justin Rose",
+          "earnings": 679875,
+          "position": 6,
+          "toPar": -2,
+          "toParDisplay": "-2",
           "status": "active"
         },
         "groupC2": {
-          "name": "Robert MacIntyre",
-          "earnings": 50400,
-          "position": 82,
-          "toPar": 8,
-          "toParDisplay": "+8",
+          "name": "Hideki Matsuyama",
+          "earnings": 209606,
+          "position": 17,
+          "toPar": 0,
+          "toParDisplay": "E",
           "status": "active"
         },
         "groupD1": {
-          "name": "Akshay Bhatia",
-          "earnings": 108600,
-          "position": 33,
-          "toPar": 1,
-          "toParDisplay": "+1",
+          "name": "Min Woo Lee",
+          "earnings": 0,
+          "position": 73,
+          "toPar": 6,
+          "toParDisplay": "+6",
           "status": "active"
         },
         "groupD2": {
-          "name": "Jacob Bridgeman",
-          "earnings": 450000,
-          "position": 10,
-          "toPar": -1,
-          "toParDisplay": "-1",
+          "name": "Si Woo Kim",
+          "earnings": 52132,
+          "position": 48,
+          "toPar": 3,
+          "toParDisplay": "+3",
           "status": "active"
         },
         "groupE": {
-          "name": "Nicolai Hojgaard",
-          "earnings": 50400,
-          "position": 56,
-          "toPar": 4,
-          "toParDisplay": "+4",
+          "name": "Sergio Garcia",
+          "earnings": 209606,
+          "position": 17,
+          "toPar": 0,
+          "toParDisplay": "E",
           "status": "active"
         }
       },
-      "totalEarnings": 1986000,
+      "totalEarnings": 1906694,
       "previousRank": 0,
-      "rank": 69
+      "rank": 66
+    },
+    {
+      "id": 61,
+      "name": "FrenchGPT",
+      "owner": "FrenchGPT",
+      "players": {
+        "groupA": {
+          "name": "Scottie Scheffler",
+          "earnings": 679875,
+          "position": 6,
+          "toPar": -2,
+          "toParDisplay": "-2",
+          "status": "active"
+        },
+        "groupB1": {
+          "name": "Jon Rahm",
+          "earnings": 0,
+          "position": 73,
+          "toPar": 6,
+          "toParDisplay": "+6",
+          "status": "active"
+        },
+        "groupB2": {
+          "name": "Xander Schauffele",
+          "earnings": 679875,
+          "position": 6,
+          "toPar": -2,
+          "toParDisplay": "-2",
+          "status": "active"
+        },
+        "groupC1": {
+          "name": "Brooks Koepka",
+          "earnings": 209606,
+          "position": 17,
+          "toPar": 0,
+          "toParDisplay": "E",
+          "status": "active"
+        },
+        "groupC2": {
+          "name": "Hideki Matsuyama",
+          "earnings": 209606,
+          "position": 17,
+          "toPar": 0,
+          "toParDisplay": "E",
+          "status": "active"
+        },
+        "groupD1": {
+          "name": "Patrick Cantlay",
+          "earnings": 0,
+          "position": 65,
+          "toPar": 5,
+          "toParDisplay": "+5",
+          "status": "active"
+        },
+        "groupD2": {
+          "name": "Corey Conners",
+          "earnings": 52132,
+          "position": 48,
+          "toPar": 3,
+          "toParDisplay": "+3",
+          "status": "active"
+        },
+        "groupE": {
+          "name": "JJ Spaun",
+          "earnings": 75600,
+          "position": 40,
+          "toPar": 2,
+          "toParDisplay": "+2",
+          "status": "active"
+        }
+      },
+      "totalEarnings": 1906694,
+      "previousRank": 0,
+      "rank": 67
+    },
+    {
+      "id": 9,
+      "name": "MartyBoy1",
+      "owner": "MartyBoy1",
+      "players": {
+        "groupA": {
+          "name": "Scottie Scheffler",
+          "earnings": 679875,
+          "position": 6,
+          "toPar": -2,
+          "toParDisplay": "-2",
+          "status": "active"
+        },
+        "groupB1": {
+          "name": "Jon Rahm",
+          "earnings": 0,
+          "position": 73,
+          "toPar": 6,
+          "toParDisplay": "+6",
+          "status": "active"
+        },
+        "groupB2": {
+          "name": "Xander Schauffele",
+          "earnings": 679875,
+          "position": 6,
+          "toPar": -2,
+          "toParDisplay": "-2",
+          "status": "active"
+        },
+        "groupC1": {
+          "name": "Brooks Koepka",
+          "earnings": 209606,
+          "position": 17,
+          "toPar": 0,
+          "toParDisplay": "E",
+          "status": "active"
+        },
+        "groupC2": {
+          "name": "Hideki Matsuyama",
+          "earnings": 209606,
+          "position": 17,
+          "toPar": 0,
+          "toParDisplay": "E",
+          "status": "active"
+        },
+        "groupD1": {
+          "name": "Patrick Cantlay",
+          "earnings": 0,
+          "position": 65,
+          "toPar": 5,
+          "toParDisplay": "+5",
+          "status": "active"
+        },
+        "groupD2": {
+          "name": "Corey Conners",
+          "earnings": 52132,
+          "position": 48,
+          "toPar": 3,
+          "toParDisplay": "+3",
+          "status": "active"
+        },
+        "groupE": {
+          "name": "Cameron Smith",
+          "earnings": 75600,
+          "position": 40,
+          "toPar": 2,
+          "toParDisplay": "+2",
+          "status": "active"
+        }
+      },
+      "totalEarnings": 1906694,
+      "previousRank": 0,
+      "rank": 68
     },
     {
       "id": 38,
@@ -5148,7 +5074,7 @@
         },
         "groupC2": {
           "name": "Robert MacIntyre",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 82,
           "toPar": 8,
           "toParDisplay": "+8",
@@ -5179,9 +5105,9 @@
           "status": "active"
         }
       },
-      "totalEarnings": 1931688,
+      "totalEarnings": 1881288,
       "previousRank": 0,
-      "rank": 70
+      "rank": 69
     },
     {
       "id": 35,
@@ -5230,7 +5156,7 @@
         },
         "groupD1": {
           "name": "Min Woo Lee",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 73,
           "toPar": 6,
           "toParDisplay": "+6",
@@ -5253,9 +5179,9 @@
           "status": "active"
         }
       },
-      "totalEarnings": 1931688,
+      "totalEarnings": 1881288,
       "previousRank": 0,
-      "rank": 71
+      "rank": 70
     },
     {
       "id": 45,
@@ -5272,7 +5198,7 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 73,
           "toPar": 6,
           "toParDisplay": "+6",
@@ -5327,7 +5253,81 @@
           "status": "active"
         }
       },
-      "totalEarnings": 1931688,
+      "totalEarnings": 1881288,
+      "previousRank": 0,
+      "rank": 71
+    },
+    {
+      "id": 84,
+      "name": "Mark Watson 1",
+      "owner": "Mark Watson 1",
+      "players": {
+        "groupA": {
+          "name": "Bryson DeChambeau",
+          "earnings": 0,
+          "position": 56,
+          "toPar": 4,
+          "toParDisplay": "+4",
+          "status": "active"
+        },
+        "groupB1": {
+          "name": "Cameron Young",
+          "earnings": 108600,
+          "position": 33,
+          "toPar": 1,
+          "toParDisplay": "+1",
+          "status": "active"
+        },
+        "groupB2": {
+          "name": "Matt Fitzpatrick",
+          "earnings": 75600,
+          "position": 40,
+          "toPar": 2,
+          "toParDisplay": "+2",
+          "status": "active"
+        },
+        "groupC1": {
+          "name": "Patrick Reed",
+          "earnings": 1092000,
+          "position": 3,
+          "toPar": -3,
+          "toParDisplay": "-3",
+          "status": "active"
+        },
+        "groupC2": {
+          "name": "Robert MacIntyre",
+          "earnings": 0,
+          "position": 82,
+          "toPar": 8,
+          "toParDisplay": "+8",
+          "status": "active"
+        },
+        "groupD1": {
+          "name": "Akshay Bhatia",
+          "earnings": 108600,
+          "position": 33,
+          "toPar": 1,
+          "toParDisplay": "+1",
+          "status": "active"
+        },
+        "groupD2": {
+          "name": "Jacob Bridgeman",
+          "earnings": 450000,
+          "position": 10,
+          "toPar": -1,
+          "toParDisplay": "-1",
+          "status": "active"
+        },
+        "groupE": {
+          "name": "Nicolai Hojgaard",
+          "earnings": 0,
+          "position": 56,
+          "toPar": 4,
+          "toParDisplay": "+4",
+          "status": "active"
+        }
+      },
+      "totalEarnings": 1834800,
       "previousRank": 0,
       "rank": 72
     },
@@ -5338,7 +5338,7 @@
       "players": {
         "groupA": {
           "name": "Bryson DeChambeau",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 56,
           "toPar": 4,
           "toParDisplay": "+4",
@@ -5370,7 +5370,7 @@
         },
         "groupC2": {
           "name": "Robert MacIntyre",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 82,
           "toPar": 8,
           "toParDisplay": "+8",
@@ -5401,83 +5401,9 @@
           "status": "active"
         }
       },
-      "totalEarnings": 1828950,
+      "totalEarnings": 1728150,
       "previousRank": 0,
       "rank": 73
-    },
-    {
-      "id": 72,
-      "name": "Liam McQuaid",
-      "owner": "Liam McQuaid",
-      "players": {
-        "groupA": {
-          "name": "Bryson DeChambeau",
-          "earnings": 50400,
-          "position": 56,
-          "toPar": 4,
-          "toParDisplay": "+4",
-          "status": "active"
-        },
-        "groupB1": {
-          "name": "Cameron Young",
-          "earnings": 108600,
-          "position": 33,
-          "toPar": 1,
-          "toParDisplay": "+1",
-          "status": "active"
-        },
-        "groupB2": {
-          "name": "Matt Fitzpatrick",
-          "earnings": 75600,
-          "position": 40,
-          "toPar": 2,
-          "toParDisplay": "+2",
-          "status": "active"
-        },
-        "groupC1": {
-          "name": "Patrick Reed",
-          "earnings": 1092000,
-          "position": 3,
-          "toPar": -3,
-          "toParDisplay": "-3",
-          "status": "active"
-        },
-        "groupC2": {
-          "name": "Chris Gotterup",
-          "earnings": 209606,
-          "position": 17,
-          "toPar": 0,
-          "toParDisplay": "E",
-          "status": "active"
-        },
-        "groupD1": {
-          "name": "Min Woo Lee",
-          "earnings": 50400,
-          "position": 73,
-          "toPar": 6,
-          "toParDisplay": "+6",
-          "status": "active"
-        },
-        "groupD2": {
-          "name": "Akshay Bhatia",
-          "earnings": 108600,
-          "position": 33,
-          "toPar": 1,
-          "toParDisplay": "+1",
-          "status": "active"
-        },
-        "groupE": {
-          "name": "Maverick McNealy",
-          "earnings": 50400,
-          "position": 65,
-          "toPar": 5,
-          "toParDisplay": "+5",
-          "status": "active"
-        }
-      },
-      "totalEarnings": 1745606,
-      "previousRank": 0,
-      "rank": 74
     },
     {
       "id": 47,
@@ -5494,7 +5420,7 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 73,
           "toPar": 6,
           "toParDisplay": "+6",
@@ -5549,83 +5475,9 @@
           "status": "active"
         }
       },
-      "totalEarnings": 1734813,
+      "totalEarnings": 1684413,
       "previousRank": 0,
-      "rank": 75
-    },
-    {
-      "id": 66,
-      "name": "Ginger's R Us",
-      "owner": "Ginger's R Us",
-      "players": {
-        "groupA": {
-          "name": "Bryson DeChambeau",
-          "earnings": 50400,
-          "position": 56,
-          "toPar": 4,
-          "toParDisplay": "+4",
-          "status": "active"
-        },
-        "groupB1": {
-          "name": "Xander Schauffele",
-          "earnings": 679875,
-          "position": 6,
-          "toPar": -2,
-          "toParDisplay": "-2",
-          "status": "active"
-        },
-        "groupB2": {
-          "name": "Cameron Young",
-          "earnings": 108600,
-          "position": 33,
-          "toPar": 1,
-          "toParDisplay": "+1",
-          "status": "active"
-        },
-        "groupC1": {
-          "name": "Justin Rose",
-          "earnings": 679875,
-          "position": 6,
-          "toPar": -2,
-          "toParDisplay": "-2",
-          "status": "active"
-        },
-        "groupC2": {
-          "name": "Robert MacIntyre",
-          "earnings": 50400,
-          "position": 82,
-          "toPar": 8,
-          "toParDisplay": "+8",
-          "status": "active"
-        },
-        "groupD1": {
-          "name": "Min Woo Lee",
-          "earnings": 50400,
-          "position": 73,
-          "toPar": 6,
-          "toParDisplay": "+6",
-          "status": "active"
-        },
-        "groupD2": {
-          "name": "Corey Conners",
-          "earnings": 52132,
-          "position": 48,
-          "toPar": 3,
-          "toParDisplay": "+3",
-          "status": "active"
-        },
-        "groupE": {
-          "name": "Marco Penge",
-          "earnings": 50400,
-          "position": 56,
-          "toPar": 4,
-          "toParDisplay": "+4",
-          "status": "active"
-        }
-      },
-      "totalEarnings": 1722082,
-      "previousRank": 0,
-      "rank": 76
+      "rank": 74
     },
     {
       "id": 89,
@@ -5642,7 +5494,7 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 73,
           "toPar": 6,
           "toParDisplay": "+6",
@@ -5697,7 +5549,155 @@
           "status": "active"
         }
       },
-      "totalEarnings": 1651893,
+      "totalEarnings": 1601493,
+      "previousRank": 0,
+      "rank": 75
+    },
+    {
+      "id": 72,
+      "name": "Liam McQuaid",
+      "owner": "Liam McQuaid",
+      "players": {
+        "groupA": {
+          "name": "Bryson DeChambeau",
+          "earnings": 0,
+          "position": 56,
+          "toPar": 4,
+          "toParDisplay": "+4",
+          "status": "active"
+        },
+        "groupB1": {
+          "name": "Cameron Young",
+          "earnings": 108600,
+          "position": 33,
+          "toPar": 1,
+          "toParDisplay": "+1",
+          "status": "active"
+        },
+        "groupB2": {
+          "name": "Matt Fitzpatrick",
+          "earnings": 75600,
+          "position": 40,
+          "toPar": 2,
+          "toParDisplay": "+2",
+          "status": "active"
+        },
+        "groupC1": {
+          "name": "Patrick Reed",
+          "earnings": 1092000,
+          "position": 3,
+          "toPar": -3,
+          "toParDisplay": "-3",
+          "status": "active"
+        },
+        "groupC2": {
+          "name": "Chris Gotterup",
+          "earnings": 209606,
+          "position": 17,
+          "toPar": 0,
+          "toParDisplay": "E",
+          "status": "active"
+        },
+        "groupD1": {
+          "name": "Min Woo Lee",
+          "earnings": 0,
+          "position": 73,
+          "toPar": 6,
+          "toParDisplay": "+6",
+          "status": "active"
+        },
+        "groupD2": {
+          "name": "Akshay Bhatia",
+          "earnings": 108600,
+          "position": 33,
+          "toPar": 1,
+          "toParDisplay": "+1",
+          "status": "active"
+        },
+        "groupE": {
+          "name": "Maverick McNealy",
+          "earnings": 0,
+          "position": 65,
+          "toPar": 5,
+          "toParDisplay": "+5",
+          "status": "active"
+        }
+      },
+      "totalEarnings": 1594406,
+      "previousRank": 0,
+      "rank": 76
+    },
+    {
+      "id": 66,
+      "name": "Ginger's R Us",
+      "owner": "Ginger's R Us",
+      "players": {
+        "groupA": {
+          "name": "Bryson DeChambeau",
+          "earnings": 0,
+          "position": 56,
+          "toPar": 4,
+          "toParDisplay": "+4",
+          "status": "active"
+        },
+        "groupB1": {
+          "name": "Xander Schauffele",
+          "earnings": 679875,
+          "position": 6,
+          "toPar": -2,
+          "toParDisplay": "-2",
+          "status": "active"
+        },
+        "groupB2": {
+          "name": "Cameron Young",
+          "earnings": 108600,
+          "position": 33,
+          "toPar": 1,
+          "toParDisplay": "+1",
+          "status": "active"
+        },
+        "groupC1": {
+          "name": "Justin Rose",
+          "earnings": 679875,
+          "position": 6,
+          "toPar": -2,
+          "toParDisplay": "-2",
+          "status": "active"
+        },
+        "groupC2": {
+          "name": "Robert MacIntyre",
+          "earnings": 0,
+          "position": 82,
+          "toPar": 8,
+          "toParDisplay": "+8",
+          "status": "active"
+        },
+        "groupD1": {
+          "name": "Min Woo Lee",
+          "earnings": 0,
+          "position": 73,
+          "toPar": 6,
+          "toParDisplay": "+6",
+          "status": "active"
+        },
+        "groupD2": {
+          "name": "Corey Conners",
+          "earnings": 52132,
+          "position": 48,
+          "toPar": 3,
+          "toParDisplay": "+3",
+          "status": "active"
+        },
+        "groupE": {
+          "name": "Marco Penge",
+          "earnings": 0,
+          "position": 56,
+          "toPar": 4,
+          "toParDisplay": "+4",
+          "status": "active"
+        }
+      },
+      "totalEarnings": 1520482,
       "previousRank": 0,
       "rank": 77
     },
@@ -5748,7 +5748,7 @@
         },
         "groupD1": {
           "name": "Min Woo Lee",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 73,
           "toPar": 6,
           "toParDisplay": "+6",
@@ -5756,7 +5756,7 @@
         },
         "groupD2": {
           "name": "Patrick Cantlay",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 65,
           "toPar": 5,
           "toParDisplay": "+5",
@@ -5764,14 +5764,14 @@
         },
         "groupE": {
           "name": "Daniel Berger",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 56,
           "toPar": 4,
           "toParDisplay": "+4",
           "status": "active"
         }
       },
-      "totalEarnings": 1618413,
+      "totalEarnings": 1467213,
       "previousRank": 0,
       "rank": 78
     },
@@ -5814,7 +5814,7 @@
         },
         "groupC2": {
           "name": "Robert MacIntyre",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 82,
           "toPar": 8,
           "toParDisplay": "+8",
@@ -5838,14 +5838,14 @@
         },
         "groupE": {
           "name": "Maverick McNealy",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 65,
           "toPar": 5,
           "toParDisplay": "+5",
           "status": "active"
         }
       },
-      "totalEarnings": 1568013,
+      "totalEarnings": 1467213,
       "previousRank": 0,
       "rank": 79
     },
@@ -5864,7 +5864,7 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 73,
           "toPar": 6,
           "toParDisplay": "+6",
@@ -5896,7 +5896,7 @@
         },
         "groupD1": {
           "name": "Patrick Cantlay",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 65,
           "toPar": 5,
           "toParDisplay": "+5",
@@ -5919,7 +5919,7 @@
           "status": "active"
         }
       },
-      "totalEarnings": 1492687,
+      "totalEarnings": 1391887,
       "previousRank": 0,
       "rank": 80
     },
@@ -5930,7 +5930,7 @@
       "players": {
         "groupA": {
           "name": "Bryson DeChambeau",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 56,
           "toPar": 4,
           "toParDisplay": "+4",
@@ -5993,7 +5993,7 @@
           "status": "active"
         }
       },
-      "totalEarnings": 1327413,
+      "totalEarnings": 1277013,
       "previousRank": 0,
       "rank": 81
     },
@@ -6044,7 +6044,7 @@
         },
         "groupD1": {
           "name": "Min Woo Lee",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 73,
           "toPar": 6,
           "toParDisplay": "+6",
@@ -6067,7 +6067,7 @@
           "status": "active"
         }
       },
-      "totalEarnings": 1327413,
+      "totalEarnings": 1277013,
       "previousRank": 0,
       "rank": 82
     },
@@ -6078,7 +6078,7 @@
       "players": {
         "groupA": {
           "name": "Bryson DeChambeau",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 56,
           "toPar": 4,
           "toParDisplay": "+4",
@@ -6118,7 +6118,7 @@
         },
         "groupD1": {
           "name": "Min Woo Lee",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 73,
           "toPar": 6,
           "toParDisplay": "+6",
@@ -6141,7 +6141,7 @@
           "status": "active"
         }
       },
-      "totalEarnings": 1302213,
+      "totalEarnings": 1201413,
       "previousRank": 0,
       "rank": 83
     },
@@ -6184,7 +6184,7 @@
         },
         "groupC2": {
           "name": "Robert MacIntyre",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 82,
           "toPar": 8,
           "toParDisplay": "+8",
@@ -6192,7 +6192,7 @@
         },
         "groupD1": {
           "name": "Min Woo Lee",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 73,
           "toPar": 6,
           "toParDisplay": "+6",
@@ -6215,83 +6215,9 @@
           "status": "active"
         }
       },
-      "totalEarnings": 1302213,
+      "totalEarnings": 1201413,
       "previousRank": 0,
       "rank": 84
-    },
-    {
-      "id": 55,
-      "name": "Kyle Palantzas",
-      "owner": "Kyle Palantzas",
-      "players": {
-        "groupA": {
-          "name": "Scottie Scheffler",
-          "earnings": 679875,
-          "position": 6,
-          "toPar": -2,
-          "toParDisplay": "-2",
-          "status": "active"
-        },
-        "groupB1": {
-          "name": "Jon Rahm",
-          "earnings": 50400,
-          "position": 73,
-          "toPar": 6,
-          "toParDisplay": "+6",
-          "status": "active"
-        },
-        "groupB2": {
-          "name": "Matt Fitzpatrick",
-          "earnings": 75600,
-          "position": 40,
-          "toPar": 2,
-          "toParDisplay": "+2",
-          "status": "active"
-        },
-        "groupC1": {
-          "name": "Brooks Koepka",
-          "earnings": 209606,
-          "position": 17,
-          "toPar": 0,
-          "toParDisplay": "E",
-          "status": "active"
-        },
-        "groupC2": {
-          "name": "Robert MacIntyre",
-          "earnings": 50400,
-          "position": 82,
-          "toPar": 8,
-          "toParDisplay": "+8",
-          "status": "active"
-        },
-        "groupD1": {
-          "name": "Min Woo Lee",
-          "earnings": 50400,
-          "position": 73,
-          "toPar": 6,
-          "toParDisplay": "+6",
-          "status": "active"
-        },
-        "groupD2": {
-          "name": "Akshay Bhatia",
-          "earnings": 108600,
-          "position": 33,
-          "toPar": 1,
-          "toParDisplay": "+1",
-          "status": "active"
-        },
-        "groupE": {
-          "name": "JJ Spaun",
-          "earnings": 75600,
-          "position": 40,
-          "toPar": 2,
-          "toParDisplay": "+2",
-          "status": "active"
-        }
-      },
-      "totalEarnings": 1300481,
-      "previousRank": 0,
-      "rank": 85
     },
     {
       "id": 74,
@@ -6300,7 +6226,7 @@
       "players": {
         "groupA": {
           "name": "Bryson DeChambeau",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 56,
           "toPar": 4,
           "toParDisplay": "+4",
@@ -6356,14 +6282,88 @@
         },
         "groupE": {
           "name": "Maverick McNealy",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 65,
           "toPar": 5,
           "toParDisplay": "+5",
           "status": "active"
         }
       },
-      "totalEarnings": 1278745,
+      "totalEarnings": 1177945,
+      "previousRank": 0,
+      "rank": 85
+    },
+    {
+      "id": 55,
+      "name": "Kyle Palantzas",
+      "owner": "Kyle Palantzas",
+      "players": {
+        "groupA": {
+          "name": "Scottie Scheffler",
+          "earnings": 679875,
+          "position": 6,
+          "toPar": -2,
+          "toParDisplay": "-2",
+          "status": "active"
+        },
+        "groupB1": {
+          "name": "Jon Rahm",
+          "earnings": 0,
+          "position": 73,
+          "toPar": 6,
+          "toParDisplay": "+6",
+          "status": "active"
+        },
+        "groupB2": {
+          "name": "Matt Fitzpatrick",
+          "earnings": 75600,
+          "position": 40,
+          "toPar": 2,
+          "toParDisplay": "+2",
+          "status": "active"
+        },
+        "groupC1": {
+          "name": "Brooks Koepka",
+          "earnings": 209606,
+          "position": 17,
+          "toPar": 0,
+          "toParDisplay": "E",
+          "status": "active"
+        },
+        "groupC2": {
+          "name": "Robert MacIntyre",
+          "earnings": 0,
+          "position": 82,
+          "toPar": 8,
+          "toParDisplay": "+8",
+          "status": "active"
+        },
+        "groupD1": {
+          "name": "Min Woo Lee",
+          "earnings": 0,
+          "position": 73,
+          "toPar": 6,
+          "toParDisplay": "+6",
+          "status": "active"
+        },
+        "groupD2": {
+          "name": "Akshay Bhatia",
+          "earnings": 108600,
+          "position": 33,
+          "toPar": 1,
+          "toParDisplay": "+1",
+          "status": "active"
+        },
+        "groupE": {
+          "name": "JJ Spaun",
+          "earnings": 75600,
+          "position": 40,
+          "toPar": 2,
+          "toParDisplay": "+2",
+          "status": "active"
+        }
+      },
+      "totalEarnings": 1149281,
       "previousRank": 0,
       "rank": 86
     },
@@ -6374,7 +6374,7 @@
       "players": {
         "groupA": {
           "name": "Bryson DeChambeau",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 56,
           "toPar": 4,
           "toParDisplay": "+4",
@@ -6437,83 +6437,9 @@
           "status": "active"
         }
       },
-      "totalEarnings": 1188944,
+      "totalEarnings": 1138544,
       "previousRank": 0,
       "rank": 87
-    },
-    {
-      "id": 14,
-      "name": "Maz",
-      "owner": "Maz",
-      "players": {
-        "groupA": {
-          "name": "Bryson DeChambeau",
-          "earnings": 50400,
-          "position": 56,
-          "toPar": 4,
-          "toParDisplay": "+4",
-          "status": "active"
-        },
-        "groupB1": {
-          "name": "Ludvig \u00c5berg",
-          "earnings": 75600,
-          "position": 40,
-          "toPar": 2,
-          "toParDisplay": "+2",
-          "status": "active"
-        },
-        "groupB2": {
-          "name": "Tommy Fleetwood",
-          "earnings": 450000,
-          "position": 10,
-          "toPar": -1,
-          "toParDisplay": "-1",
-          "status": "active"
-        },
-        "groupC1": {
-          "name": "Hideki Matsuyama",
-          "earnings": 209606,
-          "position": 17,
-          "toPar": 0,
-          "toParDisplay": "E",
-          "status": "active"
-        },
-        "groupC2": {
-          "name": "Robert MacIntyre",
-          "earnings": 50400,
-          "position": 82,
-          "toPar": 8,
-          "toParDisplay": "+8",
-          "status": "active"
-        },
-        "groupD1": {
-          "name": "Min Woo Lee",
-          "earnings": 50400,
-          "position": 73,
-          "toPar": 6,
-          "toParDisplay": "+6",
-          "status": "active"
-        },
-        "groupD2": {
-          "name": "Sepp Straka",
-          "earnings": 108600,
-          "position": 33,
-          "toPar": 1,
-          "toParDisplay": "+1",
-          "status": "active"
-        },
-        "groupE": {
-          "name": "Daniel Berger",
-          "earnings": 50400,
-          "position": 56,
-          "toPar": 4,
-          "toParDisplay": "+4",
-          "status": "active"
-        }
-      },
-      "totalEarnings": 1045406,
-      "previousRank": 0,
-      "rank": 88
     },
     {
       "id": 57,
@@ -6522,7 +6448,7 @@
       "players": {
         "groupA": {
           "name": "Bryson DeChambeau",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 56,
           "toPar": 4,
           "toParDisplay": "+4",
@@ -6530,7 +6456,7 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 73,
           "toPar": 6,
           "toParDisplay": "+6",
@@ -6562,7 +6488,7 @@
         },
         "groupD1": {
           "name": "Patrick Cantlay",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 65,
           "toPar": 5,
           "toParDisplay": "+5",
@@ -6585,7 +6511,81 @@
           "status": "active"
         }
       },
-      "totalEarnings": 1034407,
+      "totalEarnings": 883207,
+      "previousRank": 0,
+      "rank": 88
+    },
+    {
+      "id": 14,
+      "name": "Maz",
+      "owner": "Maz",
+      "players": {
+        "groupA": {
+          "name": "Bryson DeChambeau",
+          "earnings": 0,
+          "position": 56,
+          "toPar": 4,
+          "toParDisplay": "+4",
+          "status": "active"
+        },
+        "groupB1": {
+          "name": "Ludvig \u00c5berg",
+          "earnings": 75600,
+          "position": 40,
+          "toPar": 2,
+          "toParDisplay": "+2",
+          "status": "active"
+        },
+        "groupB2": {
+          "name": "Tommy Fleetwood",
+          "earnings": 450000,
+          "position": 10,
+          "toPar": -1,
+          "toParDisplay": "-1",
+          "status": "active"
+        },
+        "groupC1": {
+          "name": "Hideki Matsuyama",
+          "earnings": 209606,
+          "position": 17,
+          "toPar": 0,
+          "toParDisplay": "E",
+          "status": "active"
+        },
+        "groupC2": {
+          "name": "Robert MacIntyre",
+          "earnings": 0,
+          "position": 82,
+          "toPar": 8,
+          "toParDisplay": "+8",
+          "status": "active"
+        },
+        "groupD1": {
+          "name": "Min Woo Lee",
+          "earnings": 0,
+          "position": 73,
+          "toPar": 6,
+          "toParDisplay": "+6",
+          "status": "active"
+        },
+        "groupD2": {
+          "name": "Sepp Straka",
+          "earnings": 108600,
+          "position": 33,
+          "toPar": 1,
+          "toParDisplay": "+1",
+          "status": "active"
+        },
+        "groupE": {
+          "name": "Daniel Berger",
+          "earnings": 0,
+          "position": 56,
+          "toPar": 4,
+          "toParDisplay": "+4",
+          "status": "active"
+        }
+      },
+      "totalEarnings": 843806,
       "previousRank": 0,
       "rank": 89
     },
@@ -6596,7 +6596,7 @@
       "players": {
         "groupA": {
           "name": "Bryson DeChambeau",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 56,
           "toPar": 4,
           "toParDisplay": "+4",
@@ -6636,7 +6636,7 @@
         },
         "groupD1": {
           "name": "Patrick Cantlay",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 65,
           "toPar": 5,
           "toParDisplay": "+5",
@@ -6652,14 +6652,14 @@
         },
         "groupE": {
           "name": "Danny Willett",
-          "earnings": 50400,
+          "earnings": 0,
           "position": 56,
           "toPar": 4,
           "toParDisplay": "+4",
           "status": "active"
         }
       },
-      "totalEarnings": 649270,
+      "totalEarnings": 498070,
       "previousRank": 0,
       "rank": 90
     }
