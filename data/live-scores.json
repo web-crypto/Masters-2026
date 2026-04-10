@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-10T12:10:16Z",
+  "fetchedAt": "2026-04-10T12:20:14Z",
   "tournamentStatus": "in_progress",
   "currentRound": 2,
   "players": [
@@ -276,6 +276,22 @@
       "projectedEarnings": 209606
     },
     {
+      "espnId": "11119",
+      "name": "Wyndham Clark",
+      "position": 17,
+      "toPar": 0,
+      "toParDisplay": "E",
+      "rounds": [
+        72,
+        4,
+        null,
+        null
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 209606
+    },
+    {
       "espnId": "8973",
       "name": "Max Homa",
       "position": 17,
@@ -358,22 +374,6 @@
     {
       "espnId": "5860",
       "name": "Hideki Matsuyama",
-      "position": 17,
-      "toPar": 0,
-      "toParDisplay": "E",
-      "rounds": [
-        72,
-        0,
-        null,
-        null
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 209606
-    },
-    {
-      "espnId": "11119",
-      "name": "Wyndham Clark",
       "position": 17,
       "toPar": 0,
       "toParDisplay": "E",
@@ -1364,22 +1364,6 @@
       "projectedEarnings": 0
     },
     {
-      "espnId": "2201886",
-      "name": "Brandon Holtz",
-      "position": 86,
-      "toPar": 9,
-      "toParDisplay": "+9",
-      "rounds": [
-        81,
-        0,
-        null,
-        null
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 0
-    },
-    {
       "espnId": "453",
       "name": "Mike Weir",
       "position": 86,
@@ -1387,7 +1371,7 @@
       "toParDisplay": "+9",
       "rounds": [
         81,
-        0,
+        4,
         null,
         null
       ],
@@ -1398,6 +1382,22 @@
     {
       "espnId": "5344763",
       "name": "Mateo Pulcini",
+      "position": 86,
+      "toPar": 9,
+      "toParDisplay": "+9",
+      "rounds": [
+        81,
+        4,
+        null,
+        null
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 0
+    },
+    {
+      "espnId": "2201886",
+      "name": "Brandon Holtz",
       "position": 86,
       "toPar": 9,
       "toParDisplay": "+9",
