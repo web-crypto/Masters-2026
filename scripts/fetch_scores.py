@@ -97,12 +97,22 @@ def get_prize_for_position(pos: int) -> int:
     return 50_400  # positions 51+
 
 
-def calculate_tied_prize(positions: list[int]) -> int:
-    """Average prize money for a group of tied positions."""
+def calculate_tied_prize(positions: list[int], num_recipients: int | None = None) -> int:
+    """
+    Divide prize money for a group of tied positions among recipients.
+
+    `num_recipients` defaults to len(positions) (normal even split). Pass a
+    smaller number when some tied players are amateurs and forfeit their share
+    — the amateurs' portion is redistributed to the remaining pros.
+    """
     if not positions:
         return 0
+    if num_recipients is None:
+        num_recipients = len(positions)
+    if num_recipients <= 0:
+        return 0
     total = sum(get_prize_for_position(p) for p in positions)
-    return round(total / len(positions))
+    return round(total / num_recipients)
 
 
 # ---------------------------------------------------------------------------
@@ -188,7 +198,16 @@ def parse_espn_data(data: dict, force_final: bool = False, verbose: bool = False
     # Parse each player
     players_raw = []
     for c in competitors:
-        name = c["athlete"]["fullName"]
+        athlete = c["athlete"]
+        name = athlete["fullName"]
+        # ESPN marks amateurs via athlete.amateur; some feeds also suffix the
+        # display name with "(a)". Check both so we never pay out prize money
+        # to an amateur.
+        is_amateur = bool(athlete.get("amateur", False))
+        if not is_amateur:
+            display = athlete.get("displayName", "") or ""
+            if display.strip().endswith("(a)") or name.strip().endswith("(a)"):
+                is_amateur = True
         espn_id = c["id"]
         score_str = c.get("score", "E")
         to_par = parse_score_to_int(score_str)
@@ -241,6 +260,7 @@ def parse_espn_data(data: dict, force_final: bool = False, verbose: bool = False
             "espnId": espn_id,
             "name": name,
             "nameLower": normalize_name(name),
+            "amateur": is_amateur,
             "position": position,
             "toPar": to_par if to_par is not None else 0,
             "toParDisplay": score_str if score_str else "E",
@@ -290,22 +310,25 @@ def parse_espn_data(data: dict, force_final: bool = False, verbose: bool = False
     if len(active_players) >= 50:
         cut_score = active_players[49]["toPar"]
 
-    # Assign earnings only to players projected to make the cut
+    # Assign earnings only to players projected to make the cut.
+    # Amateurs never receive prize money — their share of the tied prize pool
+    # is redistributed to the non-amateur players tied at the same score.
     for pos_val, group in pos_groups.items():
-        if cut_score is not None and tourney_status != "complete":
-            if group[0]["toPar"] <= cut_score:
-                tied_positions = list(range(pos_val, pos_val + len(group)))
-                prize = calculate_tied_prize(tied_positions)
-                for p in group:
-                    p["projectedEarnings"] = prize
-            else:
-                for p in group:
-                    p["projectedEarnings"] = 0
-        else:
-            tied_positions = list(range(pos_val, pos_val + len(group)))
-            prize = calculate_tied_prize(tied_positions)
+        in_money = (
+            cut_score is None
+            or tourney_status == "complete"
+            or group[0]["toPar"] <= cut_score
+        )
+        if not in_money:
             for p in group:
-                p["projectedEarnings"] = prize
+                p["projectedEarnings"] = 0
+            continue
+
+        tied_positions = list(range(pos_val, pos_val + len(group)))
+        pros = [p for p in group if not p.get("amateur")]
+        pro_share = calculate_tied_prize(tied_positions, num_recipients=len(pros))
+        for p in group:
+            p["projectedEarnings"] = 0 if p.get("amateur") else pro_share
 
     # Cut/WD players get $0
     for p in players_raw:
