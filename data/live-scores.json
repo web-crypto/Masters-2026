@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-11T18:21:38Z",
+  "fetchedAt": "2026-04-11T18:22:56Z",
   "tournamentStatus": "in_progress",
   "currentRound": 3,
   "players": [
@@ -477,24 +477,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 142800
-    },
-    {
-      "espnId": "4848",
-      "name": "Justin Thomas",
-      "amateur": false,
-      "position": 28,
-      "toPar": -1,
-      "toParDisplay": "-1",
-      "rounds": [
-        72,
-        74,
-        58,
-        null
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 142800
+      "projectedEarnings": 145950
     },
     {
       "espnId": "5408",
@@ -511,7 +494,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 142800
+      "projectedEarnings": 145950
     },
     {
       "espnId": "4921329",
@@ -528,7 +511,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 142800
+      "projectedEarnings": 145950
     },
     {
       "espnId": "10140",
@@ -545,13 +528,30 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 142800
+      "projectedEarnings": 145950
+    },
+    {
+      "espnId": "4848",
+      "name": "Justin Thomas",
+      "amateur": false,
+      "position": 32,
+      "toPar": 0,
+      "toParDisplay": "E",
+      "rounds": [
+        72,
+        74,
+        62,
+        null
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 121538
     },
     {
       "espnId": "388",
       "name": "Adam Scott",
       "amateur": false,
-      "position": 33,
+      "position": 32,
       "toPar": 0,
       "toParDisplay": "E",
       "rounds": [
@@ -562,13 +562,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 118650
+      "projectedEarnings": 121538
     },
     {
       "espnId": "4901368",
       "name": "Matt McCarty",
       "amateur": false,
-      "position": 33,
+      "position": 32,
       "toPar": 0,
       "toParDisplay": "E",
       "rounds": [
@@ -579,13 +579,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 118650
+      "projectedEarnings": 121538
     },
     {
       "espnId": "5467",
       "name": "Jordan Spieth",
       "amateur": false,
-      "position": 33,
+      "position": 32,
       "toPar": 0,
       "toParDisplay": "E",
       "rounds": [
@@ -596,7 +596,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 118650
+      "projectedEarnings": 121538
     },
     {
       "espnId": "3832",
