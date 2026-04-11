@@ -94,6 +94,45 @@
       color: var(--text-light);
     }
 
+    .player-performance-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-sm);
+      margin-bottom: var(--space-md);
+    }
+
+    .player-performance-stat {
+      background: rgba(26, 71, 49, 0.05);
+      border: 1px solid rgba(26, 71, 49, 0.08);
+      border-radius: 8px;
+      padding: 10px 12px;
+    }
+
+    .player-performance-label {
+      display: block;
+      font-family: var(--font-body);
+      font-size: 0.68rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .player-performance-value {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--masters-green-deep);
+    }
+
+    .player-performance-value.cut,
+    .player-performance-value.wd,
+    .player-performance-value.dq {
+      color: #8c2f39;
+    }
+
     .player-owned-by {
       font-family: var(--font-body);
       font-size: 0.8rem;
@@ -287,6 +326,21 @@
       // Build player data
       const allPlayers = getAllPlayers();
 
+      function formatPosition(player) {
+        if (player.status === 'cut') return 'CUT';
+        if (player.status === 'wd') return 'WD';
+        if (player.status === 'dq') return 'DQ';
+        if (player.position == null) return '—';
+        return String(player.position);
+      }
+
+      function formatScore(player) {
+        if (player.status === 'cut' || player.status === 'wd' || player.status === 'dq') {
+          return (player.toParDisplay && player.toParDisplay !== '—') ? player.toParDisplay : player.status.toUpperCase();
+        }
+        return player.toParDisplay || 'E';
+      }
+
       function renderPlayers() {
         grid.innerHTML = '';
 
@@ -320,6 +374,16 @@
               <div class="player-earnings-row">
                 <span class="player-earnings-label">Earnings</span>
                 <span class="player-earnings-value ${player.earnings === 0 ? 'zero' : ''}">${formatCurrency(player.earnings)}</span>
+              </div>
+              <div class="player-performance-grid">
+                <div class="player-performance-stat">
+                  <span class="player-performance-label">Position</span>
+                  <span class="player-performance-value ${player.status || ''}">${formatPosition(player)}</span>
+                </div>
+                <div class="player-performance-stat">
+                  <span class="player-performance-label">Score</span>
+                  <span class="player-performance-value ${player.status || ''}">${formatScore(player)}</span>
+                </div>
               </div>
               <div class="player-owned-by">Selected by ${player.entries.length} ${player.entries.length === 1 ? 'entry' : 'entries'}</div>
               <div class="owner-tags">
