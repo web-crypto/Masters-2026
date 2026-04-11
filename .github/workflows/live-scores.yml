@@ -1,0 +1,81 @@
+name: Live Scores
+
+# Runs scripts/fetch_scores.py on a schedule so the leaderboard doesn't
+# depend on a cron process running on a single laptop. Commits the updated
+# data files back to whichever branch the workflow is running on.
+
+on:
+  schedule:
+    # Every 10 minutes during tournament week.
+    # NOTE: scheduled runs only fire from the default branch (main), so this
+    # cadence only kicks in once this workflow is merged.
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: live-scores
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Check tournament window
+        id: window
+        run: |
+          # Manual dispatch always runs. Scheduled runs only fire during
+          # the Masters 2026 tournament window (Apr 9 ~11:00 UTC through
+          # Apr 13 ~03:00 UTC, i.e. first tee Thursday through late Sunday
+          # night ET). This keeps the workflow from racking up useless
+          # no-op runs year-round after the event.
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          now=$(date -u +%s)
+          start=$(date -u -d '2026-04-09 11:00:00' +%s)
+          end=$(date -u -d '2026-04-13 03:00:00' +%s)
+          if [ "$now" -ge "$start" ] && [ "$now" -le "$end" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "Outside tournament window ($(date -u)) — skipping."
+          fi
+
+      - name: Fetch scores
+        if: steps.window.outputs.run == 'true'
+        run: python3 scripts/fetch_scores.py
+
+      - name: Commit and push
+        if: steps.window.outputs.run == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/live-scores.json data/pool-standings.json data/pool-data.js
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "Live score update"
+          for attempt in 1 2 3 4; do
+            if git push; then
+              exit 0
+            fi
+            echo "Push attempt $attempt failed; retrying..."
+            sleep $((2 ** attempt))
+          done
+          echo "Push failed after retries" >&2
+          exit 1
