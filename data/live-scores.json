@@ -1,30 +1,13 @@
 {
-  "fetchedAt": "2026-04-11T22:42:41Z",
+  "fetchedAt": "2026-04-11T23:49:00Z",
   "tournamentStatus": "in_progress",
   "currentRound": 3,
   "players": [
     {
-      "espnId": "3470",
-      "name": "Rory McIlroy",
-      "amateur": false,
-      "position": 1,
-      "toPar": -12,
-      "toParDisplay": "-12",
-      "rounds": [
-        67,
-        65,
-        64,
-        null
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 4200000
-    },
-    {
       "espnId": "4425906",
       "name": "Cameron Young",
       "amateur": false,
-      "position": 2,
+      "position": 1,
       "toPar": -11,
       "toParDisplay": "-11",
       "rounds": [
@@ -35,7 +18,24 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 2268000
+      "projectedEarnings": 3234000
+    },
+    {
+      "espnId": "3470",
+      "name": "Rory McIlroy",
+      "amateur": false,
+      "position": 1,
+      "toPar": -11,
+      "toParDisplay": "-11",
+      "rounds": [
+        67,
+        65,
+        73,
+        null
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 3234000
     },
     {
       "espnId": "9938",
@@ -47,7 +47,7 @@
       "rounds": [
         67,
         71,
-        60,
+        68,
         null
       ],
       "status": "active",
@@ -98,7 +98,7 @@
       "rounds": [
         70,
         69,
-        65,
+        69,
         null
       ],
       "status": "active",
@@ -120,7 +120,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 654500
+      "projectedEarnings": 677250
     },
     {
       "espnId": "9221",
@@ -137,30 +137,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 654500
-    },
-    {
-      "espnId": "5579",
-      "name": "Patrick Reed",
-      "amateur": false,
-      "position": 7,
-      "toPar": -7,
-      "toParDisplay": "-7",
-      "rounds": [
-        69,
-        69,
-        67,
-        null
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 654500
+      "projectedEarnings": 677250
     },
     {
       "espnId": "6007",
       "name": "Patrick Cantlay",
       "amateur": false,
-      "position": 10,
+      "position": 9,
       "toPar": -6,
       "toParDisplay": "-6",
       "rounds": [
@@ -171,13 +154,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 546000
+      "projectedEarnings": 567000
     },
     {
       "espnId": "5409",
       "name": "Russell Henley",
       "amateur": false,
-      "position": 10,
+      "position": 9,
       "toPar": -6,
       "toParDisplay": "-6",
       "rounds": [
@@ -188,7 +171,24 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 546000
+      "projectedEarnings": 567000
+    },
+    {
+      "espnId": "5579",
+      "name": "Patrick Reed",
+      "amateur": false,
+      "position": 9,
+      "toPar": -6,
+      "toParDisplay": "-6",
+      "rounds": [
+        69,
+        69,
+        72,
+        null
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 567000
     },
     {
       "espnId": "10592",

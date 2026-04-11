@@ -197,10 +197,14 @@ def parse_espn_data(data: dict, force_final: bool = False, verbose: bool = False
     # Determine tournament status
     status_name = status["type"]["name"]  # STATUS_SCHEDULED, STATUS_IN_PROGRESS, STATUS_FINAL
     status_state = status["type"]["state"]  # pre, in, post
+    status_period = status.get("period") or competition.get("status", {}).get("period") or 1
 
-    if force_final or status_state == "post":
+    # ESPN marks end-of-round states as `post` (e.g. "Round 3 - Play Complete") even
+    # though the tournament is not actually finished yet. Only treat `post` as the
+    # full tournament being complete once round 4 has completed, or when forced.
+    if force_final or (status_state == "post" and status_period >= 4):
         tourney_status = "complete"
-    elif status_state == "in":
+    elif status_state in ("in", "post"):
         tourney_status = "in_progress"
     else:
         tourney_status = "pre"
