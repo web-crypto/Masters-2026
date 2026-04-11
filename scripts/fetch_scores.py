@@ -493,6 +493,7 @@ def build_standings(live_data: dict, entries: list[dict], verbose: bool = False)
                     "toPar": espn_p["toPar"],
                     "toParDisplay": espn_p["toParDisplay"],
                     "status": espn_p["status"],
+                    "thru": espn_p.get("thru"),
                 }
             else:
                 # Player not in ESPN field (e.g. pre-tournament, WD before start)
@@ -551,7 +552,6 @@ def update_pool_data_entries(standings: list[dict], live_data: dict):
 
     # Build standings lookup by entry id
     standings_by_id = {s["id"]: s for s in standings}
-    live_players_by_name = {normalize_name(p["name"]): p for p in live_data.get("players", [])}
 
     # Find the entries array
     match = re.search(r'entries:\s*\[', js_text)
@@ -596,14 +596,11 @@ def update_pool_data_entries(standings: list[dict], live_data: dict):
                 if gk in entry.get("players", {}):
                     entry_player = entry["players"][gk]
                     entry_player["earnings"] = pdata["earnings"]
-
-                    live_player = live_players_by_name.get(normalize_name(pdata["name"]))
-                    if live_player:
-                        entry_player["position"] = live_player.get("position")
-                        entry_player["toPar"] = live_player.get("toPar")
-                        entry_player["toParDisplay"] = live_player.get("toParDisplay")
-                        entry_player["status"] = live_player.get("status")
-                        entry_player["thru"] = live_player.get("thru")
+                    entry_player["position"] = pdata.get("position")
+                    entry_player["toPar"] = pdata.get("toPar")
+                    entry_player["toParDisplay"] = pdata.get("toParDisplay")
+                    entry_player["status"] = pdata.get("status")
+                    entry_player["thru"] = pdata.get("thru")
 
     # Sort by earnings desc
     entries.sort(key=lambda x: -x.get("totalEarnings", 0))

@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-11T22:35:19Z",
+  "fetchedAt": "2026-04-11T22:37:02Z",
   "tournamentStatus": "in_progress",
   "currentRound": 3,
   "players": [
@@ -98,7 +98,7 @@
       "rounds": [
         70,
         69,
-        61,
+        65,
         null
       ],
       "status": "active",
