@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-11T18:21:08Z",
+  "fetchedAt": "2026-04-11T18:21:38Z",
   "tournamentStatus": "in_progress",
   "currentRound": 3,
   "players": [
@@ -69,24 +69,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 761250
-    },
-    {
-      "espnId": "5860",
-      "name": "Hideki Matsuyama",
-      "amateur": false,
-      "position": 4,
-      "toPar": -5,
-      "toParDisplay": "-5",
-      "rounds": [
-        72,
-        70,
-        17,
-        null
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 761250
+      "projectedEarnings": 791700
     },
     {
       "espnId": "4690755",
@@ -103,7 +86,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 761250
+      "projectedEarnings": 791700
     },
     {
       "espnId": "5539",
@@ -120,7 +103,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 761250
+      "projectedEarnings": 791700
     },
     {
       "espnId": "569",
@@ -137,7 +120,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 761250
+      "projectedEarnings": 791700
     },
     {
       "espnId": "4587",
@@ -154,13 +137,30 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 761250
+      "projectedEarnings": 791700
+    },
+    {
+      "espnId": "5860",
+      "name": "Hideki Matsuyama",
+      "amateur": false,
+      "position": 9,
+      "toPar": -4,
+      "toParDisplay": "-4",
+      "rounds": [
+        72,
+        70,
+        21,
+        null
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 469875
     },
     {
       "espnId": "9843",
       "name": "Jake Knapp",
       "amateur": false,
-      "position": 10,
+      "position": 9,
       "toPar": -4,
       "toParDisplay": "-4",
       "rounds": [
@@ -171,13 +171,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 450000
+      "projectedEarnings": 469875
     },
     {
       "espnId": "8973",
       "name": "Max Homa",
       "amateur": false,
-      "position": 10,
+      "position": 9,
       "toPar": -4,
       "toParDisplay": "-4",
       "rounds": [
@@ -188,13 +188,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 450000
+      "projectedEarnings": 469875
     },
     {
       "espnId": "4425906",
       "name": "Cameron Young",
       "amateur": false,
-      "position": 10,
+      "position": 9,
       "toPar": -4,
       "toParDisplay": "-4",
       "rounds": [
@@ -205,13 +205,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 450000
+      "projectedEarnings": 469875
     },
     {
       "espnId": "4348470",
       "name": "Kristoffer Reitan",
       "amateur": false,
-      "position": 10,
+      "position": 9,
       "toPar": -4,
       "toParDisplay": "-4",
       "rounds": [
@@ -222,13 +222,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 450000
+      "projectedEarnings": 469875
     },
     {
       "espnId": "9221",
       "name": "Haotong Li",
       "amateur": false,
-      "position": 10,
+      "position": 9,
       "toPar": -4,
       "toParDisplay": "-4",
       "rounds": [
@@ -239,13 +239,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 450000
+      "projectedEarnings": 469875
     },
     {
       "espnId": "5553",
       "name": "Tyrrell Hatton",
       "amateur": false,
-      "position": 10,
+      "position": 9,
       "toPar": -4,
       "toParDisplay": "-4",
       "rounds": [
@@ -256,13 +256,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 450000
+      "projectedEarnings": 469875
     },
     {
       "espnId": "11119",
       "name": "Wyndham Clark",
       "amateur": false,
-      "position": 10,
+      "position": 9,
       "toPar": -4,
       "toParDisplay": "-4",
       "rounds": [
@@ -273,7 +273,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 450000
+      "projectedEarnings": 469875
     },
     {
       "espnId": "9037",
@@ -455,7 +455,7 @@
       "rounds": [
         71,
         72,
-        22,
+        26,
         null
       ],
       "status": "active",
@@ -523,7 +523,7 @@
       "rounds": [
         72,
         71,
-        20,
+        23,
         null
       ],
       "status": "active",
@@ -710,7 +710,7 @@
       "rounds": [
         74,
         70,
-        33,
+        37,
         null
       ],
       "status": "active",
@@ -812,7 +812,7 @@
       "rounds": [
         71,
         75,
-        63,
+        66,
         null
       ],
       "status": "active",

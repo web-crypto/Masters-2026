@@ -503,6 +503,22 @@ def update_pool_data_entries(standings: list[dict], live_data: dict):
 
     js_text = POOL_DATA_JS.read_text(encoding="utf-8")
 
+    # Refresh top-level lastUpdated so the frontend's "Last updated" label is based
+    # on the latest fetch, not the last manual edit to pool-data.js.
+    fetched_at = live_data.get("fetchedAt")
+    if fetched_at:
+        try:
+            fetched_local = datetime.fromisoformat(fetched_at.replace("Z", "+00:00")).astimezone()
+            js_timestamp = fetched_local.strftime("%Y-%m-%dT%H:%M:%S")
+            js_text = re.sub(
+                r'lastUpdated:\s*"[^"]+"',
+                f'lastUpdated: "{js_timestamp}"',
+                js_text,
+                count=1,
+            )
+        except ValueError:
+            pass
+
     # Build standings lookup by entry id
     standings_by_id = {s["id"]: s for s in standings}
 
