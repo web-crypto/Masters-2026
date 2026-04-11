@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-11T21:51:31Z",
+  "fetchedAt": "2026-04-11T21:54:11Z",
   "tournamentStatus": "in_progress",
   "currentRound": 3,
   "players": [
@@ -13,7 +13,7 @@
       "rounds": [
         73,
         67,
-        57,
+        61,
         null
       ],
       "status": "active",
@@ -72,23 +72,6 @@
       "projectedEarnings": 1218000
     },
     {
-      "espnId": "9221",
-      "name": "Haotong Li",
-      "amateur": false,
-      "position": 5,
-      "toPar": -8,
-      "toParDisplay": "-8",
-      "rounds": [
-        71,
-        69,
-        60,
-        null
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 766500
-    },
-    {
       "espnId": "1680",
       "name": "Jason Day",
       "amateur": false,
@@ -98,6 +81,23 @@
       "rounds": [
         69,
         71,
+        64,
+        null
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 766500
+    },
+    {
+      "espnId": "9221",
+      "name": "Haotong Li",
+      "amateur": false,
+      "position": 5,
+      "toPar": -8,
+      "toParDisplay": "-8",
+      "rounds": [
+        71,
+        69,
         60,
         null
       ],
@@ -200,7 +200,7 @@
       "rounds": [
         72,
         68,
-        54,
+        59,
         null
       ],
       "status": "active",
@@ -319,7 +319,7 @@
       "rounds": [
         74,
         66,
-        56,
+        61,
         null
       ],
       "status": "active",
