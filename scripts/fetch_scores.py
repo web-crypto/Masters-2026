@@ -228,12 +228,14 @@ def parse_espn_data(data: dict, force_final: bool = False, verbose: bool = False
         score_str = c.get("score", "E")
         to_par = parse_score_to_int(score_str)
 
-        # Round scores from linescores
+        # Round scores from linescores. ESPN uses displayValue '-' with value 0
+        # for unplayed future rounds; treat those as None, not an actual score of 0.
         linescores = c.get("linescores", [])
         rounds = []
         for ls in linescores:
             val = ls.get("value")
-            if val is not None:
+            display_val = str(ls.get("displayValue", "")).strip()
+            if val is not None and display_val != "-":
                 rounds.append(int(val))
             else:
                 rounds.append(None)
@@ -288,11 +290,35 @@ def parse_espn_data(data: dict, force_final: bool = False, verbose: bool = False
 
     # Determine current round of tournament
     completed_rounds = [len([r for r in p["rounds"] if r is not None]) for p in players_raw]
+    status_period = competition.get("status", {}).get("period") or 1
     if completed_rounds:
         max_round = max(completed_rounds)
-        current_tourney_round = max(1, max_round) if max_round > 0 else 1
+        current_tourney_round = max(1, max(max_round, status_period)) if max_round > 0 else max(1, status_period)
     else:
-        current_tourney_round = 1
+        current_tourney_round = max(1, status_period)
+
+    # Infer missed cuts once round 3+ has started. ESPN's feed often leaves status
+    # empty for players who finished 36 holes but did not qualify for the weekend.
+    round_three_started = any((p["rounds"][2] is not None) for p in players_raw if len(p["rounds"]) >= 3)
+    if current_tourney_round >= 3 and round_three_started:
+        eligible_for_cutline = []
+        for p in players_raw:
+            if p["status"] in ("wd", "dq"):
+                continue
+            if p["rounds"][0] is None or p["rounds"][1] is None:
+                continue
+            total_36 = p["rounds"][0] + p["rounds"][1]
+            eligible_for_cutline.append((total_36, p))
+
+        eligible_for_cutline.sort(key=lambda item: item[0])
+        cut_total_36 = eligible_for_cutline[49][0] if len(eligible_for_cutline) >= 50 else None
+
+        if cut_total_36 is not None:
+            for total_36, p in eligible_for_cutline:
+                played_weekend_round = p["rounds"][2] is not None
+                if p["status"] == "active" and not played_weekend_round and total_36 > cut_total_36:
+                    p["status"] = "cut"
+                    p["thru"] = 0
 
     # Calculate positions from toPar (don't trust ESPN's order field)
     active_players = [p for p in players_raw if p["status"] == "active"]
