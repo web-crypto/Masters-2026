@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-11T22:07:15Z",
+  "fetchedAt": "2026-04-11T22:10:15Z",
   "tournamentStatus": "in_progress",
   "currentRound": 3,
   "players": [
@@ -13,12 +13,29 @@
       "rounds": [
         73,
         67,
-        61,
+        65,
         null
       ],
       "status": "active",
       "thru": 18,
       "projectedEarnings": 4200000
+    },
+    {
+      "espnId": "3470",
+      "name": "Rory McIlroy",
+      "amateur": false,
+      "position": 2,
+      "toPar": -10,
+      "toParDisplay": "-10",
+      "rounds": [
+        67,
+        65,
+        57,
+        null
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 1848000
     },
     {
       "espnId": "9938",
@@ -31,23 +48,6 @@
         67,
         71,
         48,
-        null
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 1848000
-    },
-    {
-      "espnId": "3470",
-      "name": "Rory McIlroy",
-      "amateur": false,
-      "position": 2,
-      "toPar": -10,
-      "toParDisplay": "-10",
-      "rounds": [
-        67,
-        65,
-        54,
         null
       ],
       "status": "active",
@@ -72,23 +72,6 @@
       "projectedEarnings": 1008000
     },
     {
-      "espnId": "9221",
-      "name": "Haotong Li",
-      "amateur": false,
-      "position": 5,
-      "toPar": -8,
-      "toParDisplay": "-8",
-      "rounds": [
-        71,
-        69,
-        64,
-        null
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 766500
-    },
-    {
       "espnId": "1680",
       "name": "Jason Day",
       "amateur": false,
@@ -98,6 +81,23 @@
       "rounds": [
         69,
         71,
+        68,
+        null
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 766500
+    },
+    {
+      "espnId": "9221",
+      "name": "Haotong Li",
+      "amateur": false,
+      "position": 5,
+      "toPar": -8,
+      "toParDisplay": "-8",
+      "rounds": [
+        71,
+        69,
         64,
         null
       ],
