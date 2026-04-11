@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-11T22:41:09Z",
+  "fetchedAt": "2026-04-11T22:42:41Z",
   "tournamentStatus": "in_progress",
   "currentRound": 3,
   "entries": [
@@ -483,7 +483,7 @@
         },
         "groupE": {
           "name": "Gary Woodland",
-          "earnings": 0,
+          "earnings": 50400,
           "position": 51,
           "toPar": 6,
           "toParDisplay": "+6",
@@ -491,7 +491,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 5916138,
+      "totalEarnings": 5966538,
       "previousRank": 0,
       "rank": 6
     },
@@ -2205,7 +2205,7 @@
         },
         "groupE": {
           "name": "Gary Woodland",
-          "earnings": 0,
+          "earnings": 50400,
           "position": 51,
           "toPar": 6,
           "toParDisplay": "+6",
@@ -2213,7 +2213,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 4058600,
+      "totalEarnings": 4109000,
       "previousRank": 0,
       "rank": 27
     },
@@ -6154,6 +6154,88 @@
       "rank": 75
     },
     {
+      "id": 32,
+      "name": "David Iudiciani #1",
+      "owner": "David Iudiciani #1",
+      "players": {
+        "groupA": {
+          "name": "Scottie Scheffler",
+          "earnings": 654500,
+          "position": 7,
+          "toPar": -7,
+          "toParDisplay": "-7",
+          "status": "active",
+          "thru": 18
+        },
+        "groupB1": {
+          "name": "Jon Rahm",
+          "earnings": 55020,
+          "position": 48,
+          "toPar": 5,
+          "toParDisplay": "+5",
+          "status": "active",
+          "thru": 18
+        },
+        "groupB2": {
+          "name": "Xander Schauffele",
+          "earnings": 325500,
+          "position": 15,
+          "toPar": -4,
+          "toParDisplay": "-4",
+          "status": "active",
+          "thru": 18
+        },
+        "groupC1": {
+          "name": "Patrick Reed",
+          "earnings": 654500,
+          "position": 7,
+          "toPar": -7,
+          "toParDisplay": "-7",
+          "status": "active",
+          "thru": 18
+        },
+        "groupC2": {
+          "name": "Robert MacIntyre",
+          "earnings": 0,
+          "position": 64,
+          "toPar": 7,
+          "toParDisplay": "+7",
+          "status": "cut",
+          "thru": 0
+        },
+        "groupD1": {
+          "name": "Akshay Bhatia",
+          "earnings": 0,
+          "position": 63,
+          "toPar": 6,
+          "toParDisplay": "+6",
+          "status": "cut",
+          "thru": 0
+        },
+        "groupD2": {
+          "name": "Corey Conners",
+          "earnings": 69300,
+          "position": 44,
+          "toPar": 3,
+          "toParDisplay": "+3",
+          "status": "active",
+          "thru": 18
+        },
+        "groupE": {
+          "name": "Gary Woodland",
+          "earnings": 50400,
+          "position": 51,
+          "toPar": 6,
+          "toParDisplay": "+6",
+          "status": "active",
+          "thru": 18
+        }
+      },
+      "totalEarnings": 1809220,
+      "previousRank": 0,
+      "rank": 76
+    },
+    {
       "id": 47,
       "name": "Alex Smith",
       "owner": "Alex Smith",
@@ -6233,7 +6315,7 @@
       },
       "totalEarnings": 1785770,
       "previousRank": 0,
-      "rank": 76
+      "rank": 77
     },
     {
       "id": 89,
@@ -6315,7 +6397,7 @@
       },
       "totalEarnings": 1777896,
       "previousRank": 0,
-      "rank": 77
+      "rank": 78
     },
     {
       "id": 51,
@@ -6393,88 +6475,6 @@
           "toParDisplay": "+5",
           "status": "cut",
           "thru": 0
-        }
-      },
-      "totalEarnings": 1758820,
-      "previousRank": 0,
-      "rank": 78
-    },
-    {
-      "id": 32,
-      "name": "David Iudiciani #1",
-      "owner": "David Iudiciani #1",
-      "players": {
-        "groupA": {
-          "name": "Scottie Scheffler",
-          "earnings": 654500,
-          "position": 7,
-          "toPar": -7,
-          "toParDisplay": "-7",
-          "status": "active",
-          "thru": 18
-        },
-        "groupB1": {
-          "name": "Jon Rahm",
-          "earnings": 55020,
-          "position": 48,
-          "toPar": 5,
-          "toParDisplay": "+5",
-          "status": "active",
-          "thru": 18
-        },
-        "groupB2": {
-          "name": "Xander Schauffele",
-          "earnings": 325500,
-          "position": 15,
-          "toPar": -4,
-          "toParDisplay": "-4",
-          "status": "active",
-          "thru": 18
-        },
-        "groupC1": {
-          "name": "Patrick Reed",
-          "earnings": 654500,
-          "position": 7,
-          "toPar": -7,
-          "toParDisplay": "-7",
-          "status": "active",
-          "thru": 18
-        },
-        "groupC2": {
-          "name": "Robert MacIntyre",
-          "earnings": 0,
-          "position": 64,
-          "toPar": 7,
-          "toParDisplay": "+7",
-          "status": "cut",
-          "thru": 0
-        },
-        "groupD1": {
-          "name": "Akshay Bhatia",
-          "earnings": 0,
-          "position": 63,
-          "toPar": 6,
-          "toParDisplay": "+6",
-          "status": "cut",
-          "thru": 0
-        },
-        "groupD2": {
-          "name": "Corey Conners",
-          "earnings": 69300,
-          "position": 44,
-          "toPar": 3,
-          "toParDisplay": "+3",
-          "status": "active",
-          "thru": 18
-        },
-        "groupE": {
-          "name": "Gary Woodland",
-          "earnings": 0,
-          "position": 51,
-          "toPar": 6,
-          "toParDisplay": "+6",
-          "status": "active",
-          "thru": 18
         }
       },
       "totalEarnings": 1758820,

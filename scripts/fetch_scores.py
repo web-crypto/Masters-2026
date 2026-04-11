@@ -352,13 +352,17 @@ def parse_espn_data(data: dict, force_final: bool = False, verbose: bool = False
     if len(active_players) >= 50:
         cut_score = active_players[49]["toPar"]
 
-    # Assign earnings only to players projected to make the cut.
+    # Assign projected earnings. Before the cut is finalized, only players above
+    # the projected cut line earn money. Once round 3 has started, all remaining
+    # active players made the cut and are guaranteed at least last-place money.
     # Amateurs never receive prize money — their share of the tied prize pool
     # is redistributed to the non-amateur players tied at the same score.
+    weekend_started = current_tourney_round >= 3 and round_three_started
     for pos_val, group in pos_groups.items():
         in_money = (
             cut_score is None
             or tourney_status == "complete"
+            or weekend_started
             or group[0]["toPar"] <= cut_score
         )
         if not in_money:
