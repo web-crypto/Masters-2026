@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-11T01:02:25Z",
+  "fetchedAt": "2026-04-11T01:10:15Z",
   "tournamentStatus": "complete",
   "currentRound": 2,
   "players": [
@@ -766,7 +766,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 65100
+      "projectedEarnings": 67200
     },
     {
       "espnId": "158",
@@ -783,13 +783,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 65100
+      "projectedEarnings": 67200
     },
     {
       "espnId": "1225",
       "name": "Brian Harman",
       "amateur": false,
-      "position": 48,
+      "position": 47,
       "toPar": 4,
       "toParDisplay": "+4",
       "rounds": [
@@ -800,13 +800,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 52380
+      "projectedEarnings": 53445
     },
     {
       "espnId": "9780",
       "name": "Jon Rahm",
       "amateur": false,
-      "position": 48,
+      "position": 47,
       "toPar": 4,
       "toParDisplay": "+4",
       "rounds": [
@@ -817,13 +817,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 52380
+      "projectedEarnings": 53445
     },
     {
       "espnId": "11253",
       "name": "Rasmus H\u00f8jgaard",
       "amateur": false,
-      "position": 48,
+      "position": 47,
       "toPar": 4,
       "toParDisplay": "+4",
       "rounds": [
@@ -834,13 +834,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 52380
+      "projectedEarnings": 53445
     },
     {
       "espnId": "3832",
       "name": "Alex Noren",
       "amateur": false,
-      "position": 48,
+      "position": 47,
       "toPar": 4,
       "toParDisplay": "+4",
       "rounds": [
@@ -851,13 +851,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 52380
+      "projectedEarnings": 53445
     },
     {
       "espnId": "9126",
       "name": "Corey Conners",
       "amateur": false,
-      "position": 48,
+      "position": 47,
       "toPar": 4,
       "toParDisplay": "+4",
       "rounds": [
@@ -868,30 +868,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 52380
+      "projectedEarnings": 53445
     },
     {
       "espnId": "7081",
       "name": "Si Woo Kim",
       "amateur": false,
-      "position": 45,
-      "toPar": 3,
-      "toParDisplay": "+3",
-      "rounds": [
-        75,
-        73,
-        null,
-        null
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 65100
-    },
-    {
-      "espnId": "1097",
-      "name": "Charl Schwartzel",
-      "amateur": false,
-      "position": 48,
+      "position": 47,
       "toPar": 4,
       "toParDisplay": "+4",
       "rounds": [
@@ -902,13 +885,30 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 52380
+      "projectedEarnings": 53445
+    },
+    {
+      "espnId": "1097",
+      "name": "Charl Schwartzel",
+      "amateur": false,
+      "position": 47,
+      "toPar": 4,
+      "toParDisplay": "+4",
+      "rounds": [
+        75,
+        73,
+        null,
+        null
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 53445
     },
     {
       "espnId": "10364",
       "name": "Kurt Kitayama",
       "amateur": false,
-      "position": 48,
+      "position": 47,
       "toPar": 4,
       "toParDisplay": "+4",
       "rounds": [
@@ -919,7 +919,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 52380
+      "projectedEarnings": 53445
     },
     {
       "espnId": "4589438",
@@ -1134,7 +1134,7 @@
       "toParDisplay": "+7",
       "rounds": [
         75,
-        25,
+        76,
         null,
         null
       ],
