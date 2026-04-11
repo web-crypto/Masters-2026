@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-11T18:18:22Z",
+  "fetchedAt": "2026-04-11T18:19:28Z",
   "tournamentStatus": "in_progress",
   "currentRound": 3,
   "players": [
@@ -208,6 +208,23 @@
       "projectedEarnings": 469875
     },
     {
+      "espnId": "4348470",
+      "name": "Kristoffer Reitan",
+      "amateur": false,
+      "position": 9,
+      "toPar": -4,
+      "toParDisplay": "-4",
+      "rounds": [
+        72,
+        68,
+        4,
+        null
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 469875
+    },
+    {
       "espnId": "9221",
       "name": "Haotong Li",
       "amateur": false,
@@ -244,23 +261,6 @@
     {
       "espnId": "11119",
       "name": "Wyndham Clark",
-      "amateur": false,
-      "position": 9,
-      "toPar": -4,
-      "toParDisplay": "-4",
-      "rounds": [
-        72,
-        68,
-        0,
-        null
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 469875
-    },
-    {
-      "espnId": "4348470",
-      "name": "Kristoffer Reitan",
       "amateur": false,
       "position": 9,
       "toPar": -4,
@@ -477,7 +477,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 139650
+      "projectedEarnings": 142800
     },
     {
       "espnId": "4848",
@@ -494,24 +494,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 139650
-    },
-    {
-      "espnId": "4901368",
-      "name": "Matt McCarty",
-      "amateur": false,
-      "position": 28,
-      "toPar": -1,
-      "toParDisplay": "-1",
-      "rounds": [
-        72,
-        73,
-        50,
-        null
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 139650
+      "projectedEarnings": 142800
     },
     {
       "espnId": "5408",
@@ -528,7 +511,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 139650
+      "projectedEarnings": 142800
     },
     {
       "espnId": "4921329",
@@ -545,7 +528,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 139650
+      "projectedEarnings": 142800
     },
     {
       "espnId": "10140",
@@ -562,13 +545,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 139650
+      "projectedEarnings": 142800
     },
     {
       "espnId": "388",
       "name": "Adam Scott",
       "amateur": false,
-      "position": 34,
+      "position": 33,
       "toPar": 0,
       "toParDisplay": "E",
       "rounds": [
@@ -579,13 +562,30 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 116025
+      "projectedEarnings": 118650
+    },
+    {
+      "espnId": "4901368",
+      "name": "Matt McCarty",
+      "amateur": false,
+      "position": 33,
+      "toPar": 0,
+      "toParDisplay": "E",
+      "rounds": [
+        72,
+        73,
+        55,
+        null
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 118650
     },
     {
       "espnId": "5467",
       "name": "Jordan Spieth",
       "amateur": false,
-      "position": 34,
+      "position": 33,
       "toPar": 0,
       "toParDisplay": "E",
       "rounds": [
@@ -596,7 +596,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 116025
+      "projectedEarnings": 118650
     },
     {
       "espnId": "3832",
@@ -625,7 +625,7 @@
       "rounds": [
         77,
         70,
-        66,
+        70,
         null
       ],
       "status": "active",
@@ -642,7 +642,7 @@
       "rounds": [
         75,
         71,
-        63,
+        67,
         null
       ],
       "status": "active",
@@ -744,7 +744,7 @@
       "rounds": [
         76,
         69,
-        53,
+        57,
         null
       ],
       "status": "active",
