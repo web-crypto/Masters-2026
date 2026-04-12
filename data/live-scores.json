@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-12T22:09:06Z",
+  "fetchedAt": "2026-04-12T22:12:06Z",
   "tournamentStatus": "in_progress",
   "currentRound": 4,
   "players": [
@@ -562,7 +562,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 110950
+      "projectedEarnings": 113400
     },
     {
       "espnId": "3448",
@@ -579,7 +579,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 110950
+      "projectedEarnings": 113400
     },
     {
       "espnId": "1225",
@@ -596,7 +596,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 110950
+      "projectedEarnings": 113400
     },
     {
       "espnId": "5539",
@@ -613,7 +613,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 110950
+      "projectedEarnings": 113400
     },
     {
       "espnId": "4404992",
@@ -630,30 +630,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 110950
-    },
-    {
-      "espnId": "9221",
-      "name": "Haotong Li",
-      "amateur": false,
-      "position": 33,
-      "toPar": 0,
-      "toParDisplay": "E",
-      "rounds": [
-        71,
-        69,
-        69,
-        71
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 110950
+      "projectedEarnings": 113400
     },
     {
       "espnId": "9780",
       "name": "Jon Rahm",
       "amateur": false,
-      "position": 39,
+      "position": 38,
       "toPar": 1,
       "toParDisplay": "+1",
       "rounds": [
@@ -664,13 +647,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 92400
+      "projectedEarnings": 94500
     },
     {
       "espnId": "5076021",
       "name": "Ryan Gerard",
       "amateur": false,
-      "position": 39,
+      "position": 38,
       "toPar": 1,
       "toParDisplay": "+1",
       "rounds": [
@@ -681,7 +664,24 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 92400
+      "projectedEarnings": 94500
+    },
+    {
+      "espnId": "9221",
+      "name": "Haotong Li",
+      "amateur": false,
+      "position": 38,
+      "toPar": 1,
+      "toParDisplay": "+1",
+      "rounds": [
+        71,
+        69,
+        69,
+        76
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 94500
     },
     {
       "espnId": "4848",

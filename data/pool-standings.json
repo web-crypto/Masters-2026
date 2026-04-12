@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-12T22:09:06Z",
+  "fetchedAt": "2026-04-12T22:12:06Z",
   "tournamentStatus": "in_progress",
   "currentRound": 4,
   "entries": [
@@ -155,7 +155,7 @@
         },
         "groupE": {
           "name": "Dustin Johnson",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -163,7 +163,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 8232350,
+      "totalEarnings": 8234800,
       "previousRank": 0,
       "rank": 2
     },
@@ -183,8 +183,8 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 92400,
-          "position": 39,
+          "earnings": 94500,
+          "position": 38,
           "toPar": 1,
           "toParDisplay": "+1",
           "status": "active",
@@ -245,7 +245,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 6865320,
+      "totalEarnings": 6867420,
       "previousRank": 0,
       "rank": 3
     },
@@ -319,7 +319,7 @@
         },
         "groupE": {
           "name": "Gary Woodland",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -327,7 +327,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 6695150,
+      "totalEarnings": 6697600,
       "previousRank": 0,
       "rank": 4
     },
@@ -401,7 +401,7 @@
         },
         "groupE": {
           "name": "Gary Woodland",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -409,7 +409,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 6559350,
+      "totalEarnings": 6561800,
       "previousRank": 0,
       "rank": 5
     },
@@ -429,8 +429,8 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 92400,
-          "position": 39,
+          "earnings": 94500,
+          "position": 38,
           "toPar": 1,
           "toParDisplay": "+1",
           "status": "active",
@@ -491,7 +491,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 6555360,
+      "totalEarnings": 6557460,
       "previousRank": 0,
       "rank": 6
     },
@@ -556,7 +556,7 @@
         },
         "groupD2": {
           "name": "Brian Harman",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -565,7 +565,7 @@
         },
         "groupE": {
           "name": "Dustin Johnson",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -573,7 +573,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 6491450,
+      "totalEarnings": 6496350,
       "previousRank": 0,
       "rank": 7
     },
@@ -602,7 +602,7 @@
         },
         "groupB2": {
           "name": "Tommy Fleetwood",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -647,7 +647,7 @@
         },
         "groupE": {
           "name": "Dustin Johnson",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -655,7 +655,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 6379800,
+      "totalEarnings": 6384700,
       "previousRank": 0,
       "rank": 8
     },
@@ -729,7 +729,7 @@
         },
         "groupE": {
           "name": "Dustin Johnson",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -737,7 +737,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 6344450,
+      "totalEarnings": 6346900,
       "previousRank": 0,
       "rank": 9
     },
@@ -811,7 +811,7 @@
         },
         "groupE": {
           "name": "Dustin Johnson",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -819,7 +819,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 6082300,
+      "totalEarnings": 6084750,
       "previousRank": 0,
       "rank": 10
     },
@@ -839,7 +839,7 @@
         },
         "groupB1": {
           "name": "Tommy Fleetwood",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -901,7 +901,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 6069700,
+      "totalEarnings": 6072150,
       "previousRank": 0,
       "rank": 11
     },
@@ -1085,8 +1085,8 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 92400,
-          "position": 39,
+          "earnings": 94500,
+          "position": 38,
           "toPar": 1,
           "toParDisplay": "+1",
           "status": "active",
@@ -1139,15 +1139,15 @@
         },
         "groupE": {
           "name": "Ryan Gerard",
-          "earnings": 92400,
-          "position": 39,
+          "earnings": 94500,
+          "position": 38,
           "toPar": 1,
           "toParDisplay": "+1",
           "status": "active",
           "thru": 18
         }
       },
-      "totalEarnings": 5824560,
+      "totalEarnings": 5828760,
       "previousRank": 0,
       "rank": 14
     },
@@ -1167,7 +1167,7 @@
         },
         "groupB1": {
           "name": "Tommy Fleetwood",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -1229,7 +1229,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 5751200,
+      "totalEarnings": 5753650,
       "previousRank": 0,
       "rank": 15
     },
@@ -1249,7 +1249,7 @@
         },
         "groupB1": {
           "name": "Tommy Fleetwood",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -1311,7 +1311,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 5724460,
+      "totalEarnings": 5726910,
       "previousRank": 0,
       "rank": 16
     },
@@ -1413,8 +1413,8 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 92400,
-          "position": 39,
+          "earnings": 94500,
+          "position": 38,
           "toPar": 1,
           "toParDisplay": "+1",
           "status": "active",
@@ -1475,7 +1475,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 5677560,
+      "totalEarnings": 5679660,
       "previousRank": 0,
       "rank": 18
     },
@@ -1495,8 +1495,8 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 92400,
-          "position": 39,
+          "earnings": 94500,
+          "position": 38,
           "toPar": 1,
           "toParDisplay": "+1",
           "status": "active",
@@ -1557,7 +1557,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 5646060,
+      "totalEarnings": 5648160,
       "previousRank": 0,
       "rank": 19
     },
@@ -1741,8 +1741,8 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 92400,
-          "position": 39,
+          "earnings": 94500,
+          "position": 38,
           "toPar": 1,
           "toParDisplay": "+1",
           "status": "active",
@@ -1803,7 +1803,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 5495910,
+      "totalEarnings": 5498010,
       "previousRank": 0,
       "rank": 22
     },
@@ -1823,8 +1823,8 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 92400,
-          "position": 39,
+          "earnings": 94500,
+          "position": 38,
           "toPar": 1,
           "toParDisplay": "+1",
           "status": "active",
@@ -1885,7 +1885,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 5441800,
+      "totalEarnings": 5443900,
       "previousRank": 0,
       "rank": 23
     },
@@ -1905,8 +1905,8 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 92400,
-          "position": 39,
+          "earnings": 94500,
+          "position": 38,
           "toPar": 1,
           "toParDisplay": "+1",
           "status": "active",
@@ -1967,7 +1967,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 5439700,
+      "totalEarnings": 5441800,
       "previousRank": 0,
       "rank": 24
     },
@@ -2151,7 +2151,7 @@
         },
         "groupB1": {
           "name": "Tommy Fleetwood",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -2213,7 +2213,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 5178110,
+      "totalEarnings": 5180560,
       "previousRank": 0,
       "rank": 27
     },
@@ -2315,8 +2315,8 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 92400,
-          "position": 39,
+          "earnings": 94500,
+          "position": 38,
           "toPar": 1,
           "toParDisplay": "+1",
           "status": "active",
@@ -2324,7 +2324,7 @@
         },
         "groupB2": {
           "name": "Tommy Fleetwood",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -2377,7 +2377,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 4993870,
+      "totalEarnings": 4998420,
       "previousRank": 0,
       "rank": 29
     },
@@ -2488,7 +2488,7 @@
         },
         "groupB2": {
           "name": "Tommy Fleetwood",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -2541,7 +2541,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 4927300,
+      "totalEarnings": 4929750,
       "previousRank": 0,
       "rank": 31
     },
@@ -2561,8 +2561,8 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 92400,
-          "position": 39,
+          "earnings": 94500,
+          "position": 38,
           "toPar": 1,
           "toParDisplay": "+1",
           "status": "active",
@@ -2623,7 +2623,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 4829160,
+      "totalEarnings": 4831260,
       "previousRank": 0,
       "rank": 32
     },
@@ -2643,8 +2643,8 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 92400,
-          "position": 39,
+          "earnings": 94500,
+          "position": 38,
           "toPar": 1,
           "toParDisplay": "+1",
           "status": "active",
@@ -2705,7 +2705,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 4829160,
+      "totalEarnings": 4831260,
       "previousRank": 0,
       "rank": 33
     },
@@ -2779,7 +2779,7 @@
         },
         "groupE": {
           "name": "Dustin Johnson",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -2787,7 +2787,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 4646110,
+      "totalEarnings": 4648560,
       "previousRank": 0,
       "rank": 34
     },
@@ -3053,8 +3053,8 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 92400,
-          "position": 39,
+          "earnings": 94500,
+          "position": 38,
           "toPar": 1,
           "toParDisplay": "+1",
           "status": "active",
@@ -3115,7 +3115,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 4524660,
+      "totalEarnings": 4526760,
       "previousRank": 0,
       "rank": 38
     },
@@ -3135,8 +3135,8 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 92400,
-          "position": 39,
+          "earnings": 94500,
+          "position": 38,
           "toPar": 1,
           "toParDisplay": "+1",
           "status": "active",
@@ -3197,7 +3197,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 4517100,
+      "totalEarnings": 4519200,
       "previousRank": 0,
       "rank": 39
     },
@@ -3217,8 +3217,8 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 92400,
-          "position": 39,
+          "earnings": 94500,
+          "position": 38,
           "toPar": 1,
           "toParDisplay": "+1",
           "status": "active",
@@ -3279,7 +3279,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 4459560,
+      "totalEarnings": 4461660,
       "previousRank": 0,
       "rank": 40
     },
@@ -3353,7 +3353,7 @@
         },
         "groupE": {
           "name": "Dustin Johnson",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -3361,7 +3361,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 4408600,
+      "totalEarnings": 4411050,
       "previousRank": 0,
       "rank": 41
     },
@@ -3718,7 +3718,7 @@
         },
         "groupB2": {
           "name": "Tommy Fleetwood",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -3763,7 +3763,7 @@
         },
         "groupE": {
           "name": "Ben Griffin",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -3771,7 +3771,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 3924900,
+      "totalEarnings": 3929800,
       "previousRank": 0,
       "rank": 46
     },
@@ -3873,8 +3873,8 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 92400,
-          "position": 39,
+          "earnings": 94500,
+          "position": 38,
           "toPar": 1,
           "toParDisplay": "+1",
           "status": "active",
@@ -3935,7 +3935,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 3824800,
+      "totalEarnings": 3826900,
       "previousRank": 0,
       "rank": 48
     },
@@ -3964,7 +3964,7 @@
         },
         "groupB2": {
           "name": "Tommy Fleetwood",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -4017,7 +4017,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 3813950,
+      "totalEarnings": 3816400,
       "previousRank": 0,
       "rank": 49
     },
@@ -4037,8 +4037,8 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 92400,
-          "position": 39,
+          "earnings": 94500,
+          "position": 38,
           "toPar": 1,
           "toParDisplay": "+1",
           "status": "active",
@@ -4099,7 +4099,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 3779160,
+      "totalEarnings": 3781260,
       "previousRank": 0,
       "rank": 50
     },
@@ -4119,8 +4119,8 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 92400,
-          "position": 39,
+          "earnings": 94500,
+          "position": 38,
           "toPar": 1,
           "toParDisplay": "+1",
           "status": "active",
@@ -4181,7 +4181,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 3779160,
+      "totalEarnings": 3781260,
       "previousRank": 0,
       "rank": 51
     },
@@ -4201,8 +4201,8 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 92400,
-          "position": 39,
+          "earnings": 94500,
+          "position": 38,
           "toPar": 1,
           "toParDisplay": "+1",
           "status": "active",
@@ -4263,7 +4263,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 3779160,
+      "totalEarnings": 3781260,
       "previousRank": 0,
       "rank": 52
     },
@@ -4283,8 +4283,8 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 92400,
-          "position": 39,
+          "earnings": 94500,
+          "position": 38,
           "toPar": 1,
           "toParDisplay": "+1",
           "status": "active",
@@ -4337,7 +4337,7 @@
         },
         "groupE": {
           "name": "Dustin Johnson",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -4345,7 +4345,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 3733450,
+      "totalEarnings": 3738000,
       "previousRank": 0,
       "rank": 53
     },
@@ -4365,8 +4365,8 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 92400,
-          "position": 39,
+          "earnings": 94500,
+          "position": 38,
           "toPar": 1,
           "toParDisplay": "+1",
           "status": "active",
@@ -4374,7 +4374,7 @@
         },
         "groupB2": {
           "name": "Tommy Fleetwood",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -4427,7 +4427,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 3601850,
+      "totalEarnings": 3606400,
       "previousRank": 0,
       "rank": 54
     },
@@ -4583,7 +4583,7 @@
         },
         "groupE": {
           "name": "Ben Griffin",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -4591,7 +4591,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 3546410,
+      "totalEarnings": 3548860,
       "previousRank": 0,
       "rank": 56
     },
@@ -4611,8 +4611,8 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 92400,
-          "position": 39,
+          "earnings": 94500,
+          "position": 38,
           "toPar": 1,
           "toParDisplay": "+1",
           "status": "active",
@@ -4665,7 +4665,7 @@
         },
         "groupE": {
           "name": "Dustin Johnson",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -4673,7 +4673,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 3466750,
+      "totalEarnings": 3471300,
       "previousRank": 0,
       "rank": 57
     },
@@ -4693,8 +4693,8 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 92400,
-          "position": 39,
+          "earnings": 94500,
+          "position": 38,
           "toPar": 1,
           "toParDisplay": "+1",
           "status": "active",
@@ -4747,7 +4747,7 @@
         },
         "groupE": {
           "name": "Dustin Johnson",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -4755,7 +4755,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 3453310,
+      "totalEarnings": 3457860,
       "previousRank": 0,
       "rank": 58
     },
@@ -4939,7 +4939,7 @@
         },
         "groupB1": {
           "name": "Tommy Fleetwood",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -5001,7 +5001,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 3368750,
+      "totalEarnings": 3371200,
       "previousRank": 0,
       "rank": 61
     },
@@ -5021,8 +5021,8 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 92400,
-          "position": 39,
+          "earnings": 94500,
+          "position": 38,
           "toPar": 1,
           "toParDisplay": "+1",
           "status": "active",
@@ -5075,7 +5075,7 @@
         },
         "groupE": {
           "name": "Dustin Johnson",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -5083,7 +5083,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 3351250,
+      "totalEarnings": 3355800,
       "previousRank": 0,
       "rank": 62
     },
@@ -5157,7 +5157,7 @@
         },
         "groupE": {
           "name": "Dustin Johnson",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -5165,7 +5165,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 3314500,
+      "totalEarnings": 3316950,
       "previousRank": 0,
       "rank": 63
     },
@@ -5194,7 +5194,7 @@
         },
         "groupB2": {
           "name": "Tommy Fleetwood",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -5247,7 +5247,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 3312610,
+      "totalEarnings": 3315060,
       "previousRank": 0,
       "rank": 64
     },
@@ -5267,8 +5267,8 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 92400,
-          "position": 39,
+          "earnings": 94500,
+          "position": 38,
           "toPar": 1,
           "toParDisplay": "+1",
           "status": "active",
@@ -5321,7 +5321,7 @@
         },
         "groupE": {
           "name": "Dustin Johnson",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -5329,7 +5329,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 3301550,
+      "totalEarnings": 3306100,
       "previousRank": 0,
       "rank": 65
     },
@@ -5440,7 +5440,7 @@
         },
         "groupB2": {
           "name": "Tommy Fleetwood",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -5493,7 +5493,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 3258850,
+      "totalEarnings": 3261300,
       "previousRank": 0,
       "rank": 67
     },
@@ -5677,8 +5677,8 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 92400,
-          "position": 39,
+          "earnings": 94500,
+          "position": 38,
           "toPar": 1,
           "toParDisplay": "+1",
           "status": "active",
@@ -5731,7 +5731,7 @@
         },
         "groupE": {
           "name": "Gary Woodland",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -5739,7 +5739,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 3092110,
+      "totalEarnings": 3096660,
       "previousRank": 0,
       "rank": 70
     },
@@ -5759,8 +5759,8 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 92400,
-          "position": 39,
+          "earnings": 94500,
+          "position": 38,
           "toPar": 1,
           "toParDisplay": "+1",
           "status": "active",
@@ -5821,7 +5821,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 2981160,
+      "totalEarnings": 2983260,
       "previousRank": 0,
       "rank": 71
     },
@@ -5850,7 +5850,7 @@
         },
         "groupB2": {
           "name": "Tommy Fleetwood",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -5903,7 +5903,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 2978710,
+      "totalEarnings": 2981160,
       "previousRank": 0,
       "rank": 72
     },
@@ -5923,8 +5923,8 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 92400,
-          "position": 39,
+          "earnings": 94500,
+          "position": 38,
           "toPar": 1,
           "toParDisplay": "+1",
           "status": "active",
@@ -5985,7 +5985,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 2906400,
+      "totalEarnings": 2908500,
       "previousRank": 0,
       "rank": 73
     },
@@ -6087,8 +6087,8 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 92400,
-          "position": 39,
+          "earnings": 94500,
+          "position": 38,
           "toPar": 1,
           "toParDisplay": "+1",
           "status": "active",
@@ -6096,7 +6096,7 @@
         },
         "groupB2": {
           "name": "Tommy Fleetwood",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -6149,7 +6149,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 2787610,
+      "totalEarnings": 2792160,
       "previousRank": 0,
       "rank": 75
     },
@@ -6178,7 +6178,7 @@
         },
         "groupB2": {
           "name": "Tommy Fleetwood",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -6231,7 +6231,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 2784950,
+      "totalEarnings": 2787400,
       "previousRank": 0,
       "rank": 76
     },
@@ -6251,8 +6251,8 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 92400,
-          "position": 39,
+          "earnings": 94500,
+          "position": 38,
           "toPar": 1,
           "toParDisplay": "+1",
           "status": "active",
@@ -6313,7 +6313,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 2622900,
+      "totalEarnings": 2625000,
       "previousRank": 0,
       "rank": 77
     },
@@ -6743,7 +6743,7 @@
         },
         "groupB1": {
           "name": "Tommy Fleetwood",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -6797,7 +6797,7 @@
         },
         "groupE": {
           "name": "Dustin Johnson",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -6805,7 +6805,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 1768060,
+      "totalEarnings": 1772960,
       "previousRank": 0,
       "rank": 83
     },
@@ -6834,7 +6834,7 @@
         },
         "groupB2": {
           "name": "Tommy Fleetwood",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -6879,7 +6879,7 @@
         },
         "groupE": {
           "name": "Dustin Johnson",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -6887,7 +6887,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 1726760,
+      "totalEarnings": 1731660,
       "previousRank": 0,
       "rank": 84
     },
@@ -7071,8 +7071,8 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 92400,
-          "position": 39,
+          "earnings": 94500,
+          "position": 38,
           "toPar": 1,
           "toParDisplay": "+1",
           "status": "active",
@@ -7133,7 +7133,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 1362900,
+      "totalEarnings": 1365000,
       "previousRank": 0,
       "rank": 87
     },
@@ -7153,8 +7153,8 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 92400,
-          "position": 39,
+          "earnings": 94500,
+          "position": 38,
           "toPar": 1,
           "toParDisplay": "+1",
           "status": "active",
@@ -7207,7 +7207,7 @@
         },
         "groupE": {
           "name": "Ben Griffin",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -7215,7 +7215,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 1158010,
+      "totalEarnings": 1162560,
       "previousRank": 0,
       "rank": 88
     },
@@ -7235,8 +7235,8 @@
         },
         "groupB1": {
           "name": "Jon Rahm",
-          "earnings": 92400,
-          "position": 39,
+          "earnings": 94500,
+          "position": 38,
           "toPar": 1,
           "toParDisplay": "+1",
           "status": "active",
@@ -7244,7 +7244,7 @@
         },
         "groupB2": {
           "name": "Tommy Fleetwood",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -7297,7 +7297,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 949760,
+      "totalEarnings": 954310,
       "previousRank": 0,
       "rank": 89
     },
@@ -7326,7 +7326,7 @@
         },
         "groupB2": {
           "name": "Tommy Fleetwood",
-          "earnings": 110950,
+          "earnings": 113400,
           "position": 33,
           "toPar": 0,
           "toParDisplay": "E",
@@ -7379,7 +7379,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 806050,
+      "totalEarnings": 808500,
       "previousRank": 0,
       "rank": 90
     }
