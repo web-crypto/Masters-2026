@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-12T19:30:48Z",
+  "fetchedAt": "2026-04-12T19:33:07Z",
   "tournamentStatus": "in_progress",
   "currentRound": 4,
   "players": [
@@ -65,7 +65,7 @@
         70,
         74,
         65,
-        21
+        25
       ],
       "status": "active",
       "thru": 18,
@@ -361,6 +361,23 @@
       "projectedEarnings": 245700
     },
     {
+      "espnId": "4375972",
+      "name": "Ludvig \u00c5berg",
+      "amateur": false,
+      "position": 19,
+      "toPar": -4,
+      "toParDisplay": "-4",
+      "rounds": [
+        74,
+        70,
+        69,
+        51
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 245700
+    },
+    {
       "espnId": "9037",
       "name": "Matt Fitzpatrick",
       "amateur": false,
@@ -372,23 +389,6 @@
         69,
         70,
         51
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 245700
-    },
-    {
-      "espnId": "4375972",
-      "name": "Ludvig \u00c5berg",
-      "amateur": false,
-      "position": 19,
-      "toPar": -4,
-      "toParDisplay": "-4",
-      "rounds": [
-        74,
-        70,
-        69,
-        46
       ],
       "status": "active",
       "thru": 18,
@@ -426,7 +426,24 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 176400
+      "projectedEarnings": 171500
+    },
+    {
+      "espnId": "4690755",
+      "name": "Chris Gotterup",
+      "amateur": false,
+      "position": 25,
+      "toPar": -3,
+      "toParDisplay": "-3",
+      "rounds": [
+        72,
+        69,
+        72,
+        64
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 171500
     },
     {
       "espnId": "6798",
@@ -443,13 +460,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 176400
+      "projectedEarnings": 171500
     },
     {
       "espnId": "4901368",
       "name": "Matt McCarty",
       "amateur": false,
-      "position": 27,
+      "position": 28,
       "toPar": -2,
       "toParDisplay": "-2",
       "rounds": [
@@ -460,13 +477,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 149100
+      "projectedEarnings": 145950
     },
     {
       "espnId": "388",
       "name": "Adam Scott",
       "amateur": false,
-      "position": 27,
+      "position": 28,
       "toPar": -2,
       "toParDisplay": "-2",
       "rounds": [
@@ -477,13 +494,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 149100
+      "projectedEarnings": 145950
     },
     {
       "espnId": "4426181",
       "name": "Sam Stevens",
       "amateur": false,
-      "position": 27,
+      "position": 28,
       "toPar": -2,
       "toParDisplay": "-2",
       "rounds": [
@@ -494,30 +511,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 149100
-    },
-    {
-      "espnId": "4690755",
-      "name": "Chris Gotterup",
-      "amateur": false,
-      "position": 27,
-      "toPar": -2,
-      "toParDisplay": "-2",
-      "rounds": [
-        72,
-        69,
-        72,
-        62
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 149100
+      "projectedEarnings": 145950
     },
     {
       "espnId": "9525",
       "name": "Brian Campbell",
       "amateur": false,
-      "position": 27,
+      "position": 28,
       "toPar": -2,
       "toParDisplay": "-2",
       "rounds": [
@@ -528,7 +528,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 149100
+      "projectedEarnings": 145950
     },
     {
       "espnId": "3832",
@@ -762,7 +762,7 @@
         72,
         68,
         73,
-        66
+        69
       ],
       "status": "active",
       "thru": 18,
