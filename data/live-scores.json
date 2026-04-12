@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-12T18:42:16Z",
+  "fetchedAt": "2026-04-12T18:42:40Z",
   "tournamentStatus": "in_progress",
   "currentRound": 4,
   "players": [
@@ -167,7 +167,7 @@
         74,
         66,
         72,
-        29
+        33
       ],
       "status": "active",
       "thru": 18,
@@ -239,7 +239,24 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 378000
+      "projectedEarnings": 367500
+    },
+    {
+      "espnId": "4404992",
+      "name": "Ben Griffin",
+      "amateur": false,
+      "position": 14,
+      "toPar": -5,
+      "toParDisplay": "-5",
+      "rounds": [
+        72,
+        69,
+        70,
+        27
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 367500
     },
     {
       "espnId": "9843",
@@ -256,7 +273,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 378000
+      "projectedEarnings": 367500
     },
     {
       "espnId": "10592",
@@ -273,13 +290,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 378000
+      "projectedEarnings": 367500
     },
     {
       "espnId": "9530",
       "name": "Maverick McNealy",
       "amateur": false,
-      "position": 17,
+      "position": 18,
       "toPar": -4,
       "toParDisplay": "-4",
       "rounds": [
@@ -290,13 +307,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 265650
+      "projectedEarnings": 255600
     },
     {
       "espnId": "4364873",
       "name": "Viktor Hovland",
       "amateur": false,
-      "position": 17,
+      "position": 18,
       "toPar": -4,
       "toParDisplay": "-4",
       "rounds": [
@@ -307,13 +324,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 265650
+      "projectedEarnings": 255600
     },
     {
       "espnId": "5467",
       "name": "Jordan Spieth",
       "amateur": false,
-      "position": 17,
+      "position": 18,
       "toPar": -4,
       "toParDisplay": "-4",
       "rounds": [
@@ -324,13 +341,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 265650
+      "projectedEarnings": 255600
     },
     {
       "espnId": "4921329",
       "name": "Michael Brennan",
       "amateur": false,
-      "position": 17,
+      "position": 18,
       "toPar": -4,
       "toParDisplay": "-4",
       "rounds": [
@@ -341,13 +358,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 265650
+      "projectedEarnings": 255600
     },
     {
       "espnId": "8973",
       "name": "Max Homa",
       "amateur": false,
-      "position": 17,
+      "position": 18,
       "toPar": -4,
       "toParDisplay": "-4",
       "rounds": [
@@ -358,13 +375,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 265650
+      "projectedEarnings": 255600
     },
     {
       "espnId": "9037",
       "name": "Matt Fitzpatrick",
       "amateur": false,
-      "position": 17,
+      "position": 18,
       "toPar": -4,
       "toParDisplay": "-4",
       "rounds": [
@@ -375,30 +392,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 265650
-    },
-    {
-      "espnId": "4404992",
-      "name": "Ben Griffin",
-      "amateur": false,
-      "position": 17,
-      "toPar": -4,
-      "toParDisplay": "-4",
-      "rounds": [
-        72,
-        69,
-        70,
-        24
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 265650
+      "projectedEarnings": 255600
     },
     {
       "espnId": "5579",
       "name": "Patrick Reed",
       "amateur": false,
-      "position": 17,
+      "position": 18,
       "toPar": -4,
       "toParDisplay": "-4",
       "rounds": [
@@ -409,7 +409,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 265650
+      "projectedEarnings": 255600
     },
     {
       "espnId": "4513",
