@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-12T21:53:17Z",
+  "fetchedAt": "2026-04-12T21:54:42Z",
   "tournamentStatus": "in_progress",
   "currentRound": 4,
   "players": [
@@ -21,10 +21,27 @@
       "projectedEarnings": 4200000
     },
     {
+      "espnId": "9478",
+      "name": "Scottie Scheffler",
+      "amateur": false,
+      "position": 2,
+      "toPar": -11,
+      "toParDisplay": "-11",
+      "rounds": [
+        70,
+        74,
+        65,
+        60
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 2268000
+    },
+    {
       "espnId": "5553",
       "name": "Tyrrell Hatton",
       "amateur": false,
-      "position": 2,
+      "position": 3,
       "toPar": -10,
       "toParDisplay": "-10",
       "rounds": [
@@ -35,13 +52,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 1260000
+      "projectedEarnings": 1008000
     },
     {
       "espnId": "5409",
       "name": "Russell Henley",
       "amateur": false,
-      "position": 2,
+      "position": 3,
       "toPar": -10,
       "toParDisplay": "-10",
       "rounds": [
@@ -52,30 +69,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 1260000
-    },
-    {
-      "espnId": "9478",
-      "name": "Scottie Scheffler",
-      "amateur": false,
-      "position": 2,
-      "toPar": -10,
-      "toParDisplay": "-10",
-      "rounds": [
-        70,
-        74,
-        65,
-        58
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 1260000
+      "projectedEarnings": 1008000
     },
     {
       "espnId": "569",
       "name": "Justin Rose",
       "amateur": false,
-      "position": 2,
+      "position": 3,
       "toPar": -10,
       "toParDisplay": "-10",
       "rounds": [
@@ -86,13 +86,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 1260000
+      "projectedEarnings": 1008000
     },
     {
       "espnId": "4425906",
       "name": "Cameron Young",
       "amateur": false,
-      "position": 2,
+      "position": 3,
       "toPar": -10,
       "toParDisplay": "-10",
       "rounds": [
@@ -103,7 +103,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 1260000
+      "projectedEarnings": 1008000
     },
     {
       "espnId": "10592",
@@ -643,7 +643,7 @@
         71,
         69,
         69,
-        68
+        71
       ],
       "status": "active",
       "thru": 18,
