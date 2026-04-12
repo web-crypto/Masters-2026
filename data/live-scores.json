@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-12T22:27:07Z",
+  "fetchedAt": "2026-04-12T22:30:42Z",
   "tournamentStatus": "in_progress",
   "currentRound": 4,
   "players": [
@@ -52,7 +52,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 947100
+      "projectedEarnings": 1008000
     },
     {
       "espnId": "5409",
@@ -69,7 +69,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 947100
+      "projectedEarnings": 1008000
     },
     {
       "espnId": "569",
@@ -86,24 +86,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 947100
-    },
-    {
-      "espnId": "9938",
-      "name": "Sam Burns",
-      "amateur": false,
-      "position": 3,
-      "toPar": -10,
-      "toParDisplay": "-10",
-      "rounds": [
-        67,
-        71,
-        68,
-        64
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 947100
+      "projectedEarnings": 1008000
     },
     {
       "espnId": "4425906",
@@ -120,13 +103,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 947100
+      "projectedEarnings": 1008000
     },
     {
       "espnId": "10592",
       "name": "Collin Morikawa",
       "amateur": false,
-      "position": 8,
+      "position": 7,
       "toPar": -9,
       "toParDisplay": "-9",
       "rounds": [
@@ -137,7 +120,24 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 651000
+      "projectedEarnings": 677250
+    },
+    {
+      "espnId": "9938",
+      "name": "Sam Burns",
+      "amateur": false,
+      "position": 7,
+      "toPar": -9,
+      "toParDisplay": "-9",
+      "rounds": [
+        67,
+        71,
+        68,
+        69
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 677250
     },
     {
       "espnId": "8973",
@@ -507,7 +507,7 @@
         70,
         69,
         68,
-        71
+        75
       ],
       "status": "active",
       "thru": 18,
