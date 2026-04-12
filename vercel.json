@@ -45,6 +45,15 @@
           "value": "public, max-age=15, s-maxage=15, stale-while-revalidate=15"
         }
       ]
+    },
+    {
+      "source": "/api/live",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store, max-age=0"
+        }
+      ]
     }
   ]
 }

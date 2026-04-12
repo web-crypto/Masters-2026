@@ -1,7 +1,22 @@
 async function loadLivePoolData() {
   const fallback = window.poolData;
+  const bust = Date.now();
+
   try {
-    const bust = Date.now();
+    const apiRes = await fetch(`/api/live?v=${bust}`, { cache: 'no-store' });
+    if (apiRes.ok) {
+      const payload = await apiRes.json();
+      if (payload?.ok && payload?.poolData?.entries) {
+        window.poolData = payload.poolData;
+        return payload.poolData;
+      }
+    }
+    throw new Error(`api fetch failed: ${apiRes.status}`);
+  } catch (apiErr) {
+    console.warn('Live API fetch failed, falling back to static data path.', apiErr);
+  }
+
+  try {
     const [poolRes, standingsRes] = await Promise.all([
       fetch(`data/pool-data.js?v=${bust}`, { cache: 'no-store' }),
       fetch(`data/pool-standings.json?v=${bust}`, { cache: 'no-store' })
