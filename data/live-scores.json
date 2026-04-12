@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-12T13:30:47Z",
+  "fetchedAt": "2026-04-12T13:40:07Z",
   "tournamentStatus": "in_progress",
   "currentRound": 4,
   "players": [
@@ -803,8 +803,8 @@
       "projectedEarnings": 60900
     },
     {
-      "espnId": "11253",
-      "name": "Rasmus H\u00f8jgaard",
+      "espnId": "9780",
+      "name": "Jon Rahm",
       "amateur": false,
       "position": 48,
       "toPar": 5,
@@ -820,8 +820,8 @@
       "projectedEarnings": 55020
     },
     {
-      "espnId": "9780",
-      "name": "Jon Rahm",
+      "espnId": "11253",
+      "name": "Rasmus H\u00f8jgaard",
       "amateur": false,
       "position": 48,
       "toPar": 5,
@@ -898,7 +898,7 @@
         71,
         74,
         78,
-        4
+        9
       ],
       "status": "active",
       "thru": 18,
@@ -909,13 +909,13 @@
       "name": "Charl Schwartzel",
       "amateur": false,
       "position": 54,
-      "toPar": 9,
-      "toParDisplay": "+9",
+      "toPar": 10,
+      "toParDisplay": "+10",
       "rounds": [
         75,
         73,
         77,
-        4
+        10
       ],
       "status": "active",
       "thru": 18,
