@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-12T18:50:06Z",
+  "fetchedAt": "2026-04-12T18:51:06Z",
   "tournamentStatus": "in_progress",
   "currentRound": 4,
   "players": [
@@ -99,7 +99,7 @@
         73,
         71,
         66,
-        14
+        18
       ],
       "status": "active",
       "thru": 18,
@@ -184,7 +184,7 @@
         77,
         67,
         66,
-        15
+        19
       ],
       "status": "active",
       "thru": 18,
@@ -388,7 +388,7 @@
         74,
         69,
         70,
-        39
+        43
       ],
       "status": "active",
       "thru": 18,
@@ -426,7 +426,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 171500
+      "projectedEarnings": 167475
     },
     {
       "espnId": "388",
@@ -443,7 +443,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 171500
+      "projectedEarnings": 167475
     },
     {
       "espnId": "6798",
@@ -460,13 +460,30 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 171500
+      "projectedEarnings": 167475
+    },
+    {
+      "espnId": "11119",
+      "name": "Wyndham Clark",
+      "amateur": false,
+      "position": 25,
+      "toPar": -3,
+      "toParDisplay": "-3",
+      "rounds": [
+        72,
+        68,
+        72,
+        37
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 167475
     },
     {
       "espnId": "4901368",
       "name": "Matt McCarty",
       "amateur": false,
-      "position": 28,
+      "position": 29,
       "toPar": -2,
       "toParDisplay": "-2",
       "rounds": [
@@ -477,13 +494,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 142800
+      "projectedEarnings": 139650
     },
     {
       "espnId": "4426181",
       "name": "Sam Stevens",
       "amateur": false,
-      "position": 28,
+      "position": 29,
       "toPar": -2,
       "toParDisplay": "-2",
       "rounds": [
@@ -494,13 +511,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 142800
+      "projectedEarnings": 139650
     },
     {
       "espnId": "4690755",
       "name": "Chris Gotterup",
       "amateur": false,
-      "position": 28,
+      "position": 29,
       "toPar": -2,
       "toParDisplay": "-2",
       "rounds": [
@@ -511,13 +528,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 142800
+      "projectedEarnings": 139650
     },
     {
       "espnId": "5539",
       "name": "Tommy Fleetwood",
       "amateur": false,
-      "position": 28,
+      "position": 29,
       "toPar": -2,
       "toParDisplay": "-2",
       "rounds": [
@@ -528,24 +545,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 142800
-    },
-    {
-      "espnId": "11119",
-      "name": "Wyndham Clark",
-      "amateur": false,
-      "position": 28,
-      "toPar": -2,
-      "toParDisplay": "-2",
-      "rounds": [
-        72,
-        68,
-        72,
-        34
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 142800
+      "projectedEarnings": 139650
     },
     {
       "espnId": "3832",
@@ -565,23 +565,6 @@
       "projectedEarnings": 116025
     },
     {
-      "espnId": "1225",
-      "name": "Brian Harman",
-      "amateur": false,
-      "position": 33,
-      "toPar": -1,
-      "toParDisplay": "-1",
-      "rounds": [
-        79,
-        69,
-        67,
-        64
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 116025
-    },
-    {
       "espnId": "5408",
       "name": "Harris English",
       "amateur": false,
@@ -592,6 +575,23 @@
         73,
         71,
         71,
+        68
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 116025
+    },
+    {
+      "espnId": "1225",
+      "name": "Brian Harman",
+      "amateur": false,
+      "position": 33,
+      "toPar": -1,
+      "toParDisplay": "-1",
+      "rounds": [
+        79,
+        69,
+        67,
         64
       ],
       "status": "active",

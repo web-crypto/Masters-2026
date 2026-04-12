@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-12T18:50:06Z",
+  "fetchedAt": "2026-04-12T18:51:06Z",
   "tournamentStatus": "in_progress",
   "currentRound": 4,
   "entries": [
@@ -429,8 +429,8 @@
         },
         "groupB1": {
           "name": "Tommy Fleetwood",
-          "earnings": 142800,
-          "position": 28,
+          "earnings": 139650,
+          "position": 29,
           "toPar": -2,
           "toParDisplay": "-2",
           "status": "active",
@@ -491,7 +491,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 6681675,
+      "totalEarnings": 6678525,
       "previousRank": 0,
       "rank": 6
     },
@@ -538,8 +538,8 @@
         },
         "groupC2": {
           "name": "Chris Gotterup",
-          "earnings": 142800,
-          "position": 28,
+          "earnings": 139650,
+          "position": 29,
           "toPar": -2,
           "toParDisplay": "-2",
           "status": "active",
@@ -573,7 +573,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 6264300,
+      "totalEarnings": 6261150,
       "previousRank": 0,
       "rank": 7
     },
@@ -620,8 +620,8 @@
         },
         "groupC2": {
           "name": "Chris Gotterup",
-          "earnings": 142800,
-          "position": 28,
+          "earnings": 139650,
+          "position": 29,
           "toPar": -2,
           "toParDisplay": "-2",
           "status": "active",
@@ -655,7 +655,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 6100875,
+      "totalEarnings": 6097725,
       "previousRank": 0,
       "rank": 8
     },
@@ -839,8 +839,8 @@
         },
         "groupB1": {
           "name": "Tommy Fleetwood",
-          "earnings": 142800,
-          "position": 28,
+          "earnings": 139650,
+          "position": 29,
           "toPar": -2,
           "toParDisplay": "-2",
           "status": "active",
@@ -901,7 +901,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 5693835,
+      "totalEarnings": 5690685,
       "previousRank": 0,
       "rank": 11
     },
@@ -1194,7 +1194,7 @@
         },
         "groupC2": {
           "name": "Brooks Koepka",
-          "earnings": 171500,
+          "earnings": 167475,
           "position": 25,
           "toPar": -3,
           "toParDisplay": "-3",
@@ -1229,7 +1229,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 5331860,
+      "totalEarnings": 5327835,
       "previousRank": 0,
       "rank": 15
     },
@@ -1331,8 +1331,8 @@
         },
         "groupB1": {
           "name": "Tommy Fleetwood",
-          "earnings": 142800,
-          "position": 28,
+          "earnings": 139650,
+          "position": 29,
           "toPar": -2,
           "toParDisplay": "-2",
           "status": "active",
@@ -1358,7 +1358,7 @@
         },
         "groupC2": {
           "name": "Brooks Koepka",
-          "earnings": 171500,
+          "earnings": 167475,
           "position": 25,
           "toPar": -3,
           "toParDisplay": "-3",
@@ -1393,7 +1393,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 5252900,
+      "totalEarnings": 5245725,
       "previousRank": 0,
       "rank": 17
     },
@@ -1504,8 +1504,8 @@
         },
         "groupB2": {
           "name": "Tommy Fleetwood",
-          "earnings": 142800,
-          "position": 28,
+          "earnings": 139650,
+          "position": 29,
           "toPar": -2,
           "toParDisplay": "-2",
           "status": "active",
@@ -1557,7 +1557,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 4971600,
+      "totalEarnings": 4968450,
       "previousRank": 0,
       "rank": 19
     },
@@ -1850,8 +1850,8 @@
         },
         "groupC2": {
           "name": "Chris Gotterup",
-          "earnings": 142800,
-          "position": 28,
+          "earnings": 139650,
+          "position": 29,
           "toPar": -2,
           "toParDisplay": "-2",
           "status": "active",
@@ -1885,7 +1885,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 4673160,
+      "totalEarnings": 4670010,
       "previousRank": 0,
       "rank": 23
     },
@@ -1923,7 +1923,7 @@
         },
         "groupC1": {
           "name": "Brooks Koepka",
-          "earnings": 171500,
+          "earnings": 167475,
           "position": 25,
           "toPar": -3,
           "toParDisplay": "-3",
@@ -1967,7 +1967,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 4541285,
+      "totalEarnings": 4537260,
       "previousRank": 0,
       "rank": 24
     },
@@ -1987,8 +1987,8 @@
         },
         "groupB1": {
           "name": "Tommy Fleetwood",
-          "earnings": 142800,
-          "position": 28,
+          "earnings": 139650,
+          "position": 29,
           "toPar": -2,
           "toParDisplay": "-2",
           "status": "active",
@@ -2049,7 +2049,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 4484160,
+      "totalEarnings": 4481010,
       "previousRank": 0,
       "rank": 25
     },
@@ -2087,7 +2087,7 @@
         },
         "groupC1": {
           "name": "Brooks Koepka",
-          "earnings": 171500,
+          "earnings": 167475,
           "position": 25,
           "toPar": -3,
           "toParDisplay": "-3",
@@ -2131,7 +2131,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 4437860,
+      "totalEarnings": 4433835,
       "previousRank": 0,
       "rank": 26
     },
@@ -2561,8 +2561,8 @@
         },
         "groupB1": {
           "name": "Tommy Fleetwood",
-          "earnings": 142800,
-          "position": 28,
+          "earnings": 139650,
+          "position": 29,
           "toPar": -2,
           "toParDisplay": "-2",
           "status": "active",
@@ -2588,8 +2588,8 @@
         },
         "groupC2": {
           "name": "Chris Gotterup",
-          "earnings": 142800,
-          "position": 28,
+          "earnings": 139650,
+          "position": 29,
           "toPar": -2,
           "toParDisplay": "-2",
           "status": "active",
@@ -2623,7 +2623,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 4178160,
+      "totalEarnings": 4171860,
       "previousRank": 0,
       "rank": 32
     },
@@ -2670,8 +2670,8 @@
         },
         "groupC2": {
           "name": "Chris Gotterup",
-          "earnings": 142800,
-          "position": 28,
+          "earnings": 139650,
+          "position": 29,
           "toPar": -2,
           "toParDisplay": "-2",
           "status": "active",
@@ -2705,7 +2705,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 4143600,
+      "totalEarnings": 4140450,
       "previousRank": 0,
       "rank": 33
     },
@@ -2834,8 +2834,8 @@
         },
         "groupC2": {
           "name": "Chris Gotterup",
-          "earnings": 142800,
-          "position": 28,
+          "earnings": 139650,
+          "position": 29,
           "toPar": -2,
           "toParDisplay": "-2",
           "status": "active",
@@ -2869,7 +2869,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 4073400,
+      "totalEarnings": 4070250,
       "previousRank": 0,
       "rank": 35
     },
@@ -3162,8 +3162,8 @@
         },
         "groupC2": {
           "name": "Chris Gotterup",
-          "earnings": 142800,
-          "position": 28,
+          "earnings": 139650,
+          "position": 29,
           "toPar": -2,
           "toParDisplay": "-2",
           "status": "active",
@@ -3197,7 +3197,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 3791160,
+      "totalEarnings": 3788010,
       "previousRank": 0,
       "rank": 39
     },
@@ -3235,7 +3235,7 @@
         },
         "groupC1": {
           "name": "Brooks Koepka",
-          "earnings": 171500,
+          "earnings": 167475,
           "position": 25,
           "toPar": -3,
           "toParDisplay": "-3",
@@ -3279,7 +3279,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 3761300,
+      "totalEarnings": 3757275,
       "previousRank": 0,
       "rank": 40
     },
@@ -3381,8 +3381,8 @@
         },
         "groupB1": {
           "name": "Tommy Fleetwood",
-          "earnings": 142800,
-          "position": 28,
+          "earnings": 139650,
+          "position": 29,
           "toPar": -2,
           "toParDisplay": "-2",
           "status": "active",
@@ -3426,7 +3426,7 @@
         },
         "groupD2": {
           "name": "Adam Scott",
-          "earnings": 171500,
+          "earnings": 167475,
           "position": 25,
           "toPar": -3,
           "toParDisplay": "-3",
@@ -3443,7 +3443,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 3450500,
+      "totalEarnings": 3443325,
       "previousRank": 0,
       "rank": 42
     },
@@ -3636,8 +3636,8 @@
         },
         "groupB2": {
           "name": "Tommy Fleetwood",
-          "earnings": 142800,
-          "position": 28,
+          "earnings": 139650,
+          "position": 29,
           "toPar": -2,
           "toParDisplay": "-2",
           "status": "active",
@@ -3645,7 +3645,7 @@
         },
         "groupC1": {
           "name": "Brooks Koepka",
-          "earnings": 171500,
+          "earnings": 167475,
           "position": 25,
           "toPar": -3,
           "toParDisplay": "-3",
@@ -3689,7 +3689,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 3248660,
+      "totalEarnings": 3241485,
       "previousRank": 0,
       "rank": 45
     },
@@ -3809,7 +3809,7 @@
         },
         "groupC1": {
           "name": "Brooks Koepka",
-          "earnings": 171500,
+          "earnings": 167475,
           "position": 25,
           "toPar": -3,
           "toParDisplay": "-3",
@@ -3853,7 +3853,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 3232700,
+      "totalEarnings": 3228675,
       "previousRank": 0,
       "rank": 47
     },
@@ -3918,7 +3918,7 @@
         },
         "groupD2": {
           "name": "Adam Scott",
-          "earnings": 171500,
+          "earnings": 167475,
           "position": 25,
           "toPar": -3,
           "toParDisplay": "-3",
@@ -3935,7 +3935,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 3182375,
+      "totalEarnings": 3178350,
       "previousRank": 0,
       "rank": 48
     },
@@ -4000,7 +4000,7 @@
         },
         "groupD2": {
           "name": "Adam Scott",
-          "earnings": 171500,
+          "earnings": 167475,
           "position": 25,
           "toPar": -3,
           "toParDisplay": "-3",
@@ -4017,7 +4017,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 3182375,
+      "totalEarnings": 3178350,
       "previousRank": 0,
       "rank": 49
     },
@@ -4128,8 +4128,8 @@
         },
         "groupB2": {
           "name": "Tommy Fleetwood",
-          "earnings": 142800,
-          "position": 28,
+          "earnings": 139650,
+          "position": 29,
           "toPar": -2,
           "toParDisplay": "-2",
           "status": "active",
@@ -4181,7 +4181,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 2884275,
+      "totalEarnings": 2881125,
       "previousRank": 0,
       "rank": 51
     },
@@ -4219,7 +4219,7 @@
         },
         "groupC1": {
           "name": "Brooks Koepka",
-          "earnings": 171500,
+          "earnings": 167475,
           "position": 25,
           "toPar": -3,
           "toParDisplay": "-3",
@@ -4263,7 +4263,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 2872100,
+      "totalEarnings": 2868075,
       "previousRank": 0,
       "rank": 52
     },
@@ -4556,8 +4556,8 @@
         },
         "groupC2": {
           "name": "Chris Gotterup",
-          "earnings": 142800,
-          "position": 28,
+          "earnings": 139650,
+          "position": 29,
           "toPar": -2,
           "toParDisplay": "-2",
           "status": "active",
@@ -4574,7 +4574,7 @@
         },
         "groupD2": {
           "name": "Adam Scott",
-          "earnings": 171500,
+          "earnings": 167475,
           "position": 25,
           "toPar": -3,
           "toParDisplay": "-3",
@@ -4591,7 +4591,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 2816900,
+      "totalEarnings": 2809725,
       "previousRank": 0,
       "rank": 56
     },
@@ -4656,7 +4656,7 @@
         },
         "groupD2": {
           "name": "Adam Scott",
-          "earnings": 171500,
+          "earnings": 167475,
           "position": 25,
           "toPar": -3,
           "toParDisplay": "-3",
@@ -4673,7 +4673,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 2809760,
+      "totalEarnings": 2805735,
       "previousRank": 0,
       "rank": 57
     },
@@ -4702,8 +4702,8 @@
         },
         "groupB2": {
           "name": "Tommy Fleetwood",
-          "earnings": 142800,
-          "position": 28,
+          "earnings": 139650,
+          "position": 29,
           "toPar": -2,
           "toParDisplay": "-2",
           "status": "active",
@@ -4755,7 +4755,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 2802795,
+      "totalEarnings": 2799645,
       "previousRank": 0,
       "rank": 58
     },
@@ -4884,8 +4884,8 @@
         },
         "groupC2": {
           "name": "Chris Gotterup",
-          "earnings": 142800,
-          "position": 28,
+          "earnings": 139650,
+          "position": 29,
           "toPar": -2,
           "toParDisplay": "-2",
           "status": "active",
@@ -4919,7 +4919,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 2781060,
+      "totalEarnings": 2777910,
       "previousRank": 0,
       "rank": 60
     },
@@ -4957,7 +4957,7 @@
         },
         "groupC1": {
           "name": "Brooks Koepka",
-          "earnings": 171500,
+          "earnings": 167475,
           "position": 25,
           "toPar": -3,
           "toParDisplay": "-3",
@@ -5001,7 +5001,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 2745260,
+      "totalEarnings": 2741235,
       "previousRank": 0,
       "rank": 61
     },
@@ -5039,7 +5039,7 @@
         },
         "groupC1": {
           "name": "Brooks Koepka",
-          "earnings": 171500,
+          "earnings": 167475,
           "position": 25,
           "toPar": -3,
           "toParDisplay": "-3",
@@ -5083,7 +5083,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 2745260,
+      "totalEarnings": 2741235,
       "previousRank": 0,
       "rank": 62
     },
@@ -5203,7 +5203,7 @@
         },
         "groupC1": {
           "name": "Brooks Koepka",
-          "earnings": 171500,
+          "earnings": 167475,
           "position": 25,
           "toPar": -3,
           "toParDisplay": "-3",
@@ -5247,7 +5247,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 2657300,
+      "totalEarnings": 2653275,
       "previousRank": 0,
       "rank": 64
     },
@@ -5276,8 +5276,8 @@
         },
         "groupB2": {
           "name": "Tommy Fleetwood",
-          "earnings": 142800,
-          "position": 28,
+          "earnings": 139650,
+          "position": 29,
           "toPar": -2,
           "toParDisplay": "-2",
           "status": "active",
@@ -5285,7 +5285,7 @@
         },
         "groupC1": {
           "name": "Brooks Koepka",
-          "earnings": 171500,
+          "earnings": 167475,
           "position": 25,
           "toPar": -3,
           "toParDisplay": "-3",
@@ -5329,7 +5329,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 2648900,
+      "totalEarnings": 2641725,
       "previousRank": 0,
       "rank": 65
     },
@@ -5358,8 +5358,8 @@
         },
         "groupB2": {
           "name": "Tommy Fleetwood",
-          "earnings": 142800,
-          "position": 28,
+          "earnings": 139650,
+          "position": 29,
           "toPar": -2,
           "toParDisplay": "-2",
           "status": "active",
@@ -5411,7 +5411,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 2643300,
+      "totalEarnings": 2640150,
       "previousRank": 0,
       "rank": 66
     },
@@ -5458,8 +5458,8 @@
         },
         "groupC2": {
           "name": "Chris Gotterup",
-          "earnings": 142800,
-          "position": 28,
+          "earnings": 139650,
+          "position": 29,
           "toPar": -2,
           "toParDisplay": "-2",
           "status": "active",
@@ -5476,10 +5476,10 @@
         },
         "groupD2": {
           "name": "Wyndham Clark",
-          "earnings": 142800,
-          "position": 28,
-          "toPar": -2,
-          "toParDisplay": "-2",
+          "earnings": 167475,
+          "position": 25,
+          "toPar": -3,
+          "toParDisplay": "-3",
           "status": "active",
           "thru": 18
         },
@@ -5493,7 +5493,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 2595075,
+      "totalEarnings": 2616600,
       "previousRank": 0,
       "rank": 67
     },
@@ -5686,8 +5686,8 @@
         },
         "groupB2": {
           "name": "Tommy Fleetwood",
-          "earnings": 142800,
-          "position": 28,
+          "earnings": 139650,
+          "position": 29,
           "toPar": -2,
           "toParDisplay": "-2",
           "status": "active",
@@ -5739,7 +5739,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 2509875,
+      "totalEarnings": 2506725,
       "previousRank": 0,
       "rank": 70
     },
@@ -5768,8 +5768,8 @@
         },
         "groupB2": {
           "name": "Tommy Fleetwood",
-          "earnings": 142800,
-          "position": 28,
+          "earnings": 139650,
+          "position": 29,
           "toPar": -2,
           "toParDisplay": "-2",
           "status": "active",
@@ -5821,7 +5821,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 2493360,
+      "totalEarnings": 2490210,
       "previousRank": 0,
       "rank": 71
     },
@@ -5908,88 +5908,6 @@
       "rank": 72
     },
     {
-      "id": 5,
-      "name": "Jacob Hodgson",
-      "owner": "Jacob Hodgson",
-      "players": {
-        "groupA": {
-          "name": "Bryson DeChambeau",
-          "earnings": 0,
-          "position": 61,
-          "toPar": 6,
-          "toParDisplay": "+6",
-          "status": "cut",
-          "thru": 0
-        },
-        "groupB1": {
-          "name": "Jon Rahm",
-          "earnings": 84000,
-          "position": 41,
-          "toPar": 1,
-          "toParDisplay": "+1",
-          "status": "active",
-          "thru": 18
-        },
-        "groupB2": {
-          "name": "Tommy Fleetwood",
-          "earnings": 142800,
-          "position": 28,
-          "toPar": -2,
-          "toParDisplay": "-2",
-          "status": "active",
-          "thru": 18
-        },
-        "groupC1": {
-          "name": "Justin Rose",
-          "earnings": 679875,
-          "position": 6,
-          "toPar": -8,
-          "toParDisplay": "-8",
-          "status": "active",
-          "thru": 18
-        },
-        "groupC2": {
-          "name": "Brooks Koepka",
-          "earnings": 171500,
-          "position": 25,
-          "toPar": -3,
-          "toParDisplay": "-3",
-          "status": "active",
-          "thru": 18
-        },
-        "groupD1": {
-          "name": "Shane Lowry",
-          "earnings": 1092000,
-          "position": 3,
-          "toPar": -9,
-          "toParDisplay": "-9",
-          "status": "active",
-          "thru": 18
-        },
-        "groupD2": {
-          "name": "Corey Conners",
-          "earnings": 53760,
-          "position": 49,
-          "toPar": 6,
-          "toParDisplay": "+6",
-          "status": "active",
-          "thru": 18
-        },
-        "groupE": {
-          "name": "Bubba Watson",
-          "earnings": 0,
-          "position": 58,
-          "toPar": 5,
-          "toParDisplay": "+5",
-          "status": "cut",
-          "thru": 0
-        }
-      },
-      "totalEarnings": 2223935,
-      "previousRank": 0,
-      "rank": 73
-    },
-    {
       "id": 4,
       "name": "Adam Valadao",
       "owner": "Adam Valadao",
@@ -6068,6 +5986,88 @@
         }
       },
       "totalEarnings": 2221200,
+      "previousRank": 0,
+      "rank": 73
+    },
+    {
+      "id": 5,
+      "name": "Jacob Hodgson",
+      "owner": "Jacob Hodgson",
+      "players": {
+        "groupA": {
+          "name": "Bryson DeChambeau",
+          "earnings": 0,
+          "position": 61,
+          "toPar": 6,
+          "toParDisplay": "+6",
+          "status": "cut",
+          "thru": 0
+        },
+        "groupB1": {
+          "name": "Jon Rahm",
+          "earnings": 84000,
+          "position": 41,
+          "toPar": 1,
+          "toParDisplay": "+1",
+          "status": "active",
+          "thru": 18
+        },
+        "groupB2": {
+          "name": "Tommy Fleetwood",
+          "earnings": 139650,
+          "position": 29,
+          "toPar": -2,
+          "toParDisplay": "-2",
+          "status": "active",
+          "thru": 18
+        },
+        "groupC1": {
+          "name": "Justin Rose",
+          "earnings": 679875,
+          "position": 6,
+          "toPar": -8,
+          "toParDisplay": "-8",
+          "status": "active",
+          "thru": 18
+        },
+        "groupC2": {
+          "name": "Brooks Koepka",
+          "earnings": 167475,
+          "position": 25,
+          "toPar": -3,
+          "toParDisplay": "-3",
+          "status": "active",
+          "thru": 18
+        },
+        "groupD1": {
+          "name": "Shane Lowry",
+          "earnings": 1092000,
+          "position": 3,
+          "toPar": -9,
+          "toParDisplay": "-9",
+          "status": "active",
+          "thru": 18
+        },
+        "groupD2": {
+          "name": "Corey Conners",
+          "earnings": 53760,
+          "position": 49,
+          "toPar": 6,
+          "toParDisplay": "+6",
+          "status": "active",
+          "thru": 18
+        },
+        "groupE": {
+          "name": "Bubba Watson",
+          "earnings": 0,
+          "position": 58,
+          "toPar": 5,
+          "toParDisplay": "+5",
+          "status": "cut",
+          "thru": 0
+        }
+      },
+      "totalEarnings": 2216760,
       "previousRank": 0,
       "rank": 74
     },
@@ -6178,8 +6178,8 @@
         },
         "groupB2": {
           "name": "Tommy Fleetwood",
-          "earnings": 142800,
-          "position": 28,
+          "earnings": 139650,
+          "position": 29,
           "toPar": -2,
           "toParDisplay": "-2",
           "status": "active",
@@ -6231,7 +6231,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 2115150,
+      "totalEarnings": 2112000,
       "previousRank": 0,
       "rank": 76
     },
@@ -6588,8 +6588,8 @@
         },
         "groupB2": {
           "name": "Tommy Fleetwood",
-          "earnings": 142800,
-          "position": 28,
+          "earnings": 139650,
+          "position": 29,
           "toPar": -2,
           "toParDisplay": "-2",
           "status": "active",
@@ -6597,8 +6597,8 @@
         },
         "groupC1": {
           "name": "Chris Gotterup",
-          "earnings": 142800,
-          "position": 28,
+          "earnings": 139650,
+          "position": 29,
           "toPar": -2,
           "toParDisplay": "-2",
           "status": "active",
@@ -6641,7 +6641,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 1810200,
+      "totalEarnings": 1803900,
       "previousRank": 0,
       "rank": 81
     },
@@ -6688,7 +6688,7 @@
         },
         "groupC2": {
           "name": "Brooks Koepka",
-          "earnings": 171500,
+          "earnings": 167475,
           "position": 25,
           "toPar": -3,
           "toParDisplay": "-3",
@@ -6723,7 +6723,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 1806875,
+      "totalEarnings": 1802850,
       "previousRank": 0,
       "rank": 82
     },
@@ -6770,7 +6770,7 @@
         },
         "groupC2": {
           "name": "Brooks Koepka",
-          "earnings": 171500,
+          "earnings": 167475,
           "position": 25,
           "toPar": -3,
           "toParDisplay": "-3",
@@ -6805,7 +6805,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 1639460,
+      "totalEarnings": 1635435,
       "previousRank": 0,
       "rank": 83
     },
@@ -6843,7 +6843,7 @@
         },
         "groupC1": {
           "name": "Brooks Koepka",
-          "earnings": 171500,
+          "earnings": 167475,
           "position": 25,
           "toPar": -3,
           "toParDisplay": "-3",
@@ -6887,7 +6887,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 1603100,
+      "totalEarnings": 1599075,
       "previousRank": 0,
       "rank": 84
     },
@@ -6934,8 +6934,8 @@
         },
         "groupC2": {
           "name": "Chris Gotterup",
-          "earnings": 142800,
-          "position": 28,
+          "earnings": 139650,
+          "position": 29,
           "toPar": -2,
           "toParDisplay": "-2",
           "status": "active",
@@ -6969,7 +6969,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 1573035,
+      "totalEarnings": 1569885,
       "previousRank": 0,
       "rank": 85
     },
@@ -7080,8 +7080,8 @@
         },
         "groupB2": {
           "name": "Tommy Fleetwood",
-          "earnings": 142800,
-          "position": 28,
+          "earnings": 139650,
+          "position": 29,
           "toPar": -2,
           "toParDisplay": "-2",
           "status": "active",
@@ -7133,7 +7133,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 1413960,
+      "totalEarnings": 1410810,
       "previousRank": 0,
       "rank": 87
     },
@@ -7244,8 +7244,8 @@
         },
         "groupB2": {
           "name": "Tommy Fleetwood",
-          "earnings": 142800,
-          "position": 28,
+          "earnings": 139650,
+          "position": 29,
           "toPar": -2,
           "toParDisplay": "-2",
           "status": "active",
@@ -7253,8 +7253,8 @@
         },
         "groupC1": {
           "name": "Chris Gotterup",
-          "earnings": 142800,
-          "position": 28,
+          "earnings": 139650,
+          "position": 29,
           "toPar": -2,
           "toParDisplay": "-2",
           "status": "active",
@@ -7297,7 +7297,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 1219260,
+      "totalEarnings": 1212960,
       "previousRank": 0,
       "rank": 89
     },
@@ -7326,8 +7326,8 @@
         },
         "groupB2": {
           "name": "Tommy Fleetwood",
-          "earnings": 142800,
-          "position": 28,
+          "earnings": 139650,
+          "position": 29,
           "toPar": -2,
           "toParDisplay": "-2",
           "status": "active",
@@ -7379,7 +7379,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 1100400,
+      "totalEarnings": 1097250,
       "previousRank": 0,
       "rank": 90
     }
