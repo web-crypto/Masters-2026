@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-12T20:18:06Z",
+  "fetchedAt": "2026-04-12T20:24:23Z",
   "tournamentStatus": "in_progress",
   "currentRound": 4,
   "players": [
@@ -21,6 +21,23 @@
       "projectedEarnings": 4200000
     },
     {
+      "espnId": "5553",
+      "name": "Tyrrell Hatton",
+      "amateur": false,
+      "position": 2,
+      "toPar": -10,
+      "toParDisplay": "-10",
+      "rounds": [
+        74,
+        66,
+        72,
+        58
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 1386000
+    },
+    {
       "espnId": "5409",
       "name": "Russell Henley",
       "amateur": false,
@@ -31,11 +48,11 @@
         73,
         71,
         66,
-        36
+        40
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 1568000
+      "projectedEarnings": 1386000
     },
     {
       "espnId": "4425906",
@@ -52,7 +69,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 1568000
+      "projectedEarnings": 1386000
     },
     {
       "espnId": "3470",
@@ -69,30 +86,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 1568000
-    },
-    {
-      "espnId": "5553",
-      "name": "Tyrrell Hatton",
-      "amateur": false,
-      "position": 5,
-      "toPar": -9,
-      "toParDisplay": "-9",
-      "rounds": [
-        74,
-        66,
-        72,
-        56
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 798000
+      "projectedEarnings": 1386000
     },
     {
       "espnId": "9478",
       "name": "Scottie Scheffler",
       "amateur": false,
-      "position": 5,
+      "position": 6,
       "toPar": -9,
       "toParDisplay": "-9",
       "rounds": [
@@ -103,7 +103,24 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 798000
+      "projectedEarnings": 756000
+    },
+    {
+      "espnId": "8973",
+      "name": "Max Homa",
+      "amateur": false,
+      "position": 7,
+      "toPar": -8,
+      "toParDisplay": "-8",
+      "rounds": [
+        72,
+        70,
+        71,
+        67
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 677250
     },
     {
       "espnId": "9938",
@@ -120,30 +137,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 703500
-    },
-    {
-      "espnId": "8973",
-      "name": "Max Homa",
-      "amateur": false,
-      "position": 8,
-      "toPar": -7,
-      "toParDisplay": "-7",
-      "rounds": [
-        72,
-        70,
-        71,
-        64
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 609000
+      "projectedEarnings": 677250
     },
     {
       "espnId": "10140",
       "name": "Xander Schauffele",
       "amateur": false,
-      "position": 8,
+      "position": 9,
       "toPar": -7,
       "toParDisplay": "-7",
       "rounds": [
@@ -154,13 +154,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 609000
+      "projectedEarnings": 588000
     },
     {
       "espnId": "9221",
       "name": "Haotong Li",
       "amateur": false,
-      "position": 8,
+      "position": 9,
       "toPar": -7,
       "toParDisplay": "-7",
       "rounds": [
@@ -171,7 +171,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 609000
+      "projectedEarnings": 588000
     },
     {
       "espnId": "9843",
@@ -188,24 +188,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 483000
-    },
-    {
-      "espnId": "6007",
-      "name": "Patrick Cantlay",
-      "amateur": false,
-      "position": 11,
-      "toPar": -6,
-      "toParDisplay": "-6",
-      "rounds": [
-        77,
-        67,
-        66,
-        40
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 483000
+      "projectedEarnings": 504000
     },
     {
       "espnId": "4587",
@@ -222,13 +205,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 483000
+      "projectedEarnings": 504000
     },
     {
       "espnId": "5467",
       "name": "Jordan Spieth",
       "amateur": false,
-      "position": 14,
+      "position": 13,
       "toPar": -5,
       "toParDisplay": "-5",
       "rounds": [
@@ -239,13 +222,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 367500
+      "projectedEarnings": 360000
     },
     {
       "espnId": "5860",
       "name": "Hideki Matsuyama",
       "amateur": false,
-      "position": 14,
+      "position": 13,
       "toPar": -5,
       "toParDisplay": "-5",
       "rounds": [
@@ -256,47 +239,98 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 367500
+      "projectedEarnings": 360000
+    },
+    {
+      "espnId": "6798",
+      "name": "Brooks Koepka",
+      "amateur": false,
+      "position": 13,
+      "toPar": -5,
+      "toParDisplay": "-5",
+      "rounds": [
+        72,
+        69,
+        71,
+        60
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 360000
+    },
+    {
+      "espnId": "10592",
+      "name": "Collin Morikawa",
+      "amateur": false,
+      "position": 13,
+      "toPar": -5,
+      "toParDisplay": "-5",
+      "rounds": [
+        74,
+        69,
+        68,
+        47
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 360000
     },
     {
       "espnId": "5579",
       "name": "Patrick Reed",
       "amateur": false,
-      "position": 14,
+      "position": 13,
       "toPar": -5,
       "toParDisplay": "-5",
       "rounds": [
         69,
         69,
         72,
+        48
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 360000
+    },
+    {
+      "espnId": "6007",
+      "name": "Patrick Cantlay",
+      "amateur": false,
+      "position": 13,
+      "toPar": -5,
+      "toParDisplay": "-5",
+      "rounds": [
+        77,
+        67,
+        66,
         45
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 367500
+      "projectedEarnings": 360000
     },
     {
       "espnId": "1680",
       "name": "Jason Day",
       "amateur": false,
-      "position": 14,
+      "position": 13,
       "toPar": -5,
       "toParDisplay": "-5",
       "rounds": [
         69,
         71,
         68,
-        35
+        39
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 367500
+      "projectedEarnings": 360000
     },
     {
       "espnId": "9530",
       "name": "Maverick McNealy",
       "amateur": false,
-      "position": 18,
+      "position": 20,
       "toPar": -4,
       "toParDisplay": "-4",
       "rounds": [
@@ -307,13 +341,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 264600
+      "projectedEarnings": 244650
     },
     {
       "espnId": "4364873",
       "name": "Viktor Hovland",
       "amateur": false,
-      "position": 18,
+      "position": 20,
       "toPar": -4,
       "toParDisplay": "-4",
       "rounds": [
@@ -324,30 +358,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 264600
-    },
-    {
-      "espnId": "4375972",
-      "name": "Ludvig \u00c5berg",
-      "amateur": false,
-      "position": 18,
-      "toPar": -4,
-      "toParDisplay": "-4",
-      "rounds": [
-        74,
-        70,
-        69,
-        63
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 264600
+      "projectedEarnings": 244650
     },
     {
       "espnId": "9037",
       "name": "Matt Fitzpatrick",
       "amateur": false,
-      "position": 18,
+      "position": 20,
       "toPar": -4,
       "toParDisplay": "-4",
       "rounds": [
@@ -358,41 +375,24 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 264600
+      "projectedEarnings": 244650
     },
     {
-      "espnId": "6798",
-      "name": "Brooks Koepka",
+      "espnId": "4375972",
+      "name": "Ludvig \u00c5berg",
       "amateur": false,
-      "position": 18,
-      "toPar": -4,
-      "toParDisplay": "-4",
-      "rounds": [
-        72,
-        69,
-        71,
-        56
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 264600
-    },
-    {
-      "espnId": "10592",
-      "name": "Collin Morikawa",
-      "amateur": false,
-      "position": 18,
+      "position": 20,
       "toPar": -4,
       "toParDisplay": "-4",
       "rounds": [
         74,
+        70,
         69,
-        68,
-        45
+        63
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 264600
+      "projectedEarnings": 244650
     },
     {
       "espnId": "4513",
@@ -443,7 +443,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 149100
+      "projectedEarnings": 145950
     },
     {
       "espnId": "388",
@@ -460,7 +460,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 149100
+      "projectedEarnings": 145950
     },
     {
       "espnId": "4426181",
@@ -477,7 +477,24 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 149100
+      "projectedEarnings": 145950
+    },
+    {
+      "espnId": "4921329",
+      "name": "Michael Brennan",
+      "amateur": false,
+      "position": 26,
+      "toPar": -2,
+      "toParDisplay": "-2",
+      "rounds": [
+        72,
+        71,
+        70,
+        73
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 145950
     },
     {
       "espnId": "4690755",
@@ -494,24 +511,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 149100
-    },
-    {
-      "espnId": "4921329",
-      "name": "Michael Brennan",
-      "amateur": false,
-      "position": 26,
-      "toPar": -2,
-      "toParDisplay": "-2",
-      "rounds": [
-        72,
-        71,
-        70,
-        69
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 149100
+      "projectedEarnings": 145950
     },
     {
       "espnId": "9525",
@@ -528,7 +528,24 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 149100
+      "projectedEarnings": 145950
+    },
+    {
+      "espnId": "5539",
+      "name": "Tommy Fleetwood",
+      "amateur": false,
+      "position": 26,
+      "toPar": -2,
+      "toParDisplay": "-2",
+      "rounds": [
+        71,
+        68,
+        73,
+        66
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 145950
     },
     {
       "espnId": "11119",
@@ -545,13 +562,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 149100
+      "projectedEarnings": 145950
     },
     {
       "espnId": "3832",
       "name": "Alex Noren",
       "amateur": false,
-      "position": 33,
+      "position": 34,
       "toPar": -1,
       "toParDisplay": "-1",
       "rounds": [
@@ -562,13 +579,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 118650
+      "projectedEarnings": 116025
     },
     {
       "espnId": "5408",
       "name": "Harris English",
       "amateur": false,
-      "position": 33,
+      "position": 34,
       "toPar": -1,
       "toParDisplay": "-1",
       "rounds": [
@@ -579,24 +596,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 118650
-    },
-    {
-      "espnId": "5539",
-      "name": "Tommy Fleetwood",
-      "amateur": false,
-      "position": 33,
-      "toPar": -1,
-      "toParDisplay": "-1",
-      "rounds": [
-        71,
-        68,
-        73,
-        64
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 118650
+      "projectedEarnings": 116025
     },
     {
       "espnId": "3550",
@@ -681,7 +681,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 79800
+      "projectedEarnings": 81900
     },
     {
       "espnId": "5054388",
@@ -698,7 +698,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 79800
+      "projectedEarnings": 81900
     },
     {
       "espnId": "8961",
@@ -715,7 +715,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 79800
+      "projectedEarnings": 81900
     },
     {
       "espnId": "4348470",
@@ -732,24 +732,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 79800
-    },
-    {
-      "espnId": "3792",
-      "name": "Nick Taylor",
-      "amateur": false,
-      "position": 40,
-      "toPar": 2,
-      "toParDisplay": "+2",
-      "rounds": [
-        71,
-        72,
-        70,
-        69
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 79800
+      "projectedEarnings": 81900
     },
     {
       "espnId": "5076021",
@@ -766,13 +749,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 79800
+      "projectedEarnings": 81900
     },
     {
       "espnId": "11382",
       "name": "Sungjae Im",
       "amateur": false,
-      "position": 46,
+      "position": 45,
       "toPar": 3,
       "toParDisplay": "+3",
       "rounds": [
@@ -783,7 +766,24 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 65100
+      "projectedEarnings": 67200
+    },
+    {
+      "espnId": "3792",
+      "name": "Nick Taylor",
+      "amateur": false,
+      "position": 45,
+      "toPar": 3,
+      "toParDisplay": "+3",
+      "rounds": [
+        71,
+        72,
+        70,
+        74
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 67200
     },
     {
       "espnId": "7081",
