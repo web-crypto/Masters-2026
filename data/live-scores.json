@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-12T22:42:07Z",
+  "fetchedAt": "2026-04-12T22:45:41Z",
   "tournamentStatus": "in_progress",
   "currentRound": 4,
   "players": [
@@ -133,7 +133,7 @@
         67,
         71,
         68,
-        69
+        73
       ],
       "status": "active",
       "thru": 18,
@@ -409,7 +409,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 166200
+      "projectedEarnings": 170100
     },
     {
       "espnId": "388",
@@ -426,7 +426,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 166200
+      "projectedEarnings": 170100
     },
     {
       "espnId": "4426181",
@@ -443,7 +443,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 166200
+      "projectedEarnings": 170100
     },
     {
       "espnId": "9525",
@@ -460,7 +460,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 166200
+      "projectedEarnings": 170100
     },
     {
       "espnId": "4921329",
@@ -477,7 +477,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 166200
+      "projectedEarnings": 170100
     },
     {
       "espnId": "4690755",
@@ -494,30 +494,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 166200
-    },
-    {
-      "espnId": "4587",
-      "name": "Shane Lowry",
-      "amateur": false,
-      "position": 24,
-      "toPar": -2,
-      "toParDisplay": "-2",
-      "rounds": [
-        70,
-        69,
-        68,
-        75
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 166200
+      "projectedEarnings": 170100
     },
     {
       "espnId": "3832",
       "name": "Alex Noren",
       "amateur": false,
-      "position": 31,
+      "position": 30,
       "toPar": -1,
       "toParDisplay": "-1",
       "rounds": [
@@ -528,13 +511,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 133350
+      "projectedEarnings": 136500
     },
     {
       "espnId": "5408",
       "name": "Harris English",
       "amateur": false,
-      "position": 31,
+      "position": 30,
       "toPar": -1,
       "toParDisplay": "-1",
       "rounds": [
@@ -545,7 +528,24 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 133350
+      "projectedEarnings": 136500
+    },
+    {
+      "espnId": "4587",
+      "name": "Shane Lowry",
+      "amateur": false,
+      "position": 30,
+      "toPar": -1,
+      "toParDisplay": "-1",
+      "rounds": [
+        70,
+        69,
+        68,
+        80
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 136500
     },
     {
       "espnId": "3550",

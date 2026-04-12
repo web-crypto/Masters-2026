@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-12T22:42:07Z",
+  "fetchedAt": "2026-04-12T22:45:41Z",
   "tournamentStatus": "in_progress",
   "currentRound": 4,
   "entries": [
@@ -55,10 +55,10 @@
         },
         "groupD1": {
           "name": "Shane Lowry",
-          "earnings": 166200,
-          "position": 24,
-          "toPar": -2,
-          "toParDisplay": "-2",
+          "earnings": 136500,
+          "position": 30,
+          "toPar": -1,
+          "toParDisplay": "-1",
           "status": "active",
           "thru": 18
         },
@@ -81,7 +81,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 7684200,
+      "totalEarnings": 7654500,
       "previousRank": 0,
       "rank": 1
     },
@@ -456,7 +456,7 @@
         },
         "groupC2": {
           "name": "Chris Gotterup",
-          "earnings": 166200,
+          "earnings": 170100,
           "position": 24,
           "toPar": -2,
           "toParDisplay": "-2",
@@ -491,7 +491,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 6362250,
+      "totalEarnings": 6366150,
       "previousRank": 0,
       "rank": 6
     },
@@ -711,10 +711,10 @@
         },
         "groupD1": {
           "name": "Shane Lowry",
-          "earnings": 166200,
-          "position": 24,
-          "toPar": -2,
-          "toParDisplay": "-2",
+          "earnings": 136500,
+          "position": 30,
+          "toPar": -1,
+          "toParDisplay": "-1",
           "status": "active",
           "thru": 18
         },
@@ -737,7 +737,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 5954850,
+      "totalEarnings": 5925150,
       "previousRank": 0,
       "rank": 9
     },
@@ -793,10 +793,10 @@
         },
         "groupD1": {
           "name": "Shane Lowry",
-          "earnings": 166200,
-          "position": 24,
-          "toPar": -2,
-          "toParDisplay": "-2",
+          "earnings": 136500,
+          "position": 30,
+          "toPar": -1,
+          "toParDisplay": "-1",
           "status": "active",
           "thru": 18
         },
@@ -819,7 +819,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 5949600,
+      "totalEarnings": 5919900,
       "previousRank": 0,
       "rank": 10
     },
@@ -1358,7 +1358,7 @@
         },
         "groupC2": {
           "name": "Chris Gotterup",
-          "earnings": 166200,
+          "earnings": 170100,
           "position": 24,
           "toPar": -2,
           "toParDisplay": "-2",
@@ -1393,7 +1393,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 5668200,
+      "totalEarnings": 5672100,
       "previousRank": 0,
       "rank": 17
     },
@@ -1449,10 +1449,10 @@
         },
         "groupD1": {
           "name": "Shane Lowry",
-          "earnings": 166200,
-          "position": 24,
-          "toPar": -2,
-          "toParDisplay": "-2",
+          "earnings": 136500,
+          "position": 30,
+          "toPar": -1,
+          "toParDisplay": "-1",
           "status": "active",
           "thru": 18
         },
@@ -1475,7 +1475,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 5547660,
+      "totalEarnings": 5517960,
       "previousRank": 0,
       "rank": 18
     },
@@ -1549,15 +1549,15 @@
         },
         "groupE": {
           "name": "Harry English",
-          "earnings": 133350,
-          "position": 31,
+          "earnings": 136500,
+          "position": 30,
           "toPar": -1,
           "toParDisplay": "-1",
           "status": "active",
           "thru": 18
         }
       },
-      "totalEarnings": 5514810,
+      "totalEarnings": 5517960,
       "previousRank": 0,
       "rank": 19
     },
@@ -1686,7 +1686,7 @@
         },
         "groupC2": {
           "name": "Chris Gotterup",
-          "earnings": 166200,
+          "earnings": 170100,
           "position": 24,
           "toPar": -2,
           "toParDisplay": "-2",
@@ -1721,7 +1721,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 5447700,
+      "totalEarnings": 5451600,
       "previousRank": 0,
       "rank": 21
     },
@@ -1859,10 +1859,10 @@
         },
         "groupD1": {
           "name": "Shane Lowry",
-          "earnings": 166200,
-          "position": 24,
-          "toPar": -2,
-          "toParDisplay": "-2",
+          "earnings": 136500,
+          "position": 30,
+          "toPar": -1,
+          "toParDisplay": "-1",
           "status": "active",
           "thru": 18
         },
@@ -1877,15 +1877,15 @@
         },
         "groupE": {
           "name": "Harry English",
-          "earnings": 133350,
-          "position": 31,
+          "earnings": 136500,
+          "position": 30,
           "toPar": -1,
           "toParDisplay": "-1",
           "status": "active",
           "thru": 18
         }
       },
-      "totalEarnings": 5217750,
+      "totalEarnings": 5191200,
       "previousRank": 0,
       "rank": 23
     },
@@ -1941,10 +1941,10 @@
         },
         "groupD1": {
           "name": "Shane Lowry",
-          "earnings": 166200,
-          "position": 24,
-          "toPar": -2,
-          "toParDisplay": "-2",
+          "earnings": 136500,
+          "position": 30,
+          "toPar": -1,
+          "toParDisplay": "-1",
           "status": "active",
           "thru": 18
         },
@@ -1967,7 +1967,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 5167350,
+      "totalEarnings": 5137650,
       "previousRank": 0,
       "rank": 24
     },
@@ -2023,10 +2023,10 @@
         },
         "groupD1": {
           "name": "Shane Lowry",
-          "earnings": 166200,
-          "position": 24,
-          "toPar": -2,
-          "toParDisplay": "-2",
+          "earnings": 136500,
+          "position": 30,
+          "toPar": -1,
+          "toParDisplay": "-1",
           "status": "active",
           "thru": 18
         },
@@ -2049,7 +2049,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 5073900,
+      "totalEarnings": 5044200,
       "previousRank": 0,
       "rank": 25
     },
@@ -2105,10 +2105,10 @@
         },
         "groupD1": {
           "name": "Shane Lowry",
-          "earnings": 166200,
-          "position": 24,
-          "toPar": -2,
-          "toParDisplay": "-2",
+          "earnings": 136500,
+          "position": 30,
+          "toPar": -1,
+          "toParDisplay": "-1",
           "status": "active",
           "thru": 18
         },
@@ -2131,7 +2131,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 5047650,
+      "totalEarnings": 5017950,
       "previousRank": 0,
       "rank": 26
     },
@@ -2369,15 +2369,15 @@
         },
         "groupE": {
           "name": "Harry English",
-          "earnings": 133350,
-          "position": 31,
+          "earnings": 136500,
+          "position": 30,
           "toPar": -1,
           "toParDisplay": "-1",
           "status": "active",
           "thru": 18
         }
       },
-      "totalEarnings": 4857300,
+      "totalEarnings": 4860450,
       "previousRank": 0,
       "rank": 29
     },
@@ -2442,7 +2442,7 @@
         },
         "groupD2": {
           "name": "Adam Scott",
-          "earnings": 166200,
+          "earnings": 170100,
           "position": 24,
           "toPar": -2,
           "toParDisplay": "-2",
@@ -2459,7 +2459,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 4753650,
+      "totalEarnings": 4757550,
       "previousRank": 0,
       "rank": 30
     },
@@ -2524,10 +2524,10 @@
         },
         "groupD2": {
           "name": "Shane Lowry",
-          "earnings": 166200,
-          "position": 24,
-          "toPar": -2,
-          "toParDisplay": "-2",
+          "earnings": 136500,
+          "position": 30,
+          "toPar": -1,
+          "toParDisplay": "-1",
           "status": "active",
           "thru": 18
         },
@@ -2541,91 +2541,9 @@
           "thru": 18
         }
       },
-      "totalEarnings": 4741050,
+      "totalEarnings": 4711350,
       "previousRank": 0,
       "rank": 31
-    },
-    {
-      "id": 71,
-      "name": "Arnprior Bob",
-      "owner": "Arnprior Bob",
-      "players": {
-        "groupA": {
-          "name": "Scottie Scheffler",
-          "earnings": 2268000,
-          "position": 2,
-          "toPar": -11,
-          "toParDisplay": "-11",
-          "status": "active",
-          "thru": 18
-        },
-        "groupB1": {
-          "name": "Ludvig \u00c5berg",
-          "earnings": 235200,
-          "position": 21,
-          "toPar": -3,
-          "toParDisplay": "-3",
-          "status": "active",
-          "thru": 18
-        },
-        "groupB2": {
-          "name": "Xander Schauffele",
-          "earnings": 588000,
-          "position": 9,
-          "toPar": -8,
-          "toParDisplay": "-8",
-          "status": "active",
-          "thru": 18
-        },
-        "groupC1": {
-          "name": "Justin Thomas",
-          "earnings": 77700,
-          "position": 41,
-          "toPar": 2,
-          "toParDisplay": "+2",
-          "status": "active",
-          "thru": 18
-        },
-        "groupC2": {
-          "name": "Robert MacIntyre",
-          "earnings": 0,
-          "position": 64,
-          "toPar": 7,
-          "toParDisplay": "+7",
-          "status": "cut",
-          "thru": 0
-        },
-        "groupD1": {
-          "name": "Shane Lowry",
-          "earnings": 166200,
-          "position": 24,
-          "toPar": -2,
-          "toParDisplay": "-2",
-          "status": "active",
-          "thru": 18
-        },
-        "groupD2": {
-          "name": "Tyrell Hatton",
-          "earnings": 1008000,
-          "position": 3,
-          "toPar": -10,
-          "toParDisplay": "-10",
-          "status": "active",
-          "thru": 18
-        },
-        "groupE": {
-          "name": "Maverick McNealy",
-          "earnings": 294000,
-          "position": 18,
-          "toPar": -4,
-          "toParDisplay": "-4",
-          "status": "active",
-          "thru": 18
-        }
-      },
-      "totalEarnings": 4637100,
-      "previousRank": 0,
-      "rank": 32
     },
     {
       "id": 77,
@@ -2706,6 +2624,88 @@
         }
       },
       "totalEarnings": 4629660,
+      "previousRank": 0,
+      "rank": 32
+    },
+    {
+      "id": 71,
+      "name": "Arnprior Bob",
+      "owner": "Arnprior Bob",
+      "players": {
+        "groupA": {
+          "name": "Scottie Scheffler",
+          "earnings": 2268000,
+          "position": 2,
+          "toPar": -11,
+          "toParDisplay": "-11",
+          "status": "active",
+          "thru": 18
+        },
+        "groupB1": {
+          "name": "Ludvig \u00c5berg",
+          "earnings": 235200,
+          "position": 21,
+          "toPar": -3,
+          "toParDisplay": "-3",
+          "status": "active",
+          "thru": 18
+        },
+        "groupB2": {
+          "name": "Xander Schauffele",
+          "earnings": 588000,
+          "position": 9,
+          "toPar": -8,
+          "toParDisplay": "-8",
+          "status": "active",
+          "thru": 18
+        },
+        "groupC1": {
+          "name": "Justin Thomas",
+          "earnings": 77700,
+          "position": 41,
+          "toPar": 2,
+          "toParDisplay": "+2",
+          "status": "active",
+          "thru": 18
+        },
+        "groupC2": {
+          "name": "Robert MacIntyre",
+          "earnings": 0,
+          "position": 64,
+          "toPar": 7,
+          "toParDisplay": "+7",
+          "status": "cut",
+          "thru": 0
+        },
+        "groupD1": {
+          "name": "Shane Lowry",
+          "earnings": 136500,
+          "position": 30,
+          "toPar": -1,
+          "toParDisplay": "-1",
+          "status": "active",
+          "thru": 18
+        },
+        "groupD2": {
+          "name": "Tyrell Hatton",
+          "earnings": 1008000,
+          "position": 3,
+          "toPar": -10,
+          "toParDisplay": "-10",
+          "status": "active",
+          "thru": 18
+        },
+        "groupE": {
+          "name": "Maverick McNealy",
+          "earnings": 294000,
+          "position": 18,
+          "toPar": -4,
+          "toParDisplay": "-4",
+          "status": "active",
+          "thru": 18
+        }
+      },
+      "totalEarnings": 4607400,
       "previousRank": 0,
       "rank": 33
     },
@@ -2834,7 +2834,7 @@
         },
         "groupC2": {
           "name": "Chris Gotterup",
-          "earnings": 166200,
+          "earnings": 170100,
           "position": 24,
           "toPar": -2,
           "toParDisplay": "-2",
@@ -2852,7 +2852,7 @@
         },
         "groupD2": {
           "name": "Adam Scott",
-          "earnings": 166200,
+          "earnings": 170100,
           "position": 24,
           "toPar": -2,
           "toParDisplay": "-2",
@@ -2869,7 +2869,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 4558650,
+      "totalEarnings": 4566450,
       "previousRank": 0,
       "rank": 35
     },
@@ -2943,15 +2943,15 @@
         },
         "groupE": {
           "name": "Harry English",
-          "earnings": 133350,
-          "position": 31,
+          "earnings": 136500,
+          "position": 30,
           "toPar": -1,
           "toParDisplay": "-1",
           "status": "active",
           "thru": 18
         }
       },
-      "totalEarnings": 4509750,
+      "totalEarnings": 4512900,
       "previousRank": 0,
       "rank": 36
     },
@@ -3736,7 +3736,7 @@
         },
         "groupC2": {
           "name": "Chris Gotterup",
-          "earnings": 166200,
+          "earnings": 170100,
           "position": 24,
           "toPar": -2,
           "toParDisplay": "-2",
@@ -3763,15 +3763,15 @@
         },
         "groupE": {
           "name": "Harry English",
-          "earnings": 133350,
-          "position": 31,
+          "earnings": 136500,
+          "position": 30,
           "toPar": -1,
           "toParDisplay": "-1",
           "status": "active",
           "thru": 18
         }
       },
-      "totalEarnings": 4158510,
+      "totalEarnings": 4165560,
       "previousRank": 0,
       "rank": 46
     },
@@ -3836,7 +3836,7 @@
         },
         "groupD2": {
           "name": "Adam Scott",
-          "earnings": 166200,
+          "earnings": 170100,
           "position": 24,
           "toPar": -2,
           "toParDisplay": "-2",
@@ -3845,99 +3845,17 @@
         },
         "groupE": {
           "name": "Harry English",
-          "earnings": 133350,
-          "position": 31,
+          "earnings": 136500,
+          "position": 30,
           "toPar": -1,
           "toParDisplay": "-1",
           "status": "active",
           "thru": 18
         }
       },
-      "totalEarnings": 4158510,
+      "totalEarnings": 4165560,
       "previousRank": 0,
       "rank": 47
-    },
-    {
-      "id": 20,
-      "name": "David Belcastro",
-      "owner": "David Belcastro",
-      "players": {
-        "groupA": {
-          "name": "Scottie Scheffler",
-          "earnings": 2268000,
-          "position": 2,
-          "toPar": -11,
-          "toParDisplay": "-11",
-          "status": "active",
-          "thru": 18
-        },
-        "groupB1": {
-          "name": "Ludvig \u00c5berg",
-          "earnings": 235200,
-          "position": 21,
-          "toPar": -3,
-          "toParDisplay": "-3",
-          "status": "active",
-          "thru": 18
-        },
-        "groupB2": {
-          "name": "Matt Fitzpatrick",
-          "earnings": 294000,
-          "position": 18,
-          "toPar": -4,
-          "toParDisplay": "-4",
-          "status": "active",
-          "thru": 18
-        },
-        "groupC1": {
-          "name": "Justin Rose",
-          "earnings": 1008000,
-          "position": 3,
-          "toPar": -10,
-          "toParDisplay": "-10",
-          "status": "active",
-          "thru": 18
-        },
-        "groupC2": {
-          "name": "Robert MacIntyre",
-          "earnings": 0,
-          "position": 64,
-          "toPar": 7,
-          "toParDisplay": "+7",
-          "status": "cut",
-          "thru": 0
-        },
-        "groupD1": {
-          "name": "Shane Lowry",
-          "earnings": 166200,
-          "position": 24,
-          "toPar": -2,
-          "toParDisplay": "-2",
-          "status": "active",
-          "thru": 18
-        },
-        "groupD2": {
-          "name": "Corey Conners",
-          "earnings": 53760,
-          "position": 49,
-          "toPar": 6,
-          "toParDisplay": "+6",
-          "status": "active",
-          "thru": 18
-        },
-        "groupE": {
-          "name": "Dustin Johnson",
-          "earnings": 113400,
-          "position": 33,
-          "toPar": 0,
-          "toParDisplay": "E",
-          "status": "active",
-          "thru": 18
-        }
-      },
-      "totalEarnings": 4138560,
-      "previousRank": 0,
-      "rank": 48
     },
     {
       "id": 56,
@@ -4019,7 +3937,7 @@
       },
       "totalEarnings": 4123560,
       "previousRank": 0,
-      "rank": 49
+      "rank": 48
     },
     {
       "id": 87,
@@ -4100,6 +4018,88 @@
         }
       },
       "totalEarnings": 4116000,
+      "previousRank": 0,
+      "rank": 49
+    },
+    {
+      "id": 20,
+      "name": "David Belcastro",
+      "owner": "David Belcastro",
+      "players": {
+        "groupA": {
+          "name": "Scottie Scheffler",
+          "earnings": 2268000,
+          "position": 2,
+          "toPar": -11,
+          "toParDisplay": "-11",
+          "status": "active",
+          "thru": 18
+        },
+        "groupB1": {
+          "name": "Ludvig \u00c5berg",
+          "earnings": 235200,
+          "position": 21,
+          "toPar": -3,
+          "toParDisplay": "-3",
+          "status": "active",
+          "thru": 18
+        },
+        "groupB2": {
+          "name": "Matt Fitzpatrick",
+          "earnings": 294000,
+          "position": 18,
+          "toPar": -4,
+          "toParDisplay": "-4",
+          "status": "active",
+          "thru": 18
+        },
+        "groupC1": {
+          "name": "Justin Rose",
+          "earnings": 1008000,
+          "position": 3,
+          "toPar": -10,
+          "toParDisplay": "-10",
+          "status": "active",
+          "thru": 18
+        },
+        "groupC2": {
+          "name": "Robert MacIntyre",
+          "earnings": 0,
+          "position": 64,
+          "toPar": 7,
+          "toParDisplay": "+7",
+          "status": "cut",
+          "thru": 0
+        },
+        "groupD1": {
+          "name": "Shane Lowry",
+          "earnings": 136500,
+          "position": 30,
+          "toPar": -1,
+          "toParDisplay": "-1",
+          "status": "active",
+          "thru": 18
+        },
+        "groupD2": {
+          "name": "Corey Conners",
+          "earnings": 53760,
+          "position": 49,
+          "toPar": 6,
+          "toParDisplay": "+6",
+          "status": "active",
+          "thru": 18
+        },
+        "groupE": {
+          "name": "Dustin Johnson",
+          "earnings": 113400,
+          "position": 33,
+          "toPar": 0,
+          "toParDisplay": "E",
+          "status": "active",
+          "thru": 18
+        }
+      },
+      "totalEarnings": 4108860,
       "previousRank": 0,
       "rank": 50
     },
@@ -4392,7 +4392,7 @@
         },
         "groupC2": {
           "name": "Chris Gotterup",
-          "earnings": 166200,
+          "earnings": 170100,
           "position": 24,
           "toPar": -2,
           "toParDisplay": "-2",
@@ -4401,10 +4401,10 @@
         },
         "groupD1": {
           "name": "Shane Lowry",
-          "earnings": 166200,
-          "position": 24,
-          "toPar": -2,
-          "toParDisplay": "-2",
+          "earnings": 136500,
+          "position": 30,
+          "toPar": -1,
+          "toParDisplay": "-1",
           "status": "active",
           "thru": 18
         },
@@ -4427,7 +4427,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 3884760,
+      "totalEarnings": 3858960,
       "previousRank": 0,
       "rank": 54
     },
@@ -4483,10 +4483,10 @@
         },
         "groupD1": {
           "name": "Shane Lowry",
-          "earnings": 166200,
-          "position": 24,
-          "toPar": -2,
-          "toParDisplay": "-2",
+          "earnings": 136500,
+          "position": 30,
+          "toPar": -1,
+          "toParDisplay": "-1",
           "status": "active",
           "thru": 18
         },
@@ -4509,7 +4509,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 3760560,
+      "totalEarnings": 3730860,
       "previousRank": 0,
       "rank": 55
     },
@@ -4647,16 +4647,16 @@
         },
         "groupD1": {
           "name": "Shane Lowry",
-          "earnings": 166200,
-          "position": 24,
-          "toPar": -2,
-          "toParDisplay": "-2",
+          "earnings": 136500,
+          "position": 30,
+          "toPar": -1,
+          "toParDisplay": "-1",
           "status": "active",
           "thru": 18
         },
         "groupD2": {
           "name": "Adam Scott",
-          "earnings": 166200,
+          "earnings": 170100,
           "position": 24,
           "toPar": -2,
           "toParDisplay": "-2",
@@ -4673,7 +4673,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 3700800,
+      "totalEarnings": 3675000,
       "previousRank": 0,
       "rank": 57
     },
@@ -4729,10 +4729,10 @@
         },
         "groupD1": {
           "name": "Shane Lowry",
-          "earnings": 166200,
-          "position": 24,
-          "toPar": -2,
-          "toParDisplay": "-2",
+          "earnings": 136500,
+          "position": 30,
+          "toPar": -1,
+          "toParDisplay": "-1",
           "status": "active",
           "thru": 18
         },
@@ -4755,7 +4755,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 3675300,
+      "totalEarnings": 3645600,
       "previousRank": 0,
       "rank": 58
     },
@@ -4811,10 +4811,10 @@
         },
         "groupD1": {
           "name": "Shane Lowry",
-          "earnings": 166200,
-          "position": 24,
-          "toPar": -2,
-          "toParDisplay": "-2",
+          "earnings": 136500,
+          "position": 30,
+          "toPar": -1,
+          "toParDisplay": "-1",
           "status": "active",
           "thru": 18
         },
@@ -4837,7 +4837,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 3634560,
+      "totalEarnings": 3604860,
       "previousRank": 0,
       "rank": 59
     },
@@ -5449,7 +5449,7 @@
         },
         "groupC1": {
           "name": "Chris Gotterup",
-          "earnings": 166200,
+          "earnings": 170100,
           "position": 24,
           "toPar": -2,
           "toParDisplay": "-2",
@@ -5493,7 +5493,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 3213300,
+      "totalEarnings": 3217200,
       "previousRank": 0,
       "rank": 67
     },
@@ -5713,10 +5713,10 @@
         },
         "groupD1": {
           "name": "Shane Lowry",
-          "earnings": 166200,
-          "position": 24,
-          "toPar": -2,
-          "toParDisplay": "-2",
+          "earnings": 136500,
+          "position": 30,
+          "toPar": -1,
+          "toParDisplay": "-1",
           "status": "active",
           "thru": 18
         },
@@ -5739,7 +5739,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 2921400,
+      "totalEarnings": 2891700,
       "previousRank": 0,
       "rank": 70
     },
@@ -5877,16 +5877,16 @@
         },
         "groupD1": {
           "name": "Shane Lowry",
-          "earnings": 166200,
-          "position": 24,
-          "toPar": -2,
-          "toParDisplay": "-2",
+          "earnings": 136500,
+          "position": 30,
+          "toPar": -1,
+          "toParDisplay": "-1",
           "status": "active",
           "thru": 18
         },
         "groupD2": {
           "name": "Adam Scott",
-          "earnings": 166200,
+          "earnings": 170100,
           "position": 24,
           "toPar": -2,
           "toParDisplay": "-2",
@@ -5903,91 +5903,9 @@
           "thru": 0
         }
       },
-      "totalEarnings": 2651850,
+      "totalEarnings": 2626050,
       "previousRank": 0,
       "rank": 72
-    },
-    {
-      "id": 49,
-      "name": "Far from Par",
-      "owner": "Far from Par",
-      "players": {
-        "groupA": {
-          "name": "Bryson DeChambeau",
-          "earnings": 0,
-          "position": 61,
-          "toPar": 6,
-          "toParDisplay": "+6",
-          "status": "cut",
-          "thru": 0
-        },
-        "groupB1": {
-          "name": "Ludvig \u00c5berg",
-          "earnings": 235200,
-          "position": 21,
-          "toPar": -3,
-          "toParDisplay": "-3",
-          "status": "active",
-          "thru": 18
-        },
-        "groupB2": {
-          "name": "Cameron Young",
-          "earnings": 1008000,
-          "position": 3,
-          "toPar": -10,
-          "toParDisplay": "-10",
-          "status": "active",
-          "thru": 18
-        },
-        "groupC1": {
-          "name": "Justin Rose",
-          "earnings": 1008000,
-          "position": 3,
-          "toPar": -10,
-          "toParDisplay": "-10",
-          "status": "active",
-          "thru": 18
-        },
-        "groupC2": {
-          "name": "Robert MacIntyre",
-          "earnings": 0,
-          "position": 64,
-          "toPar": 7,
-          "toParDisplay": "+7",
-          "status": "cut",
-          "thru": 0
-        },
-        "groupD1": {
-          "name": "Shane Lowry",
-          "earnings": 166200,
-          "position": 24,
-          "toPar": -2,
-          "toParDisplay": "-2",
-          "status": "active",
-          "thru": 18
-        },
-        "groupD2": {
-          "name": "Sepp Straka",
-          "earnings": 77700,
-          "position": 41,
-          "toPar": 2,
-          "toParDisplay": "+2",
-          "status": "active",
-          "thru": 18
-        },
-        "groupE": {
-          "name": "JJ Spaun",
-          "earnings": 0,
-          "position": 59,
-          "toPar": 5,
-          "toParDisplay": "+5",
-          "status": "cut",
-          "thru": 0
-        }
-      },
-      "totalEarnings": 2495100,
-      "previousRank": 0,
-      "rank": 73
     },
     {
       "id": 18,
@@ -6069,6 +5987,88 @@
       },
       "totalEarnings": 2493750,
       "previousRank": 0,
+      "rank": 73
+    },
+    {
+      "id": 49,
+      "name": "Far from Par",
+      "owner": "Far from Par",
+      "players": {
+        "groupA": {
+          "name": "Bryson DeChambeau",
+          "earnings": 0,
+          "position": 61,
+          "toPar": 6,
+          "toParDisplay": "+6",
+          "status": "cut",
+          "thru": 0
+        },
+        "groupB1": {
+          "name": "Ludvig \u00c5berg",
+          "earnings": 235200,
+          "position": 21,
+          "toPar": -3,
+          "toParDisplay": "-3",
+          "status": "active",
+          "thru": 18
+        },
+        "groupB2": {
+          "name": "Cameron Young",
+          "earnings": 1008000,
+          "position": 3,
+          "toPar": -10,
+          "toParDisplay": "-10",
+          "status": "active",
+          "thru": 18
+        },
+        "groupC1": {
+          "name": "Justin Rose",
+          "earnings": 1008000,
+          "position": 3,
+          "toPar": -10,
+          "toParDisplay": "-10",
+          "status": "active",
+          "thru": 18
+        },
+        "groupC2": {
+          "name": "Robert MacIntyre",
+          "earnings": 0,
+          "position": 64,
+          "toPar": 7,
+          "toParDisplay": "+7",
+          "status": "cut",
+          "thru": 0
+        },
+        "groupD1": {
+          "name": "Shane Lowry",
+          "earnings": 136500,
+          "position": 30,
+          "toPar": -1,
+          "toParDisplay": "-1",
+          "status": "active",
+          "thru": 18
+        },
+        "groupD2": {
+          "name": "Sepp Straka",
+          "earnings": 77700,
+          "position": 41,
+          "toPar": 2,
+          "toParDisplay": "+2",
+          "status": "active",
+          "thru": 18
+        },
+        "groupE": {
+          "name": "JJ Spaun",
+          "earnings": 0,
+          "position": 59,
+          "toPar": 5,
+          "toParDisplay": "+5",
+          "status": "cut",
+          "thru": 0
+        }
+      },
+      "totalEarnings": 2465400,
+      "previousRank": 0,
       "rank": 74
     },
     {
@@ -6114,7 +6114,7 @@
         },
         "groupC2": {
           "name": "Chris Gotterup",
-          "earnings": 166200,
+          "earnings": 170100,
           "position": 24,
           "toPar": -2,
           "toParDisplay": "-2",
@@ -6123,10 +6123,10 @@
         },
         "groupD1": {
           "name": "Shane Lowry",
-          "earnings": 166200,
-          "position": 24,
-          "toPar": -2,
-          "toParDisplay": "-2",
+          "earnings": 136500,
+          "position": 30,
+          "toPar": -1,
+          "toParDisplay": "-1",
           "status": "active",
           "thru": 18
         },
@@ -6149,7 +6149,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 2371500,
+      "totalEarnings": 2345700,
       "previousRank": 0,
       "rank": 75
     },
@@ -6196,7 +6196,7 @@
         },
         "groupC2": {
           "name": "Chris Gotterup",
-          "earnings": 166200,
+          "earnings": 170100,
           "position": 24,
           "toPar": -2,
           "toParDisplay": "-2",
@@ -6231,7 +6231,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 2161200,
+      "totalEarnings": 2165100,
       "previousRank": 0,
       "rank": 76
     },
@@ -6278,7 +6278,7 @@
         },
         "groupC2": {
           "name": "Chris Gotterup",
-          "earnings": 166200,
+          "earnings": 170100,
           "position": 24,
           "toPar": -2,
           "toParDisplay": "-2",
@@ -6313,7 +6313,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 2156160,
+      "totalEarnings": 2160060,
       "previousRank": 0,
       "rank": 77
     },
@@ -6606,7 +6606,7 @@
         },
         "groupC2": {
           "name": "Chris Gotterup",
-          "earnings": 166200,
+          "earnings": 170100,
           "position": 24,
           "toPar": -2,
           "toParDisplay": "-2",
@@ -6641,7 +6641,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 1918860,
+      "totalEarnings": 1922760,
       "previousRank": 0,
       "rank": 81
     },
@@ -6697,10 +6697,10 @@
         },
         "groupD1": {
           "name": "Shane Lowry",
-          "earnings": 166200,
-          "position": 24,
-          "toPar": -2,
-          "toParDisplay": "-2",
+          "earnings": 136500,
+          "position": 30,
+          "toPar": -1,
+          "toParDisplay": "-1",
           "status": "active",
           "thru": 18
         },
@@ -6723,7 +6723,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 1834860,
+      "totalEarnings": 1805160,
       "previousRank": 0,
       "rank": 82
     },
@@ -6852,7 +6852,7 @@
         },
         "groupC2": {
           "name": "Chris Gotterup",
-          "earnings": 166200,
+          "earnings": 170100,
           "position": 24,
           "toPar": -2,
           "toParDisplay": "-2",
@@ -6887,7 +6887,7 @@
           "thru": 0
         }
       },
-      "totalEarnings": 1757160,
+      "totalEarnings": 1761060,
       "previousRank": 0,
       "rank": 84
     },
@@ -7189,10 +7189,10 @@
         },
         "groupD1": {
           "name": "Shane Lowry",
-          "earnings": 166200,
-          "position": 24,
-          "toPar": -2,
-          "toParDisplay": "-2",
+          "earnings": 136500,
+          "position": 30,
+          "toPar": -1,
+          "toParDisplay": "-1",
           "status": "active",
           "thru": 18
         },
@@ -7215,7 +7215,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 1062060,
+      "totalEarnings": 1032360,
       "previousRank": 0,
       "rank": 88
     },
@@ -7253,7 +7253,7 @@
         },
         "groupC1": {
           "name": "Chris Gotterup",
-          "earnings": 166200,
+          "earnings": 170100,
           "position": 24,
           "toPar": -2,
           "toParDisplay": "-2",
@@ -7289,15 +7289,15 @@
         },
         "groupE": {
           "name": "Harry English",
-          "earnings": 133350,
-          "position": 31,
+          "earnings": 136500,
+          "position": 30,
           "toPar": -1,
           "toParDisplay": "-1",
           "status": "active",
           "thru": 18
         }
       },
-      "totalEarnings": 960210,
+      "totalEarnings": 967260,
       "previousRank": 0,
       "rank": 89
     },
