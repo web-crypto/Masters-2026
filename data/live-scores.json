@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-12T19:03:06Z",
+  "fetchedAt": "2026-04-12T19:09:06Z",
   "tournamentStatus": "in_progress",
   "currentRound": 4,
   "players": [
@@ -48,7 +48,7 @@
         70,
         74,
         65,
-        14
+        18
       ],
       "status": "active",
       "thru": 18,
@@ -86,24 +86,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 711900
-    },
-    {
-      "espnId": "9221",
-      "name": "Haotong Li",
-      "amateur": false,
-      "position": 5,
-      "toPar": -8,
-      "toParDisplay": "-8",
-      "rounds": [
-        71,
-        69,
-        69,
-        15
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 711900
+      "projectedEarnings": 737625
     },
     {
       "espnId": "1680",
@@ -120,7 +103,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 711900
+      "projectedEarnings": 737625
     },
     {
       "espnId": "569",
@@ -137,7 +120,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 711900
+      "projectedEarnings": 737625
     },
     {
       "espnId": "9938",
@@ -154,7 +137,24 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 711900
+      "projectedEarnings": 737625
+    },
+    {
+      "espnId": "9221",
+      "name": "Haotong Li",
+      "amateur": false,
+      "position": 9,
+      "toPar": -7,
+      "toParDisplay": "-7",
+      "rounds": [
+        71,
+        69,
+        69,
+        20
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 609000
     },
     {
       "espnId": "5860",
@@ -184,7 +184,7 @@
         74,
         70,
         69,
-        37
+        41
       ],
       "status": "active",
       "thru": 18,
@@ -218,7 +218,7 @@
         73,
         69,
         69,
-        26
+        31
       ],
       "status": "active",
       "thru": 18,
@@ -252,7 +252,24 @@
         70,
         72,
         70,
-        31
+        35
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 357000
+    },
+    {
+      "espnId": "10592",
+      "name": "Collin Morikawa",
+      "amateur": false,
+      "position": 15,
+      "toPar": -5,
+      "toParDisplay": "-5",
+      "rounds": [
+        74,
+        69,
+        68,
+        27
       ],
       "status": "active",
       "thru": 18,
@@ -270,23 +287,6 @@
         69,
         70,
         27
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 357000
-    },
-    {
-      "espnId": "10592",
-      "name": "Collin Morikawa",
-      "amateur": false,
-      "position": 15,
-      "toPar": -5,
-      "toParDisplay": "-5",
-      "rounds": [
-        74,
-        69,
-        68,
-        23
       ],
       "status": "active",
       "thru": 18,
@@ -405,7 +405,7 @@
         69,
         69,
         72,
-        25
+        29
       ],
       "status": "active",
       "thru": 18,
@@ -507,7 +507,7 @@
         72,
         74,
         70,
-        66
+        70
       ],
       "status": "active",
       "thru": 18,
@@ -660,7 +660,7 @@
         72,
         72,
         68,
-        36
+        40
       ],
       "status": "active",
       "thru": 18,
@@ -711,7 +711,7 @@
         71,
         72,
         70,
-        48
+        51
       ],
       "status": "active",
       "thru": 18,
