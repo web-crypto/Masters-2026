@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-12T21:57:06Z",
+  "fetchedAt": "2026-04-12T21:58:05Z",
   "tournamentStatus": "in_progress",
   "currentRound": 4,
   "players": [
@@ -14,7 +14,7 @@
         67,
         65,
         73,
-        50
+        54
       ],
       "status": "active",
       "thru": 18,
@@ -35,13 +35,30 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 2268000
+      "projectedEarnings": 1848000
+    },
+    {
+      "espnId": "569",
+      "name": "Justin Rose",
+      "amateur": false,
+      "position": 2,
+      "toPar": -11,
+      "toParDisplay": "-11",
+      "rounds": [
+        70,
+        69,
+        69,
+        58
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 1848000
     },
     {
       "espnId": "5553",
       "name": "Tyrrell Hatton",
       "amateur": false,
-      "position": 3,
+      "position": 4,
       "toPar": -10,
       "toParDisplay": "-10",
       "rounds": [
@@ -52,13 +69,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 1008000
+      "projectedEarnings": 868000
     },
     {
       "espnId": "5409",
       "name": "Russell Henley",
       "amateur": false,
-      "position": 3,
+      "position": 4,
       "toPar": -10,
       "toParDisplay": "-10",
       "rounds": [
@@ -69,30 +86,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 1008000
-    },
-    {
-      "espnId": "569",
-      "name": "Justin Rose",
-      "amateur": false,
-      "position": 3,
-      "toPar": -10,
-      "toParDisplay": "-10",
-      "rounds": [
-        70,
-        69,
-        69,
-        54
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 1008000
+      "projectedEarnings": 868000
     },
     {
       "espnId": "4425906",
       "name": "Cameron Young",
       "amateur": false,
-      "position": 3,
+      "position": 4,
       "toPar": -10,
       "toParDisplay": "-10",
       "rounds": [
@@ -103,7 +103,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 1008000
+      "projectedEarnings": 868000
     },
     {
       "espnId": "10592",
