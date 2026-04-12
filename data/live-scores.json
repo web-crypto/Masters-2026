@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-12T22:21:07Z",
+  "fetchedAt": "2026-04-12T22:27:07Z",
   "tournamentStatus": "in_progress",
   "currentRound": 4,
   "players": [
@@ -14,7 +14,7 @@
         67,
         65,
         73,
-        59
+        62
       ],
       "status": "active",
       "thru": 18,
@@ -31,34 +31,17 @@
         70,
         74,
         65,
-        64
+        68
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 1848000
-    },
-    {
-      "espnId": "569",
-      "name": "Justin Rose",
-      "amateur": false,
-      "position": 2,
-      "toPar": -11,
-      "toParDisplay": "-11",
-      "rounds": [
-        70,
-        69,
-        69,
-        61
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 1848000
+      "projectedEarnings": 2268000
     },
     {
       "espnId": "5553",
       "name": "Tyrrell Hatton",
       "amateur": false,
-      "position": 4,
+      "position": 3,
       "toPar": -10,
       "toParDisplay": "-10",
       "rounds": [
@@ -69,13 +52,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 826875
+      "projectedEarnings": 947100
     },
     {
       "espnId": "5409",
       "name": "Russell Henley",
       "amateur": false,
-      "position": 4,
+      "position": 3,
       "toPar": -10,
       "toParDisplay": "-10",
       "rounds": [
@@ -86,13 +69,30 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 826875
+      "projectedEarnings": 947100
+    },
+    {
+      "espnId": "569",
+      "name": "Justin Rose",
+      "amateur": false,
+      "position": 3,
+      "toPar": -10,
+      "toParDisplay": "-10",
+      "rounds": [
+        70,
+        69,
+        69,
+        66
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 947100
     },
     {
       "espnId": "9938",
       "name": "Sam Burns",
       "amateur": false,
-      "position": 4,
+      "position": 3,
       "toPar": -10,
       "toParDisplay": "-10",
       "rounds": [
@@ -103,24 +103,24 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 826875
+      "projectedEarnings": 947100
     },
     {
       "espnId": "4425906",
       "name": "Cameron Young",
       "amateur": false,
-      "position": 4,
+      "position": 3,
       "toPar": -10,
       "toParDisplay": "-10",
       "rounds": [
         73,
         67,
         65,
-        62
+        65
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 826875
+      "projectedEarnings": 947100
     },
     {
       "espnId": "10592",
@@ -286,7 +286,7 @@
         69,
         71,
         68,
-        67
+        71
       ],
       "status": "active",
       "thru": 18,
