@@ -2,7 +2,10 @@
 // MASTERS LEADERBOARD — Animation & Interaction
 // ============================================
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+  if (typeof loadLivePoolData === 'function') {
+    await loadLivePoolData();
+  }
   initLeaderboard();
   initStandings();
 });

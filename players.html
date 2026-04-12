@@ -313,8 +313,11 @@
   </footer>
 
   <script src="data/pool-data.js"></script>
+  <script src="js/live-data.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', async () => {
+      await loadLivePoolData();
+
       const grid = document.getElementById('players-grid');
       const filterBtns = document.querySelectorAll('.group-filter-btn');
       const sortBtns = document.querySelectorAll('.sort-btn');
