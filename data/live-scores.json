@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-12T23:09:07Z",
+  "fetchedAt": "2026-04-12T23:12:07Z",
   "tournamentStatus": "complete",
   "currentRound": 4,
   "players": [
@@ -395,6 +395,23 @@
       "projectedEarnings": 235200
     },
     {
+      "espnId": "4901368",
+      "name": "Matt McCarty",
+      "amateur": false,
+      "position": 24,
+      "toPar": -2,
+      "toParDisplay": "-2",
+      "rounds": [
+        72,
+        73,
+        72,
+        69
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 170100
+    },
+    {
       "espnId": "388",
       "name": "Adam Scott",
       "amateur": false,
@@ -474,23 +491,6 @@
         69,
         72,
         73
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 170100
-    },
-    {
-      "espnId": "4901368",
-      "name": "Matt McCarty",
-      "amateur": false,
-      "position": 24,
-      "toPar": -2,
-      "toParDisplay": "-2",
-      "rounds": [
-        72,
-        73,
-        72,
-        69
       ],
       "status": "active",
       "thru": 18,
