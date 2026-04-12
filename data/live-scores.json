@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-12T21:44:01Z",
+  "fetchedAt": "2026-04-12T21:45:42Z",
   "tournamentStatus": "in_progress",
   "currentRound": 4,
   "players": [
@@ -8,13 +8,13 @@
       "name": "Rory McIlroy",
       "amateur": false,
       "position": 1,
-      "toPar": -12,
-      "toParDisplay": "-12",
+      "toPar": -13,
+      "toParDisplay": "-13",
       "rounds": [
         67,
         65,
         73,
-        46
+        50
       ],
       "status": "active",
       "thru": 18,
@@ -35,7 +35,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 1386000
+      "projectedEarnings": 1260000
     },
     {
       "espnId": "5409",
@@ -52,7 +52,24 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 1386000
+      "projectedEarnings": 1260000
+    },
+    {
+      "espnId": "9478",
+      "name": "Scottie Scheffler",
+      "amateur": false,
+      "position": 2,
+      "toPar": -10,
+      "toParDisplay": "-10",
+      "rounds": [
+        70,
+        74,
+        65,
+        58
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 1260000
     },
     {
       "espnId": "569",
@@ -69,7 +86,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 1386000
+      "projectedEarnings": 1260000
     },
     {
       "espnId": "4425906",
@@ -82,17 +99,17 @@
         73,
         67,
         65,
-        48
+        53
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 1386000
+      "projectedEarnings": 1260000
     },
     {
       "espnId": "10592",
       "name": "Collin Morikawa",
       "amateur": false,
-      "position": 6,
+      "position": 7,
       "toPar": -9,
       "toParDisplay": "-9",
       "rounds": [
@@ -103,30 +120,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 703500
-    },
-    {
-      "espnId": "9478",
-      "name": "Scottie Scheffler",
-      "amateur": false,
-      "position": 6,
-      "toPar": -9,
-      "toParDisplay": "-9",
-      "rounds": [
-        70,
-        74,
-        65,
-        54
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 703500
+      "projectedEarnings": 677250
     },
     {
       "espnId": "9938",
       "name": "Sam Burns",
       "amateur": false,
-      "position": 6,
+      "position": 7,
       "toPar": -9,
       "toParDisplay": "-9",
       "rounds": [
@@ -137,7 +137,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 703500
+      "projectedEarnings": 677250
     },
     {
       "espnId": "8973",
@@ -643,7 +643,7 @@
         71,
         69,
         69,
-        63
+        68
       ],
       "status": "active",
       "thru": 18,
