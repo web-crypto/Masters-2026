@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-12T18:51:06Z",
+  "fetchedAt": "2026-04-12T18:52:27Z",
   "tournamentStatus": "in_progress",
   "currentRound": 4,
   "players": [
@@ -630,7 +630,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 96600
+      "projectedEarnings": 98700
     },
     {
       "espnId": "3448",
@@ -647,24 +647,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 96600
-    },
-    {
-      "espnId": "3792",
-      "name": "Nick Taylor",
-      "amateur": false,
-      "position": 37,
-      "toPar": 0,
-      "toParDisplay": "E",
-      "rounds": [
-        71,
-        72,
-        70,
-        43
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 96600
+      "projectedEarnings": 98700
     },
     {
       "espnId": "5076021",
@@ -681,13 +664,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 96600
+      "projectedEarnings": 98700
     },
     {
       "espnId": "9780",
       "name": "Jon Rahm",
       "amateur": false,
-      "position": 41,
+      "position": 40,
       "toPar": 1,
       "toParDisplay": "+1",
       "rounds": [
@@ -698,13 +681,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 84000
+      "projectedEarnings": 86100
     },
     {
       "espnId": "5054388",
       "name": "Jacob Bridgeman",
       "amateur": false,
-      "position": 41,
+      "position": 40,
       "toPar": 1,
       "toParDisplay": "+1",
       "rounds": [
@@ -715,7 +698,24 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 84000
+      "projectedEarnings": 86100
+    },
+    {
+      "espnId": "3792",
+      "name": "Nick Taylor",
+      "amateur": false,
+      "position": 40,
+      "toPar": 1,
+      "toParDisplay": "+1",
+      "rounds": [
+        71,
+        72,
+        70,
+        48
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 86100
     },
     {
       "espnId": "4848",
@@ -847,7 +847,7 @@
         76,
         69,
         71,
-        74
+        78
       ],
       "status": "active",
       "thru": 18,
