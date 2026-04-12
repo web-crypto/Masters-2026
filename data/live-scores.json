@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-12T20:48:07Z",
+  "fetchedAt": "2026-04-12T20:51:07Z",
   "tournamentStatus": "in_progress",
   "currentRound": 4,
   "players": [
@@ -143,18 +143,18 @@
       "espnId": "10592",
       "name": "Collin Morikawa",
       "amateur": false,
-      "position": 10,
-      "toPar": -6,
-      "toParDisplay": "-6",
+      "position": 9,
+      "toPar": -7,
+      "toParDisplay": "-7",
       "rounds": [
         74,
         69,
         68,
-        51
+        54
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 504000
+      "projectedEarnings": 588000
     },
     {
       "espnId": "9938",
@@ -171,30 +171,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 609000
-    },
-    {
-      "espnId": "6798",
-      "name": "Brooks Koepka",
-      "amateur": false,
-      "position": 10,
-      "toPar": -6,
-      "toParDisplay": "-6",
-      "rounds": [
-        72,
-        69,
-        71,
-        62
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 504000
+      "projectedEarnings": 588000
     },
     {
       "espnId": "9843",
       "name": "Jake Knapp",
       "amateur": false,
-      "position": 10,
+      "position": 11,
       "toPar": -6,
       "toParDisplay": "-6",
       "rounds": [
@@ -211,7 +194,7 @@
       "espnId": "4587",
       "name": "Shane Lowry",
       "amateur": false,
-      "position": 10,
+      "position": 11,
       "toPar": -6,
       "toParDisplay": "-6",
       "rounds": [
@@ -228,7 +211,7 @@
       "espnId": "5467",
       "name": "Jordan Spieth",
       "amateur": false,
-      "position": 14,
+      "position": 13,
       "toPar": -5,
       "toParDisplay": "-5",
       "rounds": [
@@ -239,13 +222,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 367500
+      "projectedEarnings": 382200
     },
     {
       "espnId": "5860",
       "name": "Hideki Matsuyama",
       "amateur": false,
-      "position": 14,
+      "position": 13,
       "toPar": -5,
       "toParDisplay": "-5",
       "rounds": [
@@ -256,13 +239,30 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 367500
+      "projectedEarnings": 382200
+    },
+    {
+      "espnId": "6798",
+      "name": "Brooks Koepka",
+      "amateur": false,
+      "position": 13,
+      "toPar": -5,
+      "toParDisplay": "-5",
+      "rounds": [
+        72,
+        69,
+        71,
+        67
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 382200
     },
     {
       "espnId": "6007",
       "name": "Patrick Cantlay",
       "amateur": false,
-      "position": 14,
+      "position": 13,
       "toPar": -5,
       "toParDisplay": "-5",
       "rounds": [
@@ -273,24 +273,24 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 367500
+      "projectedEarnings": 382200
     },
     {
       "espnId": "1680",
       "name": "Jason Day",
       "amateur": false,
-      "position": 14,
+      "position": 13,
       "toPar": -5,
       "toParDisplay": "-5",
       "rounds": [
         69,
         71,
         68,
-        43
+        47
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 367500
+      "projectedEarnings": 382200
     },
     {
       "espnId": "9530",
@@ -439,7 +439,7 @@
         72,
         68,
         72,
-        65
+        69
       ],
       "status": "active",
       "thru": 18,
