@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-12T14:00:51Z",
+  "fetchedAt": "2026-04-12T14:10:07Z",
   "tournamentStatus": "in_progress",
   "currentRound": 4,
   "players": [
@@ -752,23 +752,6 @@
       "projectedEarnings": 67200
     },
     {
-      "espnId": "9126",
-      "name": "Corey Conners",
-      "amateur": false,
-      "position": 44,
-      "toPar": 3,
-      "toParDisplay": "+3",
-      "rounds": [
-        75,
-        73,
-        71,
-        null
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 67200
-    },
-    {
       "espnId": "4513",
       "name": "Keegan Bradley",
       "amateur": false,
@@ -779,7 +762,7 @@
         72,
         74,
         73,
-        null
+        4
       ],
       "status": "active",
       "thru": 18,
@@ -796,6 +779,23 @@
         73,
         71,
         75,
+        4
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 67200
+    },
+    {
+      "espnId": "9126",
+      "name": "Corey Conners",
+      "amateur": false,
+      "position": 44,
+      "toPar": 3,
+      "toParDisplay": "+3",
+      "rounds": [
+        75,
+        73,
+        71,
         null
       ],
       "status": "active",
@@ -837,23 +837,6 @@
       "projectedEarnings": 54600
     },
     {
-      "espnId": "10364",
-      "name": "Kurt Kitayama",
-      "amateur": false,
-      "position": 50,
-      "toPar": 6,
-      "toParDisplay": "+6",
-      "rounds": [
-        69,
-        79,
-        75,
-        12
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 51240
-    },
-    {
       "espnId": "158",
       "name": "Sergio Garc\u00eda",
       "amateur": false,
@@ -868,7 +851,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 51240
+      "projectedEarnings": 51660
     },
     {
       "espnId": "11253",
@@ -885,7 +868,24 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 51240
+      "projectedEarnings": 51660
+    },
+    {
+      "espnId": "10364",
+      "name": "Kurt Kitayama",
+      "amateur": false,
+      "position": 52,
+      "toPar": 7,
+      "toParDisplay": "+7",
+      "rounds": [
+        69,
+        79,
+        75,
+        16
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 50400
     },
     {
       "espnId": "10906",

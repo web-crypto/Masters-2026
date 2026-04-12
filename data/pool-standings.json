@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-12T14:00:51Z",
+  "fetchedAt": "2026-04-12T14:10:07Z",
   "tournamentStatus": "in_progress",
   "currentRound": 4,
   "entries": [
@@ -1221,7 +1221,7 @@
         },
         "groupE": {
           "name": "Sergio Garcia",
-          "earnings": 51240,
+          "earnings": 51660,
           "position": 50,
           "toPar": 6,
           "toParDisplay": "+6",
@@ -1229,7 +1229,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 5292840,
+      "totalEarnings": 5293260,
       "previousRank": 0,
       "rank": 15
     },
@@ -5649,7 +5649,7 @@
         },
         "groupE": {
           "name": "Sergio Garcia",
-          "earnings": 51240,
+          "earnings": 51660,
           "position": 50,
           "toPar": 6,
           "toParDisplay": "+6",
@@ -5657,7 +5657,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 1988018,
+      "totalEarnings": 1988438,
       "previousRank": 0,
       "rank": 69
     },
@@ -7207,7 +7207,7 @@
         },
         "groupE": {
           "name": "Sergio Garcia",
-          "earnings": 51240,
+          "earnings": 51660,
           "position": 50,
           "toPar": 6,
           "toParDisplay": "+6",
@@ -7215,7 +7215,7 @@
           "thru": 18
         }
       },
-      "totalEarnings": 1219418,
+      "totalEarnings": 1219838,
       "previousRank": 0,
       "rank": 88
     },
