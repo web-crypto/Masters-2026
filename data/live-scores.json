@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-12T21:09:06Z",
+  "fetchedAt": "2026-04-12T21:12:12Z",
   "tournamentStatus": "in_progress",
   "currentRound": 4,
   "players": [
@@ -443,7 +443,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 149100
+      "projectedEarnings": 152250
     },
     {
       "espnId": "388",
@@ -460,7 +460,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 149100
+      "projectedEarnings": 152250
     },
     {
       "espnId": "4426181",
@@ -477,7 +477,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 149100
+      "projectedEarnings": 152250
     },
     {
       "espnId": "9525",
@@ -494,7 +494,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 149100
+      "projectedEarnings": 152250
     },
     {
       "espnId": "4921329",
@@ -511,7 +511,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 149100
+      "projectedEarnings": 152250
     },
     {
       "espnId": "4690755",
@@ -528,30 +528,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 149100
-    },
-    {
-      "espnId": "4404992",
-      "name": "Ben Griffin",
-      "amateur": false,
-      "position": 26,
-      "toPar": -2,
-      "toParDisplay": "-2",
-      "rounds": [
-        72,
-        69,
-        70,
-        67
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 149100
+      "projectedEarnings": 152250
     },
     {
       "espnId": "3832",
       "name": "Alex Noren",
       "amateur": false,
-      "position": 33,
+      "position": 32,
       "toPar": -1,
       "toParDisplay": "-1",
       "rounds": [
@@ -562,13 +545,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 121275
+      "projectedEarnings": 127050
     },
     {
       "espnId": "5408",
       "name": "Harris English",
       "amateur": false,
-      "position": 33,
+      "position": 32,
       "toPar": -1,
       "toParDisplay": "-1",
       "rounds": [
@@ -579,13 +562,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 121275
+      "projectedEarnings": 127050
     },
     {
       "espnId": "3550",
       "name": "Gary Woodland",
       "amateur": false,
-      "position": 35,
+      "position": 34,
       "toPar": 0,
       "toParDisplay": "E",
       "rounds": [
@@ -596,13 +579,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 105788
+      "projectedEarnings": 108360
     },
     {
       "espnId": "3448",
       "name": "Dustin Johnson",
       "amateur": false,
-      "position": 35,
+      "position": 34,
       "toPar": 0,
       "toParDisplay": "E",
       "rounds": [
@@ -613,13 +596,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 105788
+      "projectedEarnings": 108360
     },
     {
       "espnId": "1225",
       "name": "Brian Harman",
       "amateur": false,
-      "position": 35,
+      "position": 34,
       "toPar": 0,
       "toParDisplay": "E",
       "rounds": [
@@ -630,13 +613,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 105788
+      "projectedEarnings": 108360
     },
     {
       "espnId": "5539",
       "name": "Tommy Fleetwood",
       "amateur": false,
-      "position": 35,
+      "position": 34,
       "toPar": 0,
       "toParDisplay": "E",
       "rounds": [
@@ -647,7 +630,24 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 105788
+      "projectedEarnings": 108360
+    },
+    {
+      "espnId": "4404992",
+      "name": "Ben Griffin",
+      "amateur": false,
+      "position": 34,
+      "toPar": 0,
+      "toParDisplay": "E",
+      "rounds": [
+        72,
+        69,
+        70,
+        73
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 108360
     },
     {
       "espnId": "9780",
