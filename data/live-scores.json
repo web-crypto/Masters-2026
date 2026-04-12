@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-12T21:30:49Z",
+  "fetchedAt": "2026-04-12T21:33:08Z",
   "tournamentStatus": "in_progress",
   "currentRound": 4,
   "players": [
@@ -137,7 +137,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 630000
+      "projectedEarnings": 609000
     },
     {
       "espnId": "10140",
@@ -154,13 +154,30 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 630000
+      "projectedEarnings": 609000
+    },
+    {
+      "espnId": "9938",
+      "name": "Sam Burns",
+      "amateur": false,
+      "position": 8,
+      "toPar": -8,
+      "toParDisplay": "-8",
+      "rounds": [
+        67,
+        71,
+        68,
+        50
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 609000
     },
     {
       "espnId": "9843",
       "name": "Jake Knapp",
       "amateur": false,
-      "position": 10,
+      "position": 11,
       "toPar": -7,
       "toParDisplay": "-7",
       "rounds": [
@@ -171,24 +188,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 546000
-    },
-    {
-      "espnId": "9938",
-      "name": "Sam Burns",
-      "amateur": false,
-      "position": 10,
-      "toPar": -7,
-      "toParDisplay": "-7",
-      "rounds": [
-        67,
-        71,
-        68,
-        50
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 546000
+      "projectedEarnings": 525000
     },
     {
       "espnId": "6007",
