@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-12T20:51:07Z",
+  "fetchedAt": "2026-04-12T20:54:06Z",
   "tournamentStatus": "in_progress",
   "currentRound": 4,
   "players": [
@@ -8,23 +8,23 @@
       "name": "Justin Rose",
       "amateur": false,
       "position": 1,
-      "toPar": -12,
-      "toParDisplay": "-12",
+      "toPar": -11,
+      "toParDisplay": "-11",
       "rounds": [
         70,
         69,
         69,
-        36
+        41
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 4200000
+      "projectedEarnings": 3234000
     },
     {
       "espnId": "3470",
       "name": "Rory McIlroy",
       "amateur": false,
-      "position": 2,
+      "position": 1,
       "toPar": -11,
       "toParDisplay": "-11",
       "rounds": [
@@ -35,7 +35,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 2268000
+      "projectedEarnings": 3234000
     },
     {
       "espnId": "5553",
@@ -52,7 +52,24 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 1218000
+      "projectedEarnings": 1092000
+    },
+    {
+      "espnId": "5409",
+      "name": "Russell Henley",
+      "amateur": false,
+      "position": 3,
+      "toPar": -10,
+      "toParDisplay": "-10",
+      "rounds": [
+        73,
+        71,
+        66,
+        48
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 1092000
     },
     {
       "espnId": "4425906",
@@ -69,30 +86,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 1218000
-    },
-    {
-      "espnId": "5409",
-      "name": "Russell Henley",
-      "amateur": false,
-      "position": 5,
-      "toPar": -9,
-      "toParDisplay": "-9",
-      "rounds": [
-        73,
-        71,
-        66,
-        44
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 798000
+      "projectedEarnings": 1092000
     },
     {
       "espnId": "9478",
       "name": "Scottie Scheffler",
       "amateur": false,
-      "position": 5,
+      "position": 6,
       "toPar": -9,
       "toParDisplay": "-9",
       "rounds": [
@@ -103,7 +103,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 798000
+      "projectedEarnings": 756000
     },
     {
       "espnId": "8973",
@@ -269,7 +269,7 @@
         77,
         67,
         66,
-        48
+        53
       ],
       "status": "active",
       "thru": 18,
