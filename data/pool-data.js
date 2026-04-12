@@ -3,7 +3,7 @@
 // Entries loaded from Google Form responses — replace placeholder below
 
 const poolData = {
-  lastUpdated: "2026-04-12T18:54:07",
+  lastUpdated: "2026-04-12T18:57:07",
   tournamentYear: 2026,
   tournamentName: "The Masters Tournament",
   charityName: "Ride to Conquer Cancer",
@@ -138,8 +138,8 @@ const poolData = {
                 "name": "Rory McIlroy",
                 "earnings": 4200000,
                 "position": 1,
-                "toPar": -13,
-                "toParDisplay": "-13",
+                "toPar": -12,
+                "toParDisplay": "-12",
                 "status": "active",
                 "thru": 18
             },
@@ -221,8 +221,8 @@ const poolData = {
                 "name": "Rory McIlroy",
                 "earnings": 4200000,
                 "position": 1,
-                "toPar": -13,
-                "toParDisplay": "-13",
+                "toPar": -12,
+                "toParDisplay": "-12",
                 "status": "active",
                 "thru": 18
             },
@@ -304,8 +304,8 @@ const poolData = {
                 "name": "Rory McIlroy",
                 "earnings": 4200000,
                 "position": 1,
-                "toPar": -13,
-                "toParDisplay": "-13",
+                "toPar": -12,
+                "toParDisplay": "-12",
                 "status": "active",
                 "thru": 18
             },
@@ -636,8 +636,8 @@ const poolData = {
                 "name": "Rory McIlroy",
                 "earnings": 4200000,
                 "position": 1,
-                "toPar": -13,
-                "toParDisplay": "-13",
+                "toPar": -12,
+                "toParDisplay": "-12",
                 "status": "active",
                 "thru": 18
             },
@@ -719,8 +719,8 @@ const poolData = {
                 "name": "Rory McIlroy",
                 "earnings": 4200000,
                 "position": 1,
-                "toPar": -13,
-                "toParDisplay": "-13",
+                "toPar": -12,
+                "toParDisplay": "-12",
                 "status": "active",
                 "thru": 18
             },
@@ -802,8 +802,8 @@ const poolData = {
                 "name": "Rory McIlroy",
                 "earnings": 4200000,
                 "position": 1,
-                "toPar": -13,
-                "toParDisplay": "-13",
+                "toPar": -12,
+                "toParDisplay": "-12",
                 "status": "active",
                 "thru": 18
             },
@@ -968,8 +968,8 @@ const poolData = {
                 "name": "Rory McIlroy",
                 "earnings": 4200000,
                 "position": 1,
-                "toPar": -13,
-                "toParDisplay": "-13",
+                "toPar": -12,
+                "toParDisplay": "-12",
                 "status": "active",
                 "thru": 18
             },
@@ -1051,8 +1051,8 @@ const poolData = {
                 "name": "Rory McIlroy",
                 "earnings": 4200000,
                 "position": 1,
-                "toPar": -13,
-                "toParDisplay": "-13",
+                "toPar": -12,
+                "toParDisplay": "-12",
                 "status": "active",
                 "thru": 18
             },
@@ -1134,8 +1134,8 @@ const poolData = {
                 "name": "Rory McIlroy",
                 "earnings": 4200000,
                 "position": 1,
-                "toPar": -13,
-                "toParDisplay": "-13",
+                "toPar": -12,
+                "toParDisplay": "-12",
                 "status": "active",
                 "thru": 18
             },
@@ -1217,8 +1217,8 @@ const poolData = {
                 "name": "Rory McIlroy",
                 "earnings": 4200000,
                 "position": 1,
-                "toPar": -13,
-                "toParDisplay": "-13",
+                "toPar": -12,
+                "toParDisplay": "-12",
                 "status": "active",
                 "thru": 18
             },
@@ -1383,8 +1383,8 @@ const poolData = {
                 "name": "Rory McIlroy",
                 "earnings": 4200000,
                 "position": 1,
-                "toPar": -13,
-                "toParDisplay": "-13",
+                "toPar": -12,
+                "toParDisplay": "-12",
                 "status": "active",
                 "thru": 18
             },
@@ -1549,8 +1549,8 @@ const poolData = {
                 "name": "Rory McIlroy",
                 "earnings": 4200000,
                 "position": 1,
-                "toPar": -13,
-                "toParDisplay": "-13",
+                "toPar": -12,
+                "toParDisplay": "-12",
                 "status": "active",
                 "thru": 18
             },
@@ -1632,8 +1632,8 @@ const poolData = {
                 "name": "Rory McIlroy",
                 "earnings": 4200000,
                 "position": 1,
-                "toPar": -13,
-                "toParDisplay": "-13",
+                "toPar": -12,
+                "toParDisplay": "-12",
                 "status": "active",
                 "thru": 18
             },
@@ -1798,8 +1798,8 @@ const poolData = {
                 "name": "Rory McIlroy",
                 "earnings": 4200000,
                 "position": 1,
-                "toPar": -13,
-                "toParDisplay": "-13",
+                "toPar": -12,
+                "toParDisplay": "-12",
                 "status": "active",
                 "thru": 18
             },

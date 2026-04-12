@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-12T22:54:07Z",
+  "fetchedAt": "2026-04-12T22:57:07Z",
   "tournamentStatus": "in_progress",
   "currentRound": 4,
   "players": [
@@ -8,13 +8,13 @@
       "name": "Rory McIlroy",
       "amateur": false,
       "position": 1,
-      "toPar": -13,
-      "toParDisplay": "-13",
+      "toPar": -12,
+      "toParDisplay": "-12",
       "rounds": [
         67,
         65,
         73,
-        66
+        71
       ],
       "status": "active",
       "thru": 18,
@@ -99,7 +99,7 @@
         73,
         67,
         65,
-        69
+        73
       ],
       "status": "active",
       "thru": 18,
