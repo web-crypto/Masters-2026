@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-12T13:40:07Z",
+  "fetchedAt": "2026-04-12T13:50:07Z",
   "tournamentStatus": "in_progress",
   "currentRound": 4,
   "entries": [
@@ -237,15 +237,15 @@
         },
         "groupE": {
           "name": "Gary Woodland",
-          "earnings": 50400,
-          "position": 51,
-          "toPar": 6,
-          "toParDisplay": "+6",
+          "earnings": 55020,
+          "position": 48,
+          "toPar": 5,
+          "toParDisplay": "+5",
           "status": "active",
           "thru": 18
         }
       },
-      "totalEarnings": 6888788,
+      "totalEarnings": 6893408,
       "previousRank": 0,
       "rank": 3
     },
@@ -1221,15 +1221,15 @@
         },
         "groupE": {
           "name": "Sergio Garcia",
-          "earnings": 55020,
-          "position": 48,
-          "toPar": 5,
-          "toParDisplay": "+5",
+          "earnings": 50400,
+          "position": 51,
+          "toPar": 6,
+          "toParDisplay": "+6",
           "status": "active",
           "thru": 18
         }
       },
-      "totalEarnings": 5298720,
+      "totalEarnings": 5294100,
       "previousRank": 0,
       "rank": 15
     },
@@ -2697,15 +2697,15 @@
         },
         "groupE": {
           "name": "Gary Woodland",
-          "earnings": 50400,
-          "position": 51,
-          "toPar": 6,
-          "toParDisplay": "+6",
+          "earnings": 55020,
+          "position": 48,
+          "toPar": 5,
+          "toParDisplay": "+5",
           "status": "active",
           "thru": 18
         }
       },
-      "totalEarnings": 4131750,
+      "totalEarnings": 4136370,
       "previousRank": 0,
       "rank": 33
     },
@@ -5649,15 +5649,15 @@
         },
         "groupE": {
           "name": "Sergio Garcia",
-          "earnings": 55020,
-          "position": 48,
-          "toPar": 5,
-          "toParDisplay": "+5",
+          "earnings": 50400,
+          "position": 51,
+          "toPar": 6,
+          "toParDisplay": "+6",
           "status": "active",
           "thru": 18
         }
       },
-      "totalEarnings": 1982978,
+      "totalEarnings": 1978358,
       "previousRank": 0,
       "rank": 69
     },
@@ -6387,15 +6387,15 @@
         },
         "groupE": {
           "name": "Gary Woodland",
-          "earnings": 50400,
-          "position": 51,
-          "toPar": 6,
-          "toParDisplay": "+6",
+          "earnings": 55020,
+          "position": 48,
+          "toPar": 5,
+          "toParDisplay": "+5",
           "status": "active",
           "thru": 18
         }
       },
-      "totalEarnings": 1744470,
+      "totalEarnings": 1749090,
       "previousRank": 0,
       "rank": 78
     },
@@ -7207,15 +7207,15 @@
         },
         "groupE": {
           "name": "Sergio Garcia",
-          "earnings": 55020,
-          "position": 48,
-          "toPar": 5,
-          "toParDisplay": "+5",
+          "earnings": 50400,
+          "position": 51,
+          "toPar": 6,
+          "toParDisplay": "+6",
           "status": "active",
           "thru": 18
         }
       },
-      "totalEarnings": 1214378,
+      "totalEarnings": 1209758,
       "previousRank": 0,
       "rank": 88
     },
