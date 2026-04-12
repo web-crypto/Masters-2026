@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-12T22:06:06Z",
+  "fetchedAt": "2026-04-12T22:09:06Z",
   "tournamentStatus": "in_progress",
   "currentRound": 4,
   "players": [
@@ -31,7 +31,7 @@
         70,
         74,
         65,
-        60
+        64
       ],
       "status": "active",
       "thru": 18,
@@ -48,7 +48,7 @@
         70,
         69,
         69,
-        58
+        61
       ],
       "status": "active",
       "thru": 18,
@@ -286,7 +286,7 @@
         69,
         71,
         68,
-        64
+        67
       ],
       "status": "active",
       "thru": 18,
@@ -307,7 +307,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 294000
+      "projectedEarnings": 283500
     },
     {
       "espnId": "4364873",
@@ -324,7 +324,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 294000
+      "projectedEarnings": 283500
     },
     {
       "espnId": "9037",
@@ -341,13 +341,30 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 294000
+      "projectedEarnings": 283500
+    },
+    {
+      "espnId": "4587",
+      "name": "Shane Lowry",
+      "amateur": false,
+      "position": 18,
+      "toPar": -4,
+      "toParDisplay": "-4",
+      "rounds": [
+        70,
+        69,
+        68,
+        66
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 283500
     },
     {
       "espnId": "4513",
       "name": "Keegan Bradley",
       "amateur": false,
-      "position": 21,
+      "position": 22,
       "toPar": -3,
       "toParDisplay": "-3",
       "rounds": [
@@ -358,13 +375,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 226800
+      "projectedEarnings": 218400
     },
     {
       "espnId": "4375972",
       "name": "Ludvig \u00c5berg",
       "amateur": false,
-      "position": 21,
+      "position": 22,
       "toPar": -3,
       "toParDisplay": "-3",
       "rounds": [
@@ -375,13 +392,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 226800
+      "projectedEarnings": 218400
     },
     {
       "espnId": "11119",
       "name": "Wyndham Clark",
       "amateur": false,
-      "position": 21,
+      "position": 22,
       "toPar": -3,
       "toParDisplay": "-3",
       "rounds": [
@@ -392,24 +409,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 226800
-    },
-    {
-      "espnId": "4587",
-      "name": "Shane Lowry",
-      "amateur": false,
-      "position": 21,
-      "toPar": -3,
-      "toParDisplay": "-3",
-      "rounds": [
-        70,
-        69,
-        68,
-        62
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 226800
+      "projectedEarnings": 218400
     },
     {
       "espnId": "4901368",
