@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-12T20:15:40Z",
+  "fetchedAt": "2026-04-12T20:18:06Z",
   "tournamentStatus": "in_progress",
   "currentRound": 4,
   "players": [
@@ -8,13 +8,13 @@
       "name": "Justin Rose",
       "amateur": false,
       "position": 1,
-      "toPar": -11,
-      "toParDisplay": "-11",
+      "toPar": -12,
+      "toParDisplay": "-12",
       "rounds": [
         70,
         69,
         69,
-        29
+        32
       ],
       "status": "active",
       "thru": 18,
@@ -99,7 +99,7 @@
         70,
         74,
         65,
-        34
+        38
       ],
       "status": "active",
       "thru": 18,
@@ -167,7 +167,7 @@
         71,
         69,
         69,
-        36
+        40
       ],
       "status": "active",
       "thru": 18,
@@ -354,7 +354,7 @@
         74,
         69,
         70,
-        63
+        67
       ],
       "status": "active",
       "thru": 18,
