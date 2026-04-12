@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-12T19:45:42Z",
+  "fetchedAt": "2026-04-12T19:51:06Z",
   "tournamentStatus": "in_progress",
   "currentRound": 4,
   "players": [
@@ -137,7 +137,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 609000
+      "projectedEarnings": 588000
     },
     {
       "espnId": "6007",
@@ -150,11 +150,28 @@
         77,
         67,
         66,
-        32
+        36
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 609000
+      "projectedEarnings": 588000
+    },
+    {
+      "espnId": "9221",
+      "name": "Haotong Li",
+      "amateur": false,
+      "position": 8,
+      "toPar": -6,
+      "toParDisplay": "-6",
+      "rounds": [
+        71,
+        69,
+        69,
+        33
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 588000
     },
     {
       "espnId": "4587",
@@ -171,13 +188,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 609000
+      "projectedEarnings": 588000
     },
     {
       "espnId": "5467",
       "name": "Jordan Spieth",
       "amateur": false,
-      "position": 11,
+      "position": 12,
       "toPar": -5,
       "toParDisplay": "-5",
       "rounds": [
@@ -188,13 +205,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 404250
+      "projectedEarnings": 387000
     },
     {
       "espnId": "5860",
       "name": "Hideki Matsuyama",
       "amateur": false,
-      "position": 11,
+      "position": 12,
       "toPar": -5,
       "toParDisplay": "-5",
       "rounds": [
@@ -205,13 +222,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 404250
+      "projectedEarnings": 387000
     },
     {
       "espnId": "9037",
       "name": "Matt Fitzpatrick",
       "amateur": false,
-      "position": 11,
+      "position": 12,
       "toPar": -5,
       "toParDisplay": "-5",
       "rounds": [
@@ -222,13 +239,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 404250
+      "projectedEarnings": 387000
     },
     {
       "espnId": "10140",
       "name": "Xander Schauffele",
       "amateur": false,
-      "position": 11,
+      "position": 12,
       "toPar": -5,
       "toParDisplay": "-5",
       "rounds": [
@@ -239,30 +256,30 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 404250
+      "projectedEarnings": 387000
     },
     {
       "espnId": "9843",
       "name": "Jake Knapp",
       "amateur": false,
-      "position": 11,
+      "position": 12,
       "toPar": -5,
       "toParDisplay": "-5",
       "rounds": [
         73,
         69,
         69,
-        40
+        44
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 404250
+      "projectedEarnings": 387000
     },
     {
       "espnId": "5579",
       "name": "Patrick Reed",
       "amateur": false,
-      "position": 11,
+      "position": 12,
       "toPar": -5,
       "toParDisplay": "-5",
       "rounds": [
@@ -273,30 +290,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 404250
-    },
-    {
-      "espnId": "9221",
-      "name": "Haotong Li",
-      "amateur": false,
-      "position": 11,
-      "toPar": -5,
-      "toParDisplay": "-5",
-      "rounds": [
-        71,
-        69,
-        69,
-        29
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 404250
+      "projectedEarnings": 387000
     },
     {
       "espnId": "1680",
       "name": "Jason Day",
       "amateur": false,
-      "position": 11,
+      "position": 12,
       "toPar": -5,
       "toParDisplay": "-5",
       "rounds": [
@@ -307,7 +307,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 404250
+      "projectedEarnings": 387000
     },
     {
       "espnId": "9530",
@@ -371,7 +371,7 @@
         74,
         70,
         69,
-        51
+        55
       ],
       "status": "active",
       "thru": 18,
@@ -456,7 +456,7 @@
         72,
         69,
         70,
-        42
+        46
       ],
       "status": "active",
       "thru": 18,
@@ -524,7 +524,7 @@
         71,
         73,
         69,
-        53
+        57
       ],
       "status": "active",
       "thru": 18,
@@ -711,7 +711,7 @@
         71,
         74,
         69,
-        72
+        76
       ],
       "status": "active",
       "thru": 18,
@@ -728,7 +728,7 @@
         73,
         72,
         69,
-        72
+        76
       ],
       "status": "active",
       "thru": 18,
