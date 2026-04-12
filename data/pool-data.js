@@ -3,7 +3,7 @@
 // Entries loaded from Google Form responses — replace placeholder below
 
 const poolData = {
-  lastUpdated: "2026-04-12T13:45:28",
+  lastUpdated: "2026-04-12T14:00:40",
   tournamentYear: 2026,
   tournamentName: "The Masters Tournament",
   charityName: "Ride to Conquer Cancer",
@@ -298,7 +298,7 @@ const poolData = {
         "id": 33,
         "name": "I Like Big Putts and I Cannot Lie!",
         "owner": "I Like Big Putts and I Cannot Lie!",
-        "totalEarnings": 6888788,
+        "totalEarnings": 6893408,
         "players": {
             "groupA": {
                 "name": "Scottie Scheffler",
@@ -365,10 +365,10 @@ const poolData = {
             },
             "groupE": {
                 "name": "Gary Woodland",
-                "earnings": 50400,
-                "position": 51,
-                "toPar": 6,
-                "toParDisplay": "+6",
+                "earnings": 55020,
+                "position": 48,
+                "toPar": 5,
+                "toParDisplay": "+5",
                 "status": "active",
                 "thru": 18
             }
@@ -1294,7 +1294,7 @@ const poolData = {
         "id": 88,
         "name": "Mike Cane",
         "owner": "Mike Cane",
-        "totalEarnings": 5298720,
+        "totalEarnings": 5294100,
         "players": {
             "groupA": {
                 "name": "Scottie Scheffler",
@@ -1361,10 +1361,10 @@ const poolData = {
             },
             "groupE": {
                 "name": "Sergio Garcia",
-                "earnings": 55020,
-                "position": 48,
-                "toPar": 5,
-                "toParDisplay": "+5",
+                "earnings": 50400,
+                "position": 51,
+                "toPar": 6,
+                "toParDisplay": "+6",
                 "status": "active",
                 "thru": 18
             }
@@ -2788,7 +2788,7 @@ const poolData = {
         "id": 34,
         "name": "Shea DAWG",
         "owner": "Shea DAWG",
-        "totalEarnings": 4131750,
+        "totalEarnings": 4136370,
         "players": {
             "groupA": {
                 "name": "Scottie Scheffler",
@@ -2855,10 +2855,10 @@ const poolData = {
             },
             "groupE": {
                 "name": "Gary Woodland",
-                "earnings": 50400,
-                "position": 51,
-                "toPar": 6,
-                "toParDisplay": "+6",
+                "earnings": 55020,
+                "position": 48,
+                "toPar": 5,
+                "toParDisplay": "+5",
                 "status": "active",
                 "thru": 18
             }
@@ -5776,7 +5776,7 @@ const poolData = {
         "id": 87,
         "name": "Tiger Woo",
         "owner": "Tiger Woo",
-        "totalEarnings": 1982978,
+        "totalEarnings": 1978358,
         "players": {
             "groupA": {
                 "name": "Scottie Scheffler",
@@ -5843,10 +5843,10 @@ const poolData = {
             },
             "groupE": {
                 "name": "Sergio Garcia",
-                "earnings": 55020,
-                "position": 48,
-                "toPar": 5,
-                "toParDisplay": "+5",
+                "earnings": 50400,
+                "position": 51,
+                "toPar": 6,
+                "toParDisplay": "+6",
                 "status": "active",
                 "thru": 18
             }
@@ -6523,7 +6523,7 @@ const poolData = {
         "id": 32,
         "name": "David Iudiciani #1",
         "owner": "David Iudiciani #1",
-        "totalEarnings": 1744470,
+        "totalEarnings": 1749090,
         "players": {
             "groupA": {
                 "name": "Scottie Scheffler",
@@ -6590,10 +6590,10 @@ const poolData = {
             },
             "groupE": {
                 "name": "Gary Woodland",
-                "earnings": 50400,
-                "position": 51,
-                "toPar": 6,
-                "toParDisplay": "+6",
+                "earnings": 55020,
+                "position": 48,
+                "toPar": 5,
+                "toParDisplay": "+5",
                 "status": "active",
                 "thru": 18
             }
@@ -7353,7 +7353,7 @@ const poolData = {
         "id": 86,
         "name": "Maad Grenadez 1",
         "owner": "Maad Grenadez 1",
-        "totalEarnings": 1214378,
+        "totalEarnings": 1209758,
         "players": {
             "groupA": {
                 "name": "Bryson DeChambeau",
@@ -7420,10 +7420,10 @@ const poolData = {
             },
             "groupE": {
                 "name": "Sergio Garcia",
-                "earnings": 55020,
-                "position": 48,
-                "toPar": 5,
-                "toParDisplay": "+5",
+                "earnings": 50400,
+                "position": 51,
+                "toPar": 6,
+                "toParDisplay": "+6",
                 "status": "active",
                 "thru": 18
             }
