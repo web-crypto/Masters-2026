@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-12T21:18:06Z",
+  "fetchedAt": "2026-04-12T21:21:07Z",
   "tournamentStatus": "in_progress",
   "currentRound": 4,
   "players": [
@@ -48,7 +48,7 @@
         73,
         71,
         66,
-        52
+        57
       ],
       "status": "active",
       "thru": 18,
@@ -116,7 +116,7 @@
         70,
         74,
         65,
-        45
+        50
       ],
       "status": "active",
       "thru": 18,
@@ -191,10 +191,27 @@
       "projectedEarnings": 546000
     },
     {
+      "espnId": "6007",
+      "name": "Patrick Cantlay",
+      "amateur": false,
+      "position": 12,
+      "toPar": -6,
+      "toParDisplay": "-6",
+      "rounds": [
+        77,
+        67,
+        66,
+        61
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 483000
+    },
+    {
       "espnId": "5467",
       "name": "Jordan Spieth",
       "amateur": false,
-      "position": 12,
+      "position": 13,
       "toPar": -5,
       "toParDisplay": "-5",
       "rounds": [
@@ -205,13 +222,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 399000
+      "projectedEarnings": 382200
     },
     {
       "espnId": "5860",
       "name": "Hideki Matsuyama",
       "amateur": false,
-      "position": 12,
+      "position": 13,
       "toPar": -5,
       "toParDisplay": "-5",
       "rounds": [
@@ -222,13 +239,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 399000
+      "projectedEarnings": 382200
     },
     {
       "espnId": "6798",
       "name": "Brooks Koepka",
       "amateur": false,
-      "position": 12,
+      "position": 13,
       "toPar": -5,
       "toParDisplay": "-5",
       "rounds": [
@@ -239,13 +256,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 399000
+      "projectedEarnings": 382200
     },
     {
       "espnId": "5579",
       "name": "Patrick Reed",
       "amateur": false,
-      "position": 12,
+      "position": 13,
       "toPar": -5,
       "toParDisplay": "-5",
       "rounds": [
@@ -256,30 +273,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 399000
-    },
-    {
-      "espnId": "6007",
-      "name": "Patrick Cantlay",
-      "amateur": false,
-      "position": 12,
-      "toPar": -5,
-      "toParDisplay": "-5",
-      "rounds": [
-        77,
-        67,
-        66,
-        57
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 399000
+      "projectedEarnings": 382200
     },
     {
       "espnId": "1680",
       "name": "Jason Day",
       "amateur": false,
-      "position": 12,
+      "position": 13,
       "toPar": -5,
       "toParDisplay": "-5",
       "rounds": [
@@ -290,7 +290,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 399000
+      "projectedEarnings": 382200
     },
     {
       "espnId": "9530",
