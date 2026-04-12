@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-12T18:40:06Z",
+  "fetchedAt": "2026-04-12T18:42:16Z",
   "tournamentStatus": "in_progress",
   "currentRound": 4,
   "players": [
@@ -344,23 +344,6 @@
       "projectedEarnings": 265650
     },
     {
-      "espnId": "9037",
-      "name": "Matt Fitzpatrick",
-      "amateur": false,
-      "position": 17,
-      "toPar": -4,
-      "toParDisplay": "-4",
-      "rounds": [
-        74,
-        69,
-        70,
-        39
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 265650
-    },
-    {
       "espnId": "8973",
       "name": "Max Homa",
       "amateur": false,
@@ -371,6 +354,23 @@
         72,
         70,
         71,
+        43
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 265650
+    },
+    {
+      "espnId": "9037",
+      "name": "Matt Fitzpatrick",
+      "amateur": false,
+      "position": 17,
+      "toPar": -4,
+      "toParDisplay": "-4",
+      "rounds": [
+        74,
+        69,
+        70,
         39
       ],
       "status": "active",
@@ -460,7 +460,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 145950
+      "projectedEarnings": 142800
     },
     {
       "espnId": "4426181",
@@ -477,7 +477,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 145950
+      "projectedEarnings": 142800
     },
     {
       "espnId": "4690755",
@@ -494,7 +494,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 145950
+      "projectedEarnings": 142800
     },
     {
       "espnId": "9525",
@@ -511,7 +511,24 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 145950
+      "projectedEarnings": 142800
+    },
+    {
+      "espnId": "5539",
+      "name": "Tommy Fleetwood",
+      "amateur": false,
+      "position": 27,
+      "toPar": -2,
+      "toParDisplay": "-2",
+      "rounds": [
+        71,
+        68,
+        73,
+        38
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 142800
     },
     {
       "espnId": "6798",
@@ -528,7 +545,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 145950
+      "projectedEarnings": 142800
     },
     {
       "espnId": "11119",
@@ -545,13 +562,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 145950
+      "projectedEarnings": 142800
     },
     {
       "espnId": "3832",
       "name": "Alex Noren",
       "amateur": false,
-      "position": 33,
+      "position": 34,
       "toPar": -1,
       "toParDisplay": "-1",
       "rounds": [
@@ -562,13 +579,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 118650
+      "projectedEarnings": 116025
     },
     {
       "espnId": "5408",
       "name": "Harris English",
       "amateur": false,
-      "position": 33,
+      "position": 34,
       "toPar": -1,
       "toParDisplay": "-1",
       "rounds": [
@@ -579,24 +596,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 118650
-    },
-    {
-      "espnId": "5539",
-      "name": "Tommy Fleetwood",
-      "amateur": false,
-      "position": 33,
-      "toPar": -1,
-      "toParDisplay": "-1",
-      "rounds": [
-        71,
-        68,
-        73,
-        38
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 118650
+      "projectedEarnings": 116025
     },
     {
       "espnId": "3550",
