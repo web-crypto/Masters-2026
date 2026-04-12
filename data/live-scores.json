@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-12T22:36:08Z",
+  "fetchedAt": "2026-04-12T22:39:07Z",
   "tournamentStatus": "in_progress",
   "currentRound": 4,
   "players": [
@@ -82,7 +82,7 @@
         70,
         69,
         69,
-        66
+        70
       ],
       "status": "active",
       "thru": 18,
@@ -286,7 +286,7 @@
         69,
         71,
         68,
-        71
+        75
       ],
       "status": "active",
       "thru": 18,
