@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-12T13:10:06Z",
+  "fetchedAt": "2026-04-12T13:20:05Z",
   "tournamentStatus": "in_progress",
   "currentRound": 4,
   "players": [
@@ -871,6 +871,23 @@
       "projectedEarnings": 50400
     },
     {
+      "espnId": "10906",
+      "name": "Aaron Rai",
+      "amateur": false,
+      "position": 52,
+      "toPar": 7,
+      "toParDisplay": "+7",
+      "rounds": [
+        71,
+        74,
+        78,
+        4
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 50400
+    },
+    {
       "espnId": "10364",
       "name": "Kurt Kitayama",
       "amateur": false,
@@ -888,23 +905,6 @@
       "projectedEarnings": 50400
     },
     {
-      "espnId": "10906",
-      "name": "Aaron Rai",
-      "amateur": false,
-      "position": 52,
-      "toPar": 7,
-      "toParDisplay": "+7",
-      "rounds": [
-        71,
-        74,
-        78,
-        null
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 50400
-    },
-    {
       "espnId": "1097",
       "name": "Charl Schwartzel",
       "amateur": false,
@@ -915,7 +915,7 @@
         75,
         73,
         77,
-        null
+        4
       ],
       "status": "active",
       "thru": 18,
