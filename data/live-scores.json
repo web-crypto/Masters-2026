@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-12T18:42:40Z",
+  "fetchedAt": "2026-04-12T18:45:36Z",
   "tournamentStatus": "in_progress",
   "currentRound": 4,
   "players": [
@@ -205,7 +205,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 462000
+      "projectedEarnings": 441000
     },
     {
       "espnId": "4375972",
@@ -222,13 +222,30 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 462000
+      "projectedEarnings": 441000
+    },
+    {
+      "espnId": "9843",
+      "name": "Jake Knapp",
+      "amateur": false,
+      "position": 12,
+      "toPar": -6,
+      "toParDisplay": "-6",
+      "rounds": [
+        73,
+        69,
+        69,
+        26
+      ],
+      "status": "active",
+      "thru": 18,
+      "projectedEarnings": 441000
     },
     {
       "espnId": "10140",
       "name": "Xander Schauffele",
       "amateur": false,
-      "position": 14,
+      "position": 15,
       "toPar": -5,
       "toParDisplay": "-5",
       "rounds": [
@@ -239,13 +256,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 367500
+      "projectedEarnings": 357000
     },
     {
       "espnId": "4404992",
       "name": "Ben Griffin",
       "amateur": false,
-      "position": 14,
+      "position": 15,
       "toPar": -5,
       "toParDisplay": "-5",
       "rounds": [
@@ -256,30 +273,13 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 367500
-    },
-    {
-      "espnId": "9843",
-      "name": "Jake Knapp",
-      "amateur": false,
-      "position": 14,
-      "toPar": -5,
-      "toParDisplay": "-5",
-      "rounds": [
-        73,
-        69,
-        69,
-        23
-      ],
-      "status": "active",
-      "thru": 18,
-      "projectedEarnings": 367500
+      "projectedEarnings": 357000
     },
     {
       "espnId": "10592",
       "name": "Collin Morikawa",
       "amateur": false,
-      "position": 14,
+      "position": 15,
       "toPar": -5,
       "toParDisplay": "-5",
       "rounds": [
@@ -290,7 +290,7 @@
       ],
       "status": "active",
       "thru": 18,
-      "projectedEarnings": 367500
+      "projectedEarnings": 357000
     },
     {
       "espnId": "9530",
