@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Vault — Masters Charity Pool History</title>
-  <meta name="description" content="Historical results from the Masters Charity Pool. 2024 and 2025 final standings, pick analysis, and year-over-year trends.">
+  <meta name="description" content="Historical results from the Masters Charity Pool. 2024, 2025, and 2026 final standings, pick analysis, and year-over-year trends.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
@@ -546,13 +546,58 @@
   <main id="main-content" class="main-content">
     <!-- Year Tabs -->
     <div class="year-tabs">
-      <button class="year-tab active" data-year="2025" onclick="switchYear(2025)">2025</button>
+      <button class="year-tab active" data-year="2026" onclick="switchYear(2026)">2026</button>
+      <button class="year-tab" data-year="2025" onclick="switchYear(2025)">2025</button>
       <button class="year-tab" data-year="2024" onclick="switchYear(2024)">2024</button>
       <button class="year-tab" data-year="loyalty" onclick="switchYear('loyalty')">Year over Year</button>
     </div>
 
+    <!-- 2026 Section -->
+    <div class="year-section active" id="section-2026">
+      <div class="vault-stats" id="stats-2026"></div>
+      <div class="vault-card">
+        <div class="vault-card-header"><h3>2026 Final Standings</h3></div>
+        <div class="vault-card-body" style="padding: 0;">
+          <div style="padding: var(--space-md) var(--space-lg);">
+            <input type="text" id="search-2026" placeholder="Search entries or players..." style="width:100%; padding:10px 14px; border:1px solid rgba(0,0,0,0.1); border-radius:4px; font-family:var(--font-body); font-size:0.9rem;" aria-label="Search 2026 standings">
+          </div>
+          <div class="history-table-wrapper" style="box-shadow:none; border:none; border-radius:0;">
+            <table class="history-table">
+              <thead>
+                <tr>
+                  <th style="width:50px;text-align:center">Pos</th>
+                  <th>Entry</th>
+                  <th class="text-right" style="width:130px">Earnings</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-2026"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="vault-card">
+        <div class="vault-card-header"><h3>2026 Finish</h3></div>
+        <div class="vault-card-body">
+          <p style="font-size:0.95rem; color:var(--text-secondary); line-height:1.7; margin:0;">Kenner took the green jacket with a monster Rory, Rose, Young, and Henley core. Ninety entries raised <strong>$450</strong> for the Ride to Conquer Cancer, and Sunday delivered exactly the kind of chaos a proper Masters pool should.</p>
+        </div>
+      </div>
+
+      <div class="vault-card">
+        <div class="vault-card-header"><h3>Fun Facts — 2026</h3></div>
+        <div class="vault-card-body">
+          <div class="fun-fact-grid">
+            <div class="fun-fact"><div class="fun-fact-label">Champion</div><div class="fun-fact-value">Kenner</div></div>
+            <div class="fun-fact"><div class="fun-fact-label">Runner-up</div><div class="fun-fact-value">Know Nothing About Golf</div></div>
+            <div class="fun-fact"><div class="fun-fact-label">Winning Score</div><div class="fun-fact-value">$7.65M</div></div>
+            <div class="fun-fact"><div class="fun-fact-label">Charity Raised</div><div class="fun-fact-value">$450</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- 2025 Section -->
-    <div class="year-section active" id="section-2025">
+    <div class="year-section" id="section-2025">
       <div class="vault-stats" id="stats-2025"></div>
       <div class="vault-card">
         <div class="vault-card-header"><h3>2025 Final Standings</h3></div>
@@ -679,6 +724,7 @@
   <!-- Data: historical only, NO 2026 picks -->
   <script src="data/pool-2024.js"></script>
   <script src="data/pool-2025.js"></script>
+  <script src="data/pool-2026.js"></script>
   <script src="data/owner-aliases.js"></script>
   <script>
     // ── Helpers ──
@@ -908,10 +954,11 @@
 
       processEntries(pool2024);
       processEntries(pool2025);
+      processEntries(pool2026);
 
-      // Find returning poolies (appeared in both years)
+      // Find returning poolies (appeared in all three years)
       const returning = Object.entries(ownerData)
-        .filter(([_, years]) => years[2024] && years[2025])
+        .filter(([_, years]) => years[2024] && years[2025] && years[2026])
         .map(([canon, years]) => {
           const best2024 = years[2024].sort((a, b) => a.finalRank - b.finalRank)[0];
           const best2025 = years[2025].sort((a, b) => a.finalRank - b.finalRank)[0];
@@ -938,13 +985,14 @@
 
       const totalOwners2024 = new Set(pool2024.entries.map(e => getCanonical(e.name))).size;
       const totalOwners2025 = new Set(pool2025.entries.map(e => getCanonical(e.name))).size;
+      const totalOwners2026 = new Set(pool2026.entries.map(e => getCanonical(e.name))).size;
       const improvedCount = returning.filter(r => r.improved).length;
 
       statsContainer.innerHTML = `
-        <div class="vault-stat"><div class="stat-value">${returning.length}</div><div class="stat-label">Returning Poolies</div></div>
+        <div class="vault-stat"><div class="stat-value">${returning.length}</div><div class="stat-label">Three-Year Poolies</div></div>
         <div class="vault-stat"><div class="stat-value">${totalOwners2024}</div><div class="stat-label">2024 Unique Owners</div></div>
         <div class="vault-stat"><div class="stat-value">${totalOwners2025}</div><div class="stat-label">2025 Unique Owners</div></div>
-        <div class="vault-stat"><div class="stat-value">${improvedCount}</div><div class="stat-label">Improved in 2025</div></div>
+        <div class="vault-stat"><div class="stat-value">${totalOwners2026}</div><div class="stat-label">2026 Unique Owners</div></div>
       `;
 
       let html = '';
@@ -974,6 +1022,9 @@
     }
 
     // ── Initialize ──
+    renderStats(pool2026, 'stats-2026');
+    renderTable(pool2026, 'tbody-2026', 'search-2026');
+
     renderStats(pool2025, 'stats-2025');
     renderTable(pool2025, 'tbody-2025', 'search-2025');
     renderDaily(pool2025, 'daily-2025');

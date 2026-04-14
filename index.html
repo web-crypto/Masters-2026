@@ -53,93 +53,67 @@
 
   <!-- Hero Section -->
   <section class="page-hero">
-    <h1>The Leaderboard</h1>
+    <h1>Thanks for Playing</h1>
     <div class="hero-divider"></div>
-    <p class="hero-subtitle">Masters Tournament 2026 — Augusta National</p>
-    <a href="https://www.espn.com/golf/leaderboard?tournamentId=401811941" target="_blank" rel="noopener noreferrer" style="font-family:var(--font-mono); font-size:0.75rem; color:var(--masters-gold); text-decoration:none; letter-spacing:0.08em; text-transform:uppercase; margin-top:8px; display:inline-block; position:relative; z-index:2; pointer-events:auto;">ESPN Tournament Leaderboard →</a>
+    <p class="hero-subtitle">The 2026 Masters Charity Pool is in the books. See you next year.</p>
   </section>
 
   <!-- Main Content -->
   <main class="main-content">
-    <!-- Countdown Timer -->
-    <div id="countdown-container" class="countdown-container">
-      <div class="countdown-label">First Tee — Round 1</div>
-      <div class="countdown-timer" id="countdown-timer">
-        <div class="countdown-unit">
-          <span class="countdown-num" id="cd-days">--</span>
-          <span class="countdown-text">Days</span>
+    <div class="vault-card" style="max-width:900px; margin:0 auto var(--space-xl); background:var(--white); border-radius:10px; box-shadow:0 2px 12px rgba(0,0,0,0.06); border:1px solid rgba(0,0,0,0.06); overflow:hidden;">
+      <div class="vault-card-header" style="background:var(--masters-green); padding:var(--space-md) var(--space-lg);">
+        <h3 style="margin:0; color:var(--cream); font-family:var(--font-display); font-size:1.2rem;">2026 Final Results</h3>
+      </div>
+      <div class="vault-card-body" style="padding:var(--space-lg);">
+        <p style="font-size:1rem; line-height:1.7; color:var(--text-secondary); margin-bottom:var(--space-md);">
+          Thanks to everyone who jumped in, talked shit, sweated Sunday pins, and helped raise money for the Ride to Conquer Cancer. The final board is locked, the green jacket is spoken for, and Kenner gets to chirp for a full year.
+        </p>
+        <div class="stats-grid" style="margin-bottom:var(--space-lg);">
+          <div class="stat-card animate-in">
+            <div class="stat-value">90</div>
+            <div class="stat-label">Entries</div>
+          </div>
+          <div class="stat-card animate-in">
+            <div class="stat-value">$2,250</div>
+            <div class="stat-label">Prize Pool</div>
+          </div>
+          <div class="stat-card animate-in">
+            <div class="stat-value">$450</div>
+            <div class="stat-label">Raised for RTCC</div>
+          </div>
+          <div class="stat-card animate-in">
+            <div class="stat-value">Kenner</div>
+            <div class="stat-label">Champion</div>
+          </div>
         </div>
-        <div class="countdown-sep">:</div>
-        <div class="countdown-unit">
-          <span class="countdown-num" id="cd-hours">--</span>
-          <span class="countdown-text">Hours</span>
-        </div>
-        <div class="countdown-sep">:</div>
-        <div class="countdown-unit">
-          <span class="countdown-num" id="cd-mins">--</span>
-          <span class="countdown-text">Minutes</span>
-        </div>
-        <div class="countdown-sep">:</div>
-        <div class="countdown-unit">
-          <span class="countdown-num" id="cd-secs">--</span>
-          <span class="countdown-text">Seconds</span>
-        </div>
+        <p class="last-updated" id="last-updated">Final standings locked</p>
       </div>
     </div>
 
-    <!-- Pool Stats -->
-    <div class="stats-grid">
-      <div class="stat-card animate-in">
-        <div class="stat-value" id="stat-entries">—</div>
-        <div class="stat-label">Entries</div>
-      </div>
-      <div class="stat-card animate-in">
-        <div class="stat-value" id="stat-prize-pool">—</div>
-        <div class="stat-label">Prize Pool</div>
-      </div>
-      <div class="stat-card animate-in">
-        <div class="stat-value" id="stat-charity">$5/entry</div>
-        <div class="stat-label">To Charity</div>
-      </div>
-      <div class="stat-card animate-in">
-        <div class="stat-value">$1,125</div>
-        <div class="stat-label">1st Place</div>
-      </div>
-    </div>
-
-    <p class="last-updated" id="last-updated">Last updated: loading...</p>
-
-    <!-- Augusta Physical Scoreboard — Top 10 -->
     <div class="scoreboard-container">
       <div class="scoreboard">
-        <!-- Arched "LEADERS" top -->
         <div class="scoreboard-arch">
-          <span class="scoreboard-arch-text">Leaders</span>
+          <span class="scoreboard-arch-text">Final Top 10</span>
         </div>
-        <!-- Subtitle bar -->
         <div class="scoreboard-header">
-          <div class="scoreboard-subtitle">Masters Charity Pool &middot; Augusta National &middot; 2026</div>
+          <div class="scoreboard-subtitle">Masters Charity Pool &middot; Final Standings &middot; 2026</div>
         </div>
-        <!-- Column headers -->
         <div class="scoreboard-columns">
           <span class="col-header">Pos</span>
           <span class="col-header">Entry</span>
           <span class="col-header earnings-header">Earnings</span>
           <span class="col-header movement-header">+/−</span>
         </div>
-        <!-- Rows populated by JS -->
         <div id="scoreboard-rows"></div>
-        <!-- Bottom bar -->
         <div class="scoreboard-footer">
-          <span class="scoreboard-footer-text"><span class="live-dot"></span>Live during tournament week</span>
-          <span class="scoreboard-footer-text" id="board-update-time">—</span>
+          <span class="scoreboard-footer-text">🏁 Tournament complete</span>
+          <span class="scoreboard-footer-text" id="board-update-time">2026 final</span>
         </div>
       </div>
     </div>
 
-    <!-- View All -->
     <div class="text-center mt-lg">
-      <a href="standings.html" class="view-all-btn">View All Entries →</a>
+      <a href="standings.html" class="view-all-btn">View Final Standings →</a>
     </div>
   </main>
 
@@ -162,39 +136,6 @@
   <script src="data/pool-data.js"></script>
   <script src="js/live-data.js"></script>
   <script src="js/leaderboard.js"></script>
-  <script>
-    // Countdown to Masters Round 1 — Thursday April 9, 2026 8:00 AM EDT
-    (function() {
-      const TARGET = new Date('2026-04-09T12:00:00Z'); // 8am EDT = noon UTC
-      const container = document.getElementById('countdown-container');
-      const days = document.getElementById('cd-days');
-      const hours = document.getElementById('cd-hours');
-      const mins = document.getElementById('cd-mins');
-      const secs = document.getElementById('cd-secs');
-
-      function pad(n) { return n < 10 ? '0' + n : n; }
-
-      function tick() {
-        const now = new Date();
-        const diff = TARGET - now;
-        if (diff <= 0) {
-          container.style.display = 'none';
-          return;
-        }
-        const d = Math.floor(diff / 86400000);
-        const h = Math.floor((diff % 86400000) / 3600000);
-        const m = Math.floor((diff % 3600000) / 60000);
-        const s = Math.floor((diff % 60000) / 1000);
-        days.textContent = pad(d);
-        hours.textContent = pad(h);
-        mins.textContent = pad(m);
-        secs.textContent = pad(s);
-      }
-
-      tick();
-      setInterval(tick, 1000);
-    })();
-  </script>
   <script>
     (function() {
       const audio   = document.getElementById('bg-music');
